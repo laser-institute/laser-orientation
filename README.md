@@ -1,4 +1,4 @@
-# slides-template Repo Description
+# LASER Orientation Lab Session
  
 ## Orientation Introduction
 

@@ -296,6 +296,8 @@ Part 2:
 Code-Along
 
 ---
+class: no-logo
+
 # R Programming Basics
 
 .panelset[

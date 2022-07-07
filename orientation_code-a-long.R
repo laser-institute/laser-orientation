@@ -63,8 +63,6 @@ x <- 20 *4
 ####  <- Operator ##################
 
 
-
-
 #' Assign a number between 1 and 10 to a new object call my_number.
 #' Multiply my_number by 2 and save as my_product. 
 #' Type my_product and run to examine the contents. 
@@ -76,7 +74,21 @@ my_product
 
 ########Other operators 
 
-#get from lab 0 in LA
+#Pipe operator
+
+#percent greater than percent
+
+# %>%
+
+#The original pipe operator, %>%, comes from the {magrittr} package but all packages in the tidyverse load %>% for you automatically, so you don’t usually load magrittr explicitly.
+
+
+
+# |>
+
+#Some labs will also use a very powerful |> operator called a pipe. Pipes are a powerful tool for combining a sequence of functions or processes. 
+
+#The pipe has become such a useful and much used operator in R that it is now baked into R using the new and simpler version of the pipe |> operator demonstrated in the following code chunk:
 
 #####################
 ### d. Packages #####

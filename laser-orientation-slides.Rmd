@@ -66,7 +66,7 @@ xaringanExtra::use_tile_view()
 
 .pull-left[
 ## Part 1: Core Concepts
-### Network Data
+### LASER Toolkit
 - Reproducible Research
 - Git &GitHub Desktop
 - RStudio Desktop
@@ -76,10 +76,11 @@ xaringanExtra::use_tile_view()
 .pull-right[
 
 ## Part 2: R Code-Along
-#### Network Visualization
-- tidygraph & ggraph Packages
-- graph manipulation in R
-- Simple Sociograms
+### R Language Grammar
+- Operators
+- Objects
+- Functions
+- Packages
 ]
 
 
@@ -93,68 +94,17 @@ Additionally, the code-along will consist of an introduction to R and its IDE. T
 
 class: clear, inverse, middle, center
 
-PART 1:
+# Part 1: Core Concepts
 
-----
 
-Conceptual Overview
+GitHub, RStudio, and LASER Badge
 
 ---
-# Open Source, Open Science
+class: clear, laser
 
-.panelset[
+.quote[“...future you and anyone else will be able to **pick up your analysis and reproduce the same results**, including figures and tables.”]
 
-.panel[.panel-name[Open Science]
-
-**Open Science - "WHY?"**
-
-
-- Accurate
-- Efficient
-- Innovative
-- Engagement
-
-
-
-]
-
-???
-
-According to the Organization for Economic Cooperation and Development, open science encompasses unhindered access to scientific articles, access to data from public research, and collaborative research. 
-
-Open science offers a range of benefits including more **accurate** verification of scientific results, speeding up the process of scientific inquiry and discovery, reducing duplication of effort, increasing **efficient** use of financial resources, improved **innovation** and increased consumer choice from public research, and promotion of citizens **engagement** and trust in science 
-
-
-
-.panel[.panel-name[What]
-.pull-left[
-The [OECD](https://tinyurl.com/oecdlib) directorate for Science, Technology and Innovation (STI) leads OECD research on the contribution of science, technology and industry to well-being and economic growth.
-]
-
-.pull-right[
-<img src="img/open_science.png" height="400px"/>
-]
-]
-???
-This framework incorporates access to data and information, as well as civil society engagement, in the different stages of the scientific research process. 
-
-It is not meant to be prescriptive but should help different communities to decide on their own priorities within the open science space and to better visualize how these priorities link to different stage of the scientific process and to different actors. 
-
-This diagram from the 2018 article by Dai, Shin  and Smith is a good illustration of open science and how it relates to the scientific process. You'll see that in the inner portion of the diagram is a continual cycle that involves conceptualization, followed by data gathering and analysis, then publication and review, and that this process is iterative. In the outer ring of the model are shown a variety of sources and ideas that contribute to open science.
-
-Such a framework can be useful also in considering how best to incentive's and measure different aspects of open science.
-
-.panel[.panel-name[Discussion]
-
-## **How do you "open" science in your practice?**
-
-.right-column["Open Science policies encourage researchers to **disclose a wide range of outputs from their work**, thereby **codifying openness as a specific set of research practices** and **guidelines that can be interpreted** and applied consistently across disciplines and geographical settings." (Levin, N., & Leonelli, S. (2017). 
-]
-
-]
-]
-
-
+.author[~ Harrison, 2020]
 
 
 ---
@@ -162,38 +112,8 @@ Such a framework can be useful also in considering how best to incentive's and m
 
 .panelset[
 
-.panel[.panel-name[What]
 
-.pull-left[
-Reproducible research means that:
-
-.quote[**“future you and anyone else will be able to pick up your analysis and reproduce the same results, including figures and tables.”**]
-
-.author[~ Harrison, 2020]
-]
-
-.pull-right[
-.quote[Research findings cannot even really be considered *“genuine contributions to human knowledge”* until they have been verified through replication.]
-
-.author[~ Stodden, 2009b, 38]
-
-]
-
-
-]
-
-???
-
-So what is reproducible research and how does it relate to open science? According to Harrison et al in their 2020 article, reproducible research means that “future you and anyone else will be able to pick up your analysis and reproduce the same results, including figures and tables.” Stodden, in the 2009 publication, states that research findings cannot even really be considered genuine contributions to human knowledge until they have been verified through replication. 
-
-The piece here that I think links reproducible research and open science very well and helps support some of those advantages to open science that we discussed a few slides ago is that scientific inquiry and scientific progress rely heavily upon the ability to reproduce the conditions of an experiment or a research study. 
-
-That's very difficult to achieve if there's missing information about how the research occured in the first place. 
-
-When you use reproducible research techniques, however, all of the steps, all of the components are publicly available. This even includes the version of the software package that you used to analyze your data. And we're going to talk about what some of those procedures are and what some of those standards are for producing reproducible research. But I hope you can see the link between clearly and openly communicating how you've set up a study and how that might contribute to this notion of open science.
-
-
-.panel[.panel-name[Why?]
+.panel[.panel-name[Why Reproducibilty?]
 .pull-left[
 **Increases:**
 - Study replication
@@ -210,17 +130,9 @@ When you use reproducible research techniques, however, all of the steps, all of
 
 
 ]
-???
-So why reproducible research? Well this is a bit of a corollary to an earlier slide where we discussed “why open science”.
-
-Reproducible research increases your ability to replicate a study and the ability to develop knowledge cumulatively over time and enable contributions from different sources. 
-
-Gandrud 2020 and Harrison et al 2020 – make the point that adhering to principles of reproducible research improves your work habits and your teamwork. It also eases revision of a project or a study and reduces effort duplication. And all of these things result in higher impact research.
 
 
-.panel[.panel-name[Core]
-
-**Core Practices**
+.panel[.panel-name[Core Practices]
 
 .pull-left[“The **communication** aspect **should not be an afterthought**, it should be recorded with your analysis as you are going through it.” (-Harrison et al, 2020)]
 .pull-right[
@@ -228,13 +140,43 @@ Gandrud 2020 and Harrison et al 2020 – make the point that adhering to princip
 ]
 ]
 
+
+.panel[.panel-name[Discussion]
+
+Think about the following questions and then discuss at your table: 
+
+- What have your experiences been with reproducible research?
+
+- What tools have you used to ensure the reproducibility of your work? 
+
+- What questions do you have about reproducible research? 
+
+]
+
+
+]
+
 ???
+
+## So why reproducible research?
+
+Reproducible research increases your ability to replicate a study and the ability to develop knowledge cumulatively over time and enable contributions from different sources. 
+
+Gandrud 2020 and Harrison et al 2020 – make the point that adhering to principles of reproducible research improves your work habits and your teamwork. It also eases revision of a project or a study and reduces effort duplication. And all of these things result in higher impact research.
+
+The piece here that I think links reproducible research and open science very well and helps support some of those advantages to open science that we discussed a few slides ago is that scientific inquiry and scientific progress rely heavily upon the ability to reproduce the conditions of an experiment or a research study. 
+
+That's very difficult to achieve if there's missing information about how the research occured in the first place. 
+
+When you use reproducible research techniques, however, all of the steps, all of the components are publicly available. This even includes the version of the software package that you used to analyze your data. And we're going to talk about what some of those procedures are and what some of those standards are for producing reproducible research. But I hope you can see the link between clearly and openly communicating how you've set up a study and how that might contribute to this notion of open science.
 
 Let's talk about the sort of nitty-gritty of how you might go about producing reproducible research. 
 First, I want to call your attention to this quote from that Harrison article. It says “the communication aspect should not be an afterthought. It should be recorded with your analysis as you are going through it.” 
 
 So you might relate this to a situation where you're giving a person directions. We don't do this very much anymore because most people will just use their GPS or Google maps but in the olden days if you were giving someone directions, say, to your house, you would give them fairly explicit step by step directions. You would tell them what street names they would expect to see, you would tell them where to turn and which direction to turn, and you would probably also describe very obvious landmarks that they might see along the way. Well reproducible research is very similar in that as you go through the research process, you are also creating a set of directions for someone following behind you. That person may very well be yourself at a later time or it might be someone else, but either way, you're creating this set of directions for someone to reproduce your work as closely as possible to the way you produced it yourself. 
 
+
+## Core Practices
 Some core practices of reproducible research are grouped into these three categories: your research is well documented, you communicate clearly, and you use reproducible theory. 
 
 
@@ -254,23 +196,9 @@ So commenting your code, which will see an example of a little bit later, essent
 Another basic principle of clear communication is making sure that you're using plain language. So try, as best as you are able, to steer clear of jargon or discipline-specific terms. Or, if you use these terms, try to define them. And then lastly, in terms of clear communication, you want to share your rationale for using particular functions as well as the methods that you used in your study. 
 
 
+
 The last category listed here is this notion of ***reproducible theory** and essentially this is very basic to research and academia but it means that you are going to appropriately cite any foundational works, or sources, or proofs if you're working in mathematics, so that people who are looking at your research project understand where some of these ideas and concepts that informed your study have come from.
 
-
-.panel[.panel-name[Discussion]
-
-## What have your experiences been with Reproducible Research?
-
-]
-
-.panel[.panel-name[Workflow]
-
-.center[
-<img src="img/rr_workflow.png" height="425px"/>
-]
-]
-
-???
 Gandrud 2020 suggest following a Workflow for reproducibility to achieve long-term and cross-platform computational reproducibility of data analysis.
 
 This diagram is from the Gandrud text it's an example workflow and I thought this would be helpful because it illustrates this concept of being explicit about how things are tied together.
@@ -283,26 +211,18 @@ Gandrud also makes a point that everything should be human readable and everythi
 
 Then this notion that everything should be human readable is hopefully pretty understandable but basically explains that if you're communicating with other human researchers you want to make sure that your explanations are understandable by other humans. This also links to the concept of using plain language. Gandrud explains this probably much more eloquently than I can and much more clearly so again I encourage you to refer to his text.
 
-
-]
-
-
-
-
 ---
-
 class: clear, inverse, middle, center
 
-Part 2:
+# part_2(R, code_along)
 
-----
+Operators, Objects, and Functions Oh My! 
 
-Code-Along
 
 ---
 class: no-logo
 
-# R Programming Basics
+# RStudio Basics
 
 .panelset[
 
@@ -313,6 +233,46 @@ class: no-logo
 ]
 
 ]
+
+
+.panel[.panel-name[Global Options]
+
+.center[
+<img src="img/global.png" height="425px"/>
+]
+]
+
+.panel[.panel-name[Packages]
+
+.pull-left[
+Collections of R code that contain functions, data, and/or documentation.  
+```{r, echo=TRUE, eval=FALSE}
+# example of installing a package
+install.packages("tidyverse")
+
+# example of loading a package
+library(tidyverse)
+```
+]
+
+.pull-right[
+
+.center[Or just point and click... 
+
+<img src="img/install-packages.png" height="350px"/>
+]]
+]
+
+
+.panel[.panel-name[New Script]
+.center[
+<img src="img/r_script.png" height="425px"/>
+]
+]
+
+
+]
+
 ???
 **What is the Integrated Development Environment (IDE)?**
 
@@ -344,15 +304,6 @@ Access all of your files for a projects
 - the help tab will show you more information about a function or package similar to adding a question mark before a package name or function name.
 - view your Rmarkdown file 
 
-
-.panel[.panel-name[Global Options]
-
-.center[
-<img src="img/global.png" height="425px"/>
-]
-]
-???
-
 We can use 
 **Global options:** to customize the IDE to better suite your workflow with things like...
 - wrap code
@@ -367,11 +318,6 @@ Let's set up our Global Options for a smooth workflow
     + 3. `R Markdown` -> Show output preview in: Viewer Pane
 
 
-.panel[.panel-name[New Script]
-.center[
-<img src="img/r_script.png" height="425px"/>
-]
-???
 Today we will be working in a script file. A script is simply a text file containing a set of commands and comments. The script can be saved and used later to re-execute the saved commands
 
 To open a new script file 
@@ -381,23 +327,6 @@ To open a new script file
 
 However, we already have our script created that you copied frm Github.
 
-
-]
-.panel[.panel-name[Grammar]
-
-- Objects are the nouns of the R language
-	+ **owen_meany** < - mean(numeric_vector)
-- Functions are the verbs
-	+ owen_meany < - **mean**(numeric_vector)
-- Arguments are the adverbs or the direct object
-	+ owen_meany < - mean(**numeric_vector**)
-	
-As in any sentence, there is also “punctuation”
-	+ owen_meany **<-** mean(numeric_vector)
-
-
-]
-???
 Now let's talk a little bit about some r programming basics: packages, functions, and arguments. 
 
 **Packages** are bundles of functions, and if that is meaningless to you it's probably also helpful to know that functions do things. So packages are bundles of things that do things. And like we just talked about, packages must be first be installed into Rstudio using the install packages function and then loaded into the library using the library function. 
@@ -407,35 +336,20 @@ Now let's talk a little bit about some r programming basics: packages, functions
 **Arguments** go inside the parentheses and they are separated by commas. You can have more than one argument within the parentheses. Arguments provide extra details regarding how a function should run or what materials a function should work with. And I've included a couple of examples here. 
 
 
-
-]
-
-
 ---
-# Syntax
+# R Syntax
 
-.panelset[
-
-.panel[.panel-name[Functions]
-
-.pull-left[
-<img src="img/functions.png" height="300px"/>
-]
+Similar to all languages, R syntax is composed of "parts of speech" that can be combined into sentences that express complex ideas: 
 
 
-.column-right[
-- mean()
-- filter()
-
-
-```{r round-block, echo=TRUE}
-#round pi
-round(3.14) #<<
-
-```
-
-]
-]
+- *Functions* are the verbs
+	- **mean**()
+- *Objects* are the nouns of the R language
+	+ mean(**student_grades**)
+- *Arguments* are the adverbs or the direct object
+	+ mean(student_grades, **na.rm = FALSE**)
+-	As in any sentence, there is also “punctuation” or *operators*
+  + average_grade **<-** mean(student_grades, na.rm = FALSE)
 
 ???
 
@@ -445,51 +359,8 @@ Say you want to take the mean of a number, you would write mean( )
 Suppose you want to round a number, you would use round( ) and put the number inside the parentheses. Make sure to look in the console pane to see the answer.
 - Functions always include parenthesis
 
-.panel[.panel-name[Arguments]
-
-.pull-left[
-<img src="img/arguments.png" height="300px"/>
-]
 
 
-.column-right[
-
-```{r argument-block, echo = TRUE}
-#use help to look at arguments
-?round
-
-#round pi to two digits
-round(3.14, digits = 2) #<<
-```
-]
-
-]
-
-???
-- We talked about the help window or pane earlier. You can add a question mark before the round() function to look at the arguments. 
-
-- Look for an argument that you can add to pi to round to the nearest 1 decimal places
-HINT look under USAGE in the arguments help section
-
-So in this example, “digits = 1” is an argument that provides extra information for how the round function should work. So this little bit of code is saying find the mean of a numeric vector or or a string of numbers. Round that mean to one digit. In the second example, this argument “package_name”, which by the way is a terrible name for a package, is telling R which package to load into its library.
-
-.panel[.panel-name[Objects]
-
-.pull-left[
-<img src="img/objects.png" height="300px"/>
-]
-
-
-.column-right[
-```{r object-block, echo=TRUE, message=FALSE, warning=FALSE}
-twenty <-20 #<<
-forty <- 20 #<<
-
-```
-]
-
-]
-???
 Objects: are everything you have in R - things that you save like data frames in tabular form. Think back when you have used excel and you had to save your spread sheet and name it. That is comparable to an object. 
 
 To save something into an object we need to use the assignment operator <-.  The assignment operator is used for assignment operation. Operator that assigns a certain value to a variable and scope is within the function and outside as well. 
@@ -500,35 +371,206 @@ We will save the number 20 to the word twenty. I could have easily called the ne
 Don’t ever want to use TRUE/FALSE, those are reserved for testing logical variables.
 Also, NaN, inf and NA are reserved for outcomes such as whether a variable is negative or positive infinity, not a number, or missing.
 
-.panel[.panel-name[Packages]
-
-.pull-left[
-<img src="img/packages.png" height="300px"/>
-]
 
 
-.column-right[
-
-1.  Download packages to computer with `intall.packages("")`.
-2.  Read in package to Rstudio with `library()`
-
-```{r install-code, echo=TRUE, message=FALSE, warning=FALSE}
-
-
-# read in tidyverse, do not need quotations reading into script
-library(tidyverse) #<<
-```
-]
-
-]
-???
 You only install the package once, ever...mostly ever :). But, you will need to read in the package to Rstudio for each session. Sometimes during the session.
 
 There are about eight packages supplied with the R distribution and many more are available through the CRAN family of Internet sites covering a very wide range of modern statistics, and machine learning. If you need r to do something then there's probably a package for that.
 
 
+- We talked about the help window or pane earlier. You can add a question mark before the round() function to look at the arguments. 
+
+- Look for an argument that you can add to pi to round to the nearest 1 decimal places
+HINT look under USAGE in the arguments help section
+
+So in this example, “digits = 1” is an argument that provides extra information for how the round function should work. So this little bit of code is saying find the mean of a numeric vector or or a string of numbers. Round that mean to one digit. In the second example, this argument “package_name”, which by the way is a terrible name for a package, is telling R which package to load into its library.
+
+---
+# Operators & Objects
+
+.panelset[
+
+.panel[.panel-name[Arithmetic]
+
+.pull-left[
+R is a calculator!  
+  
+Type this in your console:  
+```{r, echo = TRUE, eval = FALSE}
+2 + 3
+```
+  
+You'll get this:
+```{r, echo = FALSE}
+2 + 3
+```
 ]
 
+.pull-right[
+.center[Arithmetic Operators 
+
+<img src="img/arithmetic.png" height="350px"/>
+]]
+]
+
+.panel[.panel-name[Logic]
+.pull-left[
+R is logical! 
+  
+What happens when you run this?  
+```{r, echo=TRUE, eval = FALSE}
+5 > 3
+```
+  
+Or this?
+```{r, echo=TRUE, eval = FALSE}
+5 == 3
+```
+
+Why not just a single `=` operator?
+]
+
+.pull-right[
+.center[Logical Operators 
+
+<img src="img/logical.png" height="350px"/>
+]]
+
+]
+
+.panel[.panel-name[Assignment]
+
+.pull-left[
+**Bad Form**
+
+```{r, echo=TRUE}
+my_variable = 2 + 3 #<<
+
+my_variable
+```
+]
+
+.pull-right[
+**Good Form**
+
+```{r, echo=TRUE}
+my_dog <- "Howie" #<<
+
+my_dog
+```
+]
+]
+
+.panel[.panel-name[Pipes]
+
+Old Pipe `%>%`
+```{r, echo=TRUE, message=FALSE, eval=TRUE}
+sci_data <- read_csv("data/sci-online-classes.csv") %>% # old pipe
+  select(student_id, total_points_earned, total_points_possible)
+```
+
+New Pipe `|>`
+```{r, echo=TRUE, message=FALSE, eval=TRUE}
+sci_data <- read_csv("data/sci-online-classes.csv") %>% # old pipe
+  select(student_id, total_points_earned, total_points_possible)
+```
+
+]
+
+.panel[.panel-name[Data Frames]
+
+.pull-left[
+Objects are everywhere in R! In fact we already created a few.
+
+Let's look at the `sci_data` object we just created:
+
+```{r, echo=TRUE, eval = FALSE}
+sci_data
+```
+
+
+]
+
+.pull-right[
+.center[
+
+```{r, echo=FALSE, eval = TRUE}
+sci_data |>
+  head()
+```
+]]
+]
+
+
+]
+
+---
+# Functions & Arguments
+
+.panelset[
+
+.panel[.panel-name[Basic Template]
+
+Functions are pre-packaged pieces of code that (typically) start with a verb, followed by objects or inputs in parentheses called "arguments":
+
+```{r, echo=TRUE, eval = FALSE}
+do_this(to_this)  
+do_that(to_this, to_that, with_those)
+```
+]
+
+
+.panel[.panel-name[Make One]
+Let's make a basic addition function called `add_numbers`: 
+
+```{r, echo=TRUE, eval = TRUE}
+add_numbers <- function(number_1, number_2) {
+    number_1 + number_2
+}
+```
+]
+
+.panel[.panel-name[Your Turn]
+
+Use your new function to add 5 and 10:
+```{r, echo=TRUE}
+# YOUR CODE HERE
+# 
+#
+```
+]
+
+.panel[.panel-name[Solution]
+
+
+```{r, echo=TRUE, message=FALSE, eval=TRUE}
+add_numbers(5, 10)
+```
+
+]
+
+.panel[.panel-name[Real World]
+
+.pull-left[
+In practice, most functions that we will be using this week take a data frame object as their first argument:
+```{r, echo=TRUE, message=FALSE, eval=FALSE}
+ggplot(sci_data, aes(x = total_points_earned)) +
+  geom_histogram(fill = "blue")
+```
+]
+
+.pull-right[
+```{r, echo=FALSE, message=FALSE, eval=TRUE, out.height=350}
+ggplot(sci_data, aes(x = total_points_earned)) +
+  geom_histogram(fill = "blue")
+```
+]
+
+]
+
+
+
+]
 
 ---
 # What's Next
@@ -558,6 +600,10 @@ There are about eight packages supplied with the R distribution and many more ar
 ]
 
 ---
-<img src="img/team_2022.png" height="550px"/>
+class: clear, center
+
+## .font130[.center[**Thank you!**]]
+
+<img src="img/team_2022.png" height="400px"/>
 
 

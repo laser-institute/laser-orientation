@@ -68,7 +68,7 @@ xaringanExtra::use_tile_view()
 ## Part 1: Core Concepts
 ### Network Data
 - Reproducible Research
-- Git & GitHub Desktop
+- Git &GitHub Desktop
 - RStudio Desktop
 
 ]
@@ -531,27 +531,30 @@ There are about eight packages supplied with the R distribution and many more ar
 
 
 ---
-class: inverse, clear, center
+# What's Next
 
-## .font130[.center[**Thank you!**]]
+.pull-left[
+## Essential Readings
 
-.left-col[
-.center[<img style="border-radius: 50%;" src="img/author1.jpeg" height="120px"/><br/>**First Author**<br/><mailto:author1@email.com>]
-]
-.center-col[
-.center[<img style="border-radius: 50%;" src="img/author2.jpeg" height="120px"/><br/>**Second Author**<br/><mailto:author2@email.com>]
-]
-.right-col[
-.center[<img style="border-radius: 50%;" src="img/author3.jpeg" height="120px"/><br/>**Third Author**<br/><mailto:author3@email.com>]
-]
-<br/><br/><br/><br/><br/>
+- [GitHub Something](https://github.com/laser-institute/essential-readings/blob/main/sna-labs/sna-lab-1/carolan-basic-concepts.pdf)  
 
-.pull-left-narrow[<br/>.center[<img style="border-radius: 50%;" src="https://www.nsf.gov/images/logos/NSF_4-Color_bitmap_Logo.png" height="100px"/> ]]
+- [Foundational Skills in R](https://datascienceineducation.com/c06.html)  
 
-.pull-right-wide[
-.left[.font70[
-This work was supported by countless cups of hot tea, cookies, and the RStats Xaringan community willingness to post of plethora of tutorials. But you may wish to thank your funding agency (e.g., the National Science Foundation) and put their logo on the left as shown here.
-]]
+- [Getting Started with R and RStudio](https://datascienceineducation.com/c05.html)
+
+
+
+
+
+] 
+
+.pull-right[
+## Tutorials
+
+- [Programing Basics](https://rstudio.cloud/learn/primers/1.2)
+
+- [Your First LASER Badge!](https://github.com/laser-institute/essential-readings/blob/main/sna-labs/sna-lab-1/pittinsky-class-friendships.pdf)
+
 ]
 
 ---

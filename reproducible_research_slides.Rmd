@@ -1,26 +1,28 @@
 ---
-  title: "Reproducible Research"
-  institute: "Instituttional Affiliation"
-  date: '`r format(Sys.time(), "%B %d, %Y")`'
-  output:
-    xaringan::moon_reader:
-      css:
-       - default
-       - css/laser.css
-       - css/laser-fonts.css
-      lib_dir: libs                        # creates directory for libraries
-      seal: false                          # false: custom title slide
-      nature:
-        highlightStyle: default         # highlighting syntax for code
-        highlightLines: true               # true: enables code line highlighting
-        highlightLanguage: ["r"]           # languages to highlight
-        countIncrementalSlides: false      # false: disables counting of incremental slides
-        ratio: "16:9"                      # 4:3 for standard size,16:9
-        slideNumberFormat: |
-         <div class="progress-bar-container">
-          <div class="progress-bar" style="width: calc(%current% / %total% * 100%);">
-          </div>
-         </div>
+title: "LASER Tooltkit Orientation: GitHub & RStudio Desktop"
+subtitle: "A Brief Introduction & Demo"
+author: "The LASER Team"
+institute: "The LASER Institute"
+date: "2022/07/11 (updated: `r Sys.Date()`)"
+output:
+  xaringan::moon_reader:
+    css:
+     - default
+     - css/laser.css
+     - css/laser-fonts.css
+    lib_dir: libs                        # creates directory for libraries
+    seal: false                          # false: custom title slide
+    nature:
+      highlightStyle: default         # highlighting syntax for code
+      highlightLines: true               # true: enables code line highlighting
+      highlightLanguage: ["r"]           # languages to highlight
+      countIncrementalSlides: false      # false: disables counting of incremental slides
+      ratio: "16:9"                      # 4:3 for standard size,16:9
+      slideNumberFormat: |
+       <div class="progress-bar-container">
+        <div class="progress-bar" style="width: calc(%current% / %total% * 100%);">
+        </div>
+       </div>
 ---
 class: clear, title-slide, inverse, center, top, middle
 
@@ -62,23 +64,25 @@ xaringanExtra::use_tile_view()
 ---
 # Agenda
 
-.pull-left[**Conceptual Overview**
-- Open-Science 
-- What is Reproducible Research? 
-- Core Practices (Processes of RR) 
-- Examples in LA of RR 
+.pull-left[
+## Part 1: Core Concepts
+### Network Data
+- Reproducible Research
+- Git & GitHub Desktop
+- RStudio Desktop
+
 ]
 
-.pull-right[ **Code-Along**
-- R Programming Basics
-- R Grammar
-  + Functions
-  + Arguments
-  + Objects
-  + Packages
+.pull-right[
 
-*Optional: RR Checklist for Your Research*
+## Part 2: R Code-Along
+#### Network Visualization
+- tidygraph & ggraph Packages
+- graph manipulation in R
+- Simple Sociograms
 ]
+
+
 ???
 
 In the following presentation we will discuss a conceptual overview of reproducible research. we'll discuss what open science is, what reproducible research is, describe core practices of reproducible research.  

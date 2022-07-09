@@ -253,9 +253,9 @@ class: no-logo
 
 .pull-left[
 Collections of R code that contain functions, data, and/or documentation.  
-```{r, echo=TRUE, eval=FALSE}
+```{r, echo=TRUE, eval=TRUE}
 # example of installing a package
-install.packages("tidyverse")
+# install.packages("tidyverse")
 
 # example of loading a package
 library(tidyverse)

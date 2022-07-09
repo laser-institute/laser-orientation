@@ -4,7 +4,7 @@
     <title>LASER Tooltkit Orientation: GitHub &amp; RStudio Desktop</title>
     <meta charset="utf-8" />
     <meta name="author" content="The LASER Team" />
-    <script src="libs/header-attrs-2.13/header-attrs.js"></script>
+    <script src="libs/header-attrs-2.14/header-attrs.js"></script>
     <link href="libs/remark-css-0.0.1/default.css" rel="stylesheet" />
     <link href="libs/panelset-0.2.6/panelset.css" rel="stylesheet" />
     <script src="libs/panelset-0.2.6/panelset.js"></script>
@@ -190,6 +190,125 @@ Gandrud also makes a point that everything should be human readable and everythi
 Then this notion that everything should be human readable is hopefully pretty understandable but basically explains that if you're communicating with other human researchers you want to make sure that your explanations are understandable by other humans. This also links to the concept of using plain language. Gandrud explains this probably much more eloquently than I can and much more clearly so again I encourage you to refer to his text.
 
 ---
+class: clear, middle, no-logo
+
+.pull-left[.font200[
+&lt;br /&gt;
+.orange[**Raise your hand if you're guilty of this...**]
+
+]]
+
+.pull-right[&lt;img src="img/github/phdcomic.png" height="600px" style="margin-top: -20px; border: 5px solid #d34126;"/&gt;]
+
+???
+
+Okay, be honest. Have you ever gotten lost or confused during your own research process because
+your files got disorganized or your naming structure broke down? Let's fix that...
+
+---
+# Putting Reproducibility into Practice
+
+.pull-left["Ask one of your labmates to reproduce a result you recently obtained using only what they can find in your papers or on the web. Try to do the same for one of their results, then try to do it for a result from a lab you work with."
+
+]
+
+.pull-right[
+- How do you manage your data in research?
+- How do you document who did what and when?
+- When the results of your analyses change, do you know why?
+]
+
+
+???
+We'll start with this quote from a Software Carpentry lesson on using version control 
+which addresses the question: How reproducible is my work?
+
+If you were to ask a colleague to take one of your papers and reproduce your results, could 
+they do it? Could you do it for one of theirs?
+
+
+Take just a moment and think about how you put reproducibility into practice in your own research. 
+What does this look like for your research data management? How do you document who 
+did what and when? If your results change, can you say why they changed?
+
+Managing these types issues is how we put reproducibility into practice and one way to do that is with version control.
+
+---
+class: no-logo
+# What is version control?
+
+**Version control** is keeping a .orange[**history of a file's changes**].
+
+.center[&lt;img src="img/github/google-version-history.png" height="425px" style="margin-left: -40px; border: 3px solid #143156;"/&gt;]
+
+???
+Chances are that you're already familiar with the concept of version control. If you've ever looked at the revision history of a Google doc, for example, then you have seen version control. 
+
+Version control gives a history of the versions of a file, who made the changes in that version, how many changes, and what those changes actually were in that version. 
+
+---
+class: no-logo
+# Git, GitHub, and GitHub Desktop
+
+.panelset[
+
+.panel[.panel-name[Git]
+
+- a version control system
+- tracks history of changes for individuals or collaborative teams
+- Git repositories (or projects) encompass all files and folders associated with a project along with each files revisioj history
+
+]
+
+.panel[.panel-name[GitHub]
+
+.pull-left[
+- a web-based platform that hosts Git repositories
+- provides a collaborative, community-based development environment
+- provides an extensive ecosystem for software workflows
+]
+
+.pull-right[
+&lt;img src="img/github/github-laser-org.png" height="375px" style="margin-top: -30px; margin-left: -30px;"/&gt;
+]
+
+
+]
+
+.panel[.panel-name[GitHub Desktop]
+.font80[A desktop application provided by GitHub that makes it easy to create or clone repositories, commit changes, or see/pull collaborators' changes.].pull-left[
+&lt;img src="img/github/githubdesktop.png" height="375px" style="margin-top: -50px;"/&gt;]
+.pull-right[
+&lt;img src="img/github/githubdesktop_history.png" height="375px" style="margin-top: -50px;"/&gt;
+]
+]]
+
+???
+
+---
+class: clear, center, middle
+
+.center[.font150[Let's Get Familiar with GitHub]]
+
+[https://github.com/laser-institute](https://github.com/laser-institute)
+
+???
+
+Has everyone already created a GitHub account? Okay, good. We're going to go take a tour and get familiar with GitHub
+
+---
+github desktop
+
+---
+Creating new repositories
+
+---
+
+Cloning our first repository
+
+Navigating to our cloned repository and opening .Rproj
+
+---
 class: clear, inverse, middle, center
 
 # part_2(R, code_along)
@@ -238,23 +357,6 @@ Collections of R code that contain functions, data, and/or documentation.
 
 # example of loading a package
 library(tidyverse)
-```
-
-```
-## ── Attaching packages ──────────────────────────────────────────────────── tidyverse 1.3.1 ──
-```
-
-```
-## ✓ ggplot2 3.3.5     ✓ purrr   0.3.4
-## ✓ tibble  3.1.6     ✓ dplyr   1.0.8
-## ✓ tidyr   1.2.0     ✓ stringr 1.4.0
-## ✓ readr   2.1.2     ✓ forcats 0.5.1
-```
-
-```
-## ── Conflicts ─────────────────────────────────────────────────────── tidyverse_conflicts() ──
-## x dplyr::filter() masks stats::filter()
-## x dplyr::lag()    masks stats::lag()
 ```
 ]
 
@@ -389,6 +491,7 @@ HINT look under USAGE in the arguments help section
 So in this example, “digits = 1” is an argument that provides extra information for how the round function should work. So this little bit of code is saying find the mean of a numeric vector or or a string of numbers. Round that mean to one digit. In the second example, this argument “package_name”, which by the way is a terrible name for a package, is telling R which package to load into its library.
 
 ---
+class: no-logo
 # Operators &amp; Objects
 
 .panelset[
@@ -688,6 +791,19 @@ if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
     deleted = true;
   });
 })();
+// add `data-at-shortcutkeys` attribute to <body> to resolve conflicts with JAWS
+// screen reader (see PR #262)
+(function(d) {
+  let res = {};
+  d.querySelectorAll('.remark-help-content table tr').forEach(tr => {
+    const t = tr.querySelector('td:nth-child(2)').innerText;
+    tr.querySelectorAll('td:first-child .key').forEach(key => {
+      const k = key.innerText;
+      if (/^[a-z]$/.test(k)) res[k] = t;  // must be a single letter (key)
+    });
+  });
+  d.body.setAttribute('data-at-shortcutkeys', JSON.stringify(res));
+})(document);
 (function() {
   "use strict"
   // Replace <script> tags in slides area to make them executable

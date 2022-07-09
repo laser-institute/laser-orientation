@@ -37,7 +37,7 @@ a:hover { border-bottom: none; }
   line-height: 1.5;
   padding: 1em 2em 1em 2em;
   background-image: url(../img/LASERLogoB.png); 
-  background-position: 97% 105%; 
+  background-position: 90% 100%; 
   background-size: 15%;
 }
 
@@ -135,7 +135,7 @@ h2, h3, h4 {
 .title-slide {
   background-color: var(--white);
   background-image: url(../img/LASERLogoB.png); 
-  background-position: 95% 100%; 
+  background-position: 85% 100%; 
   background-size: 40%;
 }
 

@@ -1,4 +1,4 @@
-<img src="img/LASER_Hx.png" width="40%"/>
+<img src="img/LASER_Hx.png" width="30%"/>
 
 # LASER Orientation Lab Session
  

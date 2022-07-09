@@ -212,6 +212,125 @@ Gandrud also makes a point that everything should be human readable and everythi
 Then this notion that everything should be human readable is hopefully pretty understandable but basically explains that if you're communicating with other human researchers you want to make sure that your explanations are understandable by other humans. This also links to the concept of using plain language. Gandrud explains this probably much more eloquently than I can and much more clearly so again I encourage you to refer to his text.
 
 ---
+class: clear, middle, no-logo
+
+.pull-left[.font200[
+<br />
+.orange[**Raise your hand if you're guilty of this...**]
+
+]]
+
+.pull-right[<img src="img/github/phdcomic.png" height="600px" style="margin-top: -20px; border: 5px solid #d34126;"/>]
+
+???
+
+Okay, be honest. Have you ever gotten lost or confused during your own research process because
+your files got disorganized or your naming structure broke down? Let's fix that...
+
+---
+# Putting Reproducibility into Practice
+
+.pull-left["Ask one of your labmates to reproduce a result you recently obtained using only what they can find in your papers or on the web. Try to do the same for one of their results, then try to do it for a result from a lab you work with."
+
+]
+
+.pull-right[
+- How do you manage your data in research?
+- How do you document who did what and when?
+- When the results of your analyses change, do you know why?
+]
+
+
+???
+We'll start with this quote from a Software Carpentry lesson on using version control 
+which addresses the question: How reproducible is my work?
+
+If you were to ask a colleague to take one of your papers and reproduce your results, could 
+they do it? Could you do it for one of theirs?
+
+
+Take just a moment and think about how you put reproducibility into practice in your own research. 
+What does this look like for your research data management? How do you document who 
+did what and when? If your results change, can you say why they changed?
+
+Managing these types issues is how we put reproducibility into practice and one way to do that is with version control.
+
+---
+class: no-logo
+# What is version control?
+
+**Version control** is keeping a .orange[**history of a file's changes**].
+
+.center[<img src="img/github/google-version-history.png" height="425px" style="margin-left: -40px; border: 3px solid #143156;"/>]
+
+???
+Chances are that you're already familiar with the concept of version control. If you've ever looked at the revision history of a Google doc, for example, then you have seen version control. 
+
+Version control gives a history of the versions of a file, who made the changes in that version, how many changes, and what those changes actually were in that version. 
+
+---
+class: no-logo
+# Git, GitHub, and GitHub Desktop
+
+.panelset[
+
+.panel[.panel-name[Git]
+
+- a version control system
+- tracks history of changes for individuals or collaborative teams
+- Git repositories (or projects) encompass all files and folders associated with a project along with each files revisioj history
+
+]
+
+.panel[.panel-name[GitHub]
+
+.pull-left[
+- a web-based platform that hosts Git repositories
+- provides a collaborative, community-based development environment
+- provides an extensive ecosystem for software workflows
+]
+
+.pull-right[
+<img src="img/github/github-laser-org.png" height="375px" style="margin-top: -30px; margin-left: -30px;"/>
+]
+
+
+]
+
+.panel[.panel-name[GitHub Desktop]
+.font80[A desktop application provided by GitHub that makes it easy to create or clone repositories, commit changes, or see/pull collaborators' changes.].pull-left[
+<img src="img/github/githubdesktop.png" height="375px" style="margin-top: -50px;"/>]
+.pull-right[
+<img src="img/github/githubdesktop_history.png" height="375px" style="margin-top: -50px;"/>
+]
+]]
+
+???
+
+---
+class: clear, center, middle
+
+.center[.font150[Let's Get Familiar with GitHub]]
+
+[https://github.com/laser-institute](https://github.com/laser-institute)
+
+???
+
+Has everyone already created a GitHub account? Okay, good. We're going to go take a tour and get familiar with GitHub
+
+---
+github desktop
+
+---
+Creating new repositories
+
+---
+
+Cloning our first repository
+
+Navigating to our cloned repository and opening .Rproj
+
+---
 class: clear, inverse, middle, center
 
 # part_2(R, code_along)
@@ -393,6 +512,7 @@ HINT look under USAGE in the arguments help section
 So in this example, “digits = 1” is an argument that provides extra information for how the round function should work. So this little bit of code is saying find the mean of a numeric vector or or a string of numbers. Round that mean to one digit. In the second example, this argument “package_name”, which by the way is a terrible name for a package, is telling R which package to load into its library.
 
 ---
+class: no-logo
 # Operators & Objects
 
 .panelset[

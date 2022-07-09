@@ -242,6 +242,13 @@ class: no-logo
 ]
 ]
 
+.panel[.panel-name[Settings]
+
+.center[
+<img src="img/global-settings.png" height="425px"/>
+]
+]
+
 .panel[.panel-name[Packages]
 
 .pull-left[

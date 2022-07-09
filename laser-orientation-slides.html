@@ -36,7 +36,7 @@ class: clear, title-slide, inverse, center, top, middle
 # LASER Tooltkit Orientation: GitHub &amp; RStudio Desktop
 ----
 ### The LASER Team
-### July 08, 2022
+### July 09, 2022
 
 
 ---
@@ -372,7 +372,7 @@ So in this example, “digits = 1” is an argument that provides extra informat
 .panel[.panel-name[Arithmetic]
 
 .pull-left[
-R is a calculator!  
+R is a calculator!
   
 Type this in your console:  
 
@@ -380,7 +380,7 @@ Type this in your console:
 2 + 3
 ```
   
-You'll get this:
+You'll get this: 
 
 ```
 ## [1] 5
@@ -443,32 +443,29 @@ my_variable
 
 
 ```r
-*my_dog &lt;- "Howie"
+*my_cat &lt;- "Muffins"
 
-my_dog
+my_cat
 ```
 
 ```
-## [1] "Howie"
+## [1] "Muffins"
 ```
 ]
 ]
 
 .panel[.panel-name[Pipes]
 
-Old Pipe `%&gt;%`
 
 ```r
-sci_data &lt;- read_csv("data/sci-online-classes.csv") %&gt;% # old pipe
-  select(student_id, total_points_earned, total_points_possible)
+sci_data &lt;- read_csv("data/sci-online-classes.csv") |&gt; # read in data
+  select(student_id, FinalGradeCEMS, course_id, ) |&gt; # select variables
+  rename(final_grade = FinalGradeCEMS) |&gt; # rename FinalGradeCEMS
+  filter(final_grade &gt; .5) |&gt; # keep grades higher than 50% 
+  drop_na() # remove rows with missing data
 ```
 
-New Pipe `|&gt;`
-
-```r
-sci_data &lt;- read_csv("data/sci-online-classes.csv") %&gt;% # old pipe
-  select(student_id, total_points_earned, total_points_possible)
-```
+Pipes are a very powerful tool for combining a sequence of functions or processes. The original pipe operator `%&gt;%` comes from the {magrittr} but pipe has become such a useful and much used operator in R that it is now baked into R with the new `|&gt;` operator. 
 
 ]
 
@@ -493,14 +490,14 @@ sci_data
 
 ```
 ## # A tibble: 6 × 3
-##   student_id total_points_earned total_points_possible
-##        &lt;dbl&gt;               &lt;dbl&gt;                 &lt;dbl&gt;
-## 1      43146                2220                  3280
-## 2      44638                2672                  3531
-## 3      47448                1897                  2870
-## 4      47979                3090                  4562
-## 5      48797                1910                  2207
-## 6      51943                3596                  4208
+##   student_id final_grade course_id    
+##        &lt;dbl&gt;       &lt;dbl&gt; &lt;chr&gt;        
+## 1      43146        93.5 FrScA-S216-02
+## 2      44638        81.7 OcnA-S116-01 
+## 3      47448        88.5 FrScA-S216-01
+## 4      47979        81.9 OcnA-S216-01 
+## 5      48797        84   PhysA-S116-01
+## 6      52326        83.6 AnPhA-S216-01
 ```
 ]]
 ]
@@ -567,13 +564,13 @@ add_numbers(5, 10)
 In practice, most functions that we will be using this week take a data frame object as their first argument:
 
 ```r
-ggplot(sci_data, aes(x = total_points_earned)) +
+ggplot(sci_data, aes(x = FinalGradeCEMS)) +
   geom_histogram(fill = "blue")
 ```
 ]
 
 .pull-right[
-&lt;img src="laser-orientation-slides_files/figure-html/unnamed-chunk-18-1.png" height="350" /&gt;
+&lt;img src="laser-orientation-slides_files/figure-html/unnamed-chunk-17-1.png" height="350" /&gt;
 ]
 
 ]

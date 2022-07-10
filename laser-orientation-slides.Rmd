@@ -405,6 +405,11 @@ class: clear, no-logo, middle
 
 .center[<img src="img/github/desktop-show-finder.png" height="600px"/>]
 
+---
+class: clear, no-logo, middle
+
+
+.center[<img src="img/github/github-finder.png" height="600px"/>]
 
 ---
 class: no-logo

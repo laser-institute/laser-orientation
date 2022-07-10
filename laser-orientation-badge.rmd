@@ -1,6 +1,6 @@
 ---
-title: "LASER Orientation Badge"
-subtitle: "LASER Institute Learning Lab 1 Case Study"
+title: "LASER Badge"
+subtitle: "LASER Institute Orientation"
 author: "YOUR NAME HERE"
 date: "`r format(Sys.Date(),'%B %e, %Y')`"
 output:
@@ -19,22 +19,21 @@ editor_options:
 knitr::opts_chunk$set(echo = TRUE, error = TRUE)
 ```
 
+![](img/LASER_Hx.png){width="40%"}
+
 ## Introduction
 
-### Background
+Welcome to your first LASER badge! This LASER Orientation Badge is
+really a warm-up activitiy to introduce you to R Markdown and the coding
+case studies that we will be using in the machine learning, network
+analysis, and text mining labs. It is a chance to become familiar with
+how RStudio and R Markdown works.
 
-Welcome to your first ! You may have used R before-or you may not have!
-Either is fine as this task will be designed with the assumption that
-you have not used R before. It includes "reaches" for anyone who may
-want to do a bit more.
+You may have used R before-or you may not have! Either is fine as this
+task will be designed with the assumption that you have not used R
+before. It includes "reaches" for anyone who may want to do a bit more.
 
-### Organization
-
-This LASER Orientation Badge activity is really a warm-up to introduce
-you to R Markdown and the coding case studies that we will be using in
-the machine learning, network analysis, and text mining labs. It is a
-chance to become familiar with how RStudio and R Markdown works. In the
-context of doing so, we'll focus on three things:
+In the context of doing so, we'll focus on the following tasks:
 
 1.  Reading data into R (in the **Prepare** section)
 2.  Preparing and "wrangling" data in table (think spreadsheet!) format
@@ -45,8 +44,10 @@ context of doing so, we'll focus on three things:
 5.  Finally, creating a reproducible report of your work you can share
     with others (in the **Communicate** section)
 
-You may be wondering what these bolded terms refer to; what's so special
-about preparing, wrangling, exploring, and modeling data - and
+### The LASER Cycle
+
+You may be wondering what these bolded terms above refer to; what's so
+special about preparing, wrangling, exploring, and modeling data - and
 communicating results? We're using these terms as a part of a framework,
 or model, for what we mean by doing learning in STEM education research.
 
@@ -57,26 +58,41 @@ You can check that out, but don't feel any need to dive deep for now -
 we'll be spending more time on this in first day of the summer
 institute. For now, know that this document is organized around three of
 the five components of what we're referring to as the **LASER cycle**.
-Click the arrow to the right of the code chunk below to view the image
-(more on that process of clicking the green arrow and what it does, too,
-in a moment)!
+
+Click the green arrow to the right of the "code chunk" below to view the
+image (more on that process of clicking the green arrow and what it
+does, too, in a moment)!
 
 ```{r}
 knitr::include_graphics("img/laser-cycle.png")
 ```
 
-### How to use this document
+### How to use this R Markdown document
 
-This is an R Notebook. There are two keys to your use of it:
+This is an R Markdown file as indicated by the .rmd extension at the end
+of the file name. R Markdown documents are fully reproducible and use a
+productive [notebook
+interface](https://bookdown.org/yihui/rmarkdown/notebook.html) to
+combine narrative text and "chunks" of code to produce a range of
+formatted outputs including: formats
+including [HTML](https://bookdown.org/yihui/rmarkdown/html-document.html), [PDF](https://bookdown.org/yihui/rmarkdown/pdf-document.html), [MS
+Word](https://bookdown.org/yihui/rmarkdown/word-document.html), [Beamer](https://bookdown.org/yihui/rmarkdown/beamer-presentation.html), [HTML5
+slides](https://bookdown.org/yihui/rmarkdown/ioslides-presentation.html), [Tufte-style
+handouts](https://bookdown.org/yihui/rmarkdown/tufte-handouts.html), [books](https://bookdown.org/), [dashboards](https://rmarkdown.rstudio.com/flexdashboard/), [shiny
+applications](https://bookdown.org/yihui/rmarkdown/shiny-documents.html), [scientific
+articles](https://github.com/rstudio/rticles), [websites](https://bookdown.org/yihui/rmarkdown/rmarkdown-site.html),
+and more.
+
+There are two keys to your use of R Markdown for this activity:
 
 1.  First, be sure that you are viewing the document in the "Visual
-    Editor" mode. You can use this mode by clicking the symbol that
-    appears like a letter A (or the tip of a pencil!) in the top right
-    of this window.
+    Editor" mode. You can use this mode by clicking the word "Visual" on
+    the left side of the toolbar above.
 2.  Second, click "Knit" next to the yarn ball at the top of this screen
     to preview the document as you work through it. This will allow you
     to see your code and the input in a rendered - easy-to-read -
-    document.
+    document, just as others will see this document when shared. Try
+    knitting the document now and see what happens.
 
 Let's get started! We are glad you are here and to begin this exciting
 (and challenging) journey together.
@@ -114,18 +130,22 @@ export from Microsoft Excel or Google Sheets - into R, using the
 `read_csv()` function in the next chunk.
 
 Clicking the green arrow runs the code; do that next to read the
-`sci-online-classes.csv` file into your R environment
+`sci-online-classes.csv` file stored in your data folder into your R
+environment:
 
 ```{r}
-d <- read_csv("sci-online-classes.csv")
+d <- read_csv("data/sci-online-classes.csv")
 ```
+
+Nice work! You should now see a new data "object" named `d` saved in
+your Environment pane. Try clicking on it and see what happens.
 
 #### Viewing or inspecting data
 
-Last, let's check that the code worked as we intended; run the next
-chunk and look at the results, tabbing left or right with the arrows, or
-scanning through the rows by clicking the numbers at the bottom of the
-pane with the print-out of the data you loaded:
+Now let's learn another way to inspect our data. Run the next chunk and
+look at the results, tabbing left or right with the arrows, or scanning
+through the rows by clicking the numbers at the bottom of the pane with
+the print-out of the data you loaded:
 
 ```{r}
 d
@@ -398,13 +418,40 @@ summary(m2)
 
 ## 5. COMMUNICATE
 
-Great job! Once you've finished your work, click the arrow beside the
-button you used to "Preview" your document to see what it will look like
-when you share it with others. When everything looks good, click "Knit
-to HTML" at the top to render a report that you can be viewed using a
-web browser and shared online.
+Great job! Once you've finished your work, Upon doing so, you should see
+a new `laser-orientation-badge.html`.
 
-You may also wish to "Knit to PDF"; note if you do, you now have two
-forms of output in your "Files" pane. More on all of this to come.
+Congratulations, you've completed your Models & Inference Badge!
+Complete the following steps to submit your work for review by
 
-Congratulations on getting started!
+1.  Change the name of the `author:` in the [YAML
+    header](https://monashdatafluency.github.io/r-rep-res/yaml-header.html)
+    at the very top of this document to your name. As noted in
+    [Reproducible Research in
+    R](https://monashdatafluency.github.io/r-rep-res/index.html), The
+    YAML header controls the style and feel for knitted document but
+    doesn't actually display in the final output.
+
+2.  Click the yarn icon above to "knit" your data product to a
+    [HTML](https://bookdown.org/yihui/rmarkdown/html-document.html) file
+    that will be saved in your R Project folder.
+
+3.  Commit your changes in GitHub Desktop and push them to your online
+    GitHub repository.
+
+4.  Publish your HTML page the web using one of the following
+    [publishing methods](https://rpubs.com/cathydatascience/518692):
+
+    -   Publish on [RPubs](https://rpubs.com) by clicking the "Publish"
+        button located in the Viewer Pane when you knit your document.
+        Note, you will need to quickly create a RPubs account.
+
+    -   Publishing on GitHub using either [GitHub
+        Pages](https://pages.github.com) or the [HTML
+        previewer](http://htmlpreview.github.io).
+
+5.  Post a new discussion on GitHub to our [Foundations Badges
+    forum](https://github.com/orgs/laser-institute/teams/foundations/discussions/2).
+    In your post, include a link to your published web page and a short
+    reflection highlighting one thing you learned from this lab and one
+    thing you'd like to explore further.

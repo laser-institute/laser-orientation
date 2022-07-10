@@ -415,7 +415,7 @@ class: clear, no-logo, middle
 class: clear, no-logo, middle
 
 
-.center[<img src="img/github/rstudio-repo.png" height="600px"/>]
+.center[<img src="img/rstudio-repo.png" height="600px"/>]
 
 ---
 class: no-logo
@@ -813,9 +813,10 @@ class: clear, no-logo, middle
 - [GitHub Glossary](https://docs.github.com/en/get-started/quickstart/github-glossary)  
 - [Git and GitHub Learning Resources](https://docs.github.com/en/get-started/quickstart/git-and-github-learning-resources)
 
+- [Getting Started with R and RStudio](https://datascienceineducation.com/c05.html)
+
 - [Foundational Skills in R](https://datascienceineducation.com/c06.html)  
 
-- [Getting Started with R and RStudio](https://datascienceineducation.com/c05.html)
 
 
 

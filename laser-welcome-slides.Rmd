@@ -155,37 +155,27 @@ We've partnered with [Participate, Inc.](https://www.participate.com) to help us
 
 .panel[.panel-name[This Week]
 
-.pull-left[
-### Discplinary
-- [What is LA?](https://youtu.be/gKM3T_CzC10) 
-- Data Sources in LA
-- Research-Practice Partnerships
-- Analytics Workflows
-- Legal & Ethical Considerations
-]
+1. **Have fun.**
 
+2. dd
 
-.pull-right[
-### Methodological
-- Foundational Skills
-- Machine Learning
-- Text Mining
-- Network Analysis
-]
+3. **Make a plan.** 
+
+4. **Earn a badge.**
+
+5. **
 
 ]
 
 .panel[.panel-name[Today]
 
-- Identify STEM research **questions/problems** addressed by LA
+1. **Community Building (9:15)** Get to know some *facts* about your colleagues. 
 
-- Work with new types of STEM **data sources** these questions/problems
+1. **Learning Lab Intros (10:00)** Get to know the content and activities we'll be introducing you to this week. 
 
-- Apply **computational techniques** to prepare, explore and model STEM data
+1. **Keynote Speakers (1:30)** Learn what exactly is Learning Analytics from our esteemed guest speaker Dr. George Siemens.
 
-- Evaluate the **technical feasibility and ethical issues** associated with these data and techniques
-
-- Develop a **collaborative research agenda** in that seeks to address challenges in STEM education from a LA lens
+1. **Laser Toolkit Orientation (2:15)** Get to know some *facts* about your colleagues. 
 
 ]
 

@@ -780,6 +780,17 @@ class: clear, inverse, middle, center
 Knitting, Committing, and Sharing
 
 ---
+class: clear, no-logo, middle
+
+
+.center[<img src="img/github/github-pages.png" height="600px"/>]
+
+---
+class: clear, no-logo, middle
+
+
+.center[<img src="img/github/github-pages-link.png" height="600px"/>]
+---
 # What's Next
 
 .pull-left[

@@ -68,7 +68,7 @@ xaringanExtra::use_tile_view()
 ## Part 1: Core Concepts
 ### LASER Toolkit
 - Reproducible Research
-- Git &GitHub Desktop
+- Git & GitHub Desktop
 - RStudio Desktop
 
 ]
@@ -96,8 +96,8 @@ class: clear, inverse, middle, center
 
 # Part 1: Core Concepts
 
-
-GitHub, RStudio, and LASER Badge
+----
+Reproducible Research, Git, and GitHub Desktop
 
 ---
 class: clear, laser
@@ -194,7 +194,6 @@ Another really critical piece of reproducible research in R, or really in any co
 So commenting your code, which will see an example of a little bit later, essentially means that you're going to include a note along with a piece of code that describes the purpose and function of that code. We have a way of annotating that explanatory message, using a pound sign in front of each line of the message, which tells the computer not to read it as code. You will often hear this referred to as “commenting something out”.
 
 Another basic principle of clear communication is making sure that you're using plain language. So try, as best as you are able, to steer clear of jargon or discipline-specific terms. Or, if you use these terms, try to define them. And then lastly, in terms of clear communication, you want to share your rationale for using particular functions as well as the methods that you used in your study. 
-
 
 
 The last category listed here is this notion of ***reproducible theory** and essentially this is very basic to research and academia but it means that you are going to appropriately cite any foundational works, or sources, or proofs if you're working in mathematics, so that people who are looking at your research project understand where some of these ideas and concepts that informed your study have come from.
@@ -307,6 +306,8 @@ class: no-logo
 
 ???
 
+We're going to be using version control through the LASER insitute via Git, GitHub, and GitHub Desktop so it's important for us all to know what these are and how they relate to one another.
+
 ---
 class: clear, center, middle
 
@@ -316,13 +317,74 @@ class: clear, center, middle
 
 ???
 
-Has everyone already created a GitHub account? Okay, good. We're going to go take a tour and get familiar with GitHub
+Has everyone already created a GitHub account? Okay, good. We're going to go take a tour and get familiar with GitHub. We're going to transition now from the slides to the web for a live tour, but there are slides with screenshots that you can revisit later if needed.
 
 ---
-github desktop
+class: clear, no-logo, middle
+
+
+.center[<img src="img/github/laser-org-profile.png" height="600px"/>]
 
 ---
-Creating new repositories
+class: clear, no-logo, middle
+
+
+.center[<img src="img/github/github-navigation.png" height="600px"/>]
+
+---
+class: clear, no-logo, middle
+
+
+.center[<img src="img/github/github-readme.png" height="600px"/>]
+
+---
+class: clear, no-logo, middle
+
+
+.center[<img src="img/github/github-other-info.png" height="600px"/>]
+
+---
+class: clear, no-logo, middle
+
+
+.center[<img src="img/github/github-repos.png" height="600px"/>]
+
+---
+class: clear, no-logo, middle
+
+
+.center[<img src="img/github/github-create-new-repo.png" height="600px"/>]
+
+---
+class: clear, no-logo, middle
+
+
+.center[<img src="img/github/new-repo-info-1.png" height="600px"/>]
+
+---
+class: clear, no-logo, middle
+
+
+.center[<img src="img/github/new-repo-info-2.png" height="600px"/>]
+
+
+---
+class: clear, no-logo, middle
+
+Instead of creating a new repository, we're going to go back to the repositories tab and clone the `laser-orientation` repository that already exists. Click the repository name to navigate to its page.
+
+.center[<img src="img/github/github-repos.png" height="425px"/>]
+
+---
+class: clear, no-logo, middle
+
+
+.center[<img src="img/github/github-repo-clone.png" height="600px"/>]
+
+---
+# Transitioning to GitHub Desktop
+
+
 
 ---
 
@@ -698,12 +760,20 @@ ggplot(sci_data, aes(x = final_grade)) +
 ]
 
 ---
+class: clear, inverse, middle, center
+
+# Part 3: Wrapping Up
+----
+Knitting, Committing, and Sharing
+
+---
 # What's Next
 
 .pull-left[
 ## Essential Readings
 
-- [GitHub Something](https://github.com/laser-institute/essential-readings/blob/main/sna-labs/sna-lab-1/carolan-basic-concepts.pdf)  
+- [GitHub Glossary](https://docs.github.com/en/get-started/quickstart/github-glossary)  
+- [Git and GitHub Learning Resources](https://docs.github.com/en/get-started/quickstart/git-and-github-learning-resources)
 
 - [Foundational Skills in R](https://datascienceineducation.com/c06.html)  
 
@@ -719,6 +789,8 @@ ggplot(sci_data, aes(x = final_grade)) +
 ## Tutorials
 
 - [Programing Basics](https://rstudio.cloud/learn/primers/1.2)
+
+- [GitHub Video Guides](https://www.youtube.com/githubguides)
 
 - [Your First LASER Badge!](https://github.com/laser-institute/essential-readings/blob/main/sna-labs/sna-lab-1/pittinsky-class-friendships.pdf)
 

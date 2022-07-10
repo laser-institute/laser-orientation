@@ -1,6 +1,6 @@
 ---
-title: "LASER Tooltkit Orientation: GitHub & RStudio Desktop"
-subtitle: "A Brief Introduction & Demo"
+title: "LASER Learning Lab Orientation"
+subtitle: "Reproducible Research with GitHub & RStudio"
 author: "The LASER Team"
 institute: "The LASER Institute"
 date: "2022/07/11 (updated: `r Sys.Date()`)"
@@ -56,7 +56,7 @@ xaringanExtra::use_tile_view()
 ```
 
 # `r rmarkdown::metadata$title`
-----
+## `r rmarkdown::metadata$subtitle`
 ### `r rmarkdown::metadata$author`
 ### `r format(Sys.time(), "%B %d, %Y")`
 
@@ -405,18 +405,11 @@ class: clear, no-logo, middle
 
 .center[<img src="img/github/desktop-show-finder.png" height="600px"/>]
 
----
-class: clear, inverse, middle, center
-
-# part_2(R, code_along)
-
-Operators, Objects, and Functions Oh My! 
-
 
 ---
 class: no-logo
 
-# RStudio Basics
+# RStudio Desktop Basics
 
 .panelset[
 
@@ -535,6 +528,16 @@ Now let's talk a little bit about some r programming basics: packages, functions
 **Functions** are things that do things and so one example would be the function mean which finds the mean of a series of numbers or a vector of numbers. A function always includes the parentheses and whatever is inside the parentheses indicates the thing to which the function is being done. And that thing to which the function is being done is called an argument. 
 
 **Arguments** go inside the parentheses and they are separated by commas. You can have more than one argument within the parentheses. Arguments provide extra details regarding how a function should run or what materials a function should work with. And I've included a couple of examples here. 
+
+
+
+---
+class: clear, inverse, middle, center
+
+# part_2(R, code_along)
+----
+Operators, Objects, and Functions Oh My! 
+
 
 
 ---

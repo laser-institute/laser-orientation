@@ -198,7 +198,7 @@ Time and support is provided for scholars to develop a professional learning pla
 
 1. **Keynote Speakers (1:30)** Learn what exactly is Learning Analytics from our esteemed guest speaker Dr. George Siemens.
 
-1. **Laser Toolkit Orientation (2:15)** Git comfo-R-table with GitHub and RStudio, our primary tools for LASER and reproducible research. 
+1. **Laser Toolkit Orientation (2:15)** Git comfor-R-table with GitHub and RStudio, our primary tools for LASER and reproducible research. 
 
 ]
 

@@ -382,15 +382,28 @@ class: clear, no-logo, middle
 .center[<img src="img/github/github-repo-clone.png" height="600px"/>]
 
 ---
-# Transitioning to GitHub Desktop
+class: clear, no-logo, middle
 
 
+.center[<img src="img/github/desktop-repo-info.png" height="600px"/>]
 
 ---
+class: clear, no-logo, middle
 
-Cloning our first repository
 
-Navigating to our cloned repository and opening .Rproj
+.center[<img src="img/github/desktop-changes.png" height="600px"/>]
+
+---
+class: clear, no-logo, middle
+
+
+.center[<img src="img/github/desktop-history.png" height="600px"/>]
+
+---
+class: clear, no-logo, middle
+
+
+.center[<img src="img/github/desktop-show-finder.png" height="600px"/>]
 
 ---
 class: clear, inverse, middle, center

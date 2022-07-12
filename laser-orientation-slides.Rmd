@@ -587,13 +587,13 @@ Similar to all languages, R syntax is composed of "parts of speech" that can be 
 
 
 - *Functions* are the verbs
-	- **mean**()
+	- **read_csv()**
 - *Objects* are the nouns of the R language
-	+ mean(**student_grades**)
+	+ read_csv(**"data/sci-online-classes.csv"**)
 - *Arguments* are the adverbs or the direct object
-	+ mean(student_grades, **na.rm = FALSE**)
+	+ read_csv("data/sci-online-classes.csv", **col_names = TRUE**)
 -	As in any sentence, there is also “punctuation” or *operators*
-  + average_grade **<-** mean(student_grades, na.rm = FALSE)
+  + sci_data <- read_csv("data/sci-online-classes.csv", col_names = TRUE)
 
 ???
 

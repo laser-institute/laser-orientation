@@ -797,6 +797,36 @@ Knitting, Committing, and Sharing
 class: clear, no-logo, middle
 
 
+.center[<img src="img/github/commit-changes.png" height="600px"/>]
+
+---
+class: clear, no-logo, middle
+
+
+.center[<img src="img/github/push-changes.png" height="600px"/>]
+
+---
+class: clear, no-logo, middle
+
+
+.center[<img src="img/github/fork-repository.png" height="600px"/>]
+
+---
+class: clear, no-logo, middle
+
+
+.center[<img src="img/github/own-purposes.png" height="600px"/>]
+
+---
+class: clear, no-logo, middle
+
+
+.center[<img src="img/github/view-github.png" height="600px"/>]
+
+---
+class: clear, no-logo, middle
+
+
 .center[<img src="img/github/github-pages.png" height="600px"/>]
 
 ---

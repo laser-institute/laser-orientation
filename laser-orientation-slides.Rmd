@@ -382,6 +382,35 @@ class: clear, no-logo, middle
 .center[<img src="img/github/github-repo-clone.png" height="600px"/>]
 
 ---
+# To Clone or To Fork...Decide You Must
+
+When deciding whether you should clone or fork, consider the following things:
+<br /> <br />
+
+- Are you part of the team (i.e., collaborator) developing for the project? .red[Clone!]
+
+- Do you just want to work with someone else's project but not make changes? .red[Clone!]
+
+- Do you want to make changes to someone else's code but aren't part of their team? .red[FORK!]
+
+---
+class: clear, no-logo, middle
+
+
+.center[
+<figure>
+<img src="https://cdn.ttgtmedia.com/rms/onlineimages/cdo-git_clone_vs_fork-f.png" alt="Image from https://www.theserverside.com/answer/Git-fork-vs-clone-Whats-the-difference" height="525px"/>
+<figcaption><a href="https://www.theserverside.com/answer/Git-fork-vs-clone-Whats-the-difference">Git Fork vs Clone: What's the Difference</a></figcaption>
+</figure>]
+
+
+---
+class: clear, no-logo, middle
+
+
+.center[<img src="img/github/github-fork.png" height="600px"/>]
+
+---
 class: clear, no-logo, middle
 
 

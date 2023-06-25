@@ -25,9 +25,9 @@ knitr::opts_chunk$set(echo = TRUE, error = TRUE)
 
 Welcome to your first LASER badge! This LASER Orientation Badge is
 really a warm-up activitiy to introduce you to R Markdown and the coding
-case studies that we will be using in the machine learning, network
-analysis, and text mining labs. It is a chance to become familiar with
-how RStudio and R Markdown works.
+"case studies" that you will be completing in as part of our LASER
+Learning Labs. It is a chance to become familiar with how RStudio and R
+Markdown works.
 
 You may have used R before-or you may not have! Either is fine as this
 task will be designed with the assumption that you have not used R
@@ -44,20 +44,20 @@ In the context of doing so, we'll focus on the following tasks:
 5.  Finally, creating a reproducible report of your work you can share
     with others (in the **Communicate** section)
 
-### The LASER Cycle
+### The Data-Intensive Research Workflow
 
 You may be wondering what these bolded terms above refer to; what's so
 special about preparing, wrangling, exploring, and modeling data - and
 communicating results? We're using these terms as a part of a framework,
 or model, for what we mean by doing learning in STEM education research.
 
-The particular framework we are using comes from the work of Krumm et
-al.'s [*Learning Analytics Goes to
+The data-intensive research workflow is a framework that comes from the
+work of Krumm et al.'s [*Learning Analytics Goes to
 School*](https://github.com/laser-institute/essential-readings/blob/main/laser-orientation/Learning%20Analytics%20Goes%20to%20School.pdf)*.*
 You can check that out, but don't feel any need to dive deep for now -
-we'll be spending more time on this in first day of the summer
-institute. For now, know that this document is organized around three of
-the five components of what we're referring to as the **LASER cycle**.
+we'll be spending more time on this throughout the week. For now, know
+that this document and all of our LASER Labs are organized around these
+five components.
 
 Click the green arrow to the right of the "code chunk" below to view the
 image (more on that process of clicking the green arrow and what it

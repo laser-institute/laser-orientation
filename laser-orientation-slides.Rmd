@@ -3,7 +3,7 @@ title: "LASER Learning Lab Orientation"
 subtitle: "Reproducible Research with GitHub & RStudio"
 author: "The LASER Team"
 institute: "The LASER Institute"
-date: "2022/07/11 (updated: `r Sys.Date()`)"
+date: "July 17, 2023"
 output:
   xaringan::moon_reader:
     css:
@@ -58,7 +58,7 @@ xaringanExtra::use_tile_view()
 # `r rmarkdown::metadata$title`
 ## `r rmarkdown::metadata$subtitle`
 ### `r rmarkdown::metadata$author`
-### `r format(Sys.time(), "%B %d, %Y")`
+### `r rmarkdown::metadata$date`
 
 
 ---
@@ -66,7 +66,7 @@ xaringanExtra::use_tile_view()
 
 .pull-left[
 ## Part 1: Core Concepts
-### LASER Toolkit
+### Reproducible Research
 - Reproducible Research
 - Git & GitHub Desktop
 - RStudio Desktop
@@ -76,7 +76,7 @@ xaringanExtra::use_tile_view()
 .pull-right[
 
 ## Part 2: R Code-Along
-### R Language Grammar
+### The Learning Analytics Workflow
 - Operators
 - Objects
 - Functions

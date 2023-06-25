@@ -1,9 +1,9 @@
 ---
-  title: "2022 Summer Workshop"
+  title: "2023 Summer Workshop"
   subtitle: "Learning Analytics in STEM Education Research Intitute" 
-  author: "**Dr. Shaun Kellogg**"
+  author: "**The LASER Team**"
   institute: "Instituttional Affiliation"
-  date: '`r format(Sys.time(), "%B %d, %Y")`'
+  date: 'July 17, 2023'
   output:
     xaringan::moon_reader:
       css:
@@ -59,7 +59,7 @@ xaringanExtra::use_tile_view()
 # `r rmarkdown::metadata$title`
 ## `r rmarkdown::metadata$subtitle`
 ### `r rmarkdown::metadata$author`
-### `r format(Sys.time(), "%B %d, %Y")`
+### `r rmarkdown::metadata$date`
 
 <br>
 ### .font100[[go.ncsu.edu/laser-schedule](go.ncsu.edu/laser-schedule)]

@@ -1,6 +1,6 @@
 ---
-title: "LASER Orientation Learning Lab 1 Case Study"
-subtitle: "LASER Institute Orientation"
+title: "The Data-Intensive Research Workflow"
+subtitle: "Orientation Learning Lab Case Study"
 author: "YOUR NAME HERE"
 date: "`r format(Sys.Date(),'%B %e, %Y')`"
 output:

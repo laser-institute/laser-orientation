@@ -1,5 +1,5 @@
 ---
-title: "LASER Badge"
+title: "LASER Orientation Learning Lab 1 Case Study"
 subtitle: "LASER Institute Orientation"
 author: "YOUR NAME HERE"
 date: "`r format(Sys.Date(),'%B %e, %Y')`"
@@ -418,11 +418,48 @@ summary(m2)
 
 ## 5. COMMUNICATE
 
-Great job! Once you've finished your work, Upon doing so, you should see
-a new `laser-orientation-badge.html`.
+The final step in the workflow/process is sharing the results of your
+analysis with wider audience. Krumm et al. (2018) have outlined the
+following 3-step process for communicating with education stakeholders
+findings from an analysis:
 
-Congratulations, you've completed your Models & Inference Badge!
-Complete the following steps to submit your work for review by
+1.  **Select.** Communicating what one has learned involves selecting
+    among those analyses that are most important and most useful to an
+    intended audience, as well as selecting a form for displaying that
+    information, such as a graph or table in static or interactive form,
+    i.e. a "data product."
+
+2.  **Polish**. After creating initial versions of data products,
+    research teams often spend time refining or polishing them, by
+    adding or editing titles, labels, and notations and by working with
+    colors and shapes to highlight key points.
+
+3.  **Narrate.** Writing a narrative to accompany the data products
+    involves, at a minimum, pairing a data product with its related
+    research question, describing how best to interpret the data
+    product, and explaining the ways in which the data product helps
+    answer the research question.
+
+In later Learning Labs, you will have an opportunity to create a simple
+"data product" designed to illustrate insights some insights gained from
+your analysis and ideally highlight an "action step" that can be taken
+to act upon your findings.
+
+For now, we will wrap up this case study by converting our work into a
+webpage that can be used to communicate your learning and demonstrate
+some of your new R skills. To do so, you will need to "knit" your
+document by clicking the knit button next to the yarn ball in the menu
+bar at that the top of this file. This will do two things; it will:
+
+1.  check through all your code for any errors; and,
+
+2.  create a file in your directory that you can use to share you work
+    through [RPubs](#0) (see screenshot example below to
+    publish), [GitHub Pages](#0), [Quarto Pub](#0), or any [other
+    methods](#0).
+
+Congratulations, you've completed your first LASER Badge! Complete the
+following steps to submit your work for review:
 
 1.  Change the name of the `author:` in the [YAML
     header](https://monashdatafluency.github.io/r-rep-res/yaml-header.html)
@@ -432,25 +469,20 @@ Complete the following steps to submit your work for review by
     YAML header controls the style and feel for knitted document but
     doesn't actually display in the final output.
 
-2.  Click the yarn icon above to "knit" your data product to a
+2.  Click the "knit" button with the yarn ball icon above to "knit" your
+    data product to a
     [HTML](https://bookdown.org/yihui/rmarkdown/html-document.html) file
     that will be saved in your R Project folder.
 
-3.  Commit your changes in GitHub Desktop and push them to your online
-    GitHub repository.
-
-4.  Publish your HTML page the web using one of the following
-    [publishing methods](https://rpubs.com/cathydatascience/518692):
-
-    -   Publish on [RPubs](https://rpubs.com) by clicking the "Publish"
-        button located in the Viewer Pane when you knit your document.
-        Note, you will need to quickly create a RPubs account.
+3.  Publish on [RPubs](https://rpubs.com) by clicking the "Publish"
+    button located in the Viewer Pane when you knit your document. Note,
+    you will need to quickly create a RPubs account.
 
     -   Publishing on GitHub using either [GitHub
         Pages](https://pages.github.com) or the [HTML
         previewer](http://htmlpreview.github.io).
 
-5.  Post a new discussion on GitHub to our [Foundations Badges
+4.  Post a new discussion on GitHub to our [Foundations Badges
     forum](https://github.com/orgs/laser-institute/teams/foundations/discussions/2).
     In your post, include a link to your published web page and a short
     reflection highlighting one thing you learned from this lab and one

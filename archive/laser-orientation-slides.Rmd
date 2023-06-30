@@ -66,8 +66,9 @@ xaringanExtra::use_tile_view()
 
 .pull-left[
 ## Part 1: Core Concepts
-### Reproducible Research with R
+### Reproducible Research
 - Reproducible Research
+- Git & GitHub Desktop
 - RStudio Desktop
 
 ]
@@ -75,12 +76,11 @@ xaringanExtra::use_tile_view()
 .pull-right[
 
 ## Part 2: R Code-Along
-### Data-Intensive Research Workflow
-- Prepare 
-- Wrangle 
-- Explore 
-- Model
-- Communicate
+### The Learning Analytics Workflow
+- Operators
+- Objects
+- Functions
+- Packages
 ]
 
 
@@ -97,7 +97,7 @@ class: clear, inverse, middle, center
 # Part 1: Core Concepts
 
 ----
-Reproducible Research with RStudio 
+Reproducible Research, Git, and GitHub Desktop
 
 ---
 class: clear, laser

@@ -219,7 +219,7 @@ class: clear, middle, no-logo
 
 ]]
 
-.pull-right[<img src="img/github/phdcomic.png" height="600px" style="margin-top: -20px; border: 5px solid #d34126;"/>]
+.pull-right[<img src="img/github/phd-comic.gif" height="600px" style="margin-top: -20px; border: 5px solid #d34126;"/>]
 
 ???
 

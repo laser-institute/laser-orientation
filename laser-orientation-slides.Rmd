@@ -377,7 +377,7 @@ class: clear, inverse, middle, center
 
 # part_2(R, code_along)
 ----
-Operators, Objects, and Functions Oh My! 
+The Data-Intensive Research Workflow
 
 
 
@@ -429,6 +429,10 @@ There are about eight packages supplied with the R distribution and many more ar
 HINT look under USAGE in the arguments help section
 
 So in this example, “digits = 1” is an argument that provides extra information for how the round function should work. So this little bit of code is saying find the mean of a numeric vector or or a string of numbers. Round that mean to one digit. In the second example, this argument “package_name”, which by the way is a terrible name for a package, is telling R which package to load into its library.
+
+---
+
+
 
 ---
 class: no-logo
@@ -621,7 +625,7 @@ class: clear, inverse, middle, center
 
 # Part 3: Wrapping Up
 ----
-Knitting, Committing, and Sharing
+Knitting and Sharing
 
 ---
 class: clear, no-logo, middle

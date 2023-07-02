@@ -24,14 +24,16 @@ knitr::opts_chunk$set(echo = TRUE, error = TRUE)
 ## Introduction
 
 Welcome to your first LASER badge! This LASER Orientation Badge is
-really a warm-up activitiy to introduce you to R Markdown and the coding
-"case studies" that you will be completing in as part of our LASER
+really a warm-up activitiy to introduce you to R Markdown and our coding
+"case studies," which you will be completing in as part of our LASER
 Learning Labs. It is a chance to become familiar with how RStudio and R
 Markdown works.
 
-You may have used R before-or you may not have! Either is fine as this
-task will be designed with the assumption that you have not used R
-before. It includes "reaches" for anyone who may want to do a bit more.
+R Markdown...
+
+You may have used R Markdown before - or you may not have! Either is
+fine as this task will be designed with the assumption that you have not
+used R before.
 
 In the context of doing so, we'll focus on the following tasks:
 

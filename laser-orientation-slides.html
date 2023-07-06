@@ -35,7 +35,7 @@ class: clear, title-slide, inverse, center, top, middle
 
 
 # LASER Learning Lab Orientation
-## Reproducible Research &amp; The LA Workflow
+## Reproducible Research &amp; The Data-Intensive Research Workflow
 ### The LASER Team
 ### July 17, 2023
 
@@ -45,9 +45,10 @@ class: clear, title-slide, inverse, center, top, middle
 
 .pull-left[
 ## Part 1: Core Concepts
-### Reproducible Research with R
-- Reproducible Research
-- RStudio Desktop
+### Reproducible Research with RStudio
+- What is reproducible research? 
+- The benefits of reproducibility 
+- The tools of reproducible research 
 
 ]
 
@@ -87,14 +88,124 @@ class: clear, laser
 
 
 ---
-# Reproducible Research
+# What is Reproducible Research? 
+
+.pull-left[
+1. Document everything! 
+2. Everything is a (text) file. 
+3. All files should be human readable. 
+4. Explicitly tie your fles together. 
+5. Have a plan to organize, store, and make your files available.
+]
+.pull-right[
+.center[&lt;img src="img/reproducible-research.png" height="400px"/&gt;
+]
+]
+
+.footnote[
+Gandrud, C. (2013). [Reproducible research with R and R studio (3rd Edition).](https://github.com/christophergandrud/Rep-Res-Book). CRC Press.
+]
+
+???
+We'll start with this quote from a Software Carpentry lesson on using version control 
+which addresses the question: How reproducible is my work?
+
+If you were to ask a colleague to take one of your papers and reproduce your results, could 
+they do it? Could you do it for one of theirs?
+
+
+Take just a moment and think about how you put reproducibility into practice in your own research. 
+What does this look like for your research data management? How do you document who 
+did what and when? If your results change, can you say why they changed?
+
+Managing these types issues is how we put reproducibility into practice and one way to do that is with version control.
+
+---
+# The Benefits of Reproducible Research
+
+.pull-left[
+**For Science:**
+- Standard to judge scientific claims 
+- Enhances *replicability*
+- Avoiding effort duplication
+- Cumulative knowledge development
+]
+.pull-right[
+**For Yourself:**
+- Better work habits 
+- Better teamwork
+- Changes are easier
+- Higher impact research
+]
+
+
+???
+##For Science
+
+###Standard to judge scientific claims 
+Reproducibility opens up your findings and work to scrutiny, and is the **minimum** standard for judging scientifc claims. However, “a study can be reproducible but still be wrong” (Peng, 2014).
+
+###Reproducibility enhances replicability. 
+If other researchers are able to clearly understand how a finding was originally made, then they will be better able to conduct comparable research, in meaningful attempts to replicate the original findings. However, a finding in one study may be statistically signifcant when **reproduced** using the original data/code, but when researchers try to **replicate** it using new data and even methods, they are unable to find a similar result. The original finding could have been noise, even though it is fully reproducible.
+
+### Avoiding effort duplication
+
+
+
+### Cumulative knowledge development
+
+---
+class: middle, no-logo
+# Pain-Free Reproducible Research
+
+&lt;img src="img/phd-comic.jpeg" height="500px"/&gt;
+
+???
+
+Okay, be honest. Have you ever gotten lost or confused during your own research process because your files got disorganized or your naming structure broke down? Let's fix that...
+
+---
+# Best Practices for Reproducible Research 
+
+## 1. Document everything! 
+## 2. Everything is a (text) file. 
+## 3. All files should be human readable. 
+## 4. Explicitly tie your fles together. 
+## 5. Have a plan to organize, store, and make your files available.
+
+???
+
+
+---
+class: no-logo
+
+# The Tools of Reproducible Research
 
 .panelset[
 
+.panel[.panel-name[The Tools]
+Reproducible research involves two broad sets of tools: 
+1. *A Reproducible Research Environment*, that includes the statistical tools you need to run your analyses; automatically track the provenance of data, analyses, and results; and to package them for redistribution”. 
 
-.panel[.panel-name[Why Reproducibilty?]
+2. *A Reproducible Research Publisher* the prepares dynamic documents for presenting results and is easily linked to the reproducible research environment.  
+]
+
+.panel[.panel-name[Posit Cloud]
+.center[
+&lt;img src="img/posit-cloud.png" height="350px"/&gt;
+]
+[go.ncsu.edu/laser-labs](go.ncsu.edu/laser-labs)
+]
+
+.panel[.panel-name[RStudio]
+.center[
+&lt;img src="img/r_console.png" height="425px"/&gt;
+]
+]
+
+.panel[.panel-name[R Markdown]
 .pull-left[
-**Increases:**
+**For Science:**
 - Study replication
 - Cumulative knowledge development
 - Work habits 
@@ -106,21 +217,10 @@ class: clear, laser
 **Reduces:**
 - Effort duplication
 ]
-
-
 ]
 
 
-.panel[.panel-name[Core Practices]
-
-.pull-left[“The **communication** aspect **should not be an afterthought**, it should be recorded with your analysis as you are going through it.” (-Harrison et al, 2020)]
-.pull-right[
-&lt;img src="img/reprod_2.png" height="300px"/&gt;
-]
-]
-
-
-.panel[.panel-name[Discussion]
+.panel[.panel-name[GitHub]
 
 Think about the following questions and then discuss at your table: 
 
@@ -129,9 +229,14 @@ Think about the following questions and then discuss at your table:
 - What tools have you used to ensure the reproducibility of your work? 
 
 - What questions do you have about reproducible research? 
-
 ]
 
+
+.panel[.panel-name[R]
+.center[
+&lt;img src="img/reprod_2.png" height="425px"/&gt;
+]
+]
 
 ]
 
@@ -189,105 +294,7 @@ Gandrud also makes a point that everything should be human readable and everythi
 
 Then this notion that everything should be human readable is hopefully pretty understandable but basically explains that if you're communicating with other human researchers you want to make sure that your explanations are understandable by other humans. This also links to the concept of using plain language. Gandrud explains this probably much more eloquently than I can and much more clearly so again I encourage you to refer to his text.
 
----
-class: clear, middle, no-logo
-
-&lt;img src="img/phd-comic.jpeg" height="500px"/&gt;
-
 ???
-
-Okay, be honest. Have you ever gotten lost or confused during your own research process because your files got disorganized or your naming structure broke down? Let's fix that...
-
----
-# Putting Reproducibility into Practice
-
-.pull-left["Ask one of your labmates to reproduce a result you recently obtained using only what they can find in your papers or on the web. Try to do the same for one of their results, then try to do it for a result from a lab you work with."
-
-]
-
-.pull-right[
-- How do you manage your data in research?
-- How do you document who did what and when?
-- When the results of your analyses change, do you know why?
-]
-
-
-???
-We'll start with this quote from a Software Carpentry lesson on using version control 
-which addresses the question: How reproducible is my work?
-
-If you were to ask a colleague to take one of your papers and reproduce your results, could 
-they do it? Could you do it for one of theirs?
-
-
-Take just a moment and think about how you put reproducibility into practice in your own research. 
-What does this look like for your research data management? How do you document who 
-did what and when? If your results change, can you say why they changed?
-
-Managing these types issues is how we put reproducibility into practice and one way to do that is with version control.
-
----
-class: no-logo
-
-# RStudio Desktop Basics
-
-.panelset[
-
-.panel[.panel-name[R Environment]
-
-.center[
-&lt;img src="img/r_console.png" height="425px"/&gt;
-]
-
-]
-
-
-.panel[.panel-name[Global Options]
-
-.center[
-&lt;img src="img/global.png" height="425px"/&gt;
-]
-]
-
-.panel[.panel-name[Settings]
-
-.center[
-&lt;img src="img/global-settings.png" height="425px"/&gt;
-]
-]
-
-.panel[.panel-name[Packages]
-
-.pull-left[
-Collections of R code that contain functions, data, and/or documentation.  
-
-```r
-# example of installing a package
-# install.packages("tidyverse")
-
-# example of loading a package
-library(tidyverse)
-```
-]
-
-.pull-right[
-
-.center[Or just point and click... 
-
-&lt;img src="img/install-packages.png" height="350px"/&gt;
-]]
-]
-
-
-.panel[.panel-name[New Script]
-.center[
-&lt;img src="img/r_script.png" height="425px"/&gt;
-]
-]
-
-
-]
-
 ???
 **What is the Integrated Development Environment (IDE)?**
 
@@ -349,8 +356,6 @@ Now let's talk a little bit about some r programming basics: packages, functions
 **Functions** are things that do things and so one example would be the function mean which finds the mean of a series of numbers or a vector of numbers. A function always includes the parentheses and whatever is inside the parentheses indicates the thing to which the function is being done. And that thing to which the function is being done is called an argument. 
 
 **Arguments** go inside the parentheses and they are separated by commas. You can have more than one argument within the parentheses. Arguments provide extra details regarding how a function should run or what materials a function should work with. And I've included a couple of examples here. 
-
-
 
 ---
 class: clear, inverse, middle, center
@@ -541,16 +546,14 @@ sci_data
 
 ```
 ## # A tibble: 6 × 3
-##   student_id final_grade
-##        &lt;dbl&gt;       &lt;dbl&gt;
-## 1      43146        93.5
-## 2      44638        81.7
-## 3      47448        88.5
-## 4      47979        81.9
-## 5      48797        84  
-## 6      52326        83.6
-## # ℹ 1 more variable:
-## #   course_id &lt;chr&gt;
+##   student_id final_grade course_id    
+##        &lt;dbl&gt;       &lt;dbl&gt; &lt;chr&gt;        
+## 1      43146        93.5 FrScA-S216-02
+## 2      44638        81.7 OcnA-S116-01 
+## 3      47448        88.5 FrScA-S216-01
+## 4      47979        81.9 OcnA-S216-01 
+## 5      48797        84   PhysA-S116-01
+## 6      52326        83.6 AnPhA-S216-01
 ```
 ]]
 ]
@@ -623,7 +626,7 @@ ggplot(sci_data, aes(x = FinalGradeCEMS)) +
 ]
 
 .pull-right[
-&lt;img src="laser-orientation-slides_files/figure-html/unnamed-chunk-17-1.png" height="350" /&gt;
+&lt;img src="laser-orientation-slides_files/figure-html/unnamed-chunk-16-1.png" height="350" /&gt;
 ]
 
 ]

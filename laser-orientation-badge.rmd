@@ -23,19 +23,17 @@ knitr::opts_chunk$set(echo = TRUE, error = TRUE)
 
 ## Introduction
 
-Welcome to your first LASER badge! This LASER Orientation Badge is
-really a warm-up activitiy to introduce you to R Markdown and our coding
-"case studies," which you will be completing in as part of our LASER
-Learning Labs. It is a chance to become familiar with how RStudio and R
-Markdown works.
-
-R Markdown...
+Welcome to your first Learning Lab Case Study! This case study is really
+a warm-up activity to introduce you to R Markdown and the data-intensive
+research workflow, both of which are heavily integrated into each LASER
+Learning Labs. [R Markdown](https://rmarkdown.rstudio.com/) documents
+weave together narrative text and code to produce both static and
+dynamic outputs for sharing your research.
 
 You may have used R Markdown before - or you may not have! Either is
 fine as this task will be designed with the assumption that you have not
-used R before.
-
-In the context of doing so, we'll focus on the following tasks:
+used R before. In the context of doing so, we'll focus on the following
+tasks:
 
 1.  Reading data into R (in the **Prepare** section)
 2.  Preparing and "wrangling" data in table (think spreadsheet!) format
@@ -51,15 +49,16 @@ In the context of doing so, we'll focus on the following tasks:
 You may be wondering what these bolded terms above refer to; what's so
 special about preparing, wrangling, exploring, and modeling data - and
 communicating results? We're using these terms as a part of a framework,
-or model, for what we mean by doing learning in STEM education research.
+or model, for what we mean by using learning analytics in STEM education
+research.
 
-The data-intensive research workflow is a framework that comes from the
-work of Krumm et al.'s [*Learning Analytics Goes to
+This framework is called the data-intensive research workflow and comes
+from the work of Krumm et al.'s [*Learning Analytics Goes to
 School*](https://github.com/laser-institute/essential-readings/blob/main/laser-orientation/Learning%20Analytics%20Goes%20to%20School.pdf)*.*
 You can check that out, but don't feel any need to dive deep for now -
 we'll be spending more time on this throughout the week. For now, know
-that this document and all of our LASER Labs are organized around these
-five components.
+that this document and all of our LASER Labs case studies are organized
+around these five components.
 
 Click the green arrow to the right of the "code chunk" below to view the
 image (more on that process of clicking the green arrow and what it
@@ -76,14 +75,13 @@ of the file name. R Markdown documents are fully reproducible and use a
 productive [notebook
 interface](https://bookdown.org/yihui/rmarkdown/notebook.html) to
 combine narrative text and "chunks" of code to produce a range of
-formatted outputs including: formats
-including [HTML](https://bookdown.org/yihui/rmarkdown/html-document.html), [PDF](https://bookdown.org/yihui/rmarkdown/pdf-document.html), [MS
-Word](https://bookdown.org/yihui/rmarkdown/word-document.html), [Beamer](https://bookdown.org/yihui/rmarkdown/beamer-presentation.html), [HTML5
+formatted outputs including:
+[HTML](https://bookdown.org/yihui/rmarkdown/html-document.html), [PDF](https://bookdown.org/yihui/rmarkdown/pdf-document.html), [MS
+Word](https://bookdown.org/yihui/rmarkdown/word-document.html), [HTML5
 slides](https://bookdown.org/yihui/rmarkdown/ioslides-presentation.html), [Tufte-style
-handouts](https://bookdown.org/yihui/rmarkdown/tufte-handouts.html), [books](https://bookdown.org/), [dashboards](https://rmarkdown.rstudio.com/flexdashboard/), [shiny
-applications](https://bookdown.org/yihui/rmarkdown/shiny-documents.html), [scientific
-articles](https://github.com/rstudio/rticles), [websites](https://bookdown.org/yihui/rmarkdown/rmarkdown-site.html),
-and more.
+handouts](https://bookdown.org/yihui/rmarkdown/tufte-handouts.html),
+[books](#0), [dashboards](#0), [shiny applications](#0), [scientific
+articles](#0), [websites](#0), and more.
 
 There are two keys to your use of R Markdown for this activity:
 

@@ -13,26 +13,27 @@ output:
 editor_options:
   markdown:
     wrap: 72
+bibliography: references.bib
 ---
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE, error = TRUE)
+knitr::opts_chunk$set(echo = TRUE, error = FALSE)
 ```
 
 ![](img/LASER_Hx.png){width="40%"}
 
-## Introduction
+## INTRODUCTION
 
-Welcome to your first Learning Lab Case Study! Case study activities
-demonstrate how key data-intensive research workflow processes (i.e.,
-wrangling, visualizing, summarizing, modeling, and communicating data)
-featured in exemplary STEM education research studies are implemented in
-R. Case studies also provide a holistic setting to explore important
-foundational LA topics integral to data analysis such as reproducible
-research, use of APIs, student privacy, ethical consideration, and
-diversity and inclusion in STEM education.
+Welcome to your first Learning Lab Case Study! The case study activities
+included in each learning lab demonstrate how key data-intensive
+research workflow processes (i.e., wrangling, visualizing, summarizing,
+modeling, and communicating data) featured in exemplary STEM education
+research studies are implemented in R. Case studies also provide a
+holistic setting to explore important foundational LA topics integral to
+data analysis such as reproducible research, use of APIs, and ethical
+considerations.
 
-This introductory case study is really just a warm-up activity to
+This orientation case study is really just a warm-up activity to
 introduce you to R Markdown, which is heavily integrated into each LASER
 Learning Labs. You may have used R Markdown before - or you may not
 have! Either is fine as this task will be designed with the assumption
@@ -72,20 +73,17 @@ There are two keys to your use of R Markdown for this activity:
     the left side of the toolbar above. The visual editor allows you to
     see the underlying markdown syntax, or "Source" text, with headers,
     text and code chunks formatted as specified.
-2.  Second, "Knit" next to the yarn ball at the top of this screen to
-    preview the document as you work through it. This will allow you to
-    see your code and the input in a rendered - easy-to-read - document,
-    just as others will see this document when shared. Try knitting the
-    document now and see what happens.
-3.  Finally, note the specially formatted text box below containing some
-    {r} code and its own set of buttons. This is called a "[code
+2.  Second, note the specially formatted text box below a line of code
+    (specified as `{r}` in the upper left corner) and a set of buttons
+    in the upper right corner. This is called a "[code
     chunk](https://bookdown.org/yihui/rmarkdown/r-code.html)" and allows
-    you to run [multiple
-    languages](https://bookdown.org/yihui/rmarkdown/language-engines.html)
-    including R, Python, and SQL directly in your document. Click the
-    green arrow button on the right side of the code chunk to run the R
-    code and view the one of the images stored in the `img` folder in
-    your files pane.
+    you to run code directly in your document from [multiple
+    languages](https://bookdown.org/yihui/rmarkdown/language-engines.html)including
+    R, Python, and SQL.
+
+Click the green arrow button on the right side of the code chunk to run
+the R code and view the image file name `laser-cycle.png` stored in the
+`img` folder in your files pane.
 
 ```{r}
 knitr::include_graphics("img/laser-cycle.png")
@@ -93,35 +91,70 @@ knitr::include_graphics("img/laser-cycle.png")
 
 ### The Data-Intensive Research Workflow
 
-You may be wondering what these bolded terms above refer to; what's so
-special about preparing, wrangling, exploring, and modeling data - and
+You may have noticed the words in this diagram correspond to the
+sections outlined at the beginning of this documents. What's so special
+about preparing, wrangling, exploring, and modeling data - and
 communicating results? These terms, or processes, are part of a
-framework called the data-intensive research workflow and comes from the
-work of Krumm et al.'s [*Learning Analytics Goes to
-School*](#0){style="font-size: 11.4pt;"}*.* You can check that out, but
-don't feel any need to dive deep for now - we'll be spending more time
-on this throughout the week. For now, know that this document and all of
-our LASER Labs case studies are organized around these five components.
+framework called the data-intensive research workflow and comes from
+Learning Analytics Goes to School [@krumm2018]*.* You can check that
+out, but don't feel any need to dive deep for now - we'll be spending
+more time on this throughout the week. For now, know that this document
+and all of our LASER Lab case studies are organized around these five
+components.
 
-Let's get started! We are glad you are here and to begin this exciting
-(and challenging) journey together.
+Let's get started! We are glad you are here and ready to begin this
+exciting (and challenging) journey together.
 
 ## 1. PREPARE
 
-By preparing, we refer to developing a question or purpose for the
-analysis, which you likely know from your research can be difficult!
-This part of the process also involves developing an understanding of
-the data and what you may need to analyze the data. This often involves
-looking at the data and its documentation. For now, we'll focus on just
-a few parts of this process, diving in much more deeply over the coming
-weeks.
+First and foremost, data-intensive research involves defining and
+refining a research question and developing and understanding of where
+your data comes from [@krumm2018]. This part of the process also
+involves setting up an environment for reproducible research
+[@gandrud2021]. For now, we'll focus on just a few parts of this
+process, diving in much more deeply into these components in later
+learning labs.
 
 ### Packages 📦
 
-R uses "packages," add-ons that enhance its functionality. One package
-that we'll be using is the tidyverse. To load the tidyverse, click the
-green arrow in the right corner of the block-or "chunk"-of code that
-follows.
+As highlighted in Chapter 6 of Data Science in Education Using R
+[@estrellado2020e], one of the first steps of every workflow should be
+to set up your "Project" within RStudio. Recall that:
+
+> A **Project** is the home for all of the files, images, reports, and
+> code that are used in any given project
+
+Since we are working from in Posit Cloud with a R project [cloned from
+GitHub](https://github.com/laser-institute/laser-orientation), a
+"Project" has already been set up for you as indicated by the `.Rproj`
+file in your main directory in the Files pane. Go ahead and see if you
+can locate it in your project file directory.
+
+With our project already set up for us, we will instead focus on loading
+the required packages we'll need for analysis. **Packages**, sometimes
+referred to as libraries, are shareable collections of R code that can
+contain functions, data, and/or documentation and extend the
+functionality of R. You can always check to see which packages have
+already been installed and loaded into Posit Cloud by looking at the the
+Files, Plots, & Packages Pane in the lower right-hand corner. Click the
+packages tab to see which packages have already been installed for this
+project.
+
+#### tidyverse 📦
+
+![](img/tidyverse.png){width="30%"}
+
+One package that we'll be using extensively is {tidyverse}. The
+{tidyverse} package is actually a [collection of R
+packages](https://www.tidyverse.org/packages) designed for wrangling and
+exploring data (sound familiar?) and which all share an underlying
+design philosophy, grammar, and data structures. These shared features
+are sometimes "[tidy data
+principles](https://r4ds.had.co.nz/tidy-data.html)" [@wickham2016r].
+
+One package that we'll be using a lot is the tidyverse. To load the
+tidyverse, click the green arrow in the right corner of the block-or
+"chunk"-of code that follows.
 
 ```{r}
 library(tidyverse)
@@ -134,20 +167,20 @@ reach out to us for assistance.
 
 ### Loading (or reading in) data
 
-Next, we'll load data-specifically, a CSV file, the kind that you can
-export from Microsoft Excel or Google Sheets - into R, using the
+Next, we'll load data - specifically, a CSV text file, the kind that you
+can export from Microsoft Excel or Google Sheets - into R, using the
 `read_csv()` function in the next chunk.
 
 Clicking the green arrow runs the code; do that next to read the
-`sci-online-classes.csv` file stored in your data folder into your R
-environment:
+`sci-online-classes.csv` file stored in the `data` folder of your R
+project:
 
 ```{r}
-d <- read_csv("data/sci-online-classes.csv")
+sci_data <- read_csv("data/sci-online-classes.csv")
 ```
 
-Nice work! You should now see a new data "object" named `d` saved in
-your Environment pane. Try clicking on it and see what happens.
+Nice work! You should now see a new data "object" named `sci_data` saved
+in your Environment pane. Try clicking on it and see what happens.
 
 #### Viewing or inspecting data
 
@@ -157,7 +190,7 @@ through the rows by clicking the numbers at the bottom of the pane with
 the print-out of the data you loaded:
 
 ```{r}
-d
+sci_data
 ```
 
 #### [**Your Turn**]{style="color: green;"} **⤵**
@@ -175,7 +208,7 @@ provides one such way. Run the code below to take a glimpse at your
 data.
 
 ```{r}
-glimpse(d)
+glimpse(sci_data)
 ```
 
 We have one more question to pose to you: What do rows and columns
@@ -213,10 +246,20 @@ through the use of the {dplyr} R package.
 
 ### Selecting variables
 
-Let's select only a few variables.
+Let's select only a few variables using a very powerful operator called
+a **pipe**. Pipes are a powerful tool for combining a sequence of
+functions or processes. The original pipe operator, `%>%`, comes from
+the {**magrittr**} package but all packages in the tidyverse load `%>%`
+for you automatically, so you don't usually load magrittr explicitly.
+
+The pipe has become such a useful and much used operator in R that it is
+now baked into R using the new and simpler version of the pipe `|>`
+operator. Run the following code chunk to `select()` the `student_id`,
+`total_points_possible`, and `total_points_earned` variables from our
+`sci_data`:
 
 ```{r}
-d |> 
+sci_data |> 
   select(student_id, total_points_possible, total_points_earned)
 ```
 
@@ -386,8 +429,8 @@ plot for the relationship between two variables. You will need to pass
 the names of two variables to the code below for what is now simply XXX
 (a placeholder).
 
-```{r}
-ggplot(d, aes(x = XXX, y = XXX)) +
+```{r, eval=FALSE}
+ggplot(d, aes(x = TimeSpent, y = total_points_earned)) +
   geom_point()
 ```
 

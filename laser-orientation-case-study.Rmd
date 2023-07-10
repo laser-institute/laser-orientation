@@ -193,7 +193,7 @@ the print-out of the data you loaded:
 sci_data
 ```
 
-#### [**Your Turn**]{style="color: green;"} **⤵**
+#### **👉 Your Turn** **⤵**
 
 What do you notice about this data set? What do you wonder? Add one-two
 thoughts following the dashes next (you can add additional dashes if you
@@ -222,7 +222,7 @@ units studied in your field; listing more than one is fine! Also, please
 consider what columns - which usually represent variables - represent in
 your area of work and/or research.
 
-#### [**Your Turn**]{style="color: green;"} **⤵**
+#### **👉 Your Turn** **⤵**
 
 What rows typically (or you think may) represent:
 
@@ -277,7 +277,7 @@ You can use a function named glimpse() to do this.
 glimpse(d)
 ```
 
-#### [**Your Turn**]{style="color: green;"} **⤵**
+#### **👉 Your Turn** **⤵**
 
 In the code chunk below, add a new variable to the code below, being
 careful to type the new variable name as it appears in the data. We've
@@ -305,7 +305,7 @@ d |>
   filter(FinalGradeCEMS > 70)
 ```
 
-##### [**Your Turn**]{style="color: green;"} **⤵**
+#### **👉 Your Turn** **⤵**
 
 In the next code chunk, change the cut-off from 70% to some other
 value - larger or smaller (maybe much larger or smaller - feel free to
@@ -345,7 +345,7 @@ d |>
   arrange(desc(FinalGradeCEMS))
 ```
 
-#### [**Your Turn**]{style="color: green;"} **⤵**
+#### **👉 Your Turn** **⤵**
 
 In the code chunk below, replace FinalGradeCEMS that is used with both
 the select() and arrange() functions with a different variable in the
@@ -401,7 +401,7 @@ ggplot(d, aes(x = FinalGradeCEMS)) +
 
 ### Changing colors
 
-#### [**Your Turn**]{style="color: green;"} **⤵**
+#### **👉 Your Turn** **⤵**
 
 In the code chunk below, change the color to one of your choosing;
 consider this list of valid color names here:
@@ -454,7 +454,7 @@ m1 <- lm(FinalGradeCEMS ~ TimeSpent + subject, data = d)
 summary(m1)
 ```
 
-#### [**Your Turn**]{style="color: green;"} **⤵**
+#### **👉 Your Turn** **⤵**
 
 Notice how above the variables are separated by a + symbol. Below, add
 *another* - a third - variable to the regression model. Specifically,

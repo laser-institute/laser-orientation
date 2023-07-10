@@ -23,59 +23,41 @@ knitr::opts_chunk$set(echo = TRUE, error = TRUE)
 
 ## Introduction
 
-Welcome to your first Learning Lab Case Study! This case study is really
-a warm-up activity to introduce you to R Markdown and the data-intensive
-research workflow, both of which are heavily integrated into each LASER
-Learning Labs. [R Markdown](https://rmarkdown.rstudio.com/) documents
-weave together narrative text and code to produce both static and
-dynamic outputs for sharing your research.
+Welcome to your first Learning Lab Case Study! Case study activities
+demonstrate how key data-intensive research workflow processes (i.e.,
+wrangling, visualizing, summarizing, modeling, and communicating data)
+featured in exemplary STEM education research studies are implemented in
+R. Case studies also provide a holistic setting to explore important
+foundational LA topics integral to data analysis such as reproducible
+research, use of APIs, student privacy, ethical consideration, and
+diversity and inclusion in STEM education.
 
-You may have used R Markdown before - or you may not have! Either is
-fine as this task will be designed with the assumption that you have not
-used R before. In the context of doing so, we'll focus on the following
-tasks:
+This introductory case study is really just a warm-up activity to
+introduce you to R Markdown, which is heavily integrated into each LASER
+Learning Labs. You may have used R Markdown before - or you may not
+have! Either is fine as this task will be designed with the assumption
+that you have not used R Markdown before. In the context of doing so,
+we'll focus on the following tasks:
 
 1.  Reading data into R (in the **Prepare** section)
 2.  Preparing and "wrangling" data in table (think spreadsheet!) format
     (in the **Wrangle** section)
-3.  Creating some plots (in the **Explore** section)
-4.  Running a model - specifically, a regression model (in the **Model**
-    section)
+3.  Creating some basic plots (in the **Explore** section)
+4.  Running a model - specifically, a simple regression model (in the
+    **Model** section)
 5.  Finally, creating a reproducible report of your work you can share
     with others (in the **Communicate** section)
 
-### The Data-Intensive Research Workflow
-
-You may be wondering what these bolded terms above refer to; what's so
-special about preparing, wrangling, exploring, and modeling data - and
-communicating results? We're using these terms as a part of a framework,
-or model, for what we mean by using learning analytics in STEM education
-research.
-
-This framework is called the data-intensive research workflow and comes
-from the work of Krumm et al.'s [*Learning Analytics Goes to
-School*](https://github.com/laser-institute/essential-readings/blob/main/laser-orientation/Learning%20Analytics%20Goes%20to%20School.pdf)*.*
-You can check that out, but don't feel any need to dive deep for now -
-we'll be spending more time on this throughout the week. For now, know
-that this document and all of our LASER Labs case studies are organized
-around these five components.
-
-Click the green arrow to the right of the "code chunk" below to view the
-image (more on that process of clicking the green arrow and what it
-does, too, in a moment)!
-
-```{r}
-knitr::include_graphics("img/laser-cycle.png")
-```
-
 ### How to use this R Markdown document
 
-This is an R Markdown file as indicated by the .rmd extension at the end
-of the file name. R Markdown documents are fully reproducible and use a
-productive [notebook
-interface](https://bookdown.org/yihui/rmarkdown/notebook.html) to
-combine narrative text and "chunks" of code to produce a range of
-formatted outputs including:
+This is an [R Markdown](https://rmarkdown.rstudio.com/) file as
+indicated by the .rmd extension at the end of the file name and uses
+plain text
+[markdown](https://bookdown.org/yihui/rmarkdown/markdown-syntax.html)
+syntax. R Markdown documents are fully reproducible and use a productive
+[notebook interface](https://bookdown.org/yihui/rmarkdown/notebook.html)
+to combine narrative text and "chunks" of code to produce a range of
+static or dynamic outputs formats including:
 [HTML](https://bookdown.org/yihui/rmarkdown/html-document.html), [PDF](https://bookdown.org/yihui/rmarkdown/pdf-document.html), [MS
 Word](https://bookdown.org/yihui/rmarkdown/word-document.html), [HTML5
 slides](https://bookdown.org/yihui/rmarkdown/ioslides-presentation.html), [Tufte-style
@@ -87,12 +69,39 @@ There are two keys to your use of R Markdown for this activity:
 
 1.  First, be sure that you are viewing the document in the "Visual
     Editor" mode. You can use this mode by clicking the word "Visual" on
-    the left side of the toolbar above.
-2.  Second, click "Knit" next to the yarn ball at the top of this screen
-    to preview the document as you work through it. This will allow you
-    to see your code and the input in a rendered - easy-to-read -
-    document, just as others will see this document when shared. Try
-    knitting the document now and see what happens.
+    the left side of the toolbar above. The visual editor allows you to
+    see the underlying markdown syntax, or "Source" text, with headers,
+    text and code chunks formatted as specified.
+2.  Second, "Knit" next to the yarn ball at the top of this screen to
+    preview the document as you work through it. This will allow you to
+    see your code and the input in a rendered - easy-to-read - document,
+    just as others will see this document when shared. Try knitting the
+    document now and see what happens.
+3.  Finally, note the specially formatted text box below containing some
+    {r} code and its own set of buttons. This is called a "[code
+    chunk](https://bookdown.org/yihui/rmarkdown/r-code.html)" and allows
+    you to run [multiple
+    languages](https://bookdown.org/yihui/rmarkdown/language-engines.html)
+    including R, Python, and SQL directly in your document. Click the
+    green arrow button on the right side of the code chunk to run the R
+    code and view the one of the images stored in the `img` folder in
+    your files pane.
+
+```{r}
+knitr::include_graphics("img/laser-cycle.png")
+```
+
+### The Data-Intensive Research Workflow
+
+You may be wondering what these bolded terms above refer to; what's so
+special about preparing, wrangling, exploring, and modeling data - and
+communicating results? These terms, or processes, are part of a
+framework called the data-intensive research workflow and comes from the
+work of Krumm et al.'s [*Learning Analytics Goes to
+School*](#0){style="font-size: 11.4pt;"}*.* You can check that out, but
+don't feel any need to dive deep for now - we'll be spending more time
+on this throughout the week. For now, know that this document and all of
+our LASER Labs case studies are organized around these five components.
 
 Let's get started! We are glad you are here and to begin this exciting
 (and challenging) journey together.
@@ -487,3 +496,5 @@ following steps to submit your work for review:
     In your post, include a link to your published web page and a short
     reflection highlighting one thing you learned from this lab and one
     thing you'd like to explore further.
+
+### References

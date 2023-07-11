@@ -177,13 +177,15 @@ If other researchers are able to clearly understand how a finding was originally
 
 ---
 class: middle, no-logo
-# Pain-Free Reproducible Research
+# Reproducible Research?
 
 <img src="img/phd-comic.jpeg" height="500px"/>
 
 ???
 
-Okay, be honest. Have you ever gotten lost or confused during your own research process because your files got disorganized or your naming structure broke down? Let's fix that...
+In practice, your research should be easy for independent researchers to reproduce! If a study is difficult to reproduce, it’s more likely that no one will reproduce it. If someone does attempt to reproduce it, it will be difficult for them to tell if any errors they find were in the original research or problems introduced during the reproduction.
+
+So we're next going to talk about some general best practices for reproducible research, and then a set of tools we'll be working with throughout the LASER institute to help ensure it's relatively easy to reproduce our research. 
 
 ---
 # Best Practices for Reproducible Research 
@@ -204,7 +206,7 @@ class: no-logo
 
 .panelset[
 
-.panel[.panel-name[The Tools]
+.panel[.panel-name[Tool Types]
 Reproducible research involves two broad sets of tools: 
 1. *A Reproducible Research Environment*, that includes the statistical tools you need to run your analyses; automatically track the provenance of data, analyses, and results; and to package them for redistribution”. 
 

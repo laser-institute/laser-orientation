@@ -20,9 +20,9 @@ bibliography: references.bib
 knitr::opts_chunk$set(echo = TRUE, error = FALSE)
 ```
 
-![](img/LASER_Hx.png){width="40%"}
-
 ## INTRODUCTION
+
+![](img/LASER_Hx.png){width="40%"}
 
 Welcome to your first Learning Lab Case Study! The case study activities
 included in each learning lab demonstrate how key data-intensive
@@ -160,18 +160,36 @@ that the tidyverse loaded just fine. If you see an error, though, try to
 interpret or search via your search engine the contents of the error, or
 reach out to us for assistance.
 
+#### **👉 Your Turn** **⤵**
+
+As we noted in the beginning, these case studies are meant to be
+interactive. Throughout each case study, you'll see "Your Turn" headings
+like the one above that will ask to you apply some of your R skills to
+help with the analysis. These Your Turns are intended to help you
+practice newly introduced functions or R code and reinforce R skills you
+have already learned.
+
+Use the code chunk below to load the {skimr} package into our
+environment as well. **`Skimr`** is a handy package that provides
+summary statistics that you can skim quickly to understand and your data
+and see what may be missing. We'll be using this later in the Explore
+section of this case study.
+
+```{r}
+library(skimr)
+```
+
 ### Loading (or reading in) data
 
 The data we'll explore in this case study were originally collected for
 a research study, which utilized a number of different data sources to
-understand students\' course-related motivation. These courses were
+understand students' course-related motivation. These courses were
 designed and taught by instructors through a state-wide online course
-provider designed to supplement---but not replace---students\'
-enrollment in their local school. The data used in this case study has
-already been "wrangled" quite a bit, but the original datasets included:
+provider designed to supplement---but not replace---students' enrollment
+in their local school. The data used in this case study has already been
+"wrangled" quite a bit, but the original datasets included:
 
-1.  A self-report survey assessing three aspects of students\'
-    motivation
+1.  A self-report survey assessing three aspects of students' motivation
 
 2.  Log-trace data, such as data output from the learning management
     system (LMS)
@@ -389,64 +407,147 @@ Exploratory data analysis, or exploring your data, involves processes of
 *describing* your data (such as by calculating the means and standard
 deviations of numeric variables, or counting the frequency of
 categorical variables) and, often, visualizing your data prior to
-analysis. In this section, we'll create a few plots to explore our data.
+analysis. As we'll learn in later labs, the explore phase can also
+involve the process of "feature engineering" or creating new variables
+within a dataset [@krumm2018]. In this section, we'll quickly pull
+together some basic stats using a handy function from the {skimr}
+package, and introduce you to a basic data visualization "code template"
+for the {ggplot} package from the tidyverse.
 
-### Data Visualization
+### Summary Statistics
 
-graph template
-
-#### Histograms
-
-The code below creates a histogram, or a distribution of the values, in
-this case for students' final grades. Go ahead and run it:
-
-```{r}
-ggplot(sci_data, aes(x = FinalGradeCEMS)) +
-  geom_histogram()
-```
-
-You can change the color of the histogram bars by specifying a color as
-follows:
+Let's repurpose what we learned from our wrangle section to select just
+a few variables and quickly gather some descriptive stats using the
+`skim()` function from the {skimr} package.
 
 ```{r}
-ggplot(sci_data, aes(x = FinalGradeCEMS)) +
-  geom_histogram(fill = "blue")
+sci_data |>
+  select(course_id, FinalGradeCEMS) |>
+  skim()
 ```
-
-### Changing colors
 
 #### **👉 Your Turn** **⤵**
 
-In the code chunk below, change the color to one of your choosing;
-consider this list of valid color names here:
+Use the code from the chunk from above to explore some other variables
+of interest from our `sci_data`.
+
+```{r}
+sci_data |>
+  select(course_id, FinalGradeCEMS) |>
+  skim()
+```
+
+What happens if simply feed the skim function the entire `sci_data`
+object? Give it a try!
+
+```{r}
+
+```
+
+### Data Visualization
+
+Data visualization is an extremely common practice in Learning
+Analytics, especially in the use of data dashboards, and involves
+graphically representing one or more variables with the goal of
+discovering patterns in data. These patterns may help us generate
+questions about our data, discover relationships between and among
+variables, and create or select features for data modeling.
+
+In this section we'll focus on using a basic code template for the
+{ggplot2} package from the tidyverse. `ggplot2` is a system for
+declaratively creating graphics, based on [The Grammar of Graphics](#0).
+You provide the data, tell ggplot2 how to map variables to aesthetics,
+what graphical elements to use, and it takes care of the details.
+
+### The Graphing Workflow
+
+At it's core, you can create some very simple but attractive graphs with
+just a couple lines of code. {[ggplot2](https://ggplot2.tidyverse.org)}
+follows the common workflow for making graphs with ggplot2. To make a
+graph, you:
+
+1.  Start the graph with `ggplot()` and include your data as an
+    argument;
+
+2.  "Add" elements to the graph using the `+` operator a [`geom_()`
+    function](https://ggplot2.tidyverse.org/reference/#geoms);
+
+3.  Select variables to graph on each axis with the `aes()` argument.
+
+Let's give it a try by creating a simple histogram of our
+`FinalGradeCEMS` variable. The code below creates a histogram, or a
+distribution of the values, in this case for students' final grades. Go
+ahead and run it:
+
+```{r}
+ggplot(sci_data) +
+  geom_histogram(aes(x = FinalGradeCEMS))
+```
+
+Note that the first function, `ggplot()`, creates a coordinate system
+that you can "add" layers to using additional functions and `+`
+operator. The first argument of `ggplot()` is the dataset, in our case
+`sci_data`, to use for the graph.
+
+By itself, `ggplot(data = mpg)` just creates an empty graph. But when
+you add a required `geom_()` function like `geom_histogram()`, you tell
+it which type of graph you want to make, in our case a histogram. A
+**geom** is the geometrical object that a plot uses to represent
+observations. People often describe plots by the type of geom that the
+plot uses. For example, bar charts use bar geoms, line charts use line
+geoms, boxplots use boxplot geoms, and so on. Scatterplots, which we'll
+see a in bit, break the trend; they use the point geom.
+
+The final required element for any graph is a `mapping =` argument that
+defines which variables in your dataset are mapped to which axes in your
+graph. The `mapping` argument is always paired with the
+function `aes()`, which you use to gather together all of the mappings
+that you want to create. In our case, since we just created a simple
+histogram, we only had to specify what variable to place on the x axis,
+which in our case was `FinalGradeCEMS`.
+
+We won't spend a lot of time on it in this case study, but you can also
+change the color of the histogram bars by adding an additional argument
+to specify color. Let's give that a try using the `fill =` argument:
+
+```{r}
+ggplot(sci_data) +
+  geom_histogram(aes(x = FinalGradeCEMS), fill = "blue")
+```
+
+#### **👉 Your Turn** **⤵**
+
+Now use the code chunk below to visualize the distribution of another
+variable in the data, `TimeSpent`. You can do so by swapping out the
+variable `FinalGradeCEMS` with our new variable. Also, change the color
+to one of your choosing; consider this list of valid color names here:
 <http://www.stat.columbia.edu/~tzheng/files/Rcolor.pdf>
 
 ```{r}
-ggplot(sci_data, aes(x = FinalGradeCEMS)) +
-  geom_histogram(fill = "blue")
+ggplot(sci_data) +
+  geom_histogram(aes(x = TimeSpent), fill = "green")
 ```
 
-Finally, we'll make one more change; visualize the distribution of
-another variable in the data - one other than FinalGradeCEMS. You can do
-so by swapping out the name for another variable with FinalGradeCEMS.
-Also, change the color to one other than blue.
+### Scatterplots
 
-```{r}
-ggplot(sci_data, aes(x = FinalGradeCEMS)) +
-  geom_histogram(fill = "blue")
-```
+FInally, let's creating a scatter plot for the relationship between
+these two variables. Scatterplots use the point geom, i.e., the
+`geom_point()` function, and are most useful for displaying the
+relationship between two continuous variables.
 
-### Reach 2 🎉
+#### **👉 Your Turn** **⤵**
 
-Completed the above? Nice job! Try for a "reach" by creating a scatter
-plot for the relationship between two variables. You will need to pass
-the names of two variables to the code below for what is now simply XXX
-(a placeholder).
+Complete the code chunk below to create a simple scatterplot with
+`TimeSpent` on the x axis and FinalGradeCEMS on the y axis:
 
 ```{r, eval=FALSE}
-ggplot(sci_data, aes(x = TimeSpent, y = total_points_earned)) +
-  geom_point()
+ggplot(sci_data) +
+  geom_point(aes(x = TimeSpent, y = FinalGradeCEMS))
 ```
+
+Well done! As you can see, there appears to be a positve relationship
+between the time students spend in the online course and their final
+grade!
 
 ## 4. MODEL
 
@@ -458,15 +559,23 @@ models, including linear regressions, and models and algorithms
 associated with machine learning tasks. For now, we'll run a linear
 regression to predict students' final grades.
 
-Below, we predict students' final grades (`FinaGradeCEMS`, which is on a
-0-100 point scale) on the basis of the time they spent on the course
-(measured through their learning management system in minutes,
-`TimeSpent`, and the subject (one of five) of their specific course.
+We'll dive much deeper into modeling in subsequent learning labs, but
+for now let's see if we can predict students' final grades
+(`FinaGradeCEMS`, which is on a 0-100 point scale) on the basis of the
+time they spent on the course (measured through their learning
+management system (LMS) in minutes, `TimeSpent`, and the `subject` (one
+of five) of their specific course.
 
 ```{r}
 m1 <- lm(FinalGradeCEMS ~ TimeSpent + subject, data = sci_data)
 summary(m1)
 ```
+
+It looks like `TimeSpent` and the subjects `FrSc`---forensic
+science---and `PhysA`---Physics---are associated with a higher final
+grade. This indicates that students in those two classes earned higher
+grades than students in other science classes in this dataset, and those
+who spent more time in the LMS also earned higher grades.
 
 #### **👉 Your Turn** **⤵**
 
@@ -478,7 +587,7 @@ results? We're going to dive into this *much* more: if you have many
 questions now, you're in the right spot!
 
 ```{r}
-m2 <- lm(FinalGradeCEMS ~ TimeSpent + subject, data = sci_data)
+m2 <- lm(FinalGradeCEMS ~ TimeSpent + subject + int, data = sci_data)
 summary(m2)
 ```
 
@@ -520,38 +629,48 @@ bar at that the top of this file. This will do two things; it will:
 1.  check through all your code for any errors; and,
 
 2.  create a file in your directory that you can use to share you work
-    through [RPubs](#0) (see screenshot example below to
-    publish), [GitHub Pages](#0), [Quarto Pub](#0), or any [other
-    methods](#0).
+    through [Posit
+    Cloud](https://posit.cloud/learn/guide#publish-from-cloud) (see
+    screenshot example below to publish), [RPubs](#0) , [GitHub
+    Pages](#0), [Quarto Pub](#0), or [other methods](#0).
 
-Congratulations, you've completed your first LASER Badge! Complete the
-following steps to submit your work for review:
+### Knit and Publish
 
-1.  Change the name of the `author:` in the [YAML
-    header](https://monashdatafluency.github.io/r-rep-res/yaml-header.html)
-    at the very top of this document to your name. As noted in
-    [Reproducible Research in
-    R](https://monashdatafluency.github.io/r-rep-res/index.html), The
-    YAML header controls the style and feel for knitted document but
-    doesn't actually display in the final output.
+Complete the following steps to submit your work for review:
 
-2.  Click the "knit" button with the yarn ball icon above to "knit" your
-    data product to a
+1.  First, change the name of the `author:` in the [YAML
+    header](https://bookdown.org/yihui/rmarkdown-cookbook/rmarkdown-anatomy.html#yaml-metadata)
+    at the very top of this document to your name. The YAML header
+    controls the style and feel for knitted document but doesn't
+    actually display in the final output.
+
+2.  Next, click the ![](img/knit.png){width="15%"} button in the toolbar
+    above to "knit" your R Markdown document to a
     [HTML](https://bookdown.org/yihui/rmarkdown/html-document.html) file
-    that will be saved in your R Project folder.
+    that will be saved in your R Project folder. You should see a
+    formatted webpage appear in your Viewer tab in the lower right pan
+    or in a new browser window. Let's us know if you run into any issues
+    with knitting.
 
-3.  Publish on [RPubs](https://rpubs.com) by clicking the "Publish"
-    button located in the Viewer Pane when you knit your document. Note,
-    you will need to quickly create a RPubs account.
+3.  Finally, publish your webpage on on Posit Cloud by clicking the
+    "Publish" button located in the Viewer Pane when you knit your
+    document. See screenshot below.
 
-    -   Publishing on GitHub using either [GitHub
-        Pages](https://pages.github.com) or the [HTML
-        previewer](http://htmlpreview.github.io).
+![](img/knit-publish.png){width="80%"}
 
-4.  Post a new discussion on GitHub to our [Foundations Badges
-    forum](https://github.com/orgs/laser-institute/teams/foundations/discussions/2).
-    In your post, include a link to your published web page and a short
-    reflection highlighting one thing you learned from this lab and one
-    thing you'd like to explore further.
+### Your First LASER Badge
+
+Congratulations, you've completed your first case study! To recieve
+credit for this assignment and earn your first LASER Badge, share the
+link to published webpage under the **Badge 1 Artifact** column on the
+2023 LASER Scholar Information and Documents spreadsheet:
+<https://go.ncsu.edu/laser-sheet>.
+
+![](img/share-link.png){width="80%"}
+
+Once your instructor has checked your link, you will be provide a
+physical version of the badge below!
+
+![](img/LASER_Hx.png){width="50%"}
 
 ### References

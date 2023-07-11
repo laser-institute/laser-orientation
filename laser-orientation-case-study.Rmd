@@ -310,12 +310,13 @@ now baked into R using the new and simpler version of the pipe `|>`
 operator but the original pipe operator `%>%` works just as well.
 
 Run the following code chunk to `select()` the `student_id`,
-`total_points_possible`, and `total_points_earned` variables from our
-`sci_data`:
+`FinaGradeCEMS` (i.e., students' final grades on a 0-100 point scale),
+and `TimeSpent` (i.e., the number of minuutes they spent in the course's
+learning management system).
 
 ```{r}
 sci_data |> 
-  select(student_id, total_points_possible, total_points_earned)
+  select(student_id, FinalGradeCEMS, TimeSpent)
 ```
 
 Notice how the number of columns (variables) is now different.
@@ -485,14 +486,15 @@ In this section we'll focus on using a basic code template for the
 grammar of
 graphics](https://ggplot2-book.org/introduction.html#what-is-the-grammar-of-graphics)
 [@Wickham]. You provide the data, tell ggplot2 how to map variables to
-aesthetics, what graphical elements to use, and it takes care of the
-details.
+[aesthetics](https://ggplot2.tidyverse.org/reference/aes.html), what
+graphical elements to use, and it takes care of the details.
 
 ### The Graphing Workflow
 
 At it's core, you can create some very simple but attractive graphs with
 just a couple lines of code. {[ggplot2](https://ggplot2.tidyverse.org)}
-follows the common workflow for making graphs. To make a graph, you:
+follows the common workflow for making graphs. To make a graph, you
+simply:
 
 1.  Start the graph with `ggplot()` and include your data as an
     argument;
@@ -517,7 +519,7 @@ that you can "add" layers to using additional functions and `+`
 operator. The first argument of `ggplot()` is the dataset, in our case
 `sci_data`, to use for the graph.
 
-By itself, `ggplot(data = mpg)` just creates an empty graph. But when
+By itself, `ggplot(data = mpg)` just creates an empty graph. But when
 you add a required `geom_()` function like `geom_histogram()`, you tell
 it which type of graph you want to make, in our case a histogram. A
 **geom** is the geometrical object that a plot uses to represent
@@ -528,15 +530,18 @@ see a in bit, break the trend; they use the point geom.
 
 The final required element for any graph is a `mapping =` argument that
 defines which variables in your dataset are mapped to which axes in your
-graph. The `mapping` argument is always paired with the
-function `aes()`, which you use to gather together all of the mappings
-that you want to create. In our case, since we just created a simple
-histogram, we only had to specify what variable to place on the x axis,
-which in our case was `FinalGradeCEMS`.
+graph. The `mapping` argument is always paired with the function
+`aes()`, which you use to gather together all of the mappings that you
+want to create. In our case, since we just created a simple histogram,
+we only had to specify what variable to place on the x axis, which in
+our case was `FinalGradeCEMS`.
 
 We won't spend a lot of time on it in this case study, but you can also
-change the color of the histogram bars by adding an additional argument
-to specify color. Let's give that a try using the `fill =` argument:
+add a wide range of [aesthetic
+arguments](https://ggplot2.tidyverse.org/reference/index.html#aesthetics)
+to each geom, like changing the color of the histogram bars by adding an
+argument to specify color. Let's give that a try using the `fill =`
+argument:
 
 ```{r}
 ggplot(sci_data) +
@@ -546,9 +551,10 @@ ggplot(sci_data) +
 #### **👉 Your Turn** **⤵**
 
 Now use the code chunk below to visualize the distribution of another
-variable in the data, `TimeSpent`. You can do so by swapping out the
-variable `FinalGradeCEMS` with our new variable. Also, change the color
-to one of your choosing; consider this list of valid color names here:
+variable in the data, specifically `TimeSpent`. You can do so by
+swapping out the variable `FinalGradeCEMS` with our new variable. Also,
+change the color to one of your choosing; consider this list of valid
+color names here:
 <http://www.stat.columbia.edu/~tzheng/files/Rcolor.pdf>
 
 ```{r}
@@ -558,19 +564,22 @@ ggplot(sci_data) +
 
 ### Scatterplots
 
-FInally, let's creating a scatter plot for the relationship between
-these two variables. Scatterplots use the point geom, i.e., the
-`geom_point()` function, and are most useful for displaying the
-relationship between two continuous variables.
+Finally, let's create a scatter plot for the relationship between these
+two variables. Scatterplots use the point geom, i.e., the `geom_point()`
+function, and are most useful for displaying the relationship between
+two continuous variables.
 
 #### **👉 Your Turn** **⤵**
 
 Complete the code chunk below to create a simple scatterplot with
-`TimeSpent` on the x axis and FinalGradeCEMS on the y axis:
+`TimeSpent` on the x axis and `FinalGradeCEMS` on the y axis. **Hint**:
+something else important is also missing that you will need to "add" to
+your code.
 
-```{r, eval=FALSE}
+```{r}
 ggplot(sci_data) +
-  geom_point(aes(x = TimeSpent, y = FinalGradeCEMS))
+  geom_point(aes(x = TimeSpent, 
+                 y = FinalGradeCEMS))
 ```
 
 Well done! As you can see, there appears to be a positive relationship
@@ -580,7 +589,13 @@ grade!
 To learn more about using {ggplot2} for data visualization, we highly
 recommend the following Posit Cloud Primers:
 
-1.  
+1.  [Visualization Basics](https://posit.cloud/learn/primers/1.1): Start
+    here to begin making plots with R. Plots are one of the most
+    important tools for data science; they are also one of the most fun!
+2.  [Visualize Data](https://posit.cloud/learn/primers/3): Learn how to
+    use ggplot2 to make any type of plot with your data. Then learn the
+    best ways to visualize patterns within values and relationships
+    between variables.
 
 ## 4. MODEL
 
@@ -589,45 +604,43 @@ purpose, we refer to the process of simplifying and summarizing our
 data. Thus, models can take many forms; calculating means represents a
 legitimate form of modeling data, as does estimating more complex
 models, including linear regressions, and models and algorithms
-associated with machine learning tasks. For now, we'll run a linear
-regression to predict students' final grades.
+associated with machine learning tasks. For now, we'll run a base linear
+regression model to further examine the relationship between `TimeSpent`
+and `FinalGradeCEMS`.
 
 We'll dive much deeper into modeling in subsequent learning labs, but
-for now let's see if we can predict students' final grades
-(`FinaGradeCEMS`, which is on a 0-100 point scale) on the basis of the
-time they spent on the course (measured through their learning
-management system (LMS) in minutes, `TimeSpent`, and the `subject` (one
-of five) of their specific course.
+for now let's see if there is a statistically significant relationship
+between students' final grades, `FinaGradeCEMS`, and the `TimeSpent` on
+the course:
 
 ```{r}
-m1 <- lm(FinalGradeCEMS ~ TimeSpent + subject, data = sci_data)
+m1 <- lm(FinalGradeCEMS ~ TimeSpent, data = sci_data)
+
 summary(m1)
 ```
 
-It looks like `TimeSpent` and the subjects `FrSc`---forensic
-science---and `PhysA`---Physics---are associated with a higher final
-grade. This indicates that students in those two classes earned higher
-grades than students in other science classes in this dataset, and those
-who spent more time in the LMS also earned higher grades.
+It looks like `TimeSpent` is associated with a higher final grade. That
+is, students who spent more time in the LMS also earned higher grades.
 
 #### **👉 Your Turn** **⤵**
 
-Notice how above the variables are separated by a + symbol. Below, add
-*another* - a third - variable to the regression model. Specifically,
-add a variable students' initial, self-reported interest in science,
-`int` - and any other variable(s) you like! What do you notice about the
-results? We're going to dive into this *much* more: if you have many
-questions now, you're in the right spot!
+Now let's "add" *another* variable to the regression model.
+Specifically, use the `+` operator after `TimeSpent` to add the course
+`subject` variable as a predictor of students' final grades.
 
 ```{r}
-m2 <- lm(FinalGradeCEMS ~ TimeSpent + subject + int, data = sci_data)
+m2 <- lm(FinalGradeCEMS ~ TimeSpent + subject, data = sci_data)
 summary(m2)
 ```
+
+What do you notice about the results? Add a comment or two below:
+
+-   YOUR RESPONSE HERE
 
 ## 5. COMMUNICATE
 
 The final step in the workflow/process is sharing the results of your
-analysis with wider audience. Krumm et al. (2018) have outlined the
+analysis with wider audience. Krumm et al. @krumm2018 have outlined the
 following 3-step process for communicating with education stakeholders
 findings from an analysis:
 
@@ -646,18 +659,19 @@ findings from an analysis:
     involves, at a minimum, pairing a data product with its related
     research question, describing how best to interpret the data
     product, and explaining the ways in which the data product helps
-    answer the research question.
+    answer the research question and might be used to inform new
+    analyses or a "change idea" for improving student learning.
 
 In later Learning Labs, you will have an opportunity to create a simple
-"data product" designed to illustrate insights some insights gained from
-your analysis and ideally highlight an "action step" that can be taken
-to act upon your findings.
+"data product" designed to illustrate some insights gained from your
+analysis and ideally highlight an action step or change idea that can be
+used to improve learning or the contexts in which learning occurs.
 
 For now, we will wrap up this case study by converting our work into a
 webpage that can be used to communicate your learning and demonstrate
 some of your new R skills. To do so, you will need to "knit" your
-document by clicking the knit button next to the yarn ball in the menu
-bar at that the top of this file. This will do two things; it will:
+document by clicking the ![](img/knit.png){width="10%"} button in the
+menu bar at that the top of this file. This will do two things; it will:
 
 1.  check through all your code for any errors; and,
 
@@ -669,7 +683,7 @@ bar at that the top of this file. This will do two things; it will:
 
 ### Knit and Publish
 
-Complete the following steps to submit your work for review:
+Complete the following steps to knit and publish your work:
 
 1.  First, change the name of the `author:` in the [YAML
     header](https://bookdown.org/yihui/rmarkdown-cookbook/rmarkdown-anatomy.html#yaml-metadata)
@@ -677,8 +691,8 @@ Complete the following steps to submit your work for review:
     controls the style and feel for knitted document but doesn't
     actually display in the final output.
 
-2.  Next, click the ![](img/knit.png){width="15%"} button in the toolbar
-    above to "knit" your R Markdown document to a
+2.  Next, click the knit button in the toolbar above to "knit" your R
+    Markdown document to a
     [HTML](https://bookdown.org/yihui/rmarkdown/html-document.html) file
     that will be saved in your R Project folder. You should see a
     formatted webpage appear in your Viewer tab in the lower right pan
@@ -686,17 +700,17 @@ Complete the following steps to submit your work for review:
     with knitting.
 
 3.  Finally, publish your webpage on on Posit Cloud by clicking the
-    "Publish" button located in the Viewer Pane when you knit your
+    "Publish" button located in the Viewer Pane after you knit your
     document. See screenshot below.
 
 ![](img/knit-publish.png){width="80%"}
 
 ### Your First LASER Badge
 
-Congratulations, you've completed your first case study! To recieve
-credit for this assignment and earn your first LASER Badge, share the
-link to published webpage under the **Badge 1 Artifact** column on the
-2023 LASER Scholar Information and Documents spreadsheet:
+Congratulations, you've completed your first case study! To receive
+credit for this assignment and earn your first official LASER Badge,
+share the link to published webpage under the **Badge 1 Artifact**
+column on the 2023 LASER Scholar Information and Documents spreadsheet:
 <https://go.ncsu.edu/laser-sheet>.
 
 ![](img/share-link.png){width="80%"}

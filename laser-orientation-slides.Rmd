@@ -408,7 +408,7 @@ Why not just a single `=` operator?
 .pull-right[
 ## Research Question 
 
-Is there a relationship between the time students spend on a course and their final course grade?
+Is there a relationship between the time students spend on a learning management system and their final course grade?
 
 ]
 

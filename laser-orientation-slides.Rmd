@@ -112,11 +112,9 @@ class: clear, laser
 # What is Reproducible Research? 
 
 .pull-left[
-1. Document everything! 
-2. Everything is a (text) file. 
-3. All files should be human readable. 
-4. Explicitly tie your fles together. 
-5. Have a plan to organize, store, and make your files available.
+In computational sciences like LA:
+- Ideally... researchers can ***replicate*** your findings by following the procedures used to gather the data and run the computer code.
+- Realistically... the data and code used to make a finding are available and sufficient to ***recreate*** the finding. 
 ]
 .pull-right[
 .center[<img src="img/reproducible-research.png" height="400px"/>
@@ -128,18 +126,9 @@ Gandrud, C. (2013). [Reproducible research with R and R studio (3rd Edition).](h
 ]
 
 ???
-We'll start with this quote from a Software Carpentry lesson on using version control 
-which addresses the question: How reproducible is my work?
+The information from this conceptual overview on reproducibile research is drawn largely from the excellent book by Christopher Gandrud,Reproducible research with R and R studio. 
 
-If you were to ask a colleague to take one of your papers and reproduce your results, could 
-they do it? Could you do it for one of theirs?
-
-
-Take just a moment and think about how you put reproducibility into practice in your own research. 
-What does this look like for your research data management? How do you document who 
-did what and when? If your results change, can you say why they changed?
-
-Managing these types issues is how we put reproducibility into practice and one way to do that is with version control.
+The distinction between these two definitions is that we recognize that it is sometimes difficult to replicate the original data set in a study because of issues such as limited resources to gather new data, or because the original study may have already sampled the full universe of cases.
 
 ---
 # The Benefits of Reproducible Research
@@ -185,7 +174,7 @@ class: middle, no-logo
 
 In practice, your research should be easy for independent researchers to reproduce! If a study is difficult to reproduce, it’s more likely that no one will reproduce it. If someone does attempt to reproduce it, it will be difficult for them to tell if any errors they find were in the original research or problems introduced during the reproduction.
 
-So we're next going to talk about some general best practices for reproducible research, and then a set of tools we'll be working with throughout the LASER institute to help ensure it's relatively easy to reproduce our research. 
+So next we're going to talk about some general best practices for reproducible research, and then give an overview of the research tools we'll be working with throughout the LASER institute to help ensure it's relatively easy to reproduce our research. 
 
 ---
 # Best Practices for Reproducible Research 
@@ -214,50 +203,43 @@ Reproducible research involves two broad sets of tools:
 ]
 
 .panel[.panel-name[Posit Cloud]
+
 .center[
 <img src="img/posit-cloud.png" height="350px"/>
 ]
-[go.ncsu.edu/laser-labs](go.ncsu.edu/laser-labs)
+
+.center[[go.ncsu.edu/laser-labs](go.ncsu.edu/laser-labs)
+]
+
 ]
 
 .panel[.panel-name[RStudio]
 .center[
-<img src="img/r_console.png" height="425px"/>
+<img src="img/rstudio.png" height="425px"/>
 ]
 ]
 
 .panel[.panel-name[R Markdown]
-.pull-left[
-**For Science:**
-- Study replication
-- Cumulative knowledge development
-- Work habits 
-- Teamwork
-- Ease of revision to a project/study
-- Higher impact research
-]
-.pull-right[
-**Reduces:**
-- Effort duplication
+.center[
+<img src="img/r-markdown.png" height="425px"/>
 ]
 ]
 
 
 .panel[.panel-name[GitHub]
 
-Think about the following questions and then discuss at your table: 
+.center[
+<img src="img/github.png" height="350px"/>
+]
 
-- What have your experiences been with reproducible research?
-
-- What tools have you used to ensure the reproducibility of your work? 
-
-- What questions do you have about reproducible research? 
+.center[[go.ncsu.edu/laser-github](https://go.ncsu.edu/laser-github)
+]
 ]
 
 
 .panel[.panel-name[R]
 .center[
-<img src="img/reprod_2.png" height="425px"/>
+<img src="img/r-script.png" height="425px"/>
 ]
 ]
 
@@ -387,11 +369,97 @@ class: clear, inverse, middle, center
 ----
 The Data-Intensive Research Workflow
 
+---
+# The Data-Intensive Research Workflow
+.center[
+<img src="img/laser-cycle.png" height="400px"/>
+]
+
+.footnote[
+Krumm, A., Means, B., & Bienkowski, M. (2018). [Learning Analytics Goes to School.](https://www.routledge.com/Learning-Analytics-Goes-to-School-A-Collaborative-Approach-to-Improving/Krumm-Means-Bienkowski/p/book/9781138121836). Routledge.
+]
+
+???
 
 
 ---
-# R Syntax
+class: no-logo
+# Prepare
 
+.panelset[
+
+.panel[.panel-name[Research Context]
+.pull-left[
+The Data 
+  
+What happens when you run this?  
+```{r, echo=TRUE, eval = FALSE}
+5 > 3
+```
+  
+Or this?
+```{r, echo=TRUE, eval = FALSE}
+5 == 3
+```
+
+Why not just a single `=` operator?
+]
+
+.pull-right[
+Research Question 
+
+Is there a relationship between the time students spend on a course and their final course grade?
+
+]
+
+]
+
+
+.panel[.panel-name[Packages]
+
+.pull-left[
+**Bad Form**
+
+```{r, echo=TRUE}
+my_variable = 2 + 3 #<<
+
+my_variable
+```
+]
+
+.pull-right[
+**Good Form**
+
+```{r, echo=TRUE}
+my_cat <- "Muffins" #<<
+
+my_cat
+```
+]
+]
+
+.panel[.panel-name["Read" Data]
+
+```{r, echo=TRUE, message=FALSE, eval=TRUE}
+sci_data <- read_csv("data/sci-online-classes.csv") |> # read in data
+  select(student_id, FinalGradeCEMS, course_id, ) |> # select variables
+  rename(final_grade = FinalGradeCEMS) |> # rename FinalGradeCEMS
+  filter(final_grade > .5) |> # keep grades higher than 50% 
+  drop_na() # remove rows with missing data
+```
+
+Pipes are a very powerful tool for combining a sequence of functions or processes. The original pipe operator `%>%` comes from the {magrittr} but pipe has become such a useful and much used operator in R that it is now baked into R with the new `|>` operator. 
+
+]
+
+.panel[.panel-name[Inspect Data]
+The Data Intensive Research Workflow 
+.center[
+<img src="img/laser-cycle.png" height="300px"/>
+]
+]
+
+.panel[.panel-name[R Syntax]
 Similar to all languages, R syntax is composed of "parts of speech" that can be combined into sentences that express complex ideas: 
 
 
@@ -402,44 +470,297 @@ Similar to all languages, R syntax is composed of "parts of speech" that can be 
 - *Arguments* are the adverbs or the direct object
 	+ read_csv("data/sci-online-classes.csv", **col_names = TRUE**)
 -	As in any sentence, there is also “punctuation” or *operators*
-  + sci_data <- read_csv("data/sci-online-classes.csv", col_names = TRUE)
-
-???
-
-Functions: are everything you do in R. 
-
-Say you want to take the mean of a number, you would write mean( )
-Suppose you want to round a number, you would use round( ) and put the number inside the parentheses. Make sure to look in the console pane to see the answer.
-- Functions always include parenthesis
-
-
-
-Objects: are everything you have in R - things that you save like data frames in tabular form. Think back when you have used excel and you had to save your spread sheet and name it. That is comparable to an object. 
-
-To save something into an object we need to use the assignment operator <-.  The assignment operator is used for assignment operation. Operator that assigns a certain value to a variable and scope is within the function and outside as well. 
-
-
-We will save the number 20 to the word twenty. I could have easily called the new object any other name to save as the object. Then I can **call** the number by typing twenty in and running it.
-
-Don’t ever want to use TRUE/FALSE, those are reserved for testing logical variables.
-Also, NaN, inf and NA are reserved for outcomes such as whether a variable is negative or positive infinity, not a number, or missing.
-
-
-
-You only install the package once, ever...mostly ever :). But, you will need to read in the package to Rstudio for each session. Sometimes during the session.
-
-There are about eight packages supplied with the R distribution and many more are available through the CRAN family of Internet sites covering a very wide range of modern statistics, and machine learning. If you need r to do something then there's probably a package for that.
-
-
-- We talked about the help window or pane earlier. You can add a question mark before the round() function to look at the arguments. 
-
-- Look for an argument that you can add to pi to round to the nearest 1 decimal places
-HINT look under USAGE in the arguments help section
-
-So in this example, “digits = 1” is an argument that provides extra information for how the round function should work. So this little bit of code is saying find the mean of a numeric vector or or a string of numbers. Round that mean to one digit. In the second example, this argument “package_name”, which by the way is a terrible name for a package, is telling R which package to load into its library.
+  + sci_data <- read_csv("data/sci-online-classes.csv", col_names = TRUE)]
+]
 
 ---
+class: no-logo
+# Wrangle
 
+.panelset[
+
+.panel[.panel-name[Research Context]
+.pull-left[
+The Data 
+  
+What happens when you run this?  
+```{r, echo=TRUE, eval = FALSE}
+5 > 3
+```
+  
+Or this?
+```{r, echo=TRUE, eval = FALSE}
+5 == 3
+```
+
+Why not just a single `=` operator?
+]
+
+.pull-right[
+Research Question 
+
+Is there a relationship between the time students spend on a course and their final course grade?
+
+]
+
+]
+
+
+.panel[.panel-name[Packages]
+
+.pull-left[
+**Bad Form**
+
+```{r, echo=TRUE}
+my_variable = 2 + 3 #<<
+
+my_variable
+```
+]
+
+.pull-right[
+**Good Form**
+
+```{r, echo=TRUE}
+my_cat <- "Muffins" #<<
+
+my_cat
+```
+]
+]
+
+.panel[.panel-name["Read" Data]
+
+```{r, echo=TRUE, message=FALSE, eval=TRUE}
+sci_data <- read_csv("data/sci-online-classes.csv") |> # read in data
+  select(student_id, FinalGradeCEMS, course_id, ) |> # select variables
+  rename(final_grade = FinalGradeCEMS) |> # rename FinalGradeCEMS
+  filter(final_grade > .5) |> # keep grades higher than 50% 
+  drop_na() # remove rows with missing data
+```
+
+Pipes are a very powerful tool for combining a sequence of functions or processes. The original pipe operator `%>%` comes from the {magrittr} but pipe has become such a useful and much used operator in R that it is now baked into R with the new `|>` operator. 
+
+]
+
+.panel[.panel-name[Inspect Data]
+The Data Intensive Research Workflow 
+.center[
+<img src="img/laser-cycle.png" height="300px"/>
+]
+]
+
+.panel[.panel-name[R Syntax]
+Similar to all languages, R syntax is composed of "parts of speech" that can be combined into sentences that express complex ideas: 
+
+
+- *Functions* are the verbs
+	- **read_csv()**
+- *Objects* are the nouns of the R language
+	+ read_csv(**"data/sci-online-classes.csv"**)
+- *Arguments* are the adverbs or the direct object
+	+ read_csv("data/sci-online-classes.csv", **col_names = TRUE**)
+-	As in any sentence, there is also “punctuation” or *operators*
+  + sci_data <- read_csv("data/sci-online-classes.csv", col_names = TRUE)]
+]
+
+---
+class: no-logo
+# Explore
+
+.panelset[
+
+.panel[.panel-name[Research Context]
+.pull-left[
+The Data 
+  
+What happens when you run this?  
+```{r, echo=TRUE, eval = FALSE}
+5 > 3
+```
+  
+Or this?
+```{r, echo=TRUE, eval = FALSE}
+5 == 3
+```
+
+Why not just a single `=` operator?
+]
+
+.pull-right[
+Research Question 
+
+Is there a relationship between the time students spend on a course and their final course grade?
+
+]
+
+]
+
+
+.panel[.panel-name[Packages]
+
+.pull-left[
+**Bad Form**
+
+```{r, echo=TRUE}
+my_variable = 2 + 3 #<<
+
+my_variable
+```
+]
+
+.pull-right[
+**Good Form**
+
+```{r, echo=TRUE}
+my_cat <- "Muffins" #<<
+
+my_cat
+```
+]
+]
+
+.panel[.panel-name["Read" Data]
+
+```{r, echo=TRUE, message=FALSE, eval=TRUE}
+sci_data <- read_csv("data/sci-online-classes.csv") |> # read in data
+  select(student_id, FinalGradeCEMS, course_id, ) |> # select variables
+  rename(final_grade = FinalGradeCEMS) |> # rename FinalGradeCEMS
+  filter(final_grade > .5) |> # keep grades higher than 50% 
+  drop_na() # remove rows with missing data
+```
+
+Pipes are a very powerful tool for combining a sequence of functions or processes. The original pipe operator `%>%` comes from the {magrittr} but pipe has become such a useful and much used operator in R that it is now baked into R with the new `|>` operator. 
+
+]
+
+.panel[.panel-name[Inspect Data]
+The Data Intensive Research Workflow 
+.center[
+<img src="img/laser-cycle.png" height="300px"/>
+]
+]
+
+.panel[.panel-name[R Syntax]
+Similar to all languages, R syntax is composed of "parts of speech" that can be combined into sentences that express complex ideas: 
+
+
+- *Functions* are the verbs
+	- **read_csv()**
+- *Objects* are the nouns of the R language
+	+ read_csv(**"data/sci-online-classes.csv"**)
+- *Arguments* are the adverbs or the direct object
+	+ read_csv("data/sci-online-classes.csv", **col_names = TRUE**)
+-	As in any sentence, there is also “punctuation” or *operators*
+  + sci_data <- read_csv("data/sci-online-classes.csv", col_names = TRUE)]
+]
+
+
+---
+class: no-logo
+# Model
+
+.panelset[
+
+.panel[.panel-name[Research Context]
+.pull-left[
+The Data 
+  
+What happens when you run this?  
+```{r, echo=TRUE, eval = FALSE}
+5 > 3
+```
+  
+Or this?
+```{r, echo=TRUE, eval = FALSE}
+5 == 3
+```
+
+Why not just a single `=` operator?
+]
+
+.pull-right[
+Research Question 
+
+Is there a relationship between the time students spend on a course and their final course grade?
+
+]
+
+]
+
+
+.panel[.panel-name[Packages]
+
+.pull-left[
+**Bad Form**
+
+```{r, echo=TRUE}
+my_variable = 2 + 3 #<<
+
+my_variable
+```
+]
+
+.pull-right[
+**Good Form**
+
+```{r, echo=TRUE}
+my_cat <- "Muffins" #<<
+
+my_cat
+```
+]
+]
+
+.panel[.panel-name["Read" Data]
+
+```{r, echo=TRUE, message=FALSE, eval=TRUE}
+sci_data <- read_csv("data/sci-online-classes.csv") |> # read in data
+  select(student_id, FinalGradeCEMS, course_id, ) |> # select variables
+  rename(final_grade = FinalGradeCEMS) |> # rename FinalGradeCEMS
+  filter(final_grade > .5) |> # keep grades higher than 50% 
+  drop_na() # remove rows with missing data
+```
+
+Pipes are a very powerful tool for combining a sequence of functions or processes. The original pipe operator `%>%` comes from the {magrittr} but pipe has become such a useful and much used operator in R that it is now baked into R with the new `|>` operator. 
+
+]
+
+.panel[.panel-name[Inspect Data]
+The Data Intensive Research Workflow 
+.center[
+<img src="img/laser-cycle.png" height="300px"/>
+]
+]
+
+.panel[.panel-name[R Syntax]
+Similar to all languages, R syntax is composed of "parts of speech" that can be combined into sentences that express complex ideas: 
+
+
+- *Functions* are the verbs
+	- **read_csv()**
+- *Objects* are the nouns of the R language
+	+ read_csv(**"data/sci-online-classes.csv"**)
+- *Arguments* are the adverbs or the direct object
+	+ read_csv("data/sci-online-classes.csv", **col_names = TRUE**)
+-	As in any sentence, there is also “punctuation” or *operators*
+  + sci_data <- read_csv("data/sci-online-classes.csv", col_names = TRUE)]
+]
+
+
+---
+class: no-logo
+# Communicate
+
+Krumm et al. (2018) have outlined the following 3-step process for communicating finding with education stakeholders: 
+
+1. **Select.** Communicating what one has learned involves selecting among those analyses that are most important and useful to an intended audience, as well as selecting a form for displaying that information, i.e. a data product.  
+
+2. **Polish.** After creating initial versions of data products, research teams often spend time refining or polishing them, by adding or editing titles, labels, and notations and by working with colors and shapes to highlight key points.
+
+3. **Narrate.**  Writing a narrative to accompany the data products involves, at a minimum, pairing a data product with its related research question and describing how best to interpret the data product. 
+
+???
 
 
 ---
@@ -629,54 +950,6 @@ ggplot(sci_data, aes(x = final_grade)) +
 ]
 
 ---
-class: clear, inverse, middle, center
-
-# Part 3: Wrapping Up
-----
-Knitting and Sharing
-
----
-class: clear, no-logo, middle
-
-
-.center[<img src="img/github/commit-changes.png" height="600px"/>]
-
----
-class: clear, no-logo, middle
-
-
-.center[<img src="img/github/push-changes.png" height="600px"/>]
-
----
-class: clear, no-logo, middle
-
-
-.center[<img src="img/github/fork-repository.png" height="600px"/>]
-
----
-class: clear, no-logo, middle
-
-
-.center[<img src="img/github/own-purposes.png" height="600px"/>]
-
----
-class: clear, no-logo, middle
-
-
-.center[<img src="img/github/view-github.png" height="600px"/>]
-
----
-class: clear, no-logo, middle
-
-
-.center[<img src="img/github/github-pages.png" height="600px"/>]
-
----
-class: clear, no-logo, middle
-
-
-.center[<img src="img/github/github-pages-link.png" height="600px"/>]
----
 # What's Next
 
 .pull-left[
@@ -712,6 +985,6 @@ class: clear, center
 
 ## .font130[.center[**Thank you!**]]
 
-<img src="img/team_2022.png" height="400px"/>
+<img src="img/team_2023.png" height="400px"/>
 
 

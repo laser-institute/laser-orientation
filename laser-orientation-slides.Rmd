@@ -390,7 +390,7 @@ class: no-logo
 
 .panel[.panel-name[Research Context]
 .pull-left[
-The Data 
+## The Data 
   
 What happens when you run this?  
 ```{r, echo=TRUE, eval = FALSE}
@@ -406,7 +406,7 @@ Why not just a single `=` operator?
 ]
 
 .pull-right[
-Research Question 
+## Research Question 
 
 Is there a relationship between the time students spend on a course and their final course grade?
 

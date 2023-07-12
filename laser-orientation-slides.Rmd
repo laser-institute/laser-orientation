@@ -182,7 +182,7 @@ So next we're going to talk about some general best practices for reproducible r
 ## 1. Document everything! 
 ## 2. Everything is a (text) file. 
 ## 3. All files should be human readable. 
-## 4. Explicitly tie your fles together. 
+## 4. Explicitly tie your files together. 
 ## 5. Have a plan to organize, store, and make your files available.
 
 ???
@@ -392,23 +392,13 @@ class: no-logo
 .pull-left[
 ## The Data 
   
-What happens when you run this?  
-```{r, echo=TRUE, eval = FALSE}
-5 > 3
-```
-  
-Or this?
-```{r, echo=TRUE, eval = FALSE}
-5 == 3
-```
-
-Why not just a single `=` operator?
+The data is from a research study that utilized a number of different data sources (surveys, LMS log data, gradebooks, etc.) to understand students' motivation in online courses. 
 ]
 
 .pull-right[
 ## Research Question 
 
-Is there a relationship between the time students spend on a learning management system and their final course grade?
+Is there a relationship between the time students spend in a learning management system and their final course grade?
 
 ]
 
@@ -418,22 +408,18 @@ Is there a relationship between the time students spend on a learning management
 .panel[.panel-name[Packages]
 
 .pull-left[
-**Bad Form**
+**Packages**
 
-```{r, echo=TRUE}
-my_variable = 2 + 3 #<<
+Packages, sometimes referred to as libraries, are shareable collections of R code that can contain functions, data, and/or documentation.
 
-my_variable
-```
 ]
 
 .pull-right[
-**Good Form**
+**The library function**
 
 ```{r, echo=TRUE}
-my_cat <- "Muffins" #<<
-
-my_cat
+# Load the {tidyverse} package
+library(tidyverse)
 ```
 ]
 ]
@@ -460,17 +446,15 @@ The Data Intensive Research Workflow
 ]
 
 .panel[.panel-name[R Syntax]
-Similar to all languages, R syntax is composed of "parts of speech" that can be combined into sentences that express complex ideas: 
+The R language can express complex ideas like in this simple "sentence": 
 
+`sci_data <- read_csv("data/sci-online-classes.csv", col_names = TRUE)`
 
-- *Functions* are the verbs
-	- **read_csv()**
-- *Objects* are the nouns of the R language
-	+ read_csv(**"data/sci-online-classes.csv"**)
-- *Arguments* are the adverbs or the direct object
-	+ read_csv("data/sci-online-classes.csv", **col_names = TRUE**)
--	As in any sentence, there is also “punctuation” or *operators*
-  + sci_data <- read_csv("data/sci-online-classes.csv", col_names = TRUE)]
+- *Functions* are like verbs: `read_csv()`
+- *Objects* are the nouns: `read_csv("data/sci-online-classes.csv")`
+- *Arguments* are like adverbs: `read_csv("data/sci-online-classes.csv", col_names = TRUE)`
+-	*Operators* are like “punctuation” `sci_data <- read_csv("data/sci-online-classes.csv", col_names = TRUE)`
+]
 ]
 
 ---

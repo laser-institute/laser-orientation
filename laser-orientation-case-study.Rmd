@@ -711,7 +711,9 @@ Congratulations, you've completed your first case study! To receive
 credit for this assignment and earn your first official LASER Badge,
 share the link to published webpage under the **Badge 1 Artifact**
 column on the 2023 LASER Scholar Information and Documents spreadsheet:
-<https://go.ncsu.edu/laser-sheet>.
+<https://go.ncsu.edu/laser-sheet>. We recommend bookmarking this
+spreadsheet as we'll be using it throughout the year to keep track of
+your progress.
 
 ![](img/share-link.png){width="80%"}
 

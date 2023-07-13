@@ -427,7 +427,9 @@ The {readr} tidyverse package has several functions like `read_csv()` for import
 
 ```{r, echo = TRUE, message = FALSE}
 # "read" into your R environment the sci-online-classes.csv file 
-# stored in the data folder of your R project 
+# stored in the data folder of your R project and
+# save as a new data "object" named sci_data 
+
 sci_data <- read_csv("data/sci-online-classes.csv", 
                      col_names = TRUE)
 ```
@@ -436,8 +438,17 @@ R has also packages for proprietary data formats like .xls, .sas, and .dat.
 ]
 
 .panel[.panel-name[Inspect Data]
+You should now see a new data "object" named `sci_data` saved in your Environment pane. Try clicking on it and see what happens!
 
+Now let's "print" the output to our Console to view another way:
 
+```{r, echo = TRUE, message = FALSE, results = FALSE}
+# print data to console to view
+
+sci_data
+```
+
+What variables do you think might help us answer our research question? 
 ]
 
 .panel[.panel-name[R Syntax]
@@ -453,95 +464,24 @@ The R language can express complex ideas like in this simple "sentence":
 ]
 
 ---
-class: no-logo
+class: 
 # Wrangle
 
-.panelset[
+Data wrangling is the process of cleaning, ["tidying"](https://r4ds.had.co.nz/tidy-data.html?q=tidy%20data#tidy-data-1), and transforming data. In Learning Analytics, it often involves merging (or joining) data from multiple sources. 
 
-.panel[.panel-name[Research Context]
-.pull-left[
-The Data 
-  
-What happens when you run this?  
+Run the following code chunk to `select()` the `student_id` and `course_id` from our 
+
 ```{r, echo=TRUE, eval = FALSE}
-5 > 3
-```
-  
-Or this?
-```{r, echo=TRUE, eval = FALSE}
-5 == 3
-```
+# select student_id and course_id and save as 
 
-Why not just a single `=` operator?
-]
+select_sci_data <- sci_data |> 
+  select(student_id, course_id)
 
-.pull-right[
-Research Question 
-
-Is there a relationship between the time students spend on a course and their final course grade?
-
-]
-
-]
-
-
-.panel[.panel-name[Packages]
-
-.pull-left[
-**Bad Form**
-
-```{r, echo=TRUE}
-my_variable = 2 + 3 #<<
-
-my_variable
-```
-]
-
-.pull-right[
-**Good Form**
-
-```{r, echo=TRUE}
-my_cat <- "Muffins" #<<
-
-my_cat
-```
-]
-]
-
-.panel[.panel-name["Read" Data]
-
-```{r, echo=TRUE, message=FALSE, eval=TRUE}
-sci_data <- read_csv("data/sci-online-classes.csv") |> # read in data
-  select(student_id, FinalGradeCEMS, course_id, ) |> # select variables
-  rename(final_grade = FinalGradeCEMS) |> # rename FinalGradeCEMS
-  filter(final_grade > .5) |> # keep grades higher than 50% 
-  drop_na() # remove rows with missing data
+# select two variable you think can help answer our research question and save as an object with a new name
+# YOUR CODE HERE
 ```
 
-Pipes are a very powerful tool for combining a sequence of functions or processes. The original pipe operator `%>%` comes from the {magrittr} but pipe has become such a useful and much used operator in R that it is now baked into R with the new `|>` operator. 
-
-]
-
-.panel[.panel-name[Inspect Data]
-The Data Intensive Research Workflow 
-.center[
-<img src="img/laser-cycle.png" height="300px"/>
-]
-]
-
-.panel[.panel-name[R Syntax]
-Similar to all languages, R syntax is composed of "parts of speech" that can be combined into sentences that express complex ideas: 
-
-
-- *Functions* are the verbs
-	- **read_csv()**
-- *Objects* are the nouns of the R language
-	+ read_csv(**"data/sci-online-classes.csv"**)
-- *Arguments* are the adverbs or the direct object
-	+ read_csv("data/sci-online-classes.csv", **col_names = TRUE**)
--	As in any sentence, there is also “punctuation” or *operators*
-  + sci_data <- read_csv("data/sci-online-classes.csv", col_names = TRUE)]
-]
+Note the use of a the powerful `|>` operator called a **pipe**, which are used for combining a sequence of functions or processes. 
 
 ---
 class: no-logo
@@ -549,89 +489,54 @@ class: no-logo
 
 .panelset[
 
-.panel[.panel-name[Research Context]
-.pull-left[
-The Data 
-  
-What happens when you run this?  
-```{r, echo=TRUE, eval = FALSE}
-5 > 3
-```
-  
-Or this?
-```{r, echo=TRUE, eval = FALSE}
-5 == 3
+.panel[.panel-name[EDA]
+Exploratory data analysis involves processes of **describing** your data numerically or graphically and often involves: 
+- **calculating** summary statistics like frequency, means and standard deviations
+- **visualizing** your data through charts and graphs 
+
+EDA can be used to help answer research questions or generate new questions about your data, discover relationships between and among variables, and create new variables (i.e., feature engineering) for data modeling.
+
+]
+
+.panel[.panel-name[Graph Template]
+The [{ggplot2}](https://ggplot2.tidyverse.org) package follows the common workflow for making graphs. To make a graph, you simply:
+
+1. Start the graph with `ggplot()` function and include your data as an argument;
+
+2. "Add" elements to the graph using the `+` operator `a geom_()` function;
+
+3. Select variables to graph on each axis with the `aes()` argument.
+
+]
+
+
+.panel[.panel-name[Our First Graph!]
+
+Scatterplots use the point **geom**, i.e., the `geom_point()` function, and are most useful for displaying the relationship between two continuous variables.
+
+```{r, echo=TRUE, message=FALSE, fig.show='hide', warning=FALSE}
+# plot
+ggplot(sci_data) +
+  geom_point(aes(x = TimeSpent, 
+                 y = FinalGradeCEMS))
 ```
 
-Why not just a single `=` operator?
+]
+
+.panel[.panel-name[Interpret Graph]
+.pull-left[Hopefully your scatterplot looks like something like the one to the right. 
+
+*How would you interpret this graph?*
 ]
 
 .pull-right[
-Research Question 
-
-Is there a relationship between the time students spend on a course and their final course grade?
-
-]
-
-]
-
-
-.panel[.panel-name[Packages]
-
-.pull-left[
-**Bad Form**
-
-```{r, echo=TRUE}
-my_variable = 2 + 3 #<<
-
-my_variable
-```
-]
-
-.pull-right[
-**Good Form**
-
-```{r, echo=TRUE}
-my_cat <- "Muffins" #<<
-
-my_cat
+```{r, echo=FALSE, message=FALSE, fig.width = 7, fig.height = 5.5, warning=FALSE}
+ggplot(sci_data) +
+  geom_point(aes(x = TimeSpent, 
+                 y = FinalGradeCEMS))
 ```
 ]
 ]
-
-.panel[.panel-name["Read" Data]
-
-```{r, echo=TRUE, message=FALSE, eval=TRUE}
-sci_data <- read_csv("data/sci-online-classes.csv") |> # read in data
-  select(student_id, FinalGradeCEMS, course_id, ) |> # select variables
-  rename(final_grade = FinalGradeCEMS) |> # rename FinalGradeCEMS
-  filter(final_grade > .5) |> # keep grades higher than 50% 
-  drop_na() # remove rows with missing data
-```
-
-Pipes are a very powerful tool for combining a sequence of functions or processes. The original pipe operator `%>%` comes from the {magrittr} but pipe has become such a useful and much used operator in R that it is now baked into R with the new `|>` operator. 
-
-]
-
-.panel[.panel-name[Inspect Data]
-The Data Intensive Research Workflow 
-.center[
-<img src="img/laser-cycle.png" height="300px"/>
-]
-]
-
-.panel[.panel-name[R Syntax]
-Similar to all languages, R syntax is composed of "parts of speech" that can be combined into sentences that express complex ideas: 
-
-
-- *Functions* are the verbs
-	- **read_csv()**
-- *Objects* are the nouns of the R language
-	+ read_csv(**"data/sci-online-classes.csv"**)
-- *Arguments* are the adverbs or the direct object
-	+ read_csv("data/sci-online-classes.csv", **col_names = TRUE**)
--	As in any sentence, there is also “punctuation” or *operators*
-  + sci_data <- read_csv("data/sci-online-classes.csv", col_names = TRUE)]
 ]
 
 

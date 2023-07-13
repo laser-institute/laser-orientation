@@ -311,7 +311,7 @@ operator but the original pipe operator `%>%` works just as well.
 
 Run the following code chunk to `select()` the `student_id`,
 `FinaGradeCEMS` (i.e., students' final grades on a 0-100 point scale),
-and `TimeSpent` (i.e., the number of minutes they spent in the course's
+and `TimeSpent` (i.e., the number of minuutes they spent in the course's
 learning management system).
 
 ```{r}

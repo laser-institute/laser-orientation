@@ -369,9 +369,9 @@ class: no-logo
 
 .panel[.panel-name[Research Context]
 .pull-left[
-## The Data 
+## The Study 
   
-The data is from a research study that utilized a number of different data sources (surveys, LMS log data, gradebooks, etc.) to understand students' motivation in online courses. 
+The setting of this study was a public provider of individual online courses in a Midwestern state. Data was collected from two semesters of five online science courses and aimed to understand students motivation. 
 ]
 
 .pull-right[
@@ -386,44 +386,39 @@ Is there a relationship between the time students spend in a learning management
 
 .panel[.panel-name[Packages]
 
-.pull-left[
-**Packages**
-
-Packages, sometimes referred to as libraries, are shareable collections of R code that can contain functions, data, and/or documentation.
-
-]
-
-.pull-right[
-**The library function**
+Sometimes referred to as "libraries", packages are shareable collections of R code that can contain functions, data, and/or documentation.
 
 
 ```r
 # Load the {tidyverse} package
+
 library(tidyverse)
+
+# How to install the package if not already installed
+# install.packages("tidyverse")
+# Note this code is commented out so it will not run
 ```
-]
+
 ]
 
 .panel[.panel-name["Read" Data]
 
+The {readr} tidyverse package has several functions like `read_csv()` for importing rectangular data from delimited text files such as comma-separated values (CSV), a preferred file format for reproducible research. 
+
 
 ```r
-sci_data &lt;- read_csv("data/sci-online-classes.csv") |&gt; # read in data
-  select(student_id, FinalGradeCEMS, course_id, ) |&gt; # select variables
-  rename(final_grade = FinalGradeCEMS) |&gt; # rename FinalGradeCEMS
-  filter(final_grade &gt; .5) |&gt; # keep grades higher than 50% 
-  drop_na() # remove rows with missing data
+# "read" into your R environment the sci-online-classes.csv file 
+# stored in the data folder of your R project 
+sci_data &lt;- read_csv("data/sci-online-classes.csv", 
+                     col_names = TRUE)
 ```
 
-Pipes are a very powerful tool for combining a sequence of functions or processes. The original pipe operator `%&gt;%` comes from the {magrittr} but pipe has become such a useful and much used operator in R that it is now baked into R with the new `|&gt;` operator. 
-
+R has also packages for proprietary data formats like .xls, .sas, and .dat. 
 ]
 
 .panel[.panel-name[Inspect Data]
-The Data Intensive Research Workflow 
-.center[
-&lt;img src="img/laser-cycle.png" height="300px"/&gt;
-]
+
+
 ]
 
 .panel[.panel-name[R Syntax]

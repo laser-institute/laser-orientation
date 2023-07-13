@@ -499,7 +499,7 @@ EDA can be used to help answer research questions or generate new questions abou
 ]
 
 .panel[.panel-name[Graph Template]
-The [{ggplot2}](https://ggplot2.tidyverse.org) package follows the common workflow for making graphs. To make a graph, you simply:
+The [{ggplot2}](https://ggplot2.tidyverse.org) package follows a common workflow for making graphs. To make a graph, you simply:
 
 1. Start the graph with `ggplot()` function and include your data as an argument;
 

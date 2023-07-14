@@ -62,12 +62,14 @@ xaringanExtra::use_tile_view()
 ### `r rmarkdown::metadata$date`
 
 <br>
-### .font100[[go.ncsu.edu/laser-packet](https://go.ncsu.edu/laser-packet)]
+### .font100[Welcome Slides: [go.ncsu.edu/laser-welcome](https://go.ncsu.edu/laser-welcome)]
+### .font100[Welcome Packet: [go.ncsu.edu/laser-packet](https://go.ncsu.edu/laser-packet)]
+
+
 
 ---
 # Agenda
 
-<br>
 
 ## 1. Welcome to the Friday Institute!
 

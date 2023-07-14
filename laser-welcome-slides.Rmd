@@ -73,9 +73,11 @@ xaringanExtra::use_tile_view()
 
 ## 2. Meet the LASER Team
 
-## 3. LASER Institute Core Components
+## 3. What is Learning Analytics? 
 
-## 4. Goals for the Year, the Week, and Today
+## 4. LASER Institute Core Components
+
+## 5. Goals for the Year, the Week, and Today
 
 
 ---
@@ -93,6 +95,25 @@ The LASER Institute is a prime example of how we [Think and Do](https://www.ncsu
 class: clear, middle, center
 
 <img src="img/team_2023.png" height="450px"/>
+
+---
+# What is Learning Analytics? 
+
+.pull-left[
+LA seeks to understand and improve learning environments through new forms of digital data and techniques from data science and AI: 
+
+- [Society for LA Research (SoLAR)](https://www.solaresearch.org/publications/hla-22/hla22-chapter1/) (Short Version)
+- [Handbook of Learning Analytics](https://www.solaresearch.org/publications/hla-22/hla22-chapter1/)  (Medium Version)
+- [Learning Analytics Goes to School](https://www.solaresearch.org/publications/hla-22/) (Long Version)
+
+]
+
+.pull-right[
+
+.center[<img src="img/laser-keynote.png" height="300px"/>
+[LASER Institute Keynote](https://youtu.be/gKM3T_CzC10)]]
+
+
 
 
 ---

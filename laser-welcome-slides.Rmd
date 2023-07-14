@@ -139,17 +139,18 @@ Each topic (FS, TM, ML, and SNA) consist of four progressively sequenced labs th
 ]
 ]
 
-.panel[.panel-name[Planning & Research]
+.panel[.panel-name[SHARK Goals]
 
 Time and support is provided for scholars to develop a professional learning plan and work with your own data to further research goals.
 
 > *I am thrilled to share with you all about a recently funded project that was influenced by my participation in LASER. I hope also to continue growing collaborations that have emerged out of this community!* 
 
-.pull.right[Past LASER Scholar]
+.pull.right[Justice Walker, PhD]
+.pull.right[2021 LASER Scholar]
 ]
 
 
-.panel[.panel-name[Scholar Panels]
+.panel[.panel-name[Guest Speakers]
 
 
 .center[<img src="img/laser-scholars.png" height="380px"/>]

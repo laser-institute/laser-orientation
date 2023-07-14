@@ -62,7 +62,7 @@ xaringanExtra::use_tile_view()
 ### `r rmarkdown::metadata$date`
 
 <br>
-### .font100[[go.ncsu.edu/laser-schedule](go.ncsu.edu/laser-schedule)]
+### .font100[[go.ncsu.edu/laser-packet](https://go.ncsu.edu/laser-packet)]
 
 ---
 # Agenda

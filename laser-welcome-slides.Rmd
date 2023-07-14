@@ -170,7 +170,6 @@ Throughout the Summer Workshop Rob Moore and our events team have planned a rang
 ]
 
 ---
-class: no-logo
 # LASER Institute Goals
 
 .panelset[
@@ -198,10 +197,10 @@ class: no-logo
 
 .panel[.panel-name[Today]
 
-1. **Community Building (9:15)** - Overview of affinity groups, shark goals and community activities. 
-1. **Learning Lab Intros (10:00)** - Learn about the each topic area (FS, ML, TM, and SNA) and accompanying labs to help choose a learning path this week.
-1. **Lunch (12:30)** - Eat some great food, connect with new colleagues, and catch up on email.
-1. **Scholar Panel (1:30)** - Meet three of our past scholars who'll be assisting  throughout the week and learn about their LA journey.            
+1. **Community Building (9:15)** - Affinity groups, badges and SHARK goals, oh my!
+1. **Learning Lab Intros (10:00)** - Learn about reproducible research and the data-intensive research workflow in our LASER Learning Lab orientation.
+1. **Lunch (12:30)** - Eat some great food, connect with new colleagues. 
+1. **Scholar TA Panel (1:30)** - Meet three of our past scholars who'll be assisting  throughout the week and learn about their LA journey.            
 1. **Method Overviews (2:15)** - Learn about our four concentration areas (FS, ML, TM, and SNA) and accompanying labs and select a learning path this week.
 1. **Field Trip (4:30)** - Ice cream party at NC State's dairy farm!
 

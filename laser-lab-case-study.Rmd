@@ -24,13 +24,13 @@ knitr::opts_chunk$set(echo = TRUE, error = FALSE)
 
 ![](img/LASER_Hx.png){width="40%"}
 
-Welcome to your first Learning Lab Case Study! The case study activities
-included in each learning lab demonstrate how key data-intensive
-research workflow processes as featured in exemplary STEM education
-research studies can be implemented in R. Case studies also provide a
-holistic setting to explore important foundational topics integral to
-Learning Analytics such as reproducible research, use of APIs, and
-ethical use of educational data.
+Welcome to your first LASER Learning Lab Case Study! The case study
+activities included in each learning lab demonstrate how key
+data-intensive research workflow processes as featured in exemplary STEM
+education research studies can be implemented in R. Case studies also
+provide a holistic setting to explore important foundational topics
+integral to Learning Analytics such as reproducible research, use of
+APIs, and ethical use of educational data.
 
 This orientation case study is just a warm-up activity to introduce you
 to R Markdown, which is heavily integrated into each LASER Learning

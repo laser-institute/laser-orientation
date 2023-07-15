@@ -325,7 +325,7 @@ operators](https://www.tidyverse.org/blog/2023/04/base-vs-magrittr-pipe/).
 
 Run the following code chunk to `select()` the `student_id`,
 `FinaGradeCEMS` (i.e., students' final grades on a 0-100 point scale),
-and `TimeSpent` (i.e., the number of minuutes they spent in the course's
+and `TimeSpent` (i.e., the number of minutes they spent in the course's
 learning management system).
 
 ```{r}
@@ -334,8 +334,6 @@ sci_data |>
 ```
 
 Notice how the number of columns (variables) is now different.
-
-#### **👉 Your Turn** **⤵**
 
 Let's *include one additional variable* in your select function.
 
@@ -348,6 +346,8 @@ Recall that you can use a function named `glimpse()` to do this.
 ```{r}
 glimpse(sci_data)
 ```
+
+#### **👉 Your Turn** **⤵**
 
 In the code chunk below, add a new variable, being careful to type the
 new variable name as it appears in the data. We've added some code to

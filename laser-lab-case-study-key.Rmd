@@ -26,20 +26,20 @@ knitr::opts_chunk$set(echo = TRUE, error = FALSE)
 
 Welcome to your first LASER Learning Lab Case Study! The case study
 activities included in each learning lab demonstrate how key Learning
-Analytics processes and techniques featured in exemplary STEM education
-research studies can be implemented with R. Case studies also provide a
-holistic setting to explore important foundational topics integral to
-Learning Analytics such as reproducible research, use of APIs, and
-ethical use of educational data.
+Analytics (LA) teachniques featured in exemplary STEM education research
+studies can be implemented with R. Case studies also provide a holistic
+setting to explore important foundational topics integral to Learning
+Analytics such as reproducible research, use of APIs, and ethical use of
+educational data.
 
-This orientation case study is just a warm-up activity to introduce you
-to R Markdown, which is heavily integrated into each LASER Learning
-Labs. You may have used R Markdown before - or you may not have! Either
-is fine as this task will be designed with the assumption that you have
-not used R Markdown before.
+This orientation case study will also introduce you to R Markdown, which
+is heavily integrated into each LASER Learning Labs. You may have used R
+Markdown before - or you may not have! Either is fine as this task will
+be designed with the assumption that you have not used R Markdown
+before.
 
 In this interactive coding case study, we'll focus on the following
-tasks :
+tasks:
 
 1.  Reading data into R (in the **Prepare** section)
 2.  Preparing and "wrangling" data in a tabular (think spreadsheet!)
@@ -96,14 +96,14 @@ knitr::include_graphics("img/laser-cycle.png")
 
 ### The Data-Intensive Research Workflow
 
-You may have noticed the words in this diagram correspond to the
-sections outlined at the beginning of this documents. These terms, or
+You may have noticed that the words in this diagram correspond to the
+sections outlined at the beginning of this document. These terms, or
 processes, are part of a framework called the data-intensive research
 workflow and comes from the book Learning Analytics Goes to School
-[@krumm2018]*.* You can check that out, but don't feel any need to dive
-deep into it for now - we'll be spending more time on this throughout
-the week; just know that this document and all of our LASER Lab case
-studies are organized around these five components.
+[@krumm2018]*.* You can check that out later, but don't feel any need to
+dive deep into it for now - we'll be spending more time on this
+throughout the week; just know that this document and all of our LASER
+Lab case studies are organized around these five components.
 
 Now, let's get started!
 
@@ -119,10 +119,11 @@ more deeply into these components in later learning labs.
 
 ### Research Question
 
-In this case study, we'll be working with data from a research study,
-which utilized a number of different data sources to understand
-students' course-related motivation [@estrellado2020e]. For our
-purposes, our analysis will be driven by a simple question
+In this case study, we'll be working with data come from an unpublished
+research study, which utilized a number of different data sources to
+understand high schoole students' motivation within the context of
+online courses. For the purpose of this case study, our analysis will be
+driven by the following research question:
 
 *Is there a relationship between the time students spend on a course (as
 measured through their learning management system) and their final
@@ -138,13 +139,13 @@ within RStudio.
 > A **Project** is the home for all of the files, images, reports, and
 > code that are used in any given project.
 
-Since we are working in Posit Cloud with an R project [cloned from
-GitHub](https://github.com/laser-institute/laser-orientation), a project
-has already been set up for you as indicated by the `.Rproj` file in the
-main directory. Locate the Files tab lower right hand window pane and
-see if you can find this file.
+We are working in Posit Cloud with an R project [cloned from
+GitHub](https://github.com/laser-institute/laser-orientation), so a
+project has already been set up for you as indicated by the `.Rproj`
+file in the main directory. Locate the Files tab lower right hand window
+pane and see if you can find the file named `laser-orientation.Rproj`.
 
-With a project already set up for us, we will instead focus on loading
+Since a project already set up for us, we will instead focus on loading
 the required packages we'll need for analysis.
 
 > **Packages**, sometimes referred to as libraries, are shareable
@@ -206,8 +207,10 @@ a research study, which utilized a number of different data sources to
 understand students' course-related motivation. These courses were
 designed and taught by instructors through a state-wide online course
 provider designed to supplement---but not replace---students' enrollment
-in their local school. The data used in this case study has already been
-"wrangled" quite a bit, but the original datasets included:
+in their local school.
+
+The data used in this case study has already been "wrangled" quite a
+bit, but the original datasets included:
 
 1.  A self-report survey assessing three aspects of students' motivation
 
@@ -217,6 +220,10 @@ in their local school. The data used in this case study has already been
 3.  Discussion board data
 
 4.  Academic achievement data
+
+If you are interested in learning more about these datasets, you can
+visit Chapter 7 of the excellent book, [*Data Science in Education Using
+R*](https://datascienceineducation.com/c07.html#data-sources)[@estrellado2020e].
 
 Next, we'll load our data - specifically, a CSV text file, the kind that
 you can export from Microsoft Excel or Google Sheets - into R, using the
@@ -238,7 +245,8 @@ in your Environment pane. Try clicking on it and see what happens!
 Now let's learn another way to inspect our data. Run the next chunk and
 look at the results, tabbing left or right with the arrows, or scanning
 through the rows by clicking the numbers at the bottom of the pane with
-the print-out of the data you loaded:
+the print-out of the data frame you "assigned" to the `sci_data` object
+in the previous code-chunk:
 
 ```{r}
 sci_data

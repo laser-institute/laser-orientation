@@ -447,7 +447,7 @@ select_sci_data <- sci_data |>
 # YOUR CODE HERE
 ```
 
-Note the use of a the powerful `|>` operator called a **pipe**, which is used for combining a sequence of functions or processes. 
+Note the use of a the powerful `|>` operator called a **pipe**, which are used for combining a sequence of functions or processes. 
 
 ---
 class: no-logo

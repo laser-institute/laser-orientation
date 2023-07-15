@@ -699,7 +699,7 @@ Complete the following steps to knit and publish your work:
     or in a new browser window. Let's us know if you run into any issues
     with knitting.
 
-3.  Finally, publish your webpage on on Posit Cloud by clicking the
+3.  Finally, publish your webpage on Posit Cloud by clicking the
     "Publish" button located in the Viewer Pane after you knit your
     document. See screenshot below.
 

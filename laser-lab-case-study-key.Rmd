@@ -252,7 +252,7 @@ in the previous code-chunk:
 sci_data
 ```
 
-**Note**: You can also enlarge this output by clocking the "Show in New
+**Note**: You can also enlarge this output by clicking the "Show in New
 Window" button located in the top right corner of the output.
 
 #### **👉 Your Turn** **⤵**
@@ -263,8 +263,8 @@ two observations in the space below:
 -   YOUR RESPONSE HERE
 
 There are many other ways to inspect your data; the `glimpse()` function
-provides one such way. Run the code below to take a "glimpse" at your
-data.
+provides one such way. Use the code chunk below to take a "glimpse" at
+your `sci_data`.
 
 ```{r}
 glimpse(sci_data)
@@ -280,8 +280,6 @@ varies by (and within) fields. There may be multiple types or levels of
 units studied in your field; listing more than one is fine! Also, please
 consider what columns - which usually represent variables - represent in
 your area of work and/or research.
-
-#### **👉 Your Turn** **⤵**
 
 What do rows typically (or you think may) represent in your research:
 
@@ -304,18 +302,24 @@ accomplishment! And documenting your code using R scripts or Markdown
 files will save yourself and others a great deal of time wrangling data
 in the future! There are great tools in R for data wrangling, especially
 through the use of the {[dplyr](https://dplyr.tidyverse.org)} R package
-which is part of the tidyverse.
+which is part of the {tidyverse} suite of packages.
 
 ### Selecting variables
 
 Let's practice selecting a few variables using a very powerful operator
-called a **pipe**. Pipes are a powerful tool for combining a sequence of
-functions or processes. The original pipe operator, `%>%`, comes from
-the {**magrittr**} package but all packages in the tidyverse load `%>%`
-for you automatically, so you don't usually load magrittr explicitly.
-The pipe has become such a useful and much used operator in R that it is
-now baked into R using the new and simpler version of the pipe `|>`
-operator but the original pipe operator `%>%` works just as well.
+called a pipe.
+
+> **Pipes** are a powerful tool for combining a sequence of functions or
+> processes.
+
+The original pipe operator, `%>%`, comes from the
+{[magrittr](https://magrittr.tidyverse.org)} package but all packages in
+the tidyverse load `%>%` for you automatically, so you don't usually
+load magrittr explicitly. The pipe has become such a useful and much
+used operator in R that it is now baked into R using the new and simpler
+native pipe `|>` operator. Use can use both fairly interchangeably, but
+there are a few [differences between pipe
+operators](https://www.tidyverse.org/blog/2023/04/base-vs-magrittr-pipe/).
 
 Run the following code chunk to `select()` the `student_id`,
 `FinaGradeCEMS` (i.e., students' final grades on a 0-100 point scale),

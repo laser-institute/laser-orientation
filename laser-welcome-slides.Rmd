@@ -93,10 +93,26 @@ At The Friday Institute, **our mission is to advance K-12 education through inno
 
 The LASER Institute is a prime example of how we [Think and Do](https://www.ncsu.edu/think-and-do/) at the Friday Institute and we hope that you will carry this mission and vision forward! 
 
----
-class: clear, middle, center
 
-<img src="img/team_2023.png" height="450px"/>
+---
+# LASER Project Team
+<br>
+.center[<img src="img/laser-instructors.png" height="350px"/>]
+
+---
+# LASER Support Team
+<br>
+.center[<img src="img/laser-support.png" height="350px"/>]
+
+---
+# LASER Scholar TAs
+<br>
+.center[<img src="img/laser-tas.png" height="350px"/>]
+
+---
+# Friday Institute Operations Team
+<br>
+.center[<img src="img/laser-ops.png" height="350px"/>]
 
 ---
 # What is Learning Analytics? 
@@ -153,12 +169,12 @@ Time and support is provided for scholars to develop a professional learning pla
 .panel[.panel-name[Guest Speakers]
 
 
-.center[<img src="img/laser-scholars.png" height="380px"/>]
+.center[<img src="img/laser-speakers.png" height="380px"/>]
 
 
 ]
 
-.panel[.panel-name[Community]
+.panel[.panel-name[Community Activities]
 
 Throughout the Summer Workshop Rob Moore and our events team have planned a range of activities including: 
 - **Affinity Groups** to help make new connections and inform their SHARK Goals.

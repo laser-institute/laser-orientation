@@ -26,7 +26,7 @@ knitr::opts_chunk$set(echo = TRUE, error = FALSE)
 
 Welcome to your first LASER Learning Lab Case Study! The case study
 activities included in each learning lab demonstrate how key Learning
-Analytics (LA) teachniques featured in exemplary STEM education research
+Analytics (LA) techniques featured in exemplary STEM education research
 studies can be implemented with R. Case studies also provide a holistic
 setting to explore important foundational topics integral to Learning
 Analytics such as reproducible research, use of APIs, and ethical use of

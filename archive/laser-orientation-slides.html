@@ -1,0 +1,1066 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+  <head>
+    <title>LASER Learning Lab Orientation</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="The LASER Team" />
+    <meta name="date" content="2023-07-17" />
+    <script src="libs/header-attrs-2.23/header-attrs.js"></script>
+    <link href="libs/remark-css-0.0.1/default.css" rel="stylesheet" />
+    <link href="libs/panelset-0.2.6/panelset.css" rel="stylesheet" />
+    <script src="libs/panelset-0.2.6/panelset.js"></script>
+    <script src="libs/clipboard-2.0.6/clipboard.min.js"></script>
+    <link href="libs/xaringanExtra-clipboard-0.2.6/xaringanExtra-clipboard.css" rel="stylesheet" />
+    <script src="libs/xaringanExtra-clipboard-0.2.6/xaringanExtra-clipboard.js"></script>
+    <script>window.xaringanExtraClipboard(null, {"button":"<i class=\"fa fa-clipboard\"><\/i>","success":"<i class=\"fa fa-check\" style=\"color: #90BE6D\"><\/i>","error":"Press Ctrl+C to Copy"})</script>
+    <link href="libs/font-awesome-6.4.0/css/all.min.css" rel="stylesheet" />
+    <link href="libs/font-awesome-6.4.0/css/v4-shims.min.css" rel="stylesheet" />
+    <link href="libs/tile-view-0.2.6/tile-view.css" rel="stylesheet" />
+    <script src="libs/tile-view-0.2.6/tile-view.js"></script>
+    <link rel="stylesheet" href="css/laser.css" type="text/css" />
+    <link rel="stylesheet" href="css/laser-fonts.css" type="text/css" />
+  </head>
+  <body>
+    <textarea id="source">
+
+class: clear, title-slide, inverse, center, top, middle
+
+
+
+
+
+
+
+
+
+
+# LASER Learning Lab Orientation
+## Reproducible Research &amp; The LA Workflow
+### The LASER Team
+### July 17, 2023
+
+
+---
+# Agenda
+
+.pull-left[
+## Part 1: Core Concepts
+### Reproducible Research
+- Reproducible Research
+- Git &amp; GitHub Desktop
+- RStudio Desktop
+
+]
+
+.pull-right[
+
+## Part 2: R Code-Along
+### The Learning Analytics Workflow
+- Operators
+- Objects
+- Functions
+- Packages
+]
+
+
+???
+
+In the following presentation we will discuss a conceptual overview of reproducible research. we'll discuss what open science is, what reproducible research is, describe core practices of reproducible research.  
+
+Additionally, the code-along will consist of an introduction to R and its IDE. Then we will begin to look at various coding grammar - functions, arguments, objects and packages. 
+
+---
+
+class: clear, inverse, middle, center
+
+# Part 1: Core Concepts
+
+----
+Reproducible Research, Git, and GitHub Desktop
+
+---
+class: clear, laser
+
+.quote[“...future you and anyone else will be able to **pick up your analysis and reproduce the same results**, including figures and tables.”]
+
+.author[~ Harrison, 2020]
+
+
+---
+# Reproducible Research
+
+.panelset[
+
+
+.panel[.panel-name[Why Reproducibilty?]
+.pull-left[
+**Increases:**
+- Study replication
+- Cumulative knowledge development
+- Work habits 
+- Teamwork
+- Ease of revision to a project/study
+- Higher impact research
+]
+.pull-right[
+**Reduces:**
+- Effort duplication
+]
+
+
+]
+
+
+.panel[.panel-name[Core Practices]
+
+.pull-left[“The **communication** aspect **should not be an afterthought**, it should be recorded with your analysis as you are going through it.” (-Harrison et al, 2020)]
+.pull-right[
+&lt;img src="img/reprod_2.png" height="300px"/&gt;
+]
+]
+
+
+.panel[.panel-name[Discussion]
+
+Think about the following questions and then discuss at your table: 
+
+- What have your experiences been with reproducible research?
+
+- What tools have you used to ensure the reproducibility of your work? 
+
+- What questions do you have about reproducible research? 
+
+]
+
+
+]
+
+???
+
+## So why reproducible research?
+
+Reproducible research increases your ability to replicate a study and the ability to develop knowledge cumulatively over time and enable contributions from different sources. 
+
+Gandrud 2020 and Harrison et al 2020 – make the point that adhering to principles of reproducible research improves your work habits and your teamwork. It also eases revision of a project or a study and reduces effort duplication. And all of these things result in higher impact research.
+
+The piece here that I think links reproducible research and open science very well and helps support some of those advantages to open science that we discussed a few slides ago is that scientific inquiry and scientific progress rely heavily upon the ability to reproduce the conditions of an experiment or a research study. 
+
+That's very difficult to achieve if there's missing information about how the research occured in the first place. 
+
+When you use reproducible research techniques, however, all of the steps, all of the components are publicly available. This even includes the version of the software package that you used to analyze your data. And we're going to talk about what some of those procedures are and what some of those standards are for producing reproducible research. But I hope you can see the link between clearly and openly communicating how you've set up a study and how that might contribute to this notion of open science.
+
+Let's talk about the sort of nitty-gritty of how you might go about producing reproducible research. 
+First, I want to call your attention to this quote from that Harrison article. It says “the communication aspect should not be an afterthought. It should be recorded with your analysis as you are going through it.” 
+
+So you might relate this to a situation where you're giving a person directions. We don't do this very much anymore because most people will just use their GPS or Google maps but in the olden days if you were giving someone directions, say, to your house, you would give them fairly explicit step by step directions. You would tell them what street names they would expect to see, you would tell them where to turn and which direction to turn, and you would probably also describe very obvious landmarks that they might see along the way. Well reproducible research is very similar in that as you go through the research process, you are also creating a set of directions for someone following behind you. That person may very well be yourself at a later time or it might be someone else, but either way, you're creating this set of directions for someone to reproduce your work as closely as possible to the way you produced it yourself. 
+
+
+## Core Practices
+Some core practices of reproducible research are grouped into these three categories: your research is well documented, you communicate clearly, and you use reproducible theory. 
+
+
+**Well documented research** includes a read_me file. We will talk a little bit later about some places where you might share your work to make it publicly accessible. GitHub is one such location where you might share your work, including your code that you write. It's standard procedure to include a readme file in your GitHub folder for a given project. That readme file is essentially like the instructions at the top of a worksheet. It tells you where to begin and helps orient you to the entire project. 
+
+Some other aspects of documentation that are important to include are the use of code books. So if you're using variables to represent certain things, or if you're doing qualitative research and you have established a certain set of codes, it behooves you to explain what those variables stand for, and define what those qualitative codes represent. 
+
+Ideally you're also going to include your validation procedures. So you'll share with future you or  other researchers how you validated your processes and tools that you used. You should also include your inclusion criteria: So how did you determine whether participants were appropriate for inclusion in your study? Of course you also want to include the primary research questions that guided your project. And you should consider including a rough abstract of the project as a whole. 
+
+
+In the category of **clear communication** you want to make sure that you include explanatory headers for source code files. And hopefully that's self-explanatory but basically you're going to want to tell people what the code file does. Some other things that are important to include in that explanatory header would be the author or authors, as well as packages that were necessary for that code to run, and versions of packages and software that were used. 
+
+Another really critical piece of reproducible research in R, or really in any coding language, is that you make sure you comment your code. 
+
+So commenting your code, which will see an example of a little bit later, essentially means that you're going to include a note along with a piece of code that describes the purpose and function of that code. We have a way of annotating that explanatory message, using a pound sign in front of each line of the message, which tells the computer not to read it as code. You will often hear this referred to as “commenting something out”.
+
+Another basic principle of clear communication is making sure that you're using plain language. So try, as best as you are able, to steer clear of jargon or discipline-specific terms. Or, if you use these terms, try to define them. And then lastly, in terms of clear communication, you want to share your rationale for using particular functions as well as the methods that you used in your study. 
+
+
+The last category listed here is this notion of ***reproducible theory** and essentially this is very basic to research and academia but it means that you are going to appropriately cite any foundational works, or sources, or proofs if you're working in mathematics, so that people who are looking at your research project understand where some of these ideas and concepts that informed your study have come from.
+
+Gandrud 2020 suggest following a Workflow for reproducibility to achieve long-term and cross-platform computational reproducibility of data analysis.
+
+This diagram is from the Gandrud text it's an example workflow and I thought this would be helpful because it illustrates this concept of being explicit about how things are tied together.
+
+In the sort of top part of the diagram you see the research process. There's raw data, it's gathered, it's analyzed, and then it is published or presented using any of these tools that are listed off to the right. Then at the bottom you see different packages and files that are used at each stage of this process to get from one stage to the next. 
+
+This diagram is a really nice example of explaining not only what's happening in each stage of the research process but also how these stages are tied together. 
+
+Gandrud also makes a point that everything should be human readable and everything should be a text file. Basically that's because the text file is going to be the easiest to read by the greatest number of readers, and that includes human readers and also computer readers.
+
+Then this notion that everything should be human readable is hopefully pretty understandable but basically explains that if you're communicating with other human researchers you want to make sure that your explanations are understandable by other humans. This also links to the concept of using plain language. Gandrud explains this probably much more eloquently than I can and much more clearly so again I encourage you to refer to his text.
+
+---
+class: clear, middle, no-logo
+
+.pull-left[.font200[
+&lt;br /&gt;
+.orange[**Raise your hand if you're guilty of this...**]
+
+]]
+
+.pull-right[&lt;img src="img/github/phdcomic.png" height="600px" style="margin-top: -20px; border: 5px solid #d34126;"/&gt;]
+
+???
+
+Okay, be honest. Have you ever gotten lost or confused during your own research process because
+your files got disorganized or your naming structure broke down? Let's fix that...
+
+---
+# Putting Reproducibility into Practice
+
+.pull-left["Ask one of your labmates to reproduce a result you recently obtained using only what they can find in your papers or on the web. Try to do the same for one of their results, then try to do it for a result from a lab you work with."
+
+]
+
+.pull-right[
+- How do you manage your data in research?
+- How do you document who did what and when?
+- When the results of your analyses change, do you know why?
+]
+
+
+???
+We'll start with this quote from a Software Carpentry lesson on using version control 
+which addresses the question: How reproducible is my work?
+
+If you were to ask a colleague to take one of your papers and reproduce your results, could 
+they do it? Could you do it for one of theirs?
+
+
+Take just a moment and think about how you put reproducibility into practice in your own research. 
+What does this look like for your research data management? How do you document who 
+did what and when? If your results change, can you say why they changed?
+
+Managing these types issues is how we put reproducibility into practice and one way to do that is with version control.
+
+---
+class: no-logo
+# What is version control?
+
+**Version control** is keeping a .orange[**history of a file's changes**].
+
+.center[&lt;img src="img/github/google-version-history.png" height="425px" style="margin-left: -40px; border: 3px solid #143156;"/&gt;]
+
+???
+Chances are that you're already familiar with the concept of version control. If you've ever looked at the revision history of a Google doc, for example, then you have seen version control. 
+
+Version control gives a history of the versions of a file, who made the changes in that version, how many changes, and what those changes actually were in that version. 
+
+---
+class: no-logo
+# Git, GitHub, and GitHub Desktop
+
+.panelset[
+
+.panel[.panel-name[Git]
+
+- a version control system
+- tracks history of changes for individuals or collaborative teams
+- Git repositories (or projects) encompass all files and folders associated with a project along with each files revisioj history
+
+]
+
+.panel[.panel-name[GitHub]
+
+.pull-left[
+- a web-based platform that hosts Git repositories
+- provides a collaborative, community-based development environment
+- provides an extensive ecosystem for software workflows
+]
+
+.pull-right[
+&lt;img src="img/github/github-laser-org.png" height="375px" style="margin-top: -30px; margin-left: -30px;"/&gt;
+]
+
+
+]
+
+.panel[.panel-name[GitHub Desktop]
+.font80[A desktop application provided by GitHub that makes it easy to create or clone repositories, commit changes, or see/pull collaborators' changes.].pull-left[
+&lt;img src="img/github/githubdesktop.png" height="375px" style="margin-top: -50px;"/&gt;]
+.pull-right[
+&lt;img src="img/github/githubdesktop_history.png" height="375px" style="margin-top: -50px;"/&gt;
+]
+]]
+
+???
+
+We're going to be using version control through the LASER insitute via Git, GitHub, and GitHub Desktop so it's important for us all to know what these are and how they relate to one another.
+
+---
+class: clear, center, middle
+
+.center[.font150[Let's Get Familiar with GitHub]]
+
+[https://github.com/laser-institute](https://github.com/laser-institute)
+
+???
+
+Has everyone already created a GitHub account? Okay, good. We're going to go take a tour and get familiar with GitHub. We're going to transition now from the slides to the web for a live tour, but there are slides with screenshots that you can revisit later if needed.
+
+---
+class: clear, no-logo, middle
+
+
+.center[&lt;img src="img/github/laser-org-profile.png" height="600px"/&gt;]
+
+---
+class: clear, no-logo, middle
+
+
+.center[&lt;img src="img/github/github-navigation.png" height="600px"/&gt;]
+
+---
+class: clear, no-logo, middle
+
+
+.center[&lt;img src="img/github/github-readme.png" height="600px"/&gt;]
+
+---
+class: clear, no-logo, middle
+
+
+.center[&lt;img src="img/github/github-other-info.png" height="600px"/&gt;]
+
+---
+class: clear, no-logo, middle
+
+
+.center[&lt;img src="img/github/github-repos.png" height="600px"/&gt;]
+
+---
+class: clear, no-logo, middle
+
+
+.center[&lt;img src="img/github/github-create-new-repo.png" height="600px"/&gt;]
+
+---
+class: clear, no-logo, middle
+
+
+.center[&lt;img src="img/github/new-repo-info-1.png" height="600px"/&gt;]
+
+---
+class: clear, no-logo, middle
+
+
+.center[&lt;img src="img/github/new-repo-info-2.png" height="600px"/&gt;]
+
+
+---
+class: clear, no-logo, middle
+
+Instead of creating a new repository, we're going to go back to the repositories tab and clone the `laser-orientation` repository that already exists. Click the repository name to navigate to its page.
+
+.center[&lt;img src="img/github/github-repos.png" height="425px"/&gt;]
+
+---
+class: clear, no-logo, middle
+
+
+.center[&lt;img src="img/github/github-repo-clone.png" height="600px"/&gt;]
+
+---
+# To Clone or To Fork...Decide You Must
+
+When deciding whether you should clone or fork, consider the following things:
+&lt;br /&gt; &lt;br /&gt;
+
+- Are you part of the team (i.e., collaborator) developing for the project? .red[Clone!]
+
+- Do you just want to work with someone else's project but not make changes? .red[Clone!]
+
+- Do you want to make changes to someone else's code but aren't part of their team? .red[FORK!]
+
+---
+class: clear, no-logo, middle
+
+
+.center[
+&lt;figure&gt;
+&lt;img src="https://cdn.ttgtmedia.com/rms/onlineimages/cdo-git_clone_vs_fork-f.png" alt="Image from https://www.theserverside.com/answer/Git-fork-vs-clone-Whats-the-difference" height="525px"/&gt;
+&lt;figcaption&gt;&lt;a href="https://www.theserverside.com/answer/Git-fork-vs-clone-Whats-the-difference"&gt;Git Fork vs Clone: What's the Difference&lt;/a&gt;&lt;/figcaption&gt;
+&lt;/figure&gt;]
+
+
+---
+class: clear, no-logo, middle
+
+
+.center[&lt;img src="img/github/github-fork.png" height="600px"/&gt;]
+
+---
+class: clear, no-logo, middle
+
+
+.center[&lt;img src="img/github/desktop-repo-info.png" height="600px"/&gt;]
+
+---
+class: clear, no-logo, middle
+
+
+.center[&lt;img src="img/github/desktop-changes.png" height="600px"/&gt;]
+
+---
+class: clear, no-logo, middle
+
+
+.center[&lt;img src="img/github/desktop-history.png" height="600px"/&gt;]
+
+---
+class: clear, no-logo, middle
+
+
+.center[&lt;img src="img/github/desktop-show-finder.png" height="600px"/&gt;]
+
+---
+class: clear, no-logo, middle
+
+
+.center[&lt;img src="img/github/github-finder.png" height="600px"/&gt;]
+
+---
+class: clear, no-logo, middle
+
+
+.center[&lt;img src="img/rstudio-repo.png" height="600px"/&gt;]
+
+---
+class: no-logo
+
+# RStudio Desktop Basics
+
+.panelset[
+
+.panel[.panel-name[R Environment]
+
+.center[
+&lt;img src="img/r_console.png" height="425px"/&gt;
+]
+
+]
+
+
+.panel[.panel-name[Global Options]
+
+.center[
+&lt;img src="img/global.png" height="425px"/&gt;
+]
+]
+
+.panel[.panel-name[Settings]
+
+.center[
+&lt;img src="img/global-settings.png" height="425px"/&gt;
+]
+]
+
+.panel[.panel-name[Packages]
+
+.pull-left[
+Collections of R code that contain functions, data, and/or documentation.  
+
+```r
+# example of installing a package
+# install.packages("tidyverse")
+
+# example of loading a package
+library(tidyverse)
+```
+
+```
+## ── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──
+## ✔ dplyr     1.1.2     ✔ readr     2.1.4
+## ✔ forcats   1.0.0     ✔ stringr   1.5.0
+## ✔ ggplot2   3.4.2     ✔ tibble    3.2.1
+## ✔ lubridate 1.9.2     ✔ tidyr     1.3.0
+## ✔ purrr     1.0.1     
+## ── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
+## ✖ dplyr::filter() masks stats::filter()
+## ✖ dplyr::lag()    masks stats::lag()
+## ℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors
+```
+]
+
+.pull-right[
+
+.center[Or just point and click... 
+
+&lt;img src="img/install-packages.png" height="350px"/&gt;
+]]
+]
+
+
+.panel[.panel-name[New Script]
+.center[
+&lt;img src="img/r_script.png" height="425px"/&gt;
+]
+]
+
+
+]
+
+???
+**What is the Integrated Development Environment (IDE)?**
+
+So this is an image of the R studio integrated development environment. You can see that there are these four main panels and if you're not seeing all four of those panels it's probably because something has been minimized and we can show you how to fix that here in person.
+
+The IDE four main areas
+- Console (&amp; Terminal)
+- Scripting and Viewing Window
+- Files/Plots/Packages/Help
+- Environment (&amp; Connections/Git)
+
+**CONSOLE:**
+The console will show you what items have been run and any errors
+The terminal provides access to the system shell. By default it is in the bottom left of your screen and you can view your script output here depending how you set up your global options.
+
+***Scripting and Viewing:**
+The Script Window is the place to enter and run your code so that it is easily edited and saved for future use.
+Two ways to execute your code in the R script, you can either highlight the code and click on Run, or you can highlight the code and press CTRL + Enter on your keyboard.
+
+**Environment Window:**
+The Environment tab allows you to see what objects are in the work space.
+The history tab allows you to see the commands that you have entered.
+The git tab from your project allows you to connect and update right to Github.
+
+**Files pane**
+Access all of your files for a projects
+- view your plots (data visualizations)
+- view what packages are installed
+- the help tab will show you more information about a function or package similar to adding a question mark before a package name or function name.
+- view your Rmarkdown file 
+
+We can use 
+**Global options:** to customize the IDE to better suite your workflow with things like...
+- wrap code
+- change color scheme
+- move panes around
+- so much more
+
+Let's set up our Global Options for a smooth workflow
+- In the menu bar click `Tools` then `Global Options.`
+    + 1. `R General` -&gt; (untick) Restore .RData into workspace at startup.
+    + 2. `R General` -&gt; Save workspace to .RData on exit: Never
+    + 3. `R Markdown` -&gt; Show output preview in: Viewer Pane
+
+
+Today we will be working in a script file. A script is simply a text file containing a set of commands and comments. The script can be saved and used later to re-execute the saved commands
+
+To open a new script file 
+  + `file` -&gt; (click) `New file` -&gt; `script`
+  
+*HINT* - make sure to `save as` and save in your correct folder.
+
+However, we already have our script created that you copied frm Github.
+
+Now let's talk a little bit about some r programming basics: packages, functions, and arguments. 
+
+**Packages** are bundles of functions, and if that is meaningless to you it's probably also helpful to know that functions do things. So packages are bundles of things that do things. And like we just talked about, packages must be first be installed into Rstudio using the install packages function and then loaded into the library using the library function. 
+
+**Functions** are things that do things and so one example would be the function mean which finds the mean of a series of numbers or a vector of numbers. A function always includes the parentheses and whatever is inside the parentheses indicates the thing to which the function is being done. And that thing to which the function is being done is called an argument. 
+
+**Arguments** go inside the parentheses and they are separated by commas. You can have more than one argument within the parentheses. Arguments provide extra details regarding how a function should run or what materials a function should work with. And I've included a couple of examples here. 
+
+
+
+---
+class: clear, inverse, middle, center
+
+# part_2(R, code_along)
+----
+Operators, Objects, and Functions Oh My! 
+
+
+
+---
+# R Syntax
+
+Similar to all languages, R syntax is composed of "parts of speech" that can be combined into sentences that express complex ideas: 
+
+
+- *Functions* are the verbs
+	- **read_csv()**
+- *Objects* are the nouns of the R language
+	+ read_csv(**"data/sci-online-classes.csv"**)
+- *Arguments* are the adverbs or the direct object
+	+ read_csv("data/sci-online-classes.csv", **col_names = TRUE**)
+-	As in any sentence, there is also “punctuation” or *operators*
+  + sci_data &lt;- read_csv("data/sci-online-classes.csv", col_names = TRUE)
+
+???
+
+Functions: are everything you do in R. 
+
+Say you want to take the mean of a number, you would write mean( )
+Suppose you want to round a number, you would use round( ) and put the number inside the parentheses. Make sure to look in the console pane to see the answer.
+- Functions always include parenthesis
+
+
+
+Objects: are everything you have in R - things that you save like data frames in tabular form. Think back when you have used excel and you had to save your spread sheet and name it. That is comparable to an object. 
+
+To save something into an object we need to use the assignment operator &lt;-.  The assignment operator is used for assignment operation. Operator that assigns a certain value to a variable and scope is within the function and outside as well. 
+
+
+We will save the number 20 to the word twenty. I could have easily called the new object any other name to save as the object. Then I can **call** the number by typing twenty in and running it.
+
+Don’t ever want to use TRUE/FALSE, those are reserved for testing logical variables.
+Also, NaN, inf and NA are reserved for outcomes such as whether a variable is negative or positive infinity, not a number, or missing.
+
+
+
+You only install the package once, ever...mostly ever :). But, you will need to read in the package to Rstudio for each session. Sometimes during the session.
+
+There are about eight packages supplied with the R distribution and many more are available through the CRAN family of Internet sites covering a very wide range of modern statistics, and machine learning. If you need r to do something then there's probably a package for that.
+
+
+- We talked about the help window or pane earlier. You can add a question mark before the round() function to look at the arguments. 
+
+- Look for an argument that you can add to pi to round to the nearest 1 decimal places
+HINT look under USAGE in the arguments help section
+
+So in this example, “digits = 1” is an argument that provides extra information for how the round function should work. So this little bit of code is saying find the mean of a numeric vector or or a string of numbers. Round that mean to one digit. In the second example, this argument “package_name”, which by the way is a terrible name for a package, is telling R which package to load into its library.
+
+---
+class: no-logo
+# Operators &amp; Objects
+
+.panelset[
+
+.panel[.panel-name[Arithmetic]
+
+.pull-left[
+R is a calculator!
+  
+Type this in your console:  
+
+```r
+2 + 3
+```
+  
+You'll get this: 
+
+```
+## [1] 5
+```
+]
+
+.pull-right[
+.center[Arithmetic Operators 
+
+&lt;img src="img/arithmetic.png" height="350px"/&gt;
+]]
+]
+
+.panel[.panel-name[Logic]
+.pull-left[
+R is logical! 
+  
+What happens when you run this?  
+
+```r
+5 &gt; 3
+```
+  
+Or this?
+
+```r
+5 == 3
+```
+
+Why not just a single `=` operator?
+]
+
+.pull-right[
+.center[Logical Operators 
+
+&lt;img src="img/logical.png" height="350px"/&gt;
+]]
+
+]
+
+.panel[.panel-name[Assignment]
+
+.pull-left[
+**Bad Form**
+
+
+```r
+*my_variable = 2 + 3
+
+my_variable
+```
+
+```
+## [1] 5
+```
+]
+
+.pull-right[
+**Good Form**
+
+
+```r
+*my_cat &lt;- "Muffins"
+
+my_cat
+```
+
+```
+## [1] "Muffins"
+```
+]
+]
+
+.panel[.panel-name[Pipes]
+
+
+```r
+sci_data &lt;- read_csv("data/sci-online-classes.csv") |&gt; # read in data
+  select(student_id, FinalGradeCEMS, course_id, ) |&gt; # select variables
+  rename(final_grade = FinalGradeCEMS) |&gt; # rename FinalGradeCEMS
+  filter(final_grade &gt; .5) |&gt; # keep grades higher than 50% 
+  drop_na() # remove rows with missing data
+```
+
+Pipes are a very powerful tool for combining a sequence of functions or processes. The original pipe operator `%&gt;%` comes from the {magrittr} but pipe has become such a useful and much used operator in R that it is now baked into R with the new `|&gt;` operator. 
+
+]
+
+.panel[.panel-name[Data Frames]
+
+.pull-left[
+Objects are everywhere in R! In fact we already created a few.
+
+Let's look at the `sci_data` object we just created:
+
+
+```r
+sci_data
+```
+
+
+]
+
+.pull-right[
+.center[
+
+
+```
+## # A tibble: 6 × 3
+##   student_id final_grade course_id    
+##        &lt;dbl&gt;       &lt;dbl&gt; &lt;chr&gt;        
+## 1      43146        93.5 FrScA-S216-02
+## 2      44638        81.7 OcnA-S116-01 
+## 3      47448        88.5 FrScA-S216-01
+## 4      47979        81.9 OcnA-S216-01 
+## 5      48797        84   PhysA-S116-01
+## 6      52326        83.6 AnPhA-S216-01
+```
+]]
+]
+
+
+]
+
+---
+# Functions &amp; Arguments
+
+.panelset[
+
+.panel[.panel-name[Basic Template]
+
+Functions are pre-packaged pieces of code that (typically) start with a verb, followed by objects or inputs in parentheses called "arguments":
+
+
+```r
+do_this(to_this)  
+do_that(to_this, to_that, with_those)
+```
+]
+
+
+.panel[.panel-name[Make One]
+Let's make a basic addition function called `add_numbers`: 
+
+
+```r
+add_numbers &lt;- function(number_1, number_2) {
+    number_1 + number_2
+}
+```
+]
+
+.panel[.panel-name[Your Turn]
+
+Use your new function to add 5 and 10:
+
+```r
+# YOUR CODE HERE
+# 
+#
+```
+]
+
+.panel[.panel-name[Solution]
+
+
+
+```r
+add_numbers(5, 10)
+```
+
+```
+## [1] 15
+```
+
+]
+
+.panel[.panel-name[Real World]
+
+.pull-left[
+In practice, most functions that we will be using this week take a data frame object as their first argument:
+
+```r
+ggplot(sci_data, aes(x = FinalGradeCEMS)) +
+  geom_histogram(fill = "blue")
+```
+]
+
+.pull-right[
+&lt;img src="laser-orientation-slides_files/figure-html/unnamed-chunk-17-1.png" height="350" /&gt;
+]
+
+]
+
+
+
+]
+
+---
+class: clear, inverse, middle, center
+
+# Part 3: Wrapping Up
+----
+Knitting, Committing, and Sharing
+
+---
+class: clear, no-logo, middle
+
+
+.center[&lt;img src="img/github/commit-changes.png" height="600px"/&gt;]
+
+---
+class: clear, no-logo, middle
+
+
+.center[&lt;img src="img/github/push-changes.png" height="600px"/&gt;]
+
+---
+class: clear, no-logo, middle
+
+
+.center[&lt;img src="img/github/fork-repository.png" height="600px"/&gt;]
+
+---
+class: clear, no-logo, middle
+
+
+.center[&lt;img src="img/github/own-purposes.png" height="600px"/&gt;]
+
+---
+class: clear, no-logo, middle
+
+
+.center[&lt;img src="img/github/view-github.png" height="600px"/&gt;]
+
+---
+class: clear, no-logo, middle
+
+
+.center[&lt;img src="img/github/github-pages.png" height="600px"/&gt;]
+
+---
+class: clear, no-logo, middle
+
+
+.center[&lt;img src="img/github/github-pages-link.png" height="600px"/&gt;]
+---
+# What's Next
+
+.pull-left[
+## Essential Readings
+
+- [GitHub Glossary](https://docs.github.com/en/get-started/quickstart/github-glossary)  
+- [Git and GitHub Learning Resources](https://docs.github.com/en/get-started/quickstart/git-and-github-learning-resources)
+
+- [Getting Started with R and RStudio](https://datascienceineducation.com/c05.html)
+
+- [Foundational Skills in R](https://datascienceineducation.com/c06.html)  
+
+
+
+
+
+
+] 
+
+.pull-right[
+## Tutorials
+
+- [Programing Basics](https://rstudio.cloud/learn/primers/1.2)
+
+- [GitHub Video Guides](https://www.youtube.com/githubguides)
+
+- [Your First LASER Badge!](https://github.com/laser-institute/essential-readings/blob/main/sna-labs/sna-lab-1/pittinsky-class-friendships.pdf)
+
+]
+
+---
+class: clear, center
+
+## .font130[.center[**Thank you!**]]
+
+&lt;img src="img/team_2022.png" height="400px"/&gt;
+
+
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"highlightStyle": "default",
+"highlightLines": true,
+"highlightLanguage": "r",
+"countIncrementalSlides": false,
+"ratio": "16:9",
+"slideNumberFormat": "<div class=\"progress-bar-container\">\n <div class=\"progress-bar\" style=\"width: calc(%current% / %total% * 100%);\">\n </div>\n</div>"
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+// add `data-at-shortcutkeys` attribute to <body> to resolve conflicts with JAWS
+// screen reader (see PR #262)
+(function(d) {
+  let res = {};
+  d.querySelectorAll('.remark-help-content table tr').forEach(tr => {
+    const t = tr.querySelector('td:nth-child(2)').innerText;
+    tr.querySelectorAll('td:first-child .key').forEach(key => {
+      const k = key.innerText;
+      if (/^[a-z]$/.test(k)) res[k] = t;  // must be a single letter (key)
+    });
+  });
+  d.body.setAttribute('data-at-shortcutkeys', JSON.stringify(res));
+})(document);
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+// adds .remark-code-has-line-highlighted class to <pre> parent elements
+// of code chunks containing highlighted lines with class .remark-code-line-highlighted
+(function(d) {
+  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
+  const preParents = [];
+  const findPreParent = function(line, p = 0) {
+    if (p > 1) return null; // traverse up no further than grandparent
+    const el = line.parentElement;
+    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
+  };
+
+  for (let line of hlines) {
+    let pre = findPreParent(line);
+    if (pre && !preParents.includes(pre)) preParents.push(pre);
+  }
+  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
+})(document);</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>

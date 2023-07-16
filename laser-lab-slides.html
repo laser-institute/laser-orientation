@@ -359,22 +359,7 @@ Sometimes referred to as "libraries", packages are shareable collections of R co
 # Load the {tidyverse} package
 
 library(tidyverse)
-```
 
-```
-## ── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──
-## ✔ dplyr     1.1.2     ✔ readr     2.1.4
-## ✔ forcats   1.0.0     ✔ stringr   1.5.0
-## ✔ ggplot2   3.4.2     ✔ tibble    3.2.1
-## ✔ lubridate 1.9.2     ✔ tidyr     1.3.0
-## ✔ purrr     1.0.1     
-## ── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
-## ✖ dplyr::filter() masks stats::filter()
-## ✖ dplyr::lag()    masks stats::lag()
-## ℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors
-```
-
-```r
 # How to install the package if not already installed
 # install.packages("tidyverse")
 # Note this code is commented out so it will not run
@@ -432,17 +417,14 @@ class:
 
 Data wrangling is the process of cleaning, ["tidying"](https://r4ds.had.co.nz/tidy-data.html?q=tidy%20data#tidy-data-1), and transforming data. In Learning Analytics, it often involves merging (or joining) data from multiple sources. 
 
-Run the following code chunk to `select()` the `student_id` and `course_id` from our 
+Since we are interested the relationship between time spent in an online course and final grades, let's `select()` the `FinalGradeCEMS` and `TimeSpent` from `sci_data`.
 
 
 ```r
 # select student_id and course_id and save as 
 
-select_sci_data &lt;- sci_data |&gt; 
-  select(student_id, course_id)
-
-# select two variable you think can help answer our research question and save as an object with a new name
-# YOUR CODE HERE
+sci_data |&gt; 
+  select(FinalGradeCEMS, TimeSpent)
 ```
 
 Note the use of a the powerful `|&gt;` operator called a **pipe**, which are used for combining a sequence of functions or processes. 
@@ -484,7 +466,7 @@ Scatterplots use the point **geom**, i.e., the `geom_point()` function, and are 
 
 
 ```r
-# plot
+# make a scatter plot showing time spent and final grades
 ggplot(sci_data) +
   geom_point(aes(x = TimeSpent, y = FinalGradeCEMS))
 ```
@@ -526,14 +508,17 @@ We'll dive much deeper into modeling in subsequent learning labs, but for now le
 
 
 ```r
+# use a simple linear regression model to predict final course grades
 m1 &lt;- lm(FinalGradeCEMS ~ TimeSpent, data = sci_data)
 
 summary(m1)
 ```
+
 ]
 
 .panel[.panel-name[Interpret]
 
+.code70.remark-code[ 
 
 ```
 ## 
@@ -556,7 +541,7 @@ summary(m1)
 ## Multiple R-squared:  0.1335,	Adjusted R-squared:  0.132 
 ## F-statistic: 87.99 on 1 and 571 DF,  p-value: &lt; 2.2e-16
 ```
-
+]
 ]
 
 ]
@@ -614,23 +599,10 @@ R Markdown supports dozens of static and dynamic output formats including [HTML]
 
 ???
 ---
-# What's Next
+# What's Next?
 
 
 .pull-left[
-## Essential Readings
-
-- [Reproducible Research with R and RStudio](https://github.com/christophergandrud/Rep-Res-Book)
-
-- [Learning Analytics Goes to School](https://www.routledge.com/Learning-Analytics-Goes-to-School-A-Collaborative-Approach-to-Improving/Krumm-Means-Bienkowski/p/book/9781138121836)
-
-- [Data Science in Education Using R](https://datascienceineducation.com)
-
-- [R for Data Science](https://r4ds.had.co.nz/index.html)  
-
-]
-
-.pull-right[
 ## Your First LASER Badge!
 Next you will complete an interactive "case study" which is a key component to each learning lab.  
 
@@ -640,12 +612,24 @@ Navigate to the Files tab and open the following file:
 
 ]
 
+.pull-right[
+## Essential Readings
+
+- [Reproducible Research with R and RStudio](https://github.com/christophergandrud/Rep-Res-Book) (chapters 1 &amp; 2)
+
+- [Learning Analytics Goes to School](https://www.routledge.com/Learning-Analytics-Goes-to-School-A-Collaborative-Approach-to-Improving/Krumm-Means-Bienkowski/p/book/9781138121836) (pages 28 - 58)
+
+- [Data Science in Education Using R](https://datascienceineducation.com)
+
+- [R for Data Science](https://r4ds.had.co.nz/index.html)  
+]
+
 ---
 class: clear, center
 
 ## .font130[.center[**Thank you!**]]
-
-&lt;img src="img/team_2023.png" height="400px"/&gt;
+&lt;br&gt;
+&lt;img src="img/laser-instructors.png" height="350px"/&gt;
 
     </textarea>
 <style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>

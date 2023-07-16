@@ -435,16 +435,13 @@ class:
 
 Data wrangling is the process of cleaning, ["tidying"](https://r4ds.had.co.nz/tidy-data.html?q=tidy%20data#tidy-data-1), and transforming data. In Learning Analytics, it often involves merging (or joining) data from multiple sources. 
 
-Run the following code chunk to `select()` the `student_id` and `course_id` from our 
+Since we are interested the relationship between time spent in an online course and final grades, let's `select()` the `FinalGradeCEMS` and `TimeSpent` from `sci_data`.
 
 ```{r, echo=TRUE, eval = FALSE}
 # select student_id and course_id and save as 
 
-select_sci_data <- sci_data |> 
-  select(student_id, course_id)
-
-# select two variable you think can help answer our research question and save as an object with a new name
-# YOUR CODE HERE
+sci_data |> 
+  select(FinalGradeCEMS, TimeSpent)
 ```
 
 Note the use of a the powerful `|>` operator called a **pipe**, which are used for combining a sequence of functions or processes. 
@@ -484,7 +481,7 @@ ggplot(<DATA>) +
 Scatterplots use the point **geom**, i.e., the `geom_point()` function, and are most useful for displaying the relationship between two continuous variables.
 
 ```{r, echo=TRUE, message=FALSE, fig.show='hide', warning=FALSE}
-# plot
+# make a scatter plot showing time spent and final grades
 ggplot(sci_data) +
   geom_point(aes(x = TimeSpent, y = FinalGradeCEMS))
 ```
@@ -528,20 +525,23 @@ Ideally, a good model will separate true “signals” (i.e. patterns generated 
 We'll dive much deeper into modeling in subsequent learning labs, but for now let's see if there is a statistically significant relationship between students' final grades, `FinaGradeCEMS`, and the `TimeSpent` in the LMS:
 
 ```{r, echo=TRUE, results = FALSE, message=FALSE, eval=TRUE}
+# use a simple linear regression model to predict final course grades
 m1 <- lm(FinalGradeCEMS ~ TimeSpent, data = sci_data)
 
 summary(m1)
 ```
+
 ]
 
 .panel[.panel-name[Interpret]
 
+.code70.remark-code[ 
 ```{r, echo=FALSE, message=FALSE, eval=TRUE}
 m1 <- lm(FinalGradeCEMS ~ TimeSpent, data = sci_data)
 
 summary(m1)
 ```
-
+]
 ]
 
 ]
@@ -599,23 +599,10 @@ R Markdown supports dozens of static and dynamic output formats including [HTML]
 
 ???
 ---
-# What's Next
+# What's Next?
 
 
 .pull-left[
-## Essential Readings
-
-- [Reproducible Research with R and RStudio](https://github.com/christophergandrud/Rep-Res-Book)
-
-- [Learning Analytics Goes to School](https://www.routledge.com/Learning-Analytics-Goes-to-School-A-Collaborative-Approach-to-Improving/Krumm-Means-Bienkowski/p/book/9781138121836)
-
-- [Data Science in Education Using R](https://datascienceineducation.com)
-
-- [R for Data Science](https://r4ds.had.co.nz/index.html)  
-
-]
-
-.pull-right[
 ## Your First LASER Badge!
 Next you will complete an interactive "case study" which is a key component to each learning lab.  
 
@@ -625,10 +612,22 @@ Navigate to the Files tab and open the following file:
 
 ]
 
+.pull-right[
+## Essential Readings
+
+- [Reproducible Research with R and RStudio](https://github.com/christophergandrud/Rep-Res-Book) (chapters 1 & 2)
+
+- [Learning Analytics Goes to School](https://www.routledge.com/Learning-Analytics-Goes-to-School-A-Collaborative-Approach-to-Improving/Krumm-Means-Bienkowski/p/book/9781138121836) (pages 28 - 58)
+
+- [Data Science in Education Using R](https://datascienceineducation.com)
+
+- [R for Data Science](https://r4ds.had.co.nz/index.html)  
+]
+
 ---
 class: clear, center
 
 ## .font130[.center[**Thank you!**]]
-
-<img src="img/team_2023.png" height="400px"/>
+<br>
+<img src="img/laser-instructors.png" height="350px"/>
 

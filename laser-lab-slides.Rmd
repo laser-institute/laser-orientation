@@ -249,7 +249,7 @@ Reproducible research involves two broad sets of tools:
 <img src="img/posit-cloud.png" height="350px"/>
 ]
 
-.center[[go.ncsu.edu/laser-labs](go.ncsu.edu/laser-labs)
+.center[[go.ncsu.edu/laser-labs](https://go.ncsu.edu/laser-labs)
 ]
 
 ]

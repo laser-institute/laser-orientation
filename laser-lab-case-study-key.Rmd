@@ -306,35 +306,33 @@ which is part of the {tidyverse} suite of packages.
 
 ### Selecting variables
 
-Let's practice selecting a few variables using a very powerful operator
-called a pipe.
+Recall from our Prepare section that we are interested the relationship
+between the time students spend on a course and their final course
+grade.
 
-> **Pipes** are a powerful tool for combining a sequence of functions or
-> processes.
+Let's practice selecting a few variables by introducing a very powerful
+`|>` operator called a **pipe**. Pipes are a powerful tool for combining
+a sequence of functions or processes.
 
-The original pipe operator, `%>%`, comes from the
-{[magrittr](https://magrittr.tidyverse.org)} package but all packages in
-the tidyverse load `%>%` for you automatically, so you don't usually
-load magrittr explicitly. The pipe has become such a useful and much
-used operator in R that it is now baked into R using the new and simpler
-native pipe `|>` operator. Use can use both fairly interchangeably, but
-there are a few [differences between pipe
-operators](https://www.tidyverse.org/blog/2023/04/base-vs-magrittr-pipe/).
+Run the following code chunk to "pipe" our `sci_data` to the `select()`
+function include the following two variables as arguments:
 
-Run the following code chunk "pipe" our `sci_data` to the `select()`
-function with the `student_id` and `course_id` variables as arguments:
+-   `FinalGradeCEMS` (i.e., students' final grades on a 0-100 point
+    scale)
+
+-   `TimeSpent` (i.e., the number of minutes they spent in the course's
+    learning management system)
 
 ```{r}
 sci_data |> 
-  select(student_id, course_id)
+  select(FinalGradeCEMS, TimeSpent)
 ```
 
-Notice how the number of columns (variables) is now different.
+Notice how the number of columns (variables) is now different!
 
-Let's *include one additional variable* in your select function.
-`FinaGradeCEMS` (i.e., students' final grades on a 0-100 point scale),
-and `TimeSpent` (i.e., the number of minutes they spent in the course's
-learning management system).
+Let's *include one additional variable* in the select function that you
+think might be a predictor of students' final course grade or useful in
+addressing our research question.
 
 First, we need to figure out what variables exist in our dataset (or be
 reminded of this - it's very common in R to be continually checking and
@@ -356,11 +354,20 @@ code.
 
 ```{r}
 sci_data |> 
-  select(student_id, total_points_possible, total_points_earned)
+  select(FinalGradeCEMS, TimeSpent)
 ```
 
 Once added, the output should be different than in the code above -
 there should now be an additional variable included in the print-out.
+
+**A quick footnote about pipes**: The original pipe operator, `%>%`,
+comes from the {[magrittr](https://magrittr.tidyverse.org)} package but
+all packages in the tidyverse load `%>%` for you automatically, so you
+don't usually load magrittr explicitly. The pipe has become such a
+useful and much used operator in R that it is now baked into R using the
+new and simpler native pipe `|>` operator. You can use both fairly
+interchangeably but there are a few [differences between pipe
+operators](https://www.tidyverse.org/blog/2023/04/base-vs-magrittr-pipe/).
 
 ### Filtering variables
 
@@ -392,15 +399,14 @@ a thought (or more) below:
 
 ### Arrange
 
-The last function we'll use for preparing tables is arrange.
-
-We'll combine this `arrange()` function with a function we used
-already - `select()`. We do this so we can view only the student ID and
-their final grade.
+The last function we'll use for preparing tables is arrange. We'll again
+use the `|>` to combine this `arrange()` function with a function we
+used already - `select()`. We do this so we can view only time spent and
+final grades.
 
 ```{r}
 sci_data |> 
-  select(student_id, FinalGradeCEMS) |> 
+  select(FinalGradeCEMS, TimeSpent) |> 
   arrange(FinalGradeCEMS)
 ```
 
@@ -410,9 +416,13 @@ as an argument with arrange, like the following:
 
 ```{r}
 sci_data |> 
-  select(student_id, FinalGradeCEMS) |> 
+  select(FinalGradeCEMS, TimeSpent) |> 
   arrange(desc(FinalGradeCEMS))
 ```
+
+Just at a quick cursory glance at our two variables, it does appear that
+students with higher grades also tend to have spent more time in the
+online course.
 
 #### **👉 Your Turn** **⤵**
 
@@ -423,7 +433,7 @@ glimpsed at the names of all of the variables.
 
 ```{r}
 sci_data |> 
-  select(student_id, FinalGradeCEMS) |> 
+  select(TimeSpent, FinalGradeCEMS) |> 
   arrange(desc(FinalGradeCEMS))
 ```
 
@@ -432,12 +442,11 @@ Can you compose a series of functions that include the `select()`,
 output from one function to the next as when we used select() and
 arrange() together in the code chunk above.
 
-*This is not required/necessary to complete; it's just for those who
-wish to do a bit more with these functions at this time (we'll do more
-in our learning labs , too!)*
-
 ```{r}
-# YOUR CODE HERE
+sci_data |> 
+  select(TimeSpent, FinalGradeCEMS) |> 
+  filter(FinalGradeCEMS > 70) |> 
+  arrange(FinalGradeCEMS)
 ```
 
 ## 3. EXPLORE
@@ -448,10 +457,12 @@ deviations of numeric variables, or counting the frequency of
 categorical variables) and, often, visualizing your data. As we'll learn
 in later labs, the explore phase can also involve the process of
 "feature engineering," or creating new variables within a dataset
-[@krumm2018]. In this section, we'll quickly pull together some basic
-stats using a handy function from the {skimr} package, and introduce you
-to a basic data visualization "code template" for the {ggplot} package
-from the tidyverse.
+[@krumm2018].
+
+In this section, we'll quickly pull together some basic stats using a
+handy function from the {skimr} package, and introduce you to a basic
+data visualization "code template" for the {ggplot} package from the
+tidyverse.
 
 ### Summary Statistics
 
@@ -461,7 +472,7 @@ a few variables and quickly gather some descriptive stats using the
 
 ```{r}
 sci_data |>
-  select(course_id, FinalGradeCEMS) |>
+  select(TimeSpent, FinalGradeCEMS) |>
   skim()
 ```
 
@@ -574,6 +585,9 @@ color names here:
 ggplot(sci_data) +
   geom_histogram(aes(x = TimeSpent), fill = "green")
 ```
+
+**Tip:** There is no shame in copying and pasting code from above.
+Remember, reproducible research is also intended to help you save time!
 
 ### Scatterplots
 

@@ -61,8 +61,8 @@ xaringanExtra::use_tile_view()
 ### `r rmarkdown::metadata$date`
 
 <br>
-### .font100[Welcome Slides: [go.ncsu.edu/laser-welcome](https://go.ncsu.edu/laser-welcome)]
-### .font100[Welcome Packet: [go.ncsu.edu/laser-packet](https://go.ncsu.edu/laser-packet)]
+### .font100[Slides: [go.ncsu.edu/laser-exit](https://go.ncsu.edu/laser-exit)]
+
 
 
 ---
@@ -105,17 +105,32 @@ Starting last August we'll be facilitating asynchronous:
 .panel[.panel-name[Slack Community]
 
 .pull-left[
+.center[<img src="https://go.ncsu.edu/laser-availability.qr" height="300px"/><br>
+[go.ncsu.edu/laser-slack](https://go.ncsu.edu/laser-slack)]
 
-Starting last August we'll be facilitating asynchronous: 
-- **monthly check-ins** to share progress toward your SHARK Goal.
-- **#shark-goals channel** on Slack to ask questions and discuss your goals
 ]
 
 .pull-right[
 <img src="img/slack.png" height="350px"/>
+
 ]
 
 ]
+
+]
+
+---
+# Evaluation & Availability
+
+.pull-left[
+.center[<img src="https://go.ncsu.edu/laser-eval.qr" height="350px"/><br><br>
+[go.ncsu.edu/laser-eval](https://go.ncsu.edu/laser-eval)]
+
+]
+
+.pull-right[
+.center[<img src="https://go.ncsu.edu/laser-availability.qr" height="350px"/><br><br>
+[go.ncsu.edu/laser-availability](https://go.ncsu.edu/laser-availability)]
 
 ]
 

@@ -105,7 +105,7 @@ Starting last August we'll be facilitating asynchronous:
 .panel[.panel-name[Slack Community]
 
 .pull-left[
-.center[<img src="https://go.ncsu.edu/laser-availability.qr" height="300px"/><br>
+.center[<img src="https://go.ncsu.edu/laser-slack.qr" height="300px"/><br>
 [go.ncsu.edu/laser-slack](https://go.ncsu.edu/laser-slack)]
 
 ]

@@ -119,43 +119,6 @@ Starting last August we'll be facilitating asynchronous:
 
 ]
 
----
-# LASER Institute Goals
-
-.panelset[
-
-
-.panel[.panel-name[This Year]
-
-1. **Disciplinary Knowledge**: Deepen understanding of LA methodologies, literature, applications and ethical issues as they relate to STEM education and equity.
-
-2. **Technical Skills:** Develop proficiency with R, Posit Cloud, and other tools for reproducible and collaborative data-intensive research.
-
-3. **Social Capital:** Expand their professional networks, connecting with researchers and experts in LA related fields, as well as other scholars focused on STEM education.
-
-]
-
-.panel[.panel-name[This Week]
-
-1. **Have fun.** Learning new methods can be rewarding but hard, especially when coding is involved, but we want to you enjoy yourselves this week.  
-2. **Make Connections** We have an amazing groups of scholars participating this year, use this opportunity to get to know them better. 
-3. **Develop a plan.** You won't become an expert in LA overnight, but we want to you leave Friday with a plan to continue learning and apply it to your research. 
-4. **Earn two badges.** You'll be exposed to many new concepts and techniques this week, we want you to dig in and demonstrate what you've learned. 
-5. **Provide Feedback.** We've revamped our curriculum and need your input to figure out what works well and how we can improve. 
-
-]
-
-.panel[.panel-name[Today]
-
-1. **Community Building (9:15)** - Affinity groups, badges and SHARK goals, oh my!
-1. **Learning Lab Intros (10:00)** - Learn about reproducible research and the data-intensive research workflow in our LASER Learning Lab orientation.
-1. **Lunch (12:30)** - Eat some great food, connect with new colleagues. 
-1. **Scholar TA Panel (1:30)** - Meet three of our past scholars who'll be assisting  throughout the week and learn about their LA journey.            
-1. **Method Overviews (2:15)** - Learn about our four concentration areas (FS, ML, TM, and SNA) and accompanying labs and select a learning path this week.
-1. **Field Trip (4:30)** - Ice cream party at NC State's dairy farm!
-]
-
-]
 
 ---
 class: clear, center
@@ -163,7 +126,7 @@ class: clear, center
 ## .font130[.center[**Thank you!**]]
 
 
-.center[<img style="border-radius:50%;" src="img/shaun.jpeg" height="200px"/><br/>**Shaun Kellogg**<br/><mailto:sbkellog@ncsu.edu>]
+.center[<img src="img/laser-instructors.png" height="300px"/>]
 
 .pull-left-narrow[.center[<img style="border-radius: 50%;" src="https://www.nsf.gov/images/logos/NSF_4-Color_bitmap_Logo.png" height="150px"/> ]]
 

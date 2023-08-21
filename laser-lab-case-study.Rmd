@@ -192,9 +192,8 @@ have already learned.
 
 Use the code chunk below to load the {skimr} package into our
 environment as well. **`Skimr`** is a handy package that provides
-summary statistics that you can skim quickly to understand your data and
-see what may be missing. We'll be using this later in the Explore
-section of this case study.
+summary statistics that you can skim quickly to understand your data.
+We'll be using this later in the Explore section of this case study.
 
 ```{r}
 # load the {skimr} package below

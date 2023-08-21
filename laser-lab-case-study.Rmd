@@ -223,7 +223,8 @@ bit, but the original datasets included:
 
 If you are interested in learning more about these datasets, you can
 visit Chapter 7 of the excellent book, [*Data Science in Education Using
-R*](https://datascienceineducation.com/c07.html#data-sources)[@estrellado2020e].
+R*](https://datascienceineducation.com/c07.html#data-sources)
+[@estrellado2020e].
 
 Next, we'll load our data - specifically, a CSV text file, the kind that
 you can export from Microsoft Excel or Google Sheets - into R, using the

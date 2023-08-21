@@ -428,9 +428,9 @@ online course.
 
 #### **👉 Your Turn** **⤵**
 
-In the code chunk below, replace `TimeSpent` that is used with both the
-`select()` and `arrange()` functions with a different variable in the
-data set. Consider returning to the code chunk above in which you
+In the code chunk below, replace `FinalGradeCEMS` that is used with both
+the `select()` and `arrange()` functions with a different variable in
+the data set. Consider returning to the code chunk above in which you
 glimpsed at the names of all of the variables.
 
 ```{r}

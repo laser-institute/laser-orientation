@@ -121,9 +121,9 @@ more deeply into these components in later learning labs.
 
 In this case study, we'll be working with data come from an unpublished
 research study, which utilized a number of different data sources to
-understand high schoole students' motivation within the context of
-online courses. For the purpose of this case study, our analysis will be
-driven by the following research question:
+understand high school students' motivation within the context of online
+courses. For the purpose of this case study, our analysis will be driven
+by the following research question:
 
 *Is there a relationship between the time students spend on a course (as
 measured through their learning management system) and their final

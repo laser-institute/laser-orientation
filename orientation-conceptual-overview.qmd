@@ -1,0 +1,87 @@
+---
+title: "Reproducible Research"
+subtitle: "Orientation Module: A Conceptual Overview"
+format:
+  revealjs: 
+    slide-number: c/t
+    progress: true
+    chalkboard: 
+      buttons: false
+    preview-links: auto
+    logo: img/LASERLogoB.png
+    theme: [default, css/laser.scss]
+    width: 1920
+    height: 1080
+    margin: 0.05
+    footer: <a href=https://www.go.ncsu.edu/laser-institute>go.ncsu.edu/laser-institute
+resources:
+  - demo.pdf
+bibliography: references.bib
+editor: visual
+---
+
+## What is Reproducible Research?
+
+::: columns
+::: {.column width="60%"}
+In computational sciences like LA:
+
+-   Ideally... researchers can ***replicate*** your findings by following the procedures used to gather the data and run the computer code.
+
+-   Realistically... the data and code used to make a finding are available and sufficient to ***recreate*** the finding.
+:::
+
+::: {.column width="40%"}
+![Reproducible Research with R [@gandrud2021]](img/reproducible-research.png){width="60%"}
+:::
+:::
+
+::: notes
+**Speaker Notes:**
+:::
+
+## The Benefits of Reproducible Research
+
+::: columns
+::: {.column width="50%"}
+### **For Science:**
+
+-   Standard to judge scientific claims
+
+-   Enhances *replicability*
+
+-   Avoiding effort duplication
+
+-   Cumulative knowledge development
+:::
+
+::: {.column width="50%"}
+### **For Yourself:**
+
+-   Better work habits
+
+-   Better teamwork
+
+-   Changes are easier
+
+-   Higher impact research
+:::
+:::
+
+## Reproducible Research? 
+
+![](img/phd-comic.jpeg){fig-align="center"}
+
+## Acknowledgements
+
+::: columns
+::: {.column width="20%"}
+![](img/nsf.jpg){fig-align="center" width="80%"}
+:::
+
+::: {.column width="80%"}
+This work was supported by the National Science Foundation grants DRL-2025090 and DRL-2321128 (ECR:BCSER). Any opinions, findings, and conclusions expressed in this material are those of the authors and do not necessarily reflect the views of the National Science Foundation.
+:::
+:::
+
+## References

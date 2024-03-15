@@ -1,6 +1,6 @@
 ---
-title: "Reproducible Research"
-subtitle: "Orientation Module: Conceptual Overview"
+title: "The Data-Intensive Research Workflow"
+subtitle: "Orientation Module: Code-Along"
 format:
   revealjs: 
     slide-number: c/t
@@ -20,67 +20,231 @@ bibliography: references.bib
 editor: visual
 ---
 
-## What is Reproducible Research?
+## Overview
 
-::: columns
-::: {.column width="60%"}
-In computational sciences like LA:
+![](img/laser-cycle.png){fig-align="center" width="60%"}
 
--   Ideally... researchers can ***replicate*** your findings by following the procedures used to gather the data and run the computer code.
+## Prepare
 
--   Realistically... the data and code used to make a finding are available and sufficient to ***recreate*** the finding.
+::: panel-tabset
+### Research Context
+
+The setting of this study was a public provider of individual online courses in a Midwestern state.
+
+Data was collected from two semesters of five online science courses and aimed to understand students motivation.
+
+### Question
+
+Is there a relationship between the time students spend in a learning management system and their final course grade?
+
+### Data
+
+Data comes from three primary sources:
+
+1.  LMS
+
+2.  Surveys
+
+3.  SIS
+
+### Packages
+
+Sometimes referred to as "libraries", packages are shareable collections of R code that can contain functions, data, and/or documentation.
+
+```{r, echo=TRUE}
+# Load the {tidyverse} package
+
+library(tidyverse)
+
+# How to install the package if not already installed
+# install.packages("tidyverse")
+# Note this code is commented out so it will not run
+```
 :::
 
-::: {.column width="40%"}
-![Reproducible Research with R [@gandrud2021]](img/reproducible-research.png){width="60%"}
-:::
+## Wrangle
+
+::: panel-tabset
+## Define
+
+Data wrangling is the process of cleaning, ["tidying"](https://r4ds.had.co.nz/tidy-data.html?q=tidy%20data#tidy-data-1), and transforming data. In Learning Analytics, it often involves merging (or joining) data from multiple sources.
+
+## “Read”
+
+The {readr} tidyverse package has several functions like `read_csv()` for importing rectangular data from delimited text files such as comma-separated values (CSV), a preferred file format for reproducible research.
+
+```{r, echo = TRUE, message = FALSE}
+# "read" into your R environment the sci-online-classes.csv file 
+# stored in the data folder of your R project and
+# save as a new data "object" named sci_data 
+
+sci_data <- read_csv("data/sci-online-classes.csv", 
+                     col_names = TRUE)
+```
+
+R has also packages for proprietary data formats like .xls, .sas, and .dat.
+
+## Inspect
+
+You should now see a new data "object" named `sci_data` saved in your Environment pane. Try clicking on it and see what happens!
+
+Now let's "print" the output to our Console to view another way:
+
+```{r, echo = TRUE, message = FALSE, results = FALSE}
+# print data to console to view
+
+sci_data
+```
+
+What variables do you think might help us answer our research question?
+
+## Select
+
+Since we are interested the relationship between time spent in an online course and final grades, let's `select()` the `FinalGradeCEMS` and `TimeSpent` from `sci_data`.
+
+```{r, echo=TRUE, eval = FALSE}
+# select student_id and course_id and save as 
+
+sci_data |> 
+  select(FinalGradeCEMS, TimeSpent)
+```
+
+Note the use of a the powerful `|>` operator called a **pipe**, which are used for combining a sequence of functions or processes.
+
+## Discuss
+
+The R language can express complex ideas like in this simple "sentence":
+
+`sci_data <- read_csv("data/sci-online-classes.csv", col_names = TRUE)`
+
+-   *Functions* are like verbs: `read_csv()`
+-   *Objects* are the nouns: `read_csv("data/sci-online-classes.csv")`
+-   *Arguments* are like adverbs: `read_csv("data/sci-online-classes.csv", col_names = TRUE)`
+-   *Operators* are like “punctuation” `sci_data <- read_csv("data/sci-online-classes.csv", col_names = TRUE)`
 :::
 
-::: notes
-**Speaker Notes:**
-:::
+## Explore
 
-## The Benefits of Reproducible Research
+::: panel-tabset
+### EDA
+
+Exploratory data analysis involves processes of **describing** your data numerically or graphically and often involves: - **calculating** summary statistics like frequency, means and standard deviations - **visualizing** your data through charts and graphs
+
+EDA can be used to help answer research questions or generate new questions about your data, discover relationships between and among variables, and create new variables (i.e., feature engineering) for data modeling.
+
+### Graph Template
+
+The [{ggplot2}](https://ggplot2.tidyverse.org) package follows a common [graphing workflow](https://r4ds.had.co.nz/data-visualisation.html?q=template#a-graphing-template) for making graphs. To make a graph, you simply:
+
+1.  Start the graph with `ggplot()` function and include your data as an argument;
+2.  "Add" elements to the graph using the `+` operator `a geom_()` function;
+3.  Select variables to graph on each axis with the `aes()` argument.
+
+A common graphing template is as simple as two lines of code:
+
+```{r, echo=TRUE, eval=FALSE}
+ggplot(<DATA>) + 
+  <GEOM_FUNCTION>(aes(x = <VARIABLE1>, y = <VARIABLE2>))
+```
+
+### Our First Plot!
+
+Scatterplots use the point **geom**, i.e., the `geom_point()` function, and are most useful for displaying the relationship between two continuous variables.
+
+```{r, echo=TRUE, message=FALSE, fig.show='hide', warning=FALSE}
+# make a scatter plot showing time spent and final grades
+ggplot(sci_data) +
+  geom_point(aes(x = TimeSpent, y = FinalGradeCEMS))
+```
+
+### Interpret Graph
 
 ::: columns
 ::: {.column width="50%"}
-### **For Science:**
+Hopefully your scatterplot looks like something like the one to the right.
 
--   Standard to judge scientific claims
-
--   Enhances *replicability*
-
--   Avoiding effort duplication
-
--   Cumulative knowledge development
+*How would you interpret this graph?*
 :::
 
 ::: {.column width="50%"}
-### **For Yourself:**
-
--   Better work habits
-
--   Better teamwork
-
--   Changes are easier
-
--   Higher impact research
+```{r, echo=FALSE, message=FALSE, fig.width = 7, fig.height = 5.5, warning=FALSE}
+ggplot(sci_data) +
+  geom_point(aes(x = TimeSpent, y = FinalGradeCEMS))
+```
+:::
 :::
 :::
 
-## Reproducible Research?
+## Model
 
-![](img/phd-comic.jpeg){fig-align="center"}
+::: panel-tabset
+### Goal
 
-## Discussion
+Modeling involves a simple low-dimensional summary of a dataset. According to Krumm et al. (2018), there are two general types of modeling approaches:
 
-Think about the following questions and then discuss at your table:
+-   **Unsupervised** learning algorithms can be used to understand the structure of one’s dataset.
 
--   What have your experiences been with reproducible research?
+-   **Supervised** models, on the other hand, help to quantify relationships between features and a known outcome.
 
--   What tools have you used to ensure the reproducibility of your work?
+Ideally, a good model will separate true “signals” (i.e. patterns generated by the phenomenon of interest) from the “noise” (i.e. random variation that you’re not interested in).
 
--   What questions do you have about reproducible research?
+### A Simple Model
+
+We'll dive much deeper into modeling in subsequent learning labs, but for now let's see if there is a statistically significant relationship between students' final grades, `FinaGradeCEMS`, and the `TimeSpent` in the LMS:
+
+```{r, echo=TRUE, results = FALSE, message=FALSE, eval=TRUE}
+# use a simple linear regression model to predict final course grades
+m1 <- lm(FinalGradeCEMS ~ TimeSpent, data = sci_data)
+
+summary(m1)
+```
+
+### Interpret
+
+```{r, echo=FALSE, message=FALSE, eval=TRUE}
+m1 <- lm(FinalGradeCEMS ~ TimeSpent, data = sci_data)
+
+summary(m1)
+```
+:::
+
+## Communicate
+
+::: panel-tabset
+## Data Products
+
+Krumm et al. (2018) have outlined the following 3-step process for communicating finding with education stakeholders:
+
+1.  **Select.** Selecting analyses that are most important and useful to an intended audience, as well as selecting a format for displaying that info (e.g. chart, table).
+
+2.  **Polish.** Refining or polishing data products, by adding or editing titles, labels, and notations and by working with colors and shapes to highlight key points.
+
+3.  **Narrate.** Writing a narrative pairing a data product with its related research question and describing how best to interpret and use the data product.
+
+## Dashboards
+
+![](img/dashboards.png){fig-align="center" width="60%"}
+
+## Websites
+
+![](img/websites.png){fig-align="center" width="60%"}
+
+## Books
+
+![](img/books.png){fig-align="center" width="60%"}
+
+## And More!
+
+[Quarto](https://quarto.org/) supports dozens of static and dynamic output formats including [HTML](https://bookdown.org/yihui/rmarkdown/html-document.html), [PDF](https://bookdown.org/yihui/rmarkdown/pdf-document.html), [MS Word](https://bookdown.org/yihui/rmarkdown/word-document.html), [Beamer](https://bookdown.org/yihui/rmarkdown/beamer-presentation.html), [HTML5 slides](https://bookdown.org/yihui/rmarkdown/ioslides-presentation.html), [Tufte-style handouts](https://bookdown.org/yihui/rmarkdown/tufte-handouts.html), [books](https://bookdown.org), [dashboards](flexdashboard/), [shiny applications](https://bookdown.org/yihui/rmarkdown/shiny-documents.html), [scientific articles](https://github.com/rstudio/rticles), [websites](https://bookdown.org/yihui/rmarkdown/rmarkdown-site.html), and more.
+:::
+
+## What's Next
+
+Next you will complete an interactive "case study" which is a key component to each learning lab.
+
+Navigate to the Files tab and open the following file:
+
+`orientation-case-study.RMD`
 
 ## Acknowledgements
 

@@ -1,21 +1,21 @@
 <!DOCTYPE html>
 <html lang="en"><head>
-<script src="orientation-conceptual-overview_files/libs/clipboard/clipboard.min.js"></script>
-<script src="orientation-conceptual-overview_files/libs/quarto-html/tabby.min.js"></script>
-<script src="orientation-conceptual-overview_files/libs/quarto-html/popper.min.js"></script>
-<script src="orientation-conceptual-overview_files/libs/quarto-html/tippy.umd.min.js"></script>
-<link href="orientation-conceptual-overview_files/libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="orientation-conceptual-overview_files/libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="orientation-conceptual-overview_files/libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
-<link href="orientation-conceptual-overview_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+<script src="orientation-code-along_files/libs/clipboard/clipboard.min.js"></script>
+<script src="orientation-code-along_files/libs/quarto-html/tabby.min.js"></script>
+<script src="orientation-code-along_files/libs/quarto-html/popper.min.js"></script>
+<script src="orientation-code-along_files/libs/quarto-html/tippy.umd.min.js"></script>
+<link href="orientation-code-along_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="orientation-code-along_files/libs/quarto-html/light-border.css" rel="stylesheet">
+<link href="orientation-code-along_files/libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
+<link href="orientation-code-along_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.4.550">
 
-  <title>Reproducible Research</title>
+  <title>The Data-Intensive Research Workflow</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
-  <link rel="stylesheet" href="orientation-conceptual-overview_files/libs/revealjs/dist/reset.css">
-  <link rel="stylesheet" href="orientation-conceptual-overview_files/libs/revealjs/dist/reveal.css">
+  <link rel="stylesheet" href="orientation-code-along_files/libs/revealjs/dist/reset.css">
+  <link rel="stylesheet" href="orientation-code-along_files/libs/revealjs/dist/reveal.css">
   <style>
     code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
@@ -28,34 +28,79 @@
       margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
       vertical-align: middle;
     }
-    /* CSS for citations */
-    div.csl-bib-body { }
-    div.csl-entry {
-      clear: both;
-      margin-bottom: 0em;
+    /* CSS for syntax highlighting */
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
     }
-    .hanging-indent div.csl-entry {
-      margin-left:2em;
-      text-indent:-2em;
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
     }
-    div.csl-left-margin {
-      min-width:2em;
-      float:left;
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      { color: #003b4f; background-color: #f1f3f5; }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
     }
-    div.csl-right-inline {
-      margin-left:2em;
-      padding-left:1em;
-    }
-    div.csl-indent {
-      margin-left: 2em;
-    }  </style>
-  <link rel="stylesheet" href="orientation-conceptual-overview_files/libs/revealjs/dist/theme/quarto.css">
-  <link href="orientation-conceptual-overview_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
-  <link href="orientation-conceptual-overview_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
-  <link href="orientation-conceptual-overview_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
-  <link href="orientation-conceptual-overview_files/libs/revealjs/plugin/reveal-chalkboard/font-awesome/css/all.css" rel="stylesheet">
-  <link href="orientation-conceptual-overview_files/libs/revealjs/plugin/reveal-chalkboard/style.css" rel="stylesheet">
-  <link href="orientation-conceptual-overview_files/libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
+    code span { color: #003b4f; } /* Normal */
+    code span.al { color: #ad0000; } /* Alert */
+    code span.an { color: #5e5e5e; } /* Annotation */
+    code span.at { color: #657422; } /* Attribute */
+    code span.bn { color: #ad0000; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #003b4f; } /* ControlFlow */
+    code span.ch { color: #20794d; } /* Char */
+    code span.cn { color: #8f5902; } /* Constant */
+    code span.co { color: #5e5e5e; } /* Comment */
+    code span.cv { color: #5e5e5e; font-style: italic; } /* CommentVar */
+    code span.do { color: #5e5e5e; font-style: italic; } /* Documentation */
+    code span.dt { color: #ad0000; } /* DataType */
+    code span.dv { color: #ad0000; } /* DecVal */
+    code span.er { color: #ad0000; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #ad0000; } /* Float */
+    code span.fu { color: #4758ab; } /* Function */
+    code span.im { color: #00769e; } /* Import */
+    code span.in { color: #5e5e5e; } /* Information */
+    code span.kw { color: #003b4f; } /* Keyword */
+    code span.op { color: #5e5e5e; } /* Operator */
+    code span.ot { color: #003b4f; } /* Other */
+    code span.pp { color: #ad0000; } /* Preprocessor */
+    code span.sc { color: #5e5e5e; } /* SpecialChar */
+    code span.ss { color: #20794d; } /* SpecialString */
+    code span.st { color: #20794d; } /* String */
+    code span.va { color: #111111; } /* Variable */
+    code span.vs { color: #20794d; } /* VerbatimString */
+    code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
+  </style>
+  <link rel="stylesheet" href="orientation-code-along_files/libs/revealjs/dist/theme/quarto.css">
+  <link href="orientation-code-along_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
+  <link href="orientation-code-along_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
+  <link href="orientation-code-along_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
+  <link href="orientation-code-along_files/libs/revealjs/plugin/reveal-chalkboard/font-awesome/css/all.css" rel="stylesheet">
+  <link href="orientation-code-along_files/libs/revealjs/plugin/reveal-chalkboard/style.css" rel="stylesheet">
+  <link href="orientation-code-along_files/libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
   <style type="text/css">
 
   .callout {
@@ -347,143 +392,245 @@
     <div class="slides">
 
 <section id="title-slide" class="quarto-title-block center">
-  <h1 class="title">Reproducible Research</h1>
-  <p class="subtitle">Orientation Module: Conceptual Overview</p>
+  <h1 class="title">The Data-Intensive Research Workflow</h1>
+  <p class="subtitle">Orientation Module: Code-Along</p>
 
 <div class="quarto-title-authors">
 </div>
 
 </section>
-<section id="what-is-reproducible-research" class="slide level2">
-<h2>What is Reproducible Research?</h2>
-<div class="columns">
-<div class="column" style="width:60%;">
-<p>In computational sciences like LA:</p>
-<ul>
-<li><p>Ideally… researchers can <strong><em>replicate</em></strong> your findings by following the procedures used to gather the data and run the computer code.</p></li>
-<li><p>Realistically… the data and code used to make a finding are available and sufficient to <strong><em>recreate</em></strong> the finding.</p></li>
-</ul>
-</div><div class="column" style="width:40%;">
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="img/reproducible-research.png" style="width:60.0%"></p>
-<figcaption>Reproducible Research with R <span class="citation" data-cites="gandrud2021">(<a href="#/references" role="doc-biblioref" onclick="">Gandrud 2013</a>)</span></figcaption>
-</figure>
-</div>
-</div>
-</div>
-<aside class="notes">
-<p><strong>Speaker Notes:</strong></p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-</section>
-<section id="the-benefits-of-reproducible-research" class="slide level2">
-<h2>The Benefits of Reproducible Research</h2>
-<div class="columns">
-<div class="column" style="width:50%;">
-<h3 id="for-science"><strong>For Science:</strong></h3>
-<ul>
-<li><p>Standard to judge scientific claims</p></li>
-<li><p>Enhances <em>replicability</em></p></li>
-<li><p>Avoiding effort duplication</p></li>
-<li><p>Cumulative knowledge development</p></li>
-</ul>
-</div><div class="column" style="width:50%;">
-<h3 id="for-yourself"><strong>For Yourself:</strong></h3>
-<ul>
-<li><p>Better work habits</p></li>
-<li><p>Better teamwork</p></li>
-<li><p>Changes are easier</p></li>
-<li><p>Higher impact research</p></li>
-</ul>
-</div>
-</div>
-</section>
-<section id="reproducible-research" class="slide level2">
-<h2>Reproducible Research?</h2>
+<section id="overview" class="slide level2">
+<h2>Overview</h2>
 
-<img data-src="img/phd-comic.jpeg" class="quarto-figure quarto-figure-center r-stretch"></section>
-<section id="discussion" class="slide level2">
-<h2>Discussion</h2>
-<p>Think about the following questions and then discuss at your table:</p>
-<ul>
-<li><p>What have your experiences been with reproducible research?</p></li>
-<li><p>What tools have you used to ensure the reproducibility of your work?</p></li>
-<li><p>What questions do you have about reproducible research?</p></li>
-</ul>
-</section>
-<section id="best-practices-for-reproducible-research" class="slide level2">
-<h2>Best Practices for Reproducible Research</h2>
-<ol type="1">
-<li><p>Document everything!</p></li>
-<li><p>Everything is a (text) file.</p></li>
-<li><p>All files should be human readable.</p></li>
-<li><p>Explicitly tie your files together.</p></li>
-<li><p>Have a plan to organize, store, and make your files available.</p></li>
-</ol>
-<p>To learn more: <a href="https://github.com/christophergandrud/Rep-Res-Book">Reproducible research with R and R studio (3rd Edition)</a>. CRC Press.</p>
-</section>
-<section id="the-tools-of-reproducible-research" class="slide level2">
-<h2>The Tools of Reproducible Research</h2>
+<img data-src="img/laser-cycle.png" class="quarto-figure quarto-figure-center r-stretch" style="width:60.0%"></section>
+<section id="prepare" class="slide level2">
+<h2>Prepare</h2>
 <div class="panel-tabset">
-<ul id="tabset-1" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-1-1">Tool Types</a></li><li><a href="#tabset-1-2">Posit Cloud</a></li><li><a href="#tabset-1-3">RStudio</a></li><li><a href="#tabset-1-4">Quarto</a></li><li><a href="#tabset-1-5">Github</a></li></ul>
+<ul id="tabset-1" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-1-1">Research Context</a></li><li><a href="#tabset-1-2">Question</a></li><li><a href="#tabset-1-3">Data</a></li><li><a href="#tabset-1-4">Packages</a></li></ul>
 <div class="tab-content">
 <div id="tabset-1-1">
-<p>Reproducible research involves two broad sets of tools:</p>
-<ol type="1">
-<li><p><em>A Reproducible Research Environment</em>, that includes the statistical tools you need to run your analyses; automatically track the provenance of data, analyses, and results; and to package them for redistribution”.</p></li>
-<li><p><em>A Reproducible Research Publisher</em> the prepares dynamic documents for presenting results and is easily linked to the reproducible research environment.</p></li>
-</ol>
+<p>The setting of this study was a public provider of individual online courses in a Midwestern state.</p>
+<p>Data was collected from two semesters of five online science courses and aimed to understand students motivation.</p>
 </div>
 <div id="tabset-1-2">
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="img/posit-cloud.png" class="quarto-figure quarto-figure-center" style="width:60.0%"></p>
-</figure>
-</div>
-<p><a href="go.ncsu.edu/laser-instructors">go.ncsu.edu/laser-instructors</a></p>
+<p>Is there a relationship between the time students spend in a learning management system and their final course grade?</p>
 </div>
 <div id="tabset-1-3">
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="img/rstudio.png" class="quarto-figure quarto-figure-center" style="width:60.0%"></p>
-</figure>
-</div>
+<p>Data comes from three primary sources:</p>
+<ol type="1">
+<li><p>LMS</p></li>
+<li><p>Surveys</p></li>
+<li><p>SIS</p></li>
+</ol>
 </div>
 <div id="tabset-1-4">
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="img/r-markdown.png" class="quarto-figure quarto-figure-center" style="width:60.0%"></p>
-</figure>
-</div>
-</div>
-<div id="tabset-1-5">
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="img/github.png" class="quarto-figure quarto-figure-center" style="width:60.0%"></p>
-</figure>
+<p>Sometimes referred to as “libraries”, packages are shareable collections of R code that can contain functions, data, and/or documentation.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href=""></a><span class="co"># Load the {tidyverse} package</span></span>
+<span id="cb1-2"><a href=""></a></span>
+<span id="cb1-3"><a href=""></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb1-4"><a href=""></a></span>
+<span id="cb1-5"><a href=""></a><span class="co"># How to install the package if not already installed</span></span>
+<span id="cb1-6"><a href=""></a><span class="co"># install.packages("tidyverse")</span></span>
+<span id="cb1-7"><a href=""></a><span class="co"># Note this code is commented out so it will not run</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </div>
 </div>
 </section>
-<section id="essential-readings" class="slide level2">
-<h2>Essential Readings</h2>
+<section id="wrangle" class="slide level2">
+<h2>Wrangle</h2>
+<div class="panel-tabset">
+<ul id="tabset-2" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-2-1">Define</a></li><li><a href="#tabset-2-2">“Read”</a></li><li><a href="#tabset-2-3">Inspect</a></li><li><a href="#tabset-2-4">Select</a></li><li><a href="#tabset-2-5">Discuss</a></li></ul>
+<div class="tab-content">
+<div id="tabset-2-1">
+<p>Data wrangling is the process of cleaning, <a href="https://r4ds.had.co.nz/tidy-data.html?q=tidy%20data#tidy-data-1">“tidying”</a>, and transforming data. In Learning Analytics, it often involves merging (or joining) data from multiple sources.</p>
+</div>
+<div id="tabset-2-2">
+<p>The {readr} tidyverse package has several functions like <code>read_csv()</code> for importing rectangular data from delimited text files such as comma-separated values (CSV), a preferred file format for reproducible research.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href=""></a><span class="co"># "read" into your R environment the sci-online-classes.csv file </span></span>
+<span id="cb2-2"><a href=""></a><span class="co"># stored in the data folder of your R project and</span></span>
+<span id="cb2-3"><a href=""></a><span class="co"># save as a new data "object" named sci_data </span></span>
+<span id="cb2-4"><a href=""></a></span>
+<span id="cb2-5"><a href=""></a>sci_data <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"data/sci-online-classes.csv"</span>, </span>
+<span id="cb2-6"><a href=""></a>                     <span class="at">col_names =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>R has also packages for proprietary data formats like .xls, .sas, and .dat.</p>
+</div>
+<div id="tabset-2-3">
+<p>You should now see a new data “object” named <code>sci_data</code> saved in your Environment pane. Try clicking on it and see what happens!</p>
+<p>Now let’s “print” the output to our Console to view another way:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href=""></a><span class="co"># print data to console to view</span></span>
+<span id="cb3-2"><a href=""></a></span>
+<span id="cb3-3"><a href=""></a>sci_data</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>What variables do you think might help us answer our research question?</p>
+</div>
+<div id="tabset-2-4">
+<p>Since we are interested the relationship between time spent in an online course and final grades, let’s <code>select()</code> the <code>FinalGradeCEMS</code> and <code>TimeSpent</code> from <code>sci_data</code>.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href=""></a><span class="co"># select student_id and course_id and save as </span></span>
+<span id="cb4-2"><a href=""></a></span>
+<span id="cb4-3"><a href=""></a>sci_data <span class="sc">|&gt;</span> </span>
+<span id="cb4-4"><a href=""></a>  <span class="fu">select</span>(FinalGradeCEMS, TimeSpent)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Note the use of a the powerful <code>|&gt;</code> operator called a <strong>pipe</strong>, which are used for combining a sequence of functions or processes.</p>
+</div>
+<div id="tabset-2-5">
+<p>The R language can express complex ideas like in this simple “sentence”:</p>
+<p><code>sci_data &lt;- read_csv("data/sci-online-classes.csv", col_names = TRUE)</code></p>
 <ul>
-<li><p><a href="https://github.com/christophergandrud/Rep-Res-Book">Reproducible Research with R and RStudio</a> (chapters 1 &amp; 2)</p></li>
-<li><p><a href="https://www.routledge.com/Learning-Analytics-Goes-to-School-A-Collaborative-Approach-to-Improving/Krumm-Means-Bienkowski/p/book/9781138121836">Learning Analytics Goes to School</a> (pages 28 - 58)</p></li>
-<li><p><a href="https://datascienceineducation.com">Data Science in Education Using R</a></p></li>
-<li><p><a href="https://r4ds.had.co.nz/index.html">R for Data Science</a></p></li>
+<li><em>Functions</em> are like verbs: <code>read_csv()</code></li>
+<li><em>Objects</em> are the nouns: <code>read_csv("data/sci-online-classes.csv")</code></li>
+<li><em>Arguments</em> are like adverbs: <code>read_csv("data/sci-online-classes.csv", col_names = TRUE)</code></li>
+<li><em>Operators</em> are like “punctuation” <code>sci_data &lt;- read_csv("data/sci-online-classes.csv", col_names = TRUE)</code></li>
 </ul>
+</div>
+</div>
+</div>
+</section>
+<section id="explore" class="slide level2">
+<h2>Explore</h2>
+<div class="panel-tabset">
+<ul id="tabset-3" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-3-1">EDA</a></li><li><a href="#tabset-3-2">Graph Template</a></li><li><a href="#tabset-3-3">Our First Plot!</a></li><li><a href="#tabset-3-4">Interpret Graph</a></li></ul>
+<div class="tab-content">
+<div id="tabset-3-1">
+<p>Exploratory data analysis involves processes of <strong>describing</strong> your data numerically or graphically and often involves: - <strong>calculating</strong> summary statistics like frequency, means and standard deviations - <strong>visualizing</strong> your data through charts and graphs</p>
+<p>EDA can be used to help answer research questions or generate new questions about your data, discover relationships between and among variables, and create new variables (i.e., feature engineering) for data modeling.</p>
+</div>
+<div id="tabset-3-2">
+<p>The <a href="https://ggplot2.tidyverse.org">{ggplot2}</a> package follows a common <a href="https://r4ds.had.co.nz/data-visualisation.html?q=template#a-graphing-template">graphing workflow</a> for making graphs. To make a graph, you simply:</p>
+<ol type="1">
+<li>Start the graph with <code>ggplot()</code> function and include your data as an argument;</li>
+<li>“Add” elements to the graph using the <code>+</code> operator <code>a geom_()</code> function;</li>
+<li>Select variables to graph on each axis with the <code>aes()</code> argument.</li>
+</ol>
+<p>A common graphing template is as simple as two lines of code:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href=""></a><span class="fu">ggplot</span>(<span class="sc">&lt;</span>DATA<span class="sc">&gt;</span>) <span class="sc">+</span> </span>
+<span id="cb5-2"><a href=""></a>  <span class="er">&lt;</span>GEOM_FUNCTION<span class="sc">&gt;</span>(<span class="fu">aes</span>(<span class="at">x =</span> <span class="sc">&lt;</span>VARIABLE1<span class="sc">&gt;</span>, <span class="at">y =</span> <span class="sc">&lt;</span>VARIABLE2<span class="sc">&gt;</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+<div id="tabset-3-3">
+<p>Scatterplots use the point <strong>geom</strong>, i.e., the <code>geom_point()</code> function, and are most useful for displaying the relationship between two continuous variables.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href=""></a><span class="co"># make a scatter plot showing time spent and final grades</span></span>
+<span id="cb6-2"><a href=""></a><span class="fu">ggplot</span>(sci_data) <span class="sc">+</span></span>
+<span id="cb6-3"><a href=""></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">x =</span> TimeSpent, <span class="at">y =</span> FinalGradeCEMS))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+<div id="tabset-3-4">
+<div class="columns">
+<div class="column" style="width:50%;">
+<p>Hopefully your scatterplot looks like something like the one to the right.</p>
+<p><em>How would you interpret this graph?</em></p>
+</div><div class="column" style="width:50%;">
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure>
+<p><img data-src="orientation-code-along_files/figure-revealjs/unnamed-chunk-7-1.png" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="model" class="slide level2">
+<h2>Model</h2>
+<div class="panel-tabset">
+<ul id="tabset-4" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-4-1">Goal</a></li><li><a href="#tabset-4-2">A Simple Model</a></li><li><a href="#tabset-4-3">Interpret</a></li></ul>
+<div class="tab-content">
+<div id="tabset-4-1">
+<p>Modeling involves a simple low-dimensional summary of a dataset. According to Krumm et al.&nbsp;(2018), there are two general types of modeling approaches:</p>
+<ul>
+<li><p><strong>Unsupervised</strong> learning algorithms can be used to understand the structure of one’s dataset.</p></li>
+<li><p><strong>Supervised</strong> models, on the other hand, help to quantify relationships between features and a known outcome.</p></li>
+</ul>
+<p>Ideally, a good model will separate true “signals” (i.e.&nbsp;patterns generated by the phenomenon of interest) from the “noise” (i.e.&nbsp;random variation that you’re not interested in).</p>
+</div>
+<div id="tabset-4-2">
+<p>We’ll dive much deeper into modeling in subsequent learning labs, but for now let’s see if there is a statistically significant relationship between students’ final grades, <code>FinaGradeCEMS</code>, and the <code>TimeSpent</code> in the LMS:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href=""></a><span class="co"># use a simple linear regression model to predict final course grades</span></span>
+<span id="cb7-2"><a href=""></a>m1 <span class="ot">&lt;-</span> <span class="fu">lm</span>(FinalGradeCEMS <span class="sc">~</span> TimeSpent, <span class="at">data =</span> sci_data)</span>
+<span id="cb7-3"><a href=""></a></span>
+<span id="cb7-4"><a href=""></a><span class="fu">summary</span>(m1)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+<div id="tabset-4-3">
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Call:
+lm(formula = FinalGradeCEMS ~ TimeSpent, data = sci_data)
+
+Residuals:
+    Min      1Q  Median      3Q     Max 
+-67.136  -7.805   4.723  14.471  30.317 
+
+Coefficients:
+             Estimate Std. Error t value Pr(&gt;|t|)    
+(Intercept) 6.581e+01  1.491e+00   44.13   &lt;2e-16 ***
+TimeSpent   6.081e-03  6.482e-04    9.38   &lt;2e-16 ***
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Residual standard error: 20.71 on 571 degrees of freedom
+  (30 observations deleted due to missingness)
+Multiple R-squared:  0.1335,    Adjusted R-squared:  0.132 
+F-statistic: 87.99 on 1 and 571 DF,  p-value: &lt; 2.2e-16</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="communicate" class="slide level2">
+<h2>Communicate</h2>
+<div class="panel-tabset">
+<ul id="tabset-5" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-5-1">Data Products</a></li><li><a href="#tabset-5-2">Dashboards</a></li><li><a href="#tabset-5-3">Websites</a></li><li><a href="#tabset-5-4">Books</a></li><li><a href="#tabset-5-5">And More!</a></li></ul>
+<div class="tab-content">
+<div id="tabset-5-1">
+<p>Krumm et al.&nbsp;(2018) have outlined the following 3-step process for communicating finding with education stakeholders:</p>
+<ol type="1">
+<li><p><strong>Select.</strong>&nbsp;Selecting analyses that are most important and useful to an intended audience, as well as selecting a format for displaying that info (e.g.&nbsp;chart, table).</p></li>
+<li><p><strong>Polish.</strong> Refining or polishing data products, by adding or editing titles, labels, and notations and by working with colors and shapes to highlight key points.</p></li>
+<li><p><strong>Narrate.</strong> Writing a narrative pairing a data product with its related research question and describing how best to interpret and use the data product.</p></li>
+</ol>
+</div>
+<div id="tabset-5-2">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="img/dashboards.png" class="quarto-figure quarto-figure-center" style="width:60.0%"></p>
+</figure>
+</div>
+</div>
+<div id="tabset-5-3">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="img/websites.png" class="quarto-figure quarto-figure-center" style="width:60.0%"></p>
+</figure>
+</div>
+</div>
+<div id="tabset-5-4">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="img/books.png" class="quarto-figure quarto-figure-center" style="width:60.0%"></p>
+</figure>
+</div>
+</div>
+<div id="tabset-5-5">
+<p><a href="https://quarto.org/">Quarto</a> supports dozens of static and dynamic output formats including <a href="https://bookdown.org/yihui/rmarkdown/html-document.html">HTML</a>, <a href="https://bookdown.org/yihui/rmarkdown/pdf-document.html">PDF</a>, <a href="https://bookdown.org/yihui/rmarkdown/word-document.html">MS Word</a>, <a href="https://bookdown.org/yihui/rmarkdown/beamer-presentation.html">Beamer</a>, <a href="https://bookdown.org/yihui/rmarkdown/ioslides-presentation.html">HTML5 slides</a>, <a href="https://bookdown.org/yihui/rmarkdown/tufte-handouts.html">Tufte-style handouts</a>, <a href="https://bookdown.org">books</a>, <a href="flexdashboard/">dashboards</a>, <a href="https://bookdown.org/yihui/rmarkdown/shiny-documents.html">shiny applications</a>, <a href="https://github.com/rstudio/rticles">scientific articles</a>, <a href="https://bookdown.org/yihui/rmarkdown/rmarkdown-site.html">websites</a>, and more.</p>
+</div>
+</div>
+</div>
 </section>
 <section id="acknowledgements" class="slide level2">
 <h2>Acknowledgements</h2>
@@ -499,7 +646,7 @@
 </div>
 </div>
 </section>
-<section id="references" class="slide level2 smaller scrollable">
+<section id="references" class="slide level2">
 <h2>References</h2>
 <div class="quarto-auto-generated-content">
 <p><img src="img/LASERLogoB.png" class="slide-logo"></p>
@@ -507,30 +654,25 @@
 <p><a href="https://www.go.ncsu.edu/laser-institute">go.ncsu.edu/laser-institute</a></p><a href="https://www.go.ncsu.edu/laser-institute">
 </a></div><a href="https://www.go.ncsu.edu/laser-institute">
 </a></div><a href="https://www.go.ncsu.edu/laser-institute">
-</a><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list"><a href="https://www.go.ncsu.edu/laser-institute">
-</a><div id="ref-gandrud2021" class="csl-entry" role="listitem"><a href="https://www.go.ncsu.edu/laser-institute">
-Gandrud, Christopher. 2013. <em>Reproducible Research with r and r Studio (3rd Edition)</em>. CRC Press. </a><a href="http://github.com/christophergandrud/Rep-Res-Book">http://github.com/christophergandrud/Rep-Res-Book</a>.
-</div>
-</div>
-</section>
-    </div>
-  </div>
+</a></section><a href="https://www.go.ncsu.edu/laser-institute">
+    </a></div><a href="https://www.go.ncsu.edu/laser-institute">
+  </a></div><a href="https://www.go.ncsu.edu/laser-institute">
 
   <script>window.backupDefine = window.define; window.define = undefined;</script>
-  <script src="orientation-conceptual-overview_files/libs/revealjs/dist/reveal.js"></script>
+  <script src="orientation-code-along_files/libs/revealjs/dist/reveal.js"></script>
   <!-- reveal.js plugins -->
-  <script src="orientation-conceptual-overview_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
-  <script src="orientation-conceptual-overview_files/libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
-  <script src="orientation-conceptual-overview_files/libs/revealjs/plugin/reveal-menu/menu.js"></script>
-  <script src="orientation-conceptual-overview_files/libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
-  <script src="orientation-conceptual-overview_files/libs/revealjs/plugin/reveal-chalkboard/plugin.js"></script>
-  <script src="orientation-conceptual-overview_files/libs/revealjs/plugin/quarto-support/support.js"></script>
+  <script src="orientation-code-along_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
+  <script src="orientation-code-along_files/libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
+  <script src="orientation-code-along_files/libs/revealjs/plugin/reveal-menu/menu.js"></script>
+  <script src="orientation-code-along_files/libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
+  <script src="orientation-code-along_files/libs/revealjs/plugin/reveal-chalkboard/plugin.js"></script>
+  <script src="orientation-code-along_files/libs/revealjs/plugin/quarto-support/support.js"></script>
   
 
-  <script src="orientation-conceptual-overview_files/libs/revealjs/plugin/notes/notes.js"></script>
-  <script src="orientation-conceptual-overview_files/libs/revealjs/plugin/search/search.js"></script>
-  <script src="orientation-conceptual-overview_files/libs/revealjs/plugin/zoom/zoom.js"></script>
-  <script src="orientation-conceptual-overview_files/libs/revealjs/plugin/math/math.js"></script>
+  <script src="orientation-code-along_files/libs/revealjs/plugin/notes/notes.js"></script>
+  <script src="orientation-code-along_files/libs/revealjs/plugin/search/search.js"></script>
+  <script src="orientation-code-along_files/libs/revealjs/plugin/zoom/zoom.js"></script>
+  <script src="orientation-code-along_files/libs/revealjs/plugin/math/math.js"></script>
   <script>window.define = window.backupDefine; window.backupDefine = undefined;</script>
 
   <script>
@@ -725,6 +867,44 @@ Gandrud, Christopher. 2013. <em>Reproducible Research with r and r Studio (3rd E
         ]
       });
     </script>
+    
+    <script>
+      // htmlwidgets need to know to resize themselves when slides are shown/hidden.
+      // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
+      // slide changes (different for each slide format).
+      (function () {
+        // dispatch for htmlwidgets
+        function fireSlideEnter() {
+          const event = window.document.createEvent("Event");
+          event.initEvent("slideenter", true, true);
+          window.document.dispatchEvent(event);
+        }
+
+        function fireSlideChanged(previousSlide, currentSlide) {
+          fireSlideEnter();
+
+          // dispatch for shiny
+          if (window.jQuery) {
+            if (previousSlide) {
+              window.jQuery(previousSlide).trigger("hidden");
+            }
+            if (currentSlide) {
+              window.jQuery(currentSlide).trigger("shown");
+            }
+          }
+        }
+
+        // hookup for slidy
+        if (window.w3c_slidy) {
+          window.w3c_slidy.add_observer(function (slide_num) {
+            // slide_num starts at position 1
+            fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);
+          });
+        }
+
+      })();
+    </script>
+
     <script id="quarto-html-after-body" type="application/javascript">
     window.document.addEventListener("DOMContentLoaded", function (event) {
       const toggleBodyColorMode = (bsSheetEl) => {
@@ -881,4 +1061,4 @@ Gandrud, Christopher. 2013. <em>Reproducible Research with r and r Studio (3rd E
     </script>
     
 
-</body></html>
+</a></body></html>

@@ -1,6 +1,6 @@
 ---
-title: "The Data Instensive Research Workflow"
-subtitle: "Orientation Module: Code Along"
+title: "Reproducible Research"
+subtitle: "Orientation Module: Conceptual Overview"
 format:
   revealjs: 
     slide-number: c/t
@@ -68,7 +68,7 @@ In computational sciences like LA:
 :::
 :::
 
-## Reproducible Research? 
+## Reproducible Research?
 
 ![](img/phd-comic.jpeg){fig-align="center"}
 
@@ -96,10 +96,10 @@ Think about the following questions and then discuss at your table:
 
 To learn more: [Reproducible research with R and R studio (3rd Edition)](https://github.com/christophergandrud/Rep-Res-Book). CRC Press.
 
-## The Tools of Reproducible Research 
+## The Tools of Reproducible Research
 
 ::: panel-tabset
-## Tool Types
+### Tool Types
 
 Reproducible research involves two broad sets of tools:
 
@@ -107,22 +107,34 @@ Reproducible research involves two broad sets of tools:
 
 2.  *A Reproducible Research Publisher* the prepares dynamic documents for presenting results and is easily linked to the reproducible research environment.
 
-## Posit Cloud
+### Posit Cloud
 
 ![](img/posit-cloud.png){fig-align="center" width="60%"}
 
 [go.ncsu.edu/laser-instructors](go.ncsu.edu/laser-instructors)
 
-## RStudio
+### RStudio
 
 ![](img/rstudio.png){fig-align="center" width="60%"}
 
-## Quarto
+### Quarto
 
-## Github
+![](img/r-markdown.png){fig-align="center" width="60%"}
 
-## R
+### Github
+
+![](img/github.png){fig-align="center" width="60%"}
 :::
+
+## Essential Readings
+
+-   [Reproducible Research with R and RStudio](https://github.com/christophergandrud/Rep-Res-Book) (chapters 1 & 2)
+
+-   [Learning Analytics Goes to School](https://www.routledge.com/Learning-Analytics-Goes-to-School-A-Collaborative-Approach-to-Improving/Krumm-Means-Bienkowski/p/book/9781138121836) (pages 28 - 58)
+
+-   [Data Science in Education Using R](https://datascienceineducation.com)
+
+-   [R for Data Science](https://r4ds.had.co.nz/index.html)
 
 ## Acknowledgements
 

@@ -235,7 +235,9 @@ Krumm et al. (2018) have outlined the following 3-step process for communicating
 
 ## And More!
 
-[Quarto](https://quarto.org/) supports dozens of static and dynamic output formats including [HTML](https://bookdown.org/yihui/rmarkdown/html-document.html), [PDF](https://bookdown.org/yihui/rmarkdown/pdf-document.html), [MS Word](https://bookdown.org/yihui/rmarkdown/word-document.html), [Beamer](https://bookdown.org/yihui/rmarkdown/beamer-presentation.html), [HTML5 slides](https://bookdown.org/yihui/rmarkdown/ioslides-presentation.html), [Tufte-style handouts](https://bookdown.org/yihui/rmarkdown/tufte-handouts.html), [books](https://bookdown.org), [dashboards](flexdashboard/), [shiny applications](https://bookdown.org/yihui/rmarkdown/shiny-documents.html), [scientific articles](https://github.com/rstudio/rticles), [websites](https://bookdown.org/yihui/rmarkdown/rmarkdown-site.html), and more.
+```{=html}
+<iframe width="2000" height="1000" src="https://quarto.org/docs/guide/" title="Webpage example"></iframe>
+```
 :::
 
 ## What's Next

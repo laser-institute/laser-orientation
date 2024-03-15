@@ -1,6 +1,6 @@
 ---
-title: "The Data Instensive Research Workflow"
-subtitle: "Orientation Module: Code Along"
+title: "Reproducible Research"
+subtitle: "Orientation Module: Conceptual Overview"
 format:
   revealjs: 
     slide-number: c/t
@@ -68,7 +68,7 @@ In computational sciences like LA:
 :::
 :::
 
-## Reproducible Research? 
+## Reproducible Research?
 
 ![](img/phd-comic.jpeg){fig-align="center"}
 
@@ -81,48 +81,6 @@ Think about the following questions and then discuss at your table:
 -   What tools have you used to ensure the reproducibility of your work?
 
 -   What questions do you have about reproducible research?
-
-## Best Practices for Reproducible Research
-
-1.  Document everything!
-
-2.  Everything is a (text) file.
-
-3.  All files should be human readable.
-
-4.  Explicitly tie your files together.
-
-5.  Have a plan to organize, store, and make your files available.
-
-To learn more: [Reproducible research with R and R studio (3rd Edition)](https://github.com/christophergandrud/Rep-Res-Book). CRC Press.
-
-## The Tools of Reproducible Research 
-
-::: panel-tabset
-## Tool Types
-
-Reproducible research involves two broad sets of tools:
-
-1.  *A Reproducible Research Environment*, that includes the statistical tools you need to run your analyses; automatically track the provenance of data, analyses, and results; and to package them for redistribution”.
-
-2.  *A Reproducible Research Publisher* the prepares dynamic documents for presenting results and is easily linked to the reproducible research environment.
-
-## Posit Cloud
-
-![](img/posit-cloud.png){fig-align="center" width="60%"}
-
-[go.ncsu.edu/laser-instructors](go.ncsu.edu/laser-instructors)
-
-## RStudio
-
-![](img/rstudio.png){fig-align="center" width="60%"}
-
-## Quarto
-
-## Github
-
-## R
-:::
 
 ## Acknowledgements
 

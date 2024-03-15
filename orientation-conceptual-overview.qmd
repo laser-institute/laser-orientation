@@ -38,6 +38,14 @@ In computational sciences like LA:
 
 ::: notes
 **Speaker Notes:**
+
+Each module begins with a 30-minute conceptual overview of key terminology, techniques, and applications.
+
+In this module we focus on the importance of reproducible research and tools for reproducible research. Everything we introduce in this presentation you will have an opportunity to explore in much greater depth through the essential readings, code-along, and coding case study.
+
+The information from this conceptual overview on reproducible research is drawn largely from the excellent book by Christopher Gandrud, Reproducible research with R and R studio.
+
+The distinction between these two definitions is that we recognize it is sometimes difficult to replicate the original data set in a study because of issues such as limited resources to gather new data, or because the original study may have already sampled the full universe of cases.
 :::
 
 ## The Benefits of Reproducible Research
@@ -68,9 +76,41 @@ In computational sciences like LA:
 :::
 :::
 
+::: notes
+**Speaker Notes:**
+
+**For Science:**
+
+-   **Standard to judge scientific claims.** Reproducibility opens up your findings and work to scrutiny, and is the **minimum** standard for judging scientific claims. However, “a study can be reproducible but still be wrong” (Peng, 2014).
+
+-   **Reproducibility enhances replicability**. If other researchers are able to clearly understand how a finding was originally made, then they will be better able to conduct comparable research, in meaningful attempts to replicate the original findings. However, a finding in one study may be statistically significant when **reproduced** using the original data/code, but when researchers try to **replicate** it using new data and even methods, they are unable to find a similar result. The original finding could have been noise, even though it is fully reproducible.
+
+-   **Avoiding effort duplication**. Reproducible research, in theory, should cut down on the amount of time others have to spend gathering data or developing procedures that have already been collected or figured out.
+
+-   **Cumulative knowledge development.** They can instead use that time to more quickly build on established findings and develop new knowledge.
+
+**For Yourself:**
+
+-   **Better work habits**. It can spur you to more effectively plan and organize your research. It should push you to bring your data and source code up to a higher level of quality than you might if you thought no one was looking.
+
+-   **Better teamwork**. RR makes it easier for your collaborators figure out what you have done also to understand your work and up to speed on a research project.
+
+-   **Changes are easier**. No actual research process is completely linear. You almost never gather data, run analyses, and present your results without going backwards to add variables, make changes to your statistical models, create new graphs, alter results tables in light of new findings. RR makes it easier to reproduce parts or even all of your own research.
+
+-   **Higher impact research.** Reproducible research is more likely to be useful for other researchers than nonreproducible research. Useful research is cited more frequently!
+:::
+
 ## Reproducible Research?
 
 ![](img/phd-comic.jpeg){fig-align="center"}
+
+::: notes
+**Speaker Notes:**
+
+In practice, your research should be easy for independent researchers to reproduce! If a study is difficult to reproduce, it’s more likely that no one will reproduce it. If someone does attempt to reproduce it, it will be difficult for them to tell if any errors they find were in the original research or problems introduced during the reproduction.
+
+So next we're going to talk about some general best practices for reproducible research, and then give an overview of the research tools we'll be working with throughout the LASER institute to help ensure it's relatively easy to reproduce our research.
+:::
 
 ## Discussion
 
@@ -95,6 +135,26 @@ Think about the following questions and then discuss at your table:
 5.  Have a plan to organize, store, and make your files available.
 
 To learn more: [Reproducible research with R and R studio (3rd Edition)](https://github.com/christophergandrud/Rep-Res-Book). CRC Press.
+
+::: notes
+Speaker Notes:
+
+1.  **Document everything!** Obviously, in order to reproduce your research, others must be able to know what you did. Documentation of includes, but is not limited to the data itself, analysis code, the write-up of results, and explanations of these files (e.g. data set codebooks, software information, and so on).
+
+2.  **Everything is a (text) file**. Ideally, your documentation will be stored in the simplest file format possible to store this information. Usually the simplest file format is the humble, but versatile, text file. Text files are extremely nimble and can used your data in, like in comma-separated values (CSV) format for example, can contain your analysis code in files, and can be the basis for publishable formats like articles, webpages, books, etc. using markup languages such as Markdown. One reason reproducible research is best stored in text fles is that this helps future-proof your research
+
+3.  **All files should be human readable.** Treat all of your research fles as if someone who has not worked on the project will, in the future, try to understand them. Computer code is a way of communicating with the computer. It is ‘machine readable’ in that the computer is able to use it to understand what you want to do.2 However, there is a very good chance that other people (or you six months in the future) will not understand what you were telling the computer. So, you need to make all of your files ‘human readable’. To make them human readable, you should comment on your code with the goal of communicating its design and purpose.
+
+4.  **Explicitly tie your files together.** Researchers often do not explicitly document the relationships between fles that they used in their research. For example, the results of an analysis–a table or figure–may be copied and pasted into a presentation document. It can be very difficult for future researchers to trace the table or fgure back to a particular statistical model and a particular data set without clear documentation. Therefore, it is important to make the links between your files explicit.
+
+5.  **Have a plan to organize, store, and make your files available**. Finally, in order for independent researchers to reproduce your work, they need to be able access the fles that instruct them how to do this. Files also need to be organized so that independent researchers can fgure out how they ft together. So, from the beginning of your research process, you should have a plan for organizing your files and a way to make them accessible.
+
+**Learn More**
+
+We've only scratched the surface Reproducible Research practices and highlight recommend the book Reproducible research with R and R studio to learn more.
+:::
+
+# Tools for Reproducible Research
 
 ## The Tools of Reproducible Research
 
@@ -124,6 +184,52 @@ Reproducible research involves two broad sets of tools:
 ### Github
 
 ![](img/github.png){fig-align="center" width="60%"}
+:::
+
+::: notes
+**Speaker Notes:**
+
+Posit Cloud
+
+Posit Cloud (formerly RStudio Cloud) provides a powerful set of data science tools right in your browser with no installation or complex configuration required.
+
+All of our Learning Lab materials will be access through Posit Cloud this year so we encourage you bookmark posit.cloud in your browser.
+
+\< Have scholars navigate to our LASER Learning Labs 2023 workspace using the link provide and provide a breif overview of the the Posit Cloud features like workspaces, primers, cheatsheets, etc. \>
+
+RStudio
+
+\< Next have scholars navigate to our laser-orientation RStudio Project "assignment" and click the link to make a copy for themselves and open up the project. \>
+
+RStudio is an integrated development environment (IDE) for R and Python and includes a console for running R code directly, syntax-highlighting editor that supports direct code execution in the source pane, and tools for plotting, history, debugging, and management of research projects in the Environment and Files panes. RStudio is basically your home for all of the files, images, reports, and code that are used in a research project given project.
+
+When you create a "project" with RStudio, it's straightforward to divide your work into multiple contexts, each with their own working directory, workspace, history, and source documents.
+
+\< Provide a brief walkthrough of the different panes and discuss what they are used for including how they might make their own R Project is they so desired. \>
+
+R Markdown
+
+\< Show scholars how to navigate to the files tab and open up the file named laser-lab-slides.Rmd\>
+
+As we noted earlier, plain text files written in markup languages like Markdown can be the basis for documents such as presentations, webpages, dashboards, and books.
+
+This R Markdown file can be opened not just with RStudio, but a simple text editor built into most operating systems. This specific text file is what was used to make the slides you're looking at now.
+
+Click the "knit" button located at the top of the toolbar to convert this markdown file into an HTML slide show. I should appear in the Viewer table or in a separate browser window and you will need it for our Part 2 code along.
+
+GitHub
+
+GitHub is an interface and cloud hosting service built on top of the Git version control system. GitHub was not explicitly designed to host research projects or even data, but for programmers to work together to build computer programs. This seems very far from reproducible research but remember that as reproducible researchers, we are building projects out of interconnected text fles. In important ways, this is exactly the same as building a computer program and offers many highly developed and robust features for reproducible researchers.
+
+We won't be using GitHub in our Learning Labs, but I did want to note that if you click the link below, it will take you to our GitHub organization site where you will find our RStudio Projects stored as Repositories, or repos, including the laser-orientation repository you just opened.
+
+R
+
+Underlying all of this is R, a programming language originally for statistics and graphics but has evolved into rich platform for data science and learning analytics that can be used to create a wide range of static and dynamic outputs for communicating your research.
+
+Let's create a new R script so we can begin working with R to help illustrate a simple research workflow and analyze some data.
+
+\< Direct scholars to create a new R script as illustrated in the screenshot. Show them how to name the file and save to their main directory. \>
 :::
 
 ## Essential Readings

@@ -30,6 +30,14 @@ The LASER Institute is a year-long professional development program designed to 
 
 3.  **Social Capital**: Expand their professional networks, connecting with researchers and experts in LA related fields, as well as other scholars focused on STEM education.
 
+## LASER BEAM
+
+LASER: Broadening Education in Advanced Methods (LASER BEAM) is the next phase of the LASER Institute funded by NSF in which participants will:
+
+1.  **Learn** from knowledgeable instructors with deep expertise in Learning Analytics and associated research methods.
+
+2.  **Teach** colleagues or students at their home institutions using curriculum materials developed for the LASER Institute.
+
 ## Structure of LASER  
 
 The LASER Institute consists of two core components:

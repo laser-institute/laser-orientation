@@ -172,9 +172,9 @@ Reproducible research involves two broad sets of tools:
 ::: {.column width="50%"}
 The LASER Institute has two [Posit Cloud](https://posit.cloud) workspaces for:
 
--   [LASER Instructors](https://posit.cloud/spaces/491234/join?access_code=ika-H6TmM2WU2bN9zwkU7VU1jhAioJHh9wNRudUg)
+-   [LASER Learners](https://posit.cloud/spaces/493094/join?access_code=qjsumVzA0HZYgrxOSizVbVPmDs7iHYS32yUQaqDe)
 
--   LASER Learners
+-   [LASER Instructors](https://posit.cloud/spaces/491234/join?access_code=ika-H6TmM2WU2bN9zwkU7VU1jhAioJHh9wNRudUg)
 
 Posit Cloud lets you access [Posit](https://posit.co)'s powerful set of data science tools like [RStudio IDE](https://posit.co/products/open-source/rstudio/) and [Jupyter Notebooks](https://jupyter.org) right in your browser.
 :::

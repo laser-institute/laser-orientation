@@ -7,9 +7,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="LASER Institute">
-<meta name="dcterms.date" content="2024-03-15">
+<meta name="dcterms.date" content="2024-03-17">
 
-<title>The Data-Intensive Research Workflow</title>
+<title>A Coding Case Study with Quarto</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -159,7 +159,10 @@ div.csl-indent {
   </ul></li>
   <li><a href="#communicate" id="toc-communicate" class="nav-link" data-scroll-target="#communicate">5. COMMUNICATE</a>
   <ul>
-  <li><a href="#render-and-publish" id="toc-render-and-publish" class="nav-link" data-scroll-target="#render-and-publish">Render and Publish</a></li>
+  <li><a href="#publish-file" id="toc-publish-file" class="nav-link" data-scroll-target="#publish-file">Publish File</a>
+  <ul class="collapse">
+  <li><a href="#your-turn-9" id="toc-your-turn-9" class="nav-link" data-scroll-target="#your-turn-9"><strong>👉 Your Turn</strong> <strong>⤵</strong></a></li>
+  </ul></li>
   <li><a href="#your-first-laser-badge" id="toc-your-first-laser-badge" class="nav-link" data-scroll-target="#your-first-laser-badge">Your First LASER Badge</a></li>
   <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
   </ul></li>
@@ -170,7 +173,7 @@ div.csl-indent {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">The Data-Intensive Research Workflow</h1>
+<h1 class="title">A Coding Case Study with Quarto</h1>
 <p class="subtitle lead">Orientation Module: Case Study Key</p>
 </div>
 
@@ -188,7 +191,7 @@ div.csl-indent {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">March 15, 2024</p>
+      <p class="date">March 17, 2024</p>
     </div>
   </div>
   
@@ -204,7 +207,7 @@ div.csl-indent {
 <h2 class="anchored" data-anchor-id="introduction">0. INTRODUCTION</h2>
 <p><img src="img/LASER_Hx.png" class="img-fluid" style="width:40.0%"></p>
 <p>Welcome to your first LASER Case Study! The case study activities included in each module demonstrate how key Learning Analytics (LA) techniques featured in exemplary STEM education research studies can be implemented with R. Case studies also provide a holistic setting to explore important foundational topics integral to Learning Analytics such as reproducible research, use of APIs, and ethical use of educational data.</p>
-<p>This orientation case study will also introduce you to R Markdown, which is heavily integrated into each LASER Learning Labs. You may have used R Markdown before - or you may not have! Either is fine as this task will be designed with the assumption that you have not used R Markdown before.</p>
+<p>This orientation case study will also introduce you to <a href="https://quarto.org">Quarto</a>, which is heavily integrated into each LASER Module. You may have used Qurto before - or you may not have! Either is fine as this task will be designed with the assumption that you have not used Quarto before.</p>
 <p>In this interactive coding case study, we’ll focus on the following tasks:</p>
 <ol type="1">
 <li>Reading data into R (in the <strong>Prepare</strong> section)</li>
@@ -215,8 +218,9 @@ div.csl-indent {
 </ol>
 <section id="how-to-use-this-quarto-document" class="level3">
 <h3 class="anchored" data-anchor-id="how-to-use-this-quarto-document">How to use this Quarto document</h3>
-<p>What you are working in now is an <a href="https://rmarkdown.rstudio.com/">R Markdown</a> file as indicated by the .Rmd file name extension. Following best practices for reproducible research <span class="citation" data-cites="gandrud2021">(<a href="#ref-gandrud2021" role="doc-biblioref">Gandrud 2013</a>)</span>, R Markdown files store information in plain text <a href="https://bookdown.org/yihui/rmarkdown/markdown-syntax.html">markdown</a> syntax. R Markdown documents are fully reproducible and use a productive <a href="https://bookdown.org/yihui/rmarkdown/notebook.html">notebook interface</a> to combine narrative text and “chunks” of code to produce a range of static or dynamic outputs formats including: <a href="https://bookdown.org/yihui/rmarkdown/html-document.html">HTML</a>,&nbsp;<a href="https://bookdown.org/yihui/rmarkdown/pdf-document.html">PDF</a>,&nbsp;<a href="https://bookdown.org/yihui/rmarkdown/word-document.html">MS Word</a>,&nbsp;<a href="https://bookdown.org/yihui/rmarkdown/ioslides-presentation.html">HTML5 slides</a>,&nbsp;<a href="https://bookdown.org/yihui/rmarkdown/tufte-handouts.html">Tufte-style handouts</a>, <a href="#0">books</a>, <a href="#0">dashboards</a>, <a href="#0">shiny applications</a>,&nbsp;<a href="#0">scientific articles</a>,&nbsp;<a href="#0">websites</a>, and more.</p>
-<p>There are two keys to your use of R Markdown for this activity:</p>
+<p>What you are working in now is an <a href="https://quarto.org">Quarto</a> markdown file as indicated by the .qmd file name extension. Following best practices for reproducible research <span class="citation" data-cites="gandrud2021">(<a href="#ref-gandrud2021" role="doc-biblioref">Gandrud 2013</a>)</span>, Quarto files store information in plain text <a href="https://bookdown.org/yihui/rmarkdown/markdown-syntax.html">markdown</a> syntax, which can be viewed as “Source” or by using “Visual” editor which converts markdown syntax to formatted text.</p>
+<p>Quarto documents are fully reproducible and use a productive notebook interface to combine narrative text and “chunks” of code to produce a range of <a href="https://quarto.org/docs/guide/">static and dynamic output formats</a> including: HTML,&nbsp;PDF, Word, HTML5 slides,&nbsp;Tufte-style handouts, books, dashboards, shiny applications,&nbsp;scientific articles,&nbsp;websites, and more.</p>
+<p>There are two keys to your use of Quarto for this activity:</p>
 <ol type="1">
 <li>First, be sure that you are viewing the document in the “Visual Editor” mode. You can use this mode by clicking the word “Visual” on the left side of the toolbar above. The visual editor allows you to view formatted headers, text and code chunks as specified by the underlying markdown syntax, or “Source” text. Visual mode is a bit more “human readable” than markdown syntax but definitely take a look at the source text.</li>
 <li>Second, note the specially formatted text box below called a “<a href="#0">code chunk</a>.” These chunks allows you to run code from <a href="#0">multiple languages</a> including R, Python, and SQL. This specific code chunk contains a line of R code as specified by “r” inside the curly brackets <code>{}</code> where you can also include other “<a href="https://yihui.org/knitr/options/#chunk-options">chunk options</a>.” You will also notice a set of buttons in the upper right corner for running the code.</li>
@@ -227,7 +231,7 @@ div.csl-indent {
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="img/laser-cycle.png" class="img-fluid figure-img"></p>
+<p><img src="img/laser-cycle.png" class="img-fluid figure-img" width="743"></p>
 </figure>
 </div>
 </div>
@@ -244,7 +248,7 @@ div.csl-indent {
 <p>First and foremost, data-intensive research involves defining and refining a research question and developing an understanding of where your data comes from <span class="citation" data-cites="krumm2018">(<a href="#ref-krumm2018" role="doc-biblioref">Krumm, Means, and Bienkowski 2018</a>)</span>. This part of the process also involves setting up a reproducible research environment <span class="citation" data-cites="gandrud2021">(<a href="#ref-gandrud2021" role="doc-biblioref">Gandrud 2013</a>)</span> so your work can be understood and replicated by other researchers. For now, we’ll focus on just a few parts of this process, diving in much more deeply into these components in later learning labs.</p>
 <section id="research-question" class="level3">
 <h3 class="anchored" data-anchor-id="research-question">Research Question</h3>
-<p>In this case study, we’ll be working with data come from an unpublished research study, which utilized a number of different data sources to understand high schoole students’ motivation within the context of online courses. For the purpose of this case study, our analysis will be driven by the following research question:</p>
+<p>In this case study, we’ll be working with data come from an unpublished research study, which utilized a number of different data sources to understand high school students’ motivation within the context of online courses. For the purpose of this case study, our analysis will be driven by the following research question:</p>
 <p><em>Is there a relationship between the time students spend on a course (as measured through their learning management system) and their final course grade?</em></p>
 </section>
 <section id="packages" class="level3">
@@ -271,7 +275,7 @@ div.csl-indent {
 ✔ dplyr     1.1.4     ✔ readr     2.1.5
 ✔ forcats   1.0.0     ✔ stringr   1.5.1
 ✔ ggplot2   3.5.0     ✔ tibble    3.2.1
-✔ lubridate 1.9.3     ✔ tidyr     1.3.1
+✔ lubridate 1.9.2     ✔ tidyr     1.3.1
 ✔ purrr     1.0.2     
 ── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
 ✖ dplyr::filter() masks stats::filter()
@@ -408,7 +412,7 @@ $ uv                    &lt;dbl&gt; 4.333333, 4.000000, 3.666667, 5.000000, 3.50
 </section>
 <section id="wrangle" class="level2">
 <h2 class="anchored" data-anchor-id="wrangle">2. WRANGLE</h2>
-<p>By wrangle, we refer to the process of cleaning and processing data, and, in some cases, merging (or joining) data from multiple sources. Often, this part of the process is very (surprisingly) time-intensive! Wrangling your data into shape can itself be an important accomplishment! And documenting your code using R scripts or Markdown files will save yourself and others a great deal of time wrangling data in the future! There are great tools in R for data wrangling, especially through the use of the {<a href="https://dplyr.tidyverse.org">dplyr</a>} R package which is part of the {tidyverse} suite of packages.</p>
+<p>By wrangle, we refer to the process of cleaning and processing data, and, in some cases, merging (or joining) data from multiple sources. Often, this part of the process is very (surprisingly) time-intensive! Wrangling your data into shape can itself be an important accomplishment! And documenting your code using R scripts oQuarto files will save yourself and others a great deal of time wrangling data in the future! There are great tools in R for data wrangling, especially through the use of the {<a href="https://dplyr.tidyverse.org">dplyr</a>} R package which is part of the {tidyverse} suite of packages.</p>
 <section id="selecting-variables" class="level3">
 <h3 class="anchored" data-anchor-id="selecting-variables">Selecting variables</h3>
 <p>Recall from our Prepare section that we are interested the relationship between the time students spend on a course and their final course grade.</p>
@@ -1505,11 +1509,7 @@ $ uv                    &lt;dbl&gt; 4.333333, 4.000000, 3.666667, 5.000000, 3.50
 </div>
 </div>
 <p>Well done! As you can see, there appears to be a positive relationship between the time students spend in the online course and their final grade!</p>
-<p>To learn more about using {ggplot2} for data visualization, we highly recommend the following Posit Cloud Primers:</p>
-<ol type="1">
-<li><a href="https://posit.cloud/learn/primers/1.1">Visualization Basics</a>: Start here to begin making plots with R. Plots are one of the most important tools for data science; they are also one of the most fun!</li>
-<li><a href="https://posit.cloud/learn/primers/3">Visualize Data</a>: Learn how to use ggplot2 to make any type of plot with your data. Then learn the best ways to visualize patterns within values and relationships between variables.</li>
-</ol>
+<p>To learn more about using {ggplot2} for data visualization, we highly recommend the <a href="https://rstudio.github.io/cheatsheets/html/data-visualization.html?_gl=1*11gsrq9*_ga*OTU4NTc4NzgwLjE2NzI3NTQwNzQ.*_ga_2C0WZ1JHG0*MTcxMDY0NzEzNi4yNzMuMS4xNzEwNjQ3MTk5LjAuMC4w"><strong>Data visualization with ggplot2 :: Cheat Sheet</strong></a><strong>.</strong></p>
 </section>
 </section>
 </section>
@@ -1590,27 +1590,40 @@ F-statistic: 30.69 on 5 and 567 DF,  p-value: &lt; 2.2e-16</code></pre>
 <li><p><strong>Polish</strong>. After creating initial versions of data products, research teams often spend time refining or polishing them, by adding or editing titles, labels, and notations and by working with colors and shapes to highlight key points.</p></li>
 <li><p><strong>Narrate.</strong>&nbsp;Writing a narrative to accompany the data products involves, at a minimum, pairing a data product with its related research question, describing how best to interpret the data product, and explaining the ways in which the data product helps answer the research question and might be used to inform new analyses or a “change idea” for improving student learning.</p></li>
 </ol>
-<p>In later Learning Labs, you will have an opportunity to create a simple “data product” designed to illustrate some insights gained from your analysis and ideally highlight an action step or change idea that can be used to improve learning or the contexts in which learning occurs.</p>
-<p>For now, we will wrap up this case study by converting our work into a webpage that can be used to communicate your learning and demonstrate some of your new R skills. To do so, you will need to “knit” your document by clicking the <img src="img/knit.png" class="img-fluid" style="width:10.0%"> button in the menu bar at that the top of this file. This will do two things; it will:</p>
+<p>In later modules, you will have an opportunity to create a simple “data product” designed to illustrate some insights gained from your analysis and ideally highlight an action step or change idea that can be used to improve learning or the contexts in which learning occurs.</p>
+<p>For now, we will wrap up this case study by converting your work to an HTML file that can be published and used to communicate your learning and demonstrate some of your new R skills. To do so, you will need to “render” your document by clicking the <img src="img/render.png" class="img-fluid" style="width:4.0%"> Render button in the menu bar at that the top of this file.</p>
+<p>Rendering a document does two important things:</p>
 <ol type="1">
-<li><p>check through all your code for any errors; and,</p></li>
-<li><p>create a file in your directory that you can use to share you work through <a href="https://posit.cloud/learn/guide#publish-from-cloud">Posit Cloud</a> (see screenshot example below to publish), <a href="#0">RPubs</a> , <a href="#0">GitHub Pages</a>, <a href="#0">Quarto Pub</a>, or <a href="#0">other methods</a>.</p></li>
+<li><p>checks through all your code for any errors; and,</p></li>
+<li><p>creates a file in your directory that you can use to share you work .</p></li>
 </ol>
-<section id="render-and-publish" class="level3">
-<h3 class="anchored" data-anchor-id="render-and-publish">Render and Publish</h3>
-<p>Complete the following steps to knit and publish your work:</p>
-<ol type="1">
-<li><p>First, change the name of the <code>author:</code> in the <a href="https://bookdown.org/yihui/rmarkdown-cookbook/rmarkdown-anatomy.html#yaml-metadata">YAML header</a> at the very top of this document to your name. The YAML header controls the style and feel for knitted document but doesn’t actually display in the final output.</p></li>
-<li><p>Next, click the knit button in the toolbar above to “knit” your R Markdown document to a <a href="https://bookdown.org/yihui/rmarkdown/html-document.html">HTML</a> file that will be saved in your R Project folder. You should see a formatted webpage appear in your Viewer tab in the lower right pan or in a new browser window. Let’s us know if you run into any issues with knitting.</p></li>
-<li><p>Finally, publish your webpage on Posit Cloud by clicking the “Publish” button located in the Viewer Pane after you knit your document. See screenshot below.</p></li>
-</ol>
-<p><img src="img/knit-publish.png" class="img-fluid" style="width:80.0%"></p>
+<p>Now that you’ve finished your first case study, click the “Render” button in the toolbar at the top of your document to covert this Quarto document to a HTML web page, just one of <a href="https://quarto.org/docs/output-formats/all-formats.html">the many publishing formats you can create with Quarto</a> documents.</p>
+<p>If the files rendered correctly, you should now see a new file named <code>orientation-case-study-R.html</code> in the Files tab located in the bottom right corner of R Studio. If so, congratulations, you just completed the getting started activity! You’re now ready for the unit Case Studies that we will complete during the third week of each unit.</p>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Important
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>If you encounter errors when you try to render, first check the case study answer key located in the files pane and has the suggested code for the Your Turns. If you are still having difficulties, try copying and pasting the error into Google or ChatGPT to see if you can resolve the issue. Finally, contact your instructor to debug the code together if you’re still having issues.</p>
+</div>
+</div>
+<section id="publish-file" class="level3">
+<h3 class="anchored" data-anchor-id="publish-file">Publish File</h3>
+<p>Rendered HTML files can be published online through a variety of ways including <a href="https://posit.cloud/learn/guide#publish-from-cloud">Posit Cloud</a>, <a href="#0">RPubs</a> , <a href="#0">GitHub Pages</a>, <a href="#0">Quarto Pub</a>, or <a href="#0">other methods</a>. The easiest way to quickly publish your file online is to publish directly from RStudio. You can do so by clicking the “Publish” button located in the Viewer Pane after you render your document as illustrated in the screenshot below.</p>
+<p><img src="img/publish.png" class="img-fluid"></p>
+<section id="your-turn-9" class="level4">
+<h4 class="anchored" data-anchor-id="your-turn-9"><strong>👉 Your Turn</strong> <strong>⤵</strong></h4>
+<p>Navigate the to the <a href="https://rpubs.com">RPubs</a> website and create a free account. Now, publish your rendered Quarto markdown file to the web using the RPubs option.</p>
+</section>
 </section>
 <section id="your-first-laser-badge" class="level3">
 <h3 class="anchored" data-anchor-id="your-first-laser-badge">Your First LASER Badge</h3>
-<p>Congratulations, you’ve completed your first case study! To receive credit for this assignment and earn your first official LASER Badge, share the link to published webpage under the <strong>Badge 1 Artifact</strong> column on the 2023 LASER Scholar Information and Documents spreadsheet: <a href="https://go.ncsu.edu/laser-sheet" class="uri">https://go.ncsu.edu/laser-sheet</a>. We recommend bookmarking this spreadsheet as we’ll be using it throughout the year to keep track of your progress.</p>
-<p><img src="img/share-link.png" class="img-fluid" style="width:80.0%"></p>
-<p>Once your instructor has checked your link, you will be provided a physical version of the badge below!</p>
+<p>Congratulations, you’ve completed your first case study! Once you have shared a link to you published document with your instructor and they have reviewed your work, you will be provided a physical or digital version of the badge pictured at the top of this document!</p>
 <p><img src="img/LASER_Hx.png" class="img-fluid" style="width:50.0%"></p>
 </section>
 <section id="references" class="level3 unnumbered">

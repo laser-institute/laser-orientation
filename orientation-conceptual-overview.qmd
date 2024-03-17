@@ -169,7 +169,7 @@ Reproducible research involves two broad sets of tools:
 
 ### Posit Cloud
 
-![](img/posit-cloud.png){fig-align="center" width="60%"}
+![](img/posit-cloud.png){fig-align="center" width="50%"}
 
 [go.ncsu.edu/laser-instructors](go.ncsu.edu/laser-instructors)
 

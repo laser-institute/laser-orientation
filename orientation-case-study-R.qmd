@@ -99,7 +99,7 @@ As we noted in the beginning, these case studies are meant to be interactive. Th
 Use the code chunk below to load the {skimr} package into our environment as well. **`Skimr`** is a handy package that provides summary statistics that you can skim quickly to understand your data and see what may be missing. We'll be using this later in the Explore section of this case study.
 
 ```{r}
-library(skimr)
+
 ```
 
 ### Loading (or reading in) data
@@ -147,7 +147,8 @@ What do you notice about this data set? What do you wonder? Add one or two obser
 There are many other ways to inspect your data; the `glimpse()` function provides one such way. Use the code chunk below to take a "glimpse" at your `sci_data`.
 
 ```{r}
-glimpse(sci_data)
+# YOUR CODE HERE
+
 ```
 
 We have one more question to pose to you: What do rows and columns typically represent in your area of work and/or research?
@@ -265,10 +266,8 @@ sci_data |>
 Can you compose a series of functions that include the `select()`, `filter()`, and `arrange()` functions? Recall that you can "pipe" the output from one function to the next as when we used select() and arrange() together in the code chunk above.
 
 ```{r}
-sci_data |> 
-  select(TimeSpent, FinalGradeCEMS) |> 
-  filter(FinalGradeCEMS > 70) |> 
-  arrange(FinalGradeCEMS)
+# YOUR CODE HERE
+
 ```
 
 ## 3. EXPLORE
@@ -293,14 +292,14 @@ Use the code from the chunk from above to explore some other variables of intere
 
 ```{r}
 sci_data |>
-  select(course_id, FinalGradeCEMS) |>
+  select() |>
   skim()
 ```
 
 What happens if simply feed the skim function the entire `sci_data` object? Give it a try!
 
 ```{r}
-skim(sci_data)
+skim()
 ```
 
 ### Data Visualization

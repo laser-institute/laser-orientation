@@ -156,80 +156,138 @@ We've only scratched the surface Reproducible Research practices and highlight r
 
 # Tools for Reproducible Research
 
-## The Tools of Reproducible Research
+Posit, RStudio, Quarto, GitHub, and R
 
-::: panel-tabset
-### Tool Types
+## Tool Types
 
 Reproducible research involves two broad sets of tools:
 
-1.  *A Reproducible Research Environment*, that includes the statistical tools you need to run your analyses; automatically track the provenance of data, analyses, and results; and to package them for redistribution”.
+-   **A Reproducible Research Environment**, that includes the statistical tools you need to run your analyses; automatically track the provenance of data, analyses, and results; and to package them for redistribution”.
 
-2.  *A Reproducible Research Publisher* the prepares dynamic documents for presenting results and is easily linked to the reproducible research environment.
+-   **A Reproducible Research Publisher** that prepares dynamic documents for presenting results and is easily linked to the reproducible research environment.
 
-### Posit Cloud
+## Posit Cloud
 
-![](img/posit-cloud.png){fig-align="center" width="50%"}
+::: columns
+::: {.column width="50%"}
+The LASER Institute has two [Posit Cloud](https://posit.cloud) workspaces for:
 
-[go.ncsu.edu/laser-instructors](go.ncsu.edu/laser-instructors)
+-   [LASER Instructors](https://posit.cloud/spaces/491234/join?access_code=ika-H6TmM2WU2bN9zwkU7VU1jhAioJHh9wNRudUg)
 
-### RStudio
+-   LASER Learners
 
-![](img/rstudio.png){fig-align="center" width="60%"}
+Posit Cloud lets you access [Posit](https://posit.co)'s powerful set of data science tools like [RStudio IDE](https://posit.co/products/open-source/rstudio/) and [Jupyter Notebooks](https://jupyter.org) right in your browser.
+:::
 
-### Quarto
+::: {.column width="50%"}
+![](img/posit-cloud.png){fig-align="center" width="100%"}
+:::
+:::
 
-![](img/r-markdown.png){fig-align="center" width="60%"}
+::: notes
+**Speaker Notes**:
 
-### Github
+Posit Cloud (formerly RStudio Cloud) provides a powerful set of data science tools right in your browser with no installation or complex configuration required.All of our Module materials will be access through Posit Cloud this year so we encourage you bookmark posit.cloud in your browser.
 
-![](img/github.png){fig-align="center" width="60%"}
+\< Have scholars navigate to our LASER Instructor using the link provided and share a brief overview of the the Posit Cloud features like workspaces, recipes, cheatsheets, etc. \>
+:::
+
+## RStudio
+
+::: columns
+::: {.column width="50%"}
+The LASER Institute has two [Posit Cloud](https://posit.cloud) workspaces for:
+
+-   [LASER Instructors](https://posit.cloud/spaces/491234/join?access_code=ika-H6TmM2WU2bN9zwkU7VU1jhAioJHh9wNRudUg)
+
+-   LASER Learners
+
+Posit Cloud lets you access [Posit](https://posit.co)'s powerful set of data science tools like [RStudio IDE](https://posit.co/products/open-source/rstudio/) and [Jupyter Notebooks](https://jupyter.org) right in your browser.
+:::
+
+::: {.column width="50%"}
+![](img/rstudio.png){fig-align="center"}
+:::
 :::
 
 ::: notes
 **Speaker Notes:**
 
-Posit Cloud
-
-Posit Cloud (formerly RStudio Cloud) provides a powerful set of data science tools right in your browser with no installation or complex configuration required.
-
-All of our Learning Lab materials will be access through Posit Cloud this year so we encourage you bookmark posit.cloud in your browser.
-
-\< Have scholars navigate to our LASER Learning Labs 2023 workspace using the link provide and provide a breif overview of the the Posit Cloud features like workspaces, primers, cheatsheets, etc. \>
-
-RStudio
-
 \< Next have scholars navigate to our laser-orientation RStudio Project "assignment" and click the link to make a copy for themselves and open up the project. \>
 
-RStudio is an integrated development environment (IDE) for R and Python and includes a console for running R code directly, syntax-highlighting editor that supports direct code execution in the source pane, and tools for plotting, history, debugging, and management of research projects in the Environment and Files panes. RStudio is basically your home for all of the files, images, reports, and code that are used in a research project given project.
+RStudio is an integrated development environment (IDE) for R and Python and includes a console for running R code directly, syntax-highlighting editor that supports direct code execution in the source pane, and tools for plotting, history, debugging, and management of research projects in the Environment and Files panes.
 
-When you create a "project" with RStudio, it's straightforward to divide your work into multiple contexts, each with their own working directory, workspace, history, and source documents.
+RStudio is basically your home for all of the files, images, reports, and code that are used in a research project given project.When you create a "project" with RStudio, it's straightforward to divide your work into multiple contexts, each with their own working directory, workspace, history, and source documents.
 
 \< Provide a brief walkthrough of the different panes and discuss what they are used for including how they might make their own R Project is they so desired. \>
+:::
 
-R Markdown
+## Quarto
 
-\< Show scholars how to navigate to the files tab and open up the file named laser-lab-slides.Rmd\>
+::: columns
+::: {.column width="50%"}
+[Quarto](https://quarto.org) can be used with Python and R to create reproducible, production quality:
 
-As we noted earlier, plain text files written in markup languages like Markdown can be the basis for documents such as presentations, webpages, dashboards, and books.
+-   articles
 
-This R Markdown file can be opened not just with RStudio, but a simple text editor built into most operating systems. This specific text file is what was used to make the slides you're looking at now.
+-   presentations
 
-Click the "knit" button located at the top of the toolbar to convert this markdown file into an HTML slide show. I should appear in the Viewer table or in a separate browser window and you will need it for our Part 2 code along.
+-   dashboards
 
-GitHub
+-   websites
 
-GitHub is an interface and cloud hosting service built on top of the Git version control system. GitHub was not explicitly designed to host research projects or even data, but for programmers to work together to build computer programs. This seems very far from reproducible research but remember that as reproducible researchers, we are building projects out of interconnected text fles. In important ways, this is exactly the same as building a computer program and offers many highly developed and robust features for reproducible researchers.
+-   books and much [more](https://quarto.org/docs/guide/)!
+:::
 
-We won't be using GitHub in our Learning Labs, but I did want to note that if you click the link below, it will take you to our GitHub organization site where you will find our RStudio Projects stored as Repositories, or repos, including the laser-orientation repository you just opened.
+::: {.column width="50%"}
+![](img/quarto.png){fig-align="center"}
+:::
+:::
 
-R
+## R & Python
 
-Underlying all of this is R, a programming language originally for statistics and graphics but has evolved into rich platform for data science and learning analytics that can be used to create a wide range of static and dynamic outputs for communicating your research.
+::: columns
+::: {.column width="50%"}
+[R](https://www.r-project.org/about.html) and [Python](https://www.python.org) are two of the most popular programming languages used in data science, statistical analysis, and machine learning.
+
+Both have large and active communities, which means users benefit from a vast number of libraries and frameworks, as well as support from fellow users.
+:::
+
+::: {.column width="50%"}
+![](img/r-script.png){fig-align="center" width="70%"}
+:::
+:::
+
+::: notes
+**Speaker Notes:**
+
+Underlying all of this is R (or Python), two of the most popular programming languages used in data science, statistical analysis, and machine learning. Each provide a rich platform that can be used to create a wide range of static and dynamic outputs for communicating your research.
 
 Let's create a new R script so we can begin working with R to help illustrate a simple research workflow and analyze some data.
 
-\< Direct scholars to create a new R script as illustrated in the screenshot. Show them how to name the file and save to their main directory. \>
+\< Direct learners to create a new R or Python script as illustrated in the screenshot. Show them how to name the file and save to their main directory. \>
+:::
+
+## GitHub
+
+::: columns
+::: {.column width="50%"}
+GitHub is a web-based platform used for version control, collaboration, and sharing of a project's code, documents, and other related files.
+
+The [LASER Institute GitHub](https://github.com/laser-institute) site houses repositories for all curriculum materials.
+:::
+
+::: {.column width="50%"}
+![](img/github.png){fig-align="center" width="100%"}
+:::
+:::
+
+::: notes
+**Speaker Notes:**
+
+GitHub is an interface and cloud hosting service built on top of the Git version control system. GitHub was not explicitly designed to host research projects or even data, but for programmers to work together to build computer programs. This seems very far from reproducible research but remember that as reproducible researchers, we are building projects out of interconnected text files. In important ways, this is exactly the same as building a computer program and offers many highly developed and robust features for reproducible researchers.
+
+We won't be using GitHub directly, but I did want to note that if you click the link, it will take you to our GitHub organization site where you will find our RStudio Projects stored as Repositories, or repos, including the laser-orientation repository you just opened.
 :::
 
 ## Essential Readings

@@ -1,0 +1,24 @@
+---
+title: "The LASER Toolkit"
+subtitle: "Orientation Module: Essential Readings"
+author: "LASER Institute"
+date: today 
+format:
+  html:
+    toc: true
+    toc-depth: 4
+    toc-location: right
+theme:
+  light: simplex
+  dark: cyborg
+editor: visual
+bibliography: lit/references.bib
+---
+
+The following readings for this module provide an introduction to Reproducible Research, Learning Analytics and the data-intensive research cycle, and using R for data science in education:
+
+-   [Reproducible Research with R and RStudio](https://github.com/christophergandrud/Rep-Res-Book) (chapters 1 & 2)
+
+-   [Learning Analytics Goes to School](https://www.routledge.com/Learning-Analytics-Goes-to-School-A-Collaborative-Approach-to-Improving/Krumm-Means-Bienkowski/p/book/9781138121836) (pages 28 - 58)
+
+-   [Data Science in Education Using R](https://datascienceineducation.com)

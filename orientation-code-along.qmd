@@ -16,7 +16,7 @@ format:
     footer: <a href=https://www.go.ncsu.edu/laser-institute>go.ncsu.edu/laser-institute
 resources:
   - demo.pdf
-bibliography: references.bib
+bibliography: lit/references.bib
 editor: visual
 ---
 
@@ -39,13 +39,15 @@ Is there a relationship between the time students spend in a learning management
 
 ### Data
 
-Data comes from three primary sources:
+The data used in this case study has already been "wrangled" quite a bit, but the original datasets included:
 
-1.  LMS
+1.  A self-report survey assessing three aspects of students' motivation
 
-2.  Surveys
+2.  Log-trace data, such as data output from the learning management system (LMS)
 
-3.  SIS
+3.  Discussion board data
+
+4.  Academic achievement data
 
 ### Packages
 
@@ -128,9 +130,13 @@ The R language can express complex ideas like in this simple "sentence":
 ::: panel-tabset
 ### EDA
 
-Exploratory data analysis involves processes of **describing** your data numerically or graphically and often involves: - **calculating** summary statistics like frequency, means and standard deviations - **visualizing** your data through charts and graphs
+Exploratory data analysis involves processes of **describing** your data numerically or graphically and often involves:
 
-EDA can be used to help answer research questions or generate new questions about your data, discover relationships between and among variables, and create new variables (i.e., feature engineering) for data modeling.
+-   **calculating** summary statistics like frequency, means and standard deviations
+
+-   **visualizing** your data through charts and graphs
+
+EDA can be used to help answer research questions or generate new questions about your data, discover relationships between and among variables, and create new variables for data modeling.
 
 ### Graph Template
 
@@ -180,7 +186,7 @@ ggplot(sci_data) +
 ::: panel-tabset
 ### Goal
 
-Modeling involves a simple low-dimensional summary of a dataset. According to Krumm et al. (2018), there are two general types of modeling approaches:
+According to @krumm2018, there are two general types of approaches:
 
 -   **Unsupervised** learning algorithms can be used to understand the structure of one’s dataset.
 
@@ -223,11 +229,11 @@ Krumm et al. (2018) have outlined the following 3-step process for communicating
 
 ## Dashboards
 
-![](img/dashboards.png){fig-align="center" width="60%"}
+![](img/laser-dashboard.png){fig-align="center" width="60%"}
 
 ## Websites
 
-![](img/websites.png){fig-align="center" width="60%"}
+![](img/laser-website.png){fig-align="center" width="60%"}
 
 ## Books
 
@@ -246,7 +252,7 @@ Next you will complete an interactive "case study" which is a key component to e
 
 Navigate to the Files tab and open the following file:
 
-`orientation-case-study.RMD`
+`orientation-case-study.qmd`
 
 ## Acknowledgements
 

@@ -156,7 +156,7 @@ We've only scratched the surface Reproducible Research practices and highlight r
 
 # Tools for Reproducible Research
 
-Posit, RStudio, Quarto, GitHub, and R
+GitHub, Posit, RStudio, Quarto, and R
 
 ## Tool Types
 
@@ -166,11 +166,35 @@ Reproducible research involves two broad sets of tools:
 
 -   **A Reproducible Research Publisher** that prepares dynamic documents for presenting results and is easily linked to the reproducible research environment.
 
+## GitHub
+
+::: columns
+::: {.column width="50%"}
+The [LASER Institute GitHub](https://github.com/laser-institute) site houses repositories for all curriculum materials and [GitHub Pages](https://pages.github.com) is used to publish our site to the web.
+
+<br>
+
+[GitHub](https://github.com) is a web-based platform used for version control, collaboration, and sharing of a project's code, documents, and other related files.
+:::
+
+::: {.column width="50%"}
+![](img/github.png){fig-align="center" width="100%"}
+:::
+:::
+
+::: notes
+**Speaker Notes:**
+
+GitHub is an interface and cloud hosting service built on top of the Git version control system. GitHub was not explicitly designed to host research projects or even data, but for programmers to work together to build computer programs. This seems very far from reproducible research but remember that as reproducible researchers, we are building projects out of interconnected text files. In important ways, this is exactly the same as building a computer program and offers many highly developed and robust features for reproducible researchers.
+
+We won't be using GitHub directly, but I did want to note that if you click the link, it will take you to our GitHub organization site where you will find our RStudio Projects stored as Repositories, or repos, including the laser-orientation repository you just opened.
+:::
+
 ## Posit Cloud
 
 ::: columns
 ::: {.column width="50%"}
-The LASER Institute has two [Posit Cloud](https://posit.cloud) workspaces for:
+The LASER Institute has [Posit Cloud](https://posit.cloud) workspaces for:
 
 -   [LASER Learners](https://posit.cloud/spaces/493094/join?access_code=qjsumVzA0HZYgrxOSizVbVPmDs7iHYS32yUQaqDe)
 
@@ -196,13 +220,17 @@ Posit Cloud (formerly RStudio Cloud) provides a powerful set of data science too
 
 ::: columns
 ::: {.column width="50%"}
-The LASER Institute has two [Posit Cloud](https://posit.cloud) workspaces for:
+<div>
 
--   [LASER Instructors](https://posit.cloud/spaces/491234/join?access_code=ika-H6TmM2WU2bN9zwkU7VU1jhAioJHh9wNRudUg)
+[RStudio](https://posit.co/products/open-source/rstudio/) is an integrated development environment (IDE) for R and Python and includes:
 
--   LASER Learners
+-   a **Console** for running R code directly,
 
-Posit Cloud lets you access [Posit](https://posit.co)'s powerful set of data science tools like [RStudio IDE](https://posit.co/products/open-source/rstudio/) and [Jupyter Notebooks](https://jupyter.org) right in your browser.
+-   syntax-highlighting editor that supports direct code execution in the **Source** pane,
+
+-   tools for plotting, history, debugging, and management of research projects in the **Environment** and **Files** panes.
+
+</div>
 :::
 
 ::: {.column width="50%"}
@@ -226,17 +254,17 @@ RStudio is basically your home for all of the files, images, reports, and code t
 
 ::: columns
 ::: {.column width="50%"}
-[Quarto](https://quarto.org) can be used with Python and R to create reproducible, production quality:
+[Quarto](https://quarto.org) is used with Python and R to create reproducible, production quality:
 
--   articles
+-   [websites](https://laser-institute.github.io/laser-website/)
 
--   presentations
+-   [presentations](https://laser-institute.github.io/laser-orientation/orientation-code-along.html#/title-slide)
 
--   dashboards
+-   [dashboards](https://rpubs.com/sbkellogg/dashboard-example)
 
--   websites
+-   [books](https://datascienceineducation.com)
 
--   books and much [more](https://quarto.org/docs/guide/)!
+-   journal articles and much [more](https://quarto.org/docs/guide/)!
 :::
 
 ::: {.column width="50%"}
@@ -248,9 +276,11 @@ RStudio is basically your home for all of the files, images, reports, and code t
 
 ::: columns
 ::: {.column width="50%"}
-[R](https://www.r-project.org/about.html) and [Python](https://www.python.org) are two of the most popular programming languages used in data science, statistical analysis, and machine learning.
+The LASER Institute uses [R](https://www.r-project.org/about.html) and [Python](https://www.python.org), two of the most popular programming languages for data science, statistical analysis, and machine learning.
 
-Both have large and active communities, which means users benefit from a vast number of libraries and frameworks, as well as support from fellow users.
+<br>
+
+Both are freely avialable have large and active communities and a vast number of libraries and frameworks for learning analytics.
 :::
 
 ::: {.column width="50%"}
@@ -266,28 +296,6 @@ Underlying all of this is R (or Python), two of the most popular programming lan
 Let's create a new R script so we can begin working with R to help illustrate a simple research workflow and analyze some data.
 
 \< Direct learners to create a new R or Python script as illustrated in the screenshot. Show them how to name the file and save to their main directory. \>
-:::
-
-## GitHub
-
-::: columns
-::: {.column width="50%"}
-GitHub is a web-based platform used for version control, collaboration, and sharing of a project's code, documents, and other related files.
-
-The [LASER Institute GitHub](https://github.com/laser-institute) site houses repositories for all curriculum materials.
-:::
-
-::: {.column width="50%"}
-![](img/github.png){fig-align="center" width="100%"}
-:::
-:::
-
-::: notes
-**Speaker Notes:**
-
-GitHub is an interface and cloud hosting service built on top of the Git version control system. GitHub was not explicitly designed to host research projects or even data, but for programmers to work together to build computer programs. This seems very far from reproducible research but remember that as reproducible researchers, we are building projects out of interconnected text files. In important ways, this is exactly the same as building a computer program and offers many highly developed and robust features for reproducible researchers.
-
-We won't be using GitHub directly, but I did want to note that if you click the link, it will take you to our GitHub organization site where you will find our RStudio Projects stored as Repositories, or repos, including the laser-orientation repository you just opened.
 :::
 
 ## Essential Readings

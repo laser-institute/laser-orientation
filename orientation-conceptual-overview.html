@@ -503,7 +503,7 @@
 <section>
 <section id="tools-for-reproducible-research" class="title-slide slide level1 center">
 <h1>Tools for Reproducible Research</h1>
-<p>Posit, RStudio, Quarto, GitHub, and R</p>
+<p>GitHub, Posit, RStudio, Quarto, and R</p>
 </section>
 <section id="tool-types" class="slide level2">
 <h2>Tool Types</h2>
@@ -513,14 +513,45 @@
 <li><p><strong>A Reproducible Research Publisher</strong> that prepares dynamic documents for presenting results and is easily linked to the reproducible research environment.</p></li>
 </ul>
 </section>
+<section id="github" class="slide level2">
+<h2>GitHub</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p>The <a href="https://github.com/laser-institute">LASER Institute GitHub</a> site houses repositories for all curriculum materials and <a href="https://pages.github.com">GitHub Pages</a> is used to publish our site to the web.</p>
+<p><br></p>
+<p><a href="https://github.com">GitHub</a> is a web-based platform used for version control, collaboration, and sharing of a project’s code, documents, and other related files.</p>
+</div><div class="column" style="width:50%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="img/github.png" class="quarto-figure quarto-figure-center" style="width:100.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+<aside class="notes">
+<p><strong>Speaker Notes:</strong></p>
+<p>GitHub is an interface and cloud hosting service built on top of the Git version control system. GitHub was not explicitly designed to host research projects or even data, but for programmers to work together to build computer programs. This seems very far from reproducible research but remember that as reproducible researchers, we are building projects out of interconnected text files. In important ways, this is exactly the same as building a computer program and offers many highly developed and robust features for reproducible researchers.</p>
+<p>We won’t be using GitHub directly, but I did want to note that if you click the link, it will take you to our GitHub organization site where you will find our RStudio Projects stored as Repositories, or repos, including the laser-orientation repository you just opened.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
 <section id="posit-cloud" class="slide level2">
 <h2>Posit Cloud</h2>
 <div class="columns">
 <div class="column" style="width:50%;">
-<p>The LASER Institute has two <a href="https://posit.cloud">Posit Cloud</a> workspaces for:</p>
+<p>The LASER Institute has <a href="https://posit.cloud">Posit Cloud</a> workspaces for:</p>
 <ul>
+<li><p><a href="https://posit.cloud/spaces/493094/join?access_code=qjsumVzA0HZYgrxOSizVbVPmDs7iHYS32yUQaqDe">LASER Learners</a></p></li>
 <li><p><a href="https://posit.cloud/spaces/491234/join?access_code=ika-H6TmM2WU2bN9zwkU7VU1jhAioJHh9wNRudUg">LASER Instructors</a></p></li>
-<li><p>LASER Learners</p></li>
 </ul>
 <p>Posit Cloud lets you access <a href="https://posit.co">Posit</a>’s powerful set of data science tools like <a href="https://posit.co/products/open-source/rstudio/">RStudio IDE</a> and <a href="https://jupyter.org">Jupyter Notebooks</a> right in your browser.</p>
 </div><div class="column" style="width:50%;">
@@ -551,12 +582,14 @@
 <h2>RStudio</h2>
 <div class="columns">
 <div class="column" style="width:50%;">
-<p>The LASER Institute has two <a href="https://posit.cloud">Posit Cloud</a> workspaces for:</p>
+<div>
+<p><a href="https://posit.co/products/open-source/rstudio/">RStudio</a> is an integrated development environment (IDE) for R and Python and includes:</p>
 <ul>
-<li><p><a href="https://posit.cloud/spaces/491234/join?access_code=ika-H6TmM2WU2bN9zwkU7VU1jhAioJHh9wNRudUg">LASER Instructors</a></p></li>
-<li><p>LASER Learners</p></li>
+<li><p>a <strong>Console</strong> for running R code directly,</p></li>
+<li><p>syntax-highlighting editor that supports direct code execution in the <strong>Source</strong> pane,</p></li>
+<li><p>tools for plotting, history, debugging, and management of research projects in the <strong>Environment</strong> and <strong>Files</strong> panes.</p></li>
 </ul>
-<p>Posit Cloud lets you access <a href="https://posit.co">Posit</a>’s powerful set of data science tools like <a href="https://posit.co/products/open-source/rstudio/">RStudio IDE</a> and <a href="https://jupyter.org">Jupyter Notebooks</a> right in your browser.</p>
+</div>
 </div><div class="column" style="width:50%;">
 <div class="quarto-figure quarto-figure-center">
 <figure>
@@ -587,13 +620,13 @@
 <h2>Quarto</h2>
 <div class="columns">
 <div class="column" style="width:50%;">
-<p><a href="https://quarto.org">Quarto</a> can be used with Python and R to create reproducible, production quality:</p>
+<p><a href="https://quarto.org">Quarto</a> is used with Python and R to create reproducible, production quality:</p>
 <ul>
-<li><p>articles</p></li>
-<li><p>presentations</p></li>
-<li><p>dashboards</p></li>
-<li><p>websites</p></li>
-<li><p>books and much <a href="https://quarto.org/docs/guide/">more</a>!</p></li>
+<li><p><a href="https://laser-institute.github.io/laser-website/">websites</a></p></li>
+<li><p><a href="https://laser-institute.github.io/laser-orientation/orientation-code-along.html#/title-slide">presentations</a></p></li>
+<li><p><a href="https://rpubs.com/sbkellogg/dashboard-example">dashboards</a></p></li>
+<li><p><a href="https://datascienceineducation.com">books</a></p></li>
+<li><p>journal articles and much <a href="https://quarto.org/docs/guide/">more</a>!</p></li>
 </ul>
 </div><div class="column" style="width:50%;">
 <div class="quarto-figure quarto-figure-center">
@@ -608,8 +641,9 @@
 <h2>R &amp; Python</h2>
 <div class="columns">
 <div class="column" style="width:50%;">
-<p><a href="https://www.r-project.org/about.html">R</a> and <a href="https://www.python.org">Python</a> are two of the most popular programming languages used in data science, statistical analysis, and machine learning.</p>
-<p>Both have large and active communities, which means users benefit from a vast number of libraries and frameworks, as well as support from fellow users.</p>
+<p>The LASER Institute uses <a href="https://www.r-project.org/about.html">R</a> and <a href="https://www.python.org">Python</a>, two of the most popular programming languages for data science, statistical analysis, and machine learning.</p>
+<p><br></p>
+<p>Both are freely avialable have large and active communities and a vast number of libraries and frameworks for learning analytics.</p>
 </div><div class="column" style="width:50%;">
 <div class="quarto-figure quarto-figure-center">
 <figure>
@@ -623,36 +657,6 @@
 <p>Underlying all of this is R (or Python), two of the most popular programming languages used in data science, statistical analysis, and machine learning. Each provide a rich platform that can be used to create a wide range of static and dynamic outputs for communicating your research.</p>
 <p>Let’s create a new R script so we can begin working with R to help illustrate a simple research workflow and analyze some data.</p>
 <p>&lt; Direct learners to create a new R or Python script as illustrated in the screenshot. Show them how to name the file and save to their main directory. &gt;</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-</section>
-<section id="github" class="slide level2">
-<h2>GitHub</h2>
-<div class="columns">
-<div class="column" style="width:50%;">
-<p>GitHub is a web-based platform used for version control, collaboration, and sharing of a project’s code, documents, and other related files.</p>
-<p>The <a href="https://github.com/laser-institute">LASER Institute GitHub</a> site houses repositories for all curriculum materials.</p>
-</div><div class="column" style="width:50%;">
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="img/github.png" class="quarto-figure quarto-figure-center" style="width:100.0%"></p>
-</figure>
-</div>
-</div>
-</div>
-<aside class="notes">
-<p><strong>Speaker Notes:</strong></p>
-<p>GitHub is an interface and cloud hosting service built on top of the Git version control system. GitHub was not explicitly designed to host research projects or even data, but for programmers to work together to build computer programs. This seems very far from reproducible research but remember that as reproducible researchers, we are building projects out of interconnected text files. In important ways, this is exactly the same as building a computer program and offers many highly developed and robust features for reproducible researchers.</p>
-<p>We won’t be using GitHub directly, but I did want to note that if you click the link, it will take you to our GitHub organization site where you will find our RStudio Projects stored as Repositories, or repos, including the laser-orientation repository you just opened.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;

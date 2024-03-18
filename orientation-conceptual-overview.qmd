@@ -16,7 +16,7 @@ format:
     footer: <a href=https://www.go.ncsu.edu/laser-institute>go.ncsu.edu/laser-institute
 resources:
   - demo.pdf
-bibliography: references.bib
+bibliography: lit/references.bib
 editor: visual
 ---
 

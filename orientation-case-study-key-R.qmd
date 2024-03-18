@@ -391,9 +391,9 @@ m2 <- lm(FinalGradeCEMS ~ TimeSpent + subject, data = sci_data)
 summary(m2)
 ```
 
-What do you notice about the results? Add a comment or two below:
+What do you notice about the results? How would you interpret them? Add a comment or two below:
 
--   YOUR RESPONSE HERE
+-   In summary, the model suggests that there is a statistically significant, though relatively small, positive association between the time spent in the Learning Management System and a student's final grade. However, the low R-squared value indicates that many other factors not included in the model may be influencing final grades.
 
 ## 5. COMMUNICATE
 

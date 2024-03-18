@@ -22,7 +22,7 @@ editor: visual
 
 ## Overview
 
-![](img/laser-cycle.png){fig-align="center" width="60%"}
+![Data-Intensive Research Workflow [@krumm2018]](img/laser-cycle.png){fig-align="center" width="60%"}
 
 ## Prepare
 
@@ -169,6 +169,8 @@ ggplot(sci_data) +
 ::: {.column width="50%"}
 Hopefully your scatterplot looks like something like the one to the right.
 
+<br>
+
 *How would you interpret this graph?*
 :::
 
@@ -212,6 +214,10 @@ m1 <- lm(FinalGradeCEMS ~ TimeSpent, data = sci_data)
 
 summary(m1)
 ```
+
+### Discuss
+
+Our simple model suggests that there is a statistically significant, though relatively small, positive association between the time spent in the LMS and a student's final grade. However, many other factors not included in the model may be influencing final grades.
 :::
 
 ## Communicate
@@ -249,6 +255,8 @@ Krumm et al. (2018) have outlined the following 3-step process for communicating
 ## What's Next
 
 Next you will complete an interactive "case study" which is a key component to each learning lab.
+
+<br>
 
 Navigate to the Files tab and open the following file:
 

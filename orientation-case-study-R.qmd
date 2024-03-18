@@ -390,7 +390,7 @@ m2 <- lm(FinalGradeCEMS ~ TimeSpent + subject, data = sci_data)
 summary(m2)
 ```
 
-What do you notice about the results? Add a comment or two below:
+What do you notice about the results? How would you interpret them? Add a comment or two below:
 
 -   YOUR RESPONSE HERE
 

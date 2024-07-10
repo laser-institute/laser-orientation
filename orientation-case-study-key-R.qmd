@@ -21,7 +21,7 @@ bibliography: lit/references.bib
 
 Welcome to your first LASER Case Study! The case study activities included in each module demonstrate how key Learning Analytics (LA) techniques featured in exemplary STEM education research studies can be implemented with R. Case studies also provide a holistic setting to explore important foundational topics integral to Learning Analytics such as reproducible research, use of APIs, and ethical use of educational data.
 
-This orientation case study will also introduce you to [Quarto](https://quarto.org), which is heavily integrated into each LASER Module. You may have used Qurto before - or you may not have! Either is fine as this task will be designed with the assumption that you have not used Quarto before.
+This orientation case study will also introduce you to [Quarto](https://quarto.org), which is heavily integrated into each LASER Module. You may have used Quarto before - or you may not have! Either is fine as this task will be designed with the assumption that you have not used Quarto before.
 
 In this interactive coding case study, we'll focus on the following tasks:
 

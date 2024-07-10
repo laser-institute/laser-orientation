@@ -1,0 +1,4 @@
+- source: orientation-case-study-key-R.qmd
+  quarto-pub:
+    - id: eda04d4e-214e-4c53-8f2c-69bee2f03115
+      url: 'https://sbkellogg.quarto.pub/laser-orientation-case-study-key'

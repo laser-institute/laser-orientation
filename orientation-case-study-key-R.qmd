@@ -530,7 +530,7 @@ Run the following code chunk to fit a linear regression model to predict `FinalG
 ggplot(data = sci_data, aes(x = TimeSpent, y = FinalGradeCEMS)) +
   geom_point() +  # Plot data points
   geom_smooth(method = 'lm', se = FALSE) +  # Add line of best fit
-  labs(x = 'TimeSpent', y = 'FinalGradeCEMS') +  # Add axis labels
+  labs(x = 'Time Spent in LMS', y = 'Final Grade') +  # Add axis labels
   theme_minimal()  # Use a minimal theme
 
 ```
@@ -548,7 +548,7 @@ predicted_grades <- predict(m1, newdata = time)
 predicted_grades
 ```
 
-Hmm... Assuming our model is accurate (a big assumption!) even at 2000 minutes the best a student might nope for is a C+!
+Hmm... Assuming our model is accurate (a big assumption!) even at 2000 minutes the best a student might hope for is a C+!
 
 #### **👉 Your Turn** **⤵**
 

@@ -575,7 +575,7 @@ predicted_grades = reg.predict(X_new)
 print(predicted_grades)
 ```
 
-Hmm... Assuming our model is accurate (a big assumption!) even at 2000 minutes the best a student might nope for is a C+.
+Hmm... Assuming our model is accurate (a big assumption!) even at 2000 minutes the best a student might hope for is a C+!
 
 #### **👉 Your Turn** **⤵**
 

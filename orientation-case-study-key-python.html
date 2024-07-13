@@ -295,7 +295,7 @@ Note
 <section id="your-turn-1" class="level4">
 <h4 class="anchored" data-anchor-id="your-turn-1">👉 Your Turn ⤵</h4>
 <p>Click the green arrow <img src="https://d33wubrfki0l68.cloudfront.net/18153fb9953057ee5cff086122bd26f9cee8fe93/3aba9/images/notebook-run-chunk.png" class="img-fluid">icon on the right side of the code chunk to run the Python code and view the image file name <code>laser-cycle.png</code> stored in the <code>img</code> folder in your files pane. Quarto will execute the code and its output and any related messages are displayed below the chunk.</p>
-<div id="51d1f0af" class="cell" data-execution_count="1">
+<div id="6f51ccef" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Import the pyplot and image modules from the matplotlib library</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -387,7 +387,7 @@ Note
 <section id="your-turn-3" class="level4">
 <h4 class="anchored" data-anchor-id="your-turn-3">👉 Your Turn ⤵</h4>
 <p>Click the arrow to execute the code in the cell below to load the required packages and functions for this case study.</p>
-<div id="5e8323ba" class="cell" data-execution_count="2">
+<div id="c501d235" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd <span class="co"># for data wrangling</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np <span class="co"># for descriptive statistics</span></span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt <span class="co"># for data visualization</span></span>
@@ -410,7 +410,7 @@ Note
 <section id="your-turn-4" class="level4">
 <h4 class="anchored" data-anchor-id="your-turn-4">👉 Your Turn ⤵</h4>
 <p>Next, we’ll load our data - specifically, a CSV (comma separated value) text file, the kind that you can export from Microsoft Excel or Google Sheets - into pandas, using the <code>pd.read_csv()</code> function in the next chunk.</p>
-<div id="e79600d0" class="cell" data-execution_count="3">
+<div id="d3c28e6b" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co">#read sci-online-classes.csv to sci_data and display the output</span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>sci_data <span class="op">=</span> pd.read_csv(<span class="st">"data/sci-online-classes.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
@@ -436,7 +436,7 @@ Important
 <section id="your-turn-5" class="level4">
 <h4 class="anchored" data-anchor-id="your-turn-5"><strong>👉 Your Turn ⤵</strong></h4>
 <p>Run the next chunk and look at the results of the data frame you “assigned” to the <code>sci_data</code> object in the previous code-chunk:</p>
-<div id="3fb82ee8" class="cell" data-execution_count="4">
+<div id="52de35a5" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>sci_data</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="4">
 <div>
@@ -777,7 +777,7 @@ Tip
 <h4 class="anchored" data-anchor-id="your-turn-6">👉 Your Turn ⤵</h4>
 <p>One way to explore the data types is by using <code>info()</code> function. Complete the following code to take a look at the data types for each column in our <code>sci_data</code> data frame.</p>
 <p><strong>Hint</strong>: Type the name of the function after the name of the dataset, using <code>.</code> before and <code>()</code> after it.</p>
-<div id="19af878c" class="cell" data-execution_count="5">
+<div id="e79918a1" class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>sci_data.info()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>&lt;class 'pandas.core.frame.DataFrame'&gt;
@@ -852,7 +852,7 @@ memory usage: 141.5+ KB</code></pre>
 <li><p><code>FinalGradeCEMS</code> (i.e., students’ final grades on a 0-100 point scale)</p></li>
 <li><p><code>TimeSpent</code> (i.e., the number of minutes they spent in the course’s learning management system)</p></li>
 </ul>
-<div id="85166c2f" class="cell" data-execution_count="6">
+<div id="4e3be11a" class="cell" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>sci_data[[<span class="st">'FinalGradeCEMS'</span>,<span class="st">'TimeSpent'</span>]]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="6">
 <div>
@@ -948,7 +948,7 @@ Note
 <p>Let’s <em>include one additional variable</em> that you think might be a predictor of students’ final course grade or useful in addressing our research question.</p>
 <p>First, we need to figure out what variables exist in our dataset (or be reminded of this - it’s very common in Python to be continually checking and inspecting your data)!</p>
 <p>Recall that you can use a function named <code>info()</code> to do this.</p>
-<div id="227d73d2" class="cell" data-execution_count="7">
+<div id="3104deba" class="cell" data-execution_count="7">
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>sci_data.info()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>&lt;class 'pandas.core.frame.DataFrame'&gt;
@@ -994,7 +994,7 @@ memory usage: 141.5+ KB</code></pre>
 <section id="your-turn-8" class="level4">
 <h4 class="anchored" data-anchor-id="your-turn-8">👉 Your Turn ⤵</h4>
 <p>In the code chunk below, add a new variable, being careful to type the new variable name as it appears in the data. We’ve added some code to get you started. Consider how the names of the other variables are separated as you think about how to add an additional variable to this code.</p>
-<div id="740a34ac" class="cell" data-execution_count="8">
+<div id="604e121c" class="cell" data-execution_count="8">
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>sci_data[[<span class="st">'FinalGradeCEMS'</span>,<span class="st">'TimeSpent'</span>, <span class="st">'total_points_earned'</span>]]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="8">
 <div>
@@ -1092,7 +1092,7 @@ memory usage: 141.5+ KB</code></pre>
 <h3 class="anchored" data-anchor-id="cleaning-data">Cleaning data</h3>
 <p>We have already seen that there are missing values in our target columns. There is another way to do that by selecting the column and using the <code>isnull()</code> function and adding <code>sum()</code> function in the end to find the number of those values.</p>
 <p><strong>Hint:</strong> you can use one function and then another function like <code>data.function_1().function_2()</code></p>
-<div id="2bbf0244" class="cell" data-execution_count="9">
+<div id="41358cf3" class="cell" data-execution_count="9">
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>sci_data.isnull().<span class="bu">sum</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="9">
 <pre><code>student_id                 0
@@ -1143,7 +1143,7 @@ dtype: int64</code></pre>
 <section id="drop-missing-values" class="level4">
 <h4 class="anchored" data-anchor-id="drop-missing-values">Drop missing values</h4>
 <p>The following code performs data cleaning and provides an overview of the cleaned dataset. Specifically, the <code>dropna()</code> function removes any rows from the DataFrame <code>sci_data</code> that contain missing values (NaN) in the columns <code>FinalGradeCEMS</code> and <code>TimeSpent</code>.</p>
-<div id="dbd6ea57" class="cell" data-execution_count="10">
+<div id="f8791ee2" class="cell" data-execution_count="10">
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Remove rows with missing values in 'FinalGradeCEMS' and 'TimeSpent' columns</span></span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>sci_data <span class="op">=</span> sci_data.dropna(subset<span class="op">=</span>[<span class="st">'FinalGradeCEMS'</span>, <span class="st">'TimeSpent'</span>])</span>
 <span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -1197,7 +1197,7 @@ memory usage: 138.8+ KB</code></pre>
 <li><p><strong>Calculating Mean Values:</strong> The <code>mean()</code> function calculates the mean (average) values for the FinalGradeCEMS and TimeSpent columns.</p></li>
 <li><p><strong>Filling Missing Values:</strong> The <code>fillna()</code> function replaces any missing values (NaN) in these columns with their corresponding mean values.</p></li>
 </ol>
-<div id="b642cfb6" class="cell" data-execution_count="11">
+<div id="ce09ef62" class="cell" data-execution_count="11">
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate the mean value for 'FinalGradeCEMS' column</span></span>
 <span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>mean_value_grade <span class="op">=</span> sci_data[<span class="st">'FinalGradeCEMS'</span>].mean()</span>
 <span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -1210,26 +1210,26 @@ memory usage: 138.8+ KB</code></pre>
 <span id="cb15-10"><a href="#cb15-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Replace missing values in 'TimeSpent' column with the mean value</span></span>
 <span id="cb15-11"><a href="#cb15-11" aria-hidden="true" tabindex="-1"></a>sci_data[<span class="st">'TimeSpent'</span>].fillna(value<span class="op">=</span>mean_value_time, inplace<span class="op">=</span><span class="va">True</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
-<pre><code>/var/folders/n_/y03lvw5130b2ct_8v03d6r840000gq/T/ipykernel_12985/92196522.py:8: FutureWarning: A value is trying to be set on a copy of a DataFrame or Series through chained assignment using an inplace method.
+<pre><code>/var/folders/n_/y03lvw5130b2ct_8v03d6r840000gq/T/ipykernel_13742/92196522.py:8: FutureWarning: A value is trying to be set on a copy of a DataFrame or Series through chained assignment using an inplace method.
 The behavior will change in pandas 3.0. This inplace method will never work because the intermediate object on which we are setting values always behaves as a copy.
 
 For example, when doing 'df[col].method(value, inplace=True)', try using 'df.method({col: value}, inplace=True)' or df[col] = df[col].method(value) instead, to perform the operation inplace on the original object.
 
 
   sci_data['FinalGradeCEMS'].fillna(value=mean_value_grade, inplace=True)
-/var/folders/n_/y03lvw5130b2ct_8v03d6r840000gq/T/ipykernel_12985/92196522.py:8: SettingWithCopyWarning: 
+/var/folders/n_/y03lvw5130b2ct_8v03d6r840000gq/T/ipykernel_13742/92196522.py:8: SettingWithCopyWarning: 
 A value is trying to be set on a copy of a slice from a DataFrame
 
 See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
   sci_data['FinalGradeCEMS'].fillna(value=mean_value_grade, inplace=True)
-/var/folders/n_/y03lvw5130b2ct_8v03d6r840000gq/T/ipykernel_12985/92196522.py:11: FutureWarning: A value is trying to be set on a copy of a DataFrame or Series through chained assignment using an inplace method.
+/var/folders/n_/y03lvw5130b2ct_8v03d6r840000gq/T/ipykernel_13742/92196522.py:11: FutureWarning: A value is trying to be set on a copy of a DataFrame or Series through chained assignment using an inplace method.
 The behavior will change in pandas 3.0. This inplace method will never work because the intermediate object on which we are setting values always behaves as a copy.
 
 For example, when doing 'df[col].method(value, inplace=True)', try using 'df.method({col: value}, inplace=True)' or df[col] = df[col].method(value) instead, to perform the operation inplace on the original object.
 
 
   sci_data['TimeSpent'].fillna(value=mean_value_time, inplace=True)
-/var/folders/n_/y03lvw5130b2ct_8v03d6r840000gq/T/ipykernel_12985/92196522.py:11: SettingWithCopyWarning: 
+/var/folders/n_/y03lvw5130b2ct_8v03d6r840000gq/T/ipykernel_13742/92196522.py:11: SettingWithCopyWarning: 
 A value is trying to be set on a copy of a slice from a DataFrame
 
 See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
@@ -1244,7 +1244,7 @@ See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stab
 <section id="your-turn-10" class="level4">
 <h4 class="anchored" data-anchor-id="your-turn-10">👉 Your Turn ⤵</h4>
 <p>Check out and run the next chunk of code, imagining that we wish to filter our data to view only the rows associated with students who earned a final grade (as a percentage) of 70% - or higher and the <code>TimeSpent</code> associated with it.</p>
-<div id="281e2d5a" class="cell" data-execution_count="12">
+<div id="43c15aba" class="cell" data-execution_count="12">
 <div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>sci_data[<span class="st">'TimeSpent'</span>][sci_data[<span class="st">'FinalGradeCEMS'</span>]<span class="op">&gt;</span><span class="dv">70</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="12">
 <pre><code>0      1555.1667
@@ -1278,7 +1278,7 @@ Name: TimeSpent, Length: 438, dtype: float64</code></pre>
 <section id="summary-statistics" class="level3">
 <h3 class="anchored" data-anchor-id="summary-statistics">Summary Statistics</h3>
 <p>Let’s repurpose what we learned from our wrangle section to select just a few variables and quickly gather some descriptive statistics to see where the data is centered, its values to identify trends by using <code>describe()</code> function.</p>
-<div id="ffb7900d" class="cell" data-execution_count="13">
+<div id="b902679c" class="cell" data-execution_count="13">
 <div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>sci_data.describe()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="13">
 <div>
@@ -1533,7 +1533,7 @@ Name: TimeSpent, Length: 438, dtype: float64</code></pre>
 <li><p>Select variables to graph on each axis with the <code>xlabel()</code> argument.</p></li>
 </ol>
 <p>Let’s give it a try by creating a simple histogram of our <code>FinalGradeCEMS</code> variable. The code below creates a histogram, or a distribution of the values, in this case for students’ final grades. Go ahead and run it:</p>
-<div id="e9cf61d4" class="cell" data-execution_count="14">
+<div id="1729af89" class="cell" data-execution_count="14">
 <div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Clear the previous figure to prevent overlapping in Quarto</span></span>
 <span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>plt.clf()</span>
 <span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -1558,7 +1558,7 @@ Name: TimeSpent, Length: 438, dtype: float64</code></pre>
 <h4 class="anchored" data-anchor-id="your-turn-12"><strong>👉 Your Turn</strong> <strong>⤵</strong></h4>
 <p>Now use the code chunk below to visualize the distribution of another variable in the data, specifically <code>TimeSpent</code>. You can do so by swapping out the variable <code>FinalGradeCEMS</code> with our new variable. Also, change the color to one of your choosing; consider this list of valid color names here: <a href="https://colab.research.google.com/corgiredirector?site=https%3A%2F%2Fmatplotlib.org%2Fstable%2Fgallery%2Fcolor%2Fnamed_colors.html">https://matplotlib.org/stable/gallery/color/named_colors.html</a></p>
 <p><strong>Tip:</strong> There is no shame in copying and pasting code from above. Remember, reproducible research is also intended to help you save time!</p>
-<div id="2e39c0f5" class="cell" data-execution_count="15">
+<div id="2a2c8b7c" class="cell" data-execution_count="15">
 <div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Clear the previous figure to prevent overlapping in Quarto</span></span>
 <span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>plt.clf()</span>
 <span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -1586,7 +1586,7 @@ Name: TimeSpent, Length: 438, dtype: float64</code></pre>
 <section id="your-turn-13" class="level4">
 <h4 class="anchored" data-anchor-id="your-turn-13"><strong>👉 Your Turn</strong> <strong>⤵</strong></h4>
 <p>Complete the code chunk below to create a simple scatterplot with <code>TimeSpent</code> on the x axis and <code>FinalGradeCEMS</code> on the y axis.</p>
-<div id="17df7efe" class="cell" data-execution_count="16">
+<div id="c9a1273c" class="cell" data-execution_count="16">
 <div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Clear the previous figure to prevent overlapping in Quarto</span></span>
 <span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>plt.clf()</span>
 <span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -1630,7 +1630,7 @@ Name: TimeSpent, Length: 438, dtype: float64</code></pre>
 <section id="your-turn-14" class="level4">
 <h4 class="anchored" data-anchor-id="your-turn-14"><strong>👉 Your Turn</strong> <strong>⤵</strong></h4>
 <p>Let’s use {statsmodels} package run a basic linear regression model to further examine the relationship between <code>TimeSpent</code> and <code>FinalGradeCEMS</code>:</p>
-<div id="888e8471" class="cell" data-execution_count="17">
+<div id="a9c14ba6" class="cell" data-execution_count="17">
 <div class="sourceCode cell-code" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Define the independent variable (predictor) and the dependent variable (response)</span></span>
 <span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>X <span class="op">=</span> sci_data[<span class="st">'TimeSpent'</span>]</span>
 <span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> sci_data[<span class="st">'FinalGradeCEMS'</span>]</span>
@@ -1650,7 +1650,7 @@ Dep. Variable:         FinalGradeCEMS   R-squared:                       0.134
 Model:                            OLS   Adj. R-squared:                  0.132
 Method:                 Least Squares   F-statistic:                     87.99
 Date:                Sat, 13 Jul 2024   Prob (F-statistic):           1.53e-19
-Time:                        17:56:15   Log-Likelihood:                -2548.5
+Time:                        18:01:06   Log-Likelihood:                -2548.5
 No. Observations:                 573   AIC:                             5101.
 Df Residuals:                     571   BIC:                             5110.
 Df Model:                           1                                         
@@ -1691,7 +1691,7 @@ strong multicollinearity or other numerical problems.</code></pre>
 <section id="your-turn-15" class="level4">
 <h4 class="anchored" data-anchor-id="your-turn-15"><strong>👉 Your Turn</strong> <strong>⤵</strong></h4>
 <p>Run the following code chunk to fit a linear regression model to predict <code>FinalGradeCEMS</code> (final grades) based on <code>TimeSpent</code> (time in LMS) and visualize the data points and the fitted regression line on a scatter plot:</p>
-<div id="b1366cc6" class="cell" data-execution_count="18">
+<div id="d66d458a" class="cell" data-execution_count="18">
 <div class="sourceCode cell-code" id="cb25"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="co">#dependent variable is what you want to predict - y axis; independent(exploratory) variable</span></span>
 <span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>X <span class="op">=</span> np.array(sci_data[<span class="st">'TimeSpent'</span>]).reshape(<span class="op">-</span><span class="dv">1</span>, <span class="dv">1</span>)</span>
 <span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> np.array(sci_data[<span class="st">'FinalGradeCEMS'</span>]).reshape(<span class="op">-</span><span class="dv">1</span>, <span class="dv">1</span>)</span>
@@ -1712,7 +1712,7 @@ strong multicollinearity or other numerical problems.</code></pre>
 </div>
 <p>Note that on the y-axis we put a dependent variable, the one we want to predict and x-axis is for and independent, or exploratory variable.</p>
 <p>We can now use our model to predict a student’s grade depending on how much time (in minutes) they spent in the course:</p>
-<div id="19c6b92f" class="cell" data-execution_count="19">
+<div id="6b59abb0" class="cell" data-execution_count="19">
 <div class="sourceCode cell-code" id="cb26"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a new DataFrame with a column 'TimeSpent' in minutes</span></span>
 <span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>new_data <span class="op">=</span> pd.DataFrame({<span class="st">'TimeSpent'</span>: [<span class="dv">1000</span>, <span class="dv">1500</span>, <span class="dv">2000</span>]})</span>
 <span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -1730,12 +1730,12 @@ strong multicollinearity or other numerical problems.</code></pre>
  [77.96972773]]</code></pre>
 </div>
 </div>
-<p>Hmm… Assuming our model is accurate (a big assumption!) even at 2000 minutes the best a student might nope for is a C+.</p>
+<p>Hmm… Assuming our model is accurate (a big assumption!) even at 2000 minutes the best a student might hope for is a C+!</p>
 </section>
 <section id="your-turn-16" class="level4">
 <h4 class="anchored" data-anchor-id="your-turn-16"><strong>👉 Your Turn</strong> <strong>⤵</strong></h4>
 <p>Change the amount of time a student is spends in the course and see how the predicted grade changes.</p>
-<div id="8baf5260" class="cell" data-execution_count="20">
+<div id="364219bf" class="cell" data-execution_count="20">
 <div class="sourceCode cell-code" id="cb28"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(reg.predict([[<span class="dv">5000</span>]]))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[[96.21155517]]</code></pre>

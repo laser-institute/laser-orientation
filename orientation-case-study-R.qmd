@@ -19,7 +19,7 @@ bibliography: lit/references.bib
 
 ![](img/LASER_Hx.png){width="40%"}
 
-Welcome to your first LASER Case Study! The case study activities included in each module demonstrate how key Learning Analytics (LA) techniques featured in exemplary STEM education research studies can be implemented with R or Python. Case studies also provide a holistic setting to explore important foundational topics integral to Learning Analytics such as reproducible research, use of APIs, and ethical use of educational data.
+Welcome to your first LASER case study! The case study activities included in each module demonstrate how key Learning Analytics (LA) techniques featured in exemplary STEM education research studies can be implemented with R or Python. Case studies also provide a holistic setting to explore important foundational topics integral to Learning Analytics such as reproducible research, use of APIs, and ethical use of educational data.
 
 This orientation case study will also introduce you to [Quarto](https://quarto.org), which is heavily integrated into each LASER Module. You may have used Quarto before - or you may not have! Either is fine as this task will be designed with the assumption that you have not used Quarto before.
 
@@ -352,7 +352,7 @@ Can you compose a series of functions that include the `select()`, `filter()`, a
 
 Exploratory data analysis, or exploring your data, involves processes of *describing* your data (such as by calculating the means and standard deviations of numeric variables, or counting the frequency of categorical variables) and, often, visualizing your data. As we'll learn in later labs, the explore phase can also involve the process of "feature engineering," or creating new variables within a dataset [@krumm2018].
 
-In this section, we'll quickly pull together some basic stats using a handy function from the {skimr} package, and introduce you to a basic data visualization "code template" for the {ggplot} package from the tidyverse.
+In this section, we'll quickly pull together some basic stats for our two variables of interest, `TimeSpent` and `FinalGradeCEMS`, using a handy function from the {skimr} package. We'll also introduce you to a basic data visualization "code template" for the {[ggplot](https://ggplot2.tidyverse.org)} package from the tidyverse to help us examine the relationship between these two variables.
 
 ### Summary Statistics
 
@@ -364,7 +364,7 @@ sci_data |>
   skim()
 ```
 
-#### **👉 Your Turn** **⤵**
+#### 👉 Your Turn ⤵
 
 Use the code from the chunk from above to explore some other variables of interest from our `sci_data`.
 
@@ -388,7 +388,7 @@ In this section we'll focus on using a basic code template for the {[ggplot2](ht
 
 ### The Graphing Workflow
 
-At it's core, you can create some very simple but attractive graphs with just a couple lines of code. {[ggplot2](https://ggplot2.tidyverse.org)} follows the common workflow for making graphs. To make a graph, you simply:
+At it's core, you can create some very simple but attractive graphs with just a couple lines of code. The {ggplot2} package follows the common basic workflow for making graphs:
 
 1.  Start the graph with `ggplot()` and include your data as an argument;
 
@@ -420,12 +420,12 @@ ggplot(sci_data) +
 
 Now use the code chunk below to visualize the distribution of another variable in the data, specifically `TimeSpent`. You can do so by swapping out the variable `FinalGradeCEMS` with our new variable. Also, change the color to one of your choosing; consider this list of valid color names here: <http://www.stat.columbia.edu/~tzheng/files/Rcolor.pdf>
 
+There is no shame in copying and pasting code from above. Remember, reproducible research is also intended to help you save time!
+
 ```{r}
 ggplot(sci_data) +
   geom_histogram(aes(x = TimeSpent), fill = "green")
 ```
-
-**Tip:** There is no shame in copying and pasting code from above. Remember, reproducible research is also intended to help you save time!
 
 ### Scatterplots
 
@@ -433,23 +433,43 @@ Finally, let's create a scatter plot for the relationship between these two vari
 
 #### **👉 Your Turn** **⤵**
 
-Complete the code chunk below to create a simple scatterplot with `TimeSpent` on the x axis and `FinalGradeCEMS` on the y axis. **Hint**: something else important is also missing that you will need to "add" to your code.
+Complete the code chunk below to create a simple scatterplot with `TimeSpent` on the x axis and `FinalGradeCEMS` on the y axis.
+
+**Hint**: Aside from the missing variable for the y-axis, something else important is also missing that you will need to "add" to your code.
 
 ```{r}
-ggplot(sci_data) +
+ggplot(sci_data) 
   geom_point(aes(x = TimeSpent, 
-                 y = FinalGradeCEMS))
+                 y = ???))
 ```
 
 Well done! As you can see, there appears to be a positive relationship between the time students spend in the online course and their final grade!
 
-To learn more about using {ggplot2} for data visualization, we highly recommend the [**Data visualization with ggplot2 :: Cheat Sheet**](https://rstudio.github.io/cheatsheets/html/data-visualization.html?_gl=1*11gsrq9*_ga*OTU4NTc4NzgwLjE2NzI3NTQwNzQ.*_ga_2C0WZ1JHG0*MTcxMDY0NzEzNi4yNzMuMS4xNzEwNjQ3MTk5LjAuMC4w)**.**
+To learn more about using {ggplot2} for data visualization, we highly recommend the [Data visualization with ggplot2 :: Cheat Sheet](https://rstudio.github.io/cheatsheets/html/data-visualization.html?_gl=1*11gsrq9*_ga*OTU4NTc4NzgwLjE2NzI3NTQwNzQ.*_ga_2C0WZ1JHG0*MTcxMDY0NzEzNi4yNzMuMS4xNzEwNjQ3MTk5LjAuMC4w).
 
 ## 4. MODEL
 
-"Model" is one of those terms that has many different meanings. For our purpose, we refer to the process of simplifying and summarizing our data. Thus, models can take many forms; calculating means represents a legitimate form of modeling data, as does estimating more complex models, including linear regressions, and models and algorithms associated with machine learning tasks. For now, we'll run a base linear regression model to further examine the relationship between `TimeSpent` and `FinalGradeCEMS`.
+"Model" is one of those terms that has many different meanings. For our purpose, we refer to the process of simplifying and summarizing our data as modeling. Thus, models can take many forms; calculating means represents a legitimate form of modeling data, as does estimating more complex models, including linear regressions, and models and algorithms associated with machine learning tasks. For now, we'll run a base linear regression model to further examine the relationship between `TimeSpent` and `FinalGradeCEMS`.
 
-We'll dive much deeper into modeling in subsequent learning labs, but for now let's see if there is a statistically significant relationship between students' final grades, `FinaGradeCEMS`, and the `TimeSpent` on the course:
+We'll dive much deeper into modeling in subsequent case studies, but for now let's see if there is a statistically significant relationship between students' final grades, `FinaGradeCEMS`, and the `TimeSpent` on the course.
+
+### An Inferential Model
+
+An inferential statistical model is used to understand the relationships between variables and make inferences about the population from a sample. It aims to identify the underlying mechanisms and determine the significance of these relationships.
+
+Key characteristics of an inferential model include:
+
+-   **Focus on Understanding:** These models aim to understand the causal or correlational relationships between variables.
+
+-   **Hypothesis Testing:** They often involve hypothesis testing to determine if observed patterns are statistically significant.
+
+-   **Parameter Estimates:** Inferential models provide estimates of parameters (such as coefficients) that describe the relationship between variables, along with confidence intervals and p-values to assess their significance.
+
+-   **Generalization:** The goal is to generalize findings from the sample to the larger population.
+
+#### 👉 Your Turn ⤵
+
+Execute the following code to run a basic linear regression model to further examine the relationship between `TimeSpent` and `FinalGradeCEMS`:
 
 ```{r}
 m1 <- lm(FinalGradeCEMS ~ TimeSpent, data = sci_data)
@@ -457,9 +477,11 @@ m1 <- lm(FinalGradeCEMS ~ TimeSpent, data = sci_data)
 summary(m1)
 ```
 
-It looks like `TimeSpent` is associated with a higher final grade. That is, students who spent more time in the LMS also earned higher grades.
+It looks like `TimeSpent` in the online course is indeed positively associated with a higher final grade! That is, students who spent more time in the LMS also earned higher grades. However, before we get too excited, there are likely other factors influencing student performance that are not captured by by our model and study time only accounts for a small portion of why students get different grades. There are clearly other factors that likely play a big role in determining final grades.
 
-#### **👉 Your Turn** **⤵**
+Don't worry too much for now if interpreting model outputs is relatively new for you, or if it's been a while. We'll be working with models in greater depth in our other LASER modules.
+
+#### 👉 Your Turn ⤵
 
 Now let's "add" *another* variable to the regression model. Specifically, use the `+` operator after `TimeSpent` to add the course `subject` variable as a predictor of students' final grades.
 
@@ -468,9 +490,83 @@ m2 <- lm(FinalGradeCEMS ~ TimeSpent + subject, data = sci_data)
 summary(m2)
 ```
 
+#### ❓Question
+
 What do you notice about the results? How would you interpret them? Add a comment or two below:
 
+-   In summary, the model suggests that there is a statistically significant, though relatively small, positive association between the time spent in the Learning Management System and a student's final grade. However, the low R-squared value indicates that many other factors not included in the model may be influencing final grades.
+
+### A Predictive Model
+
+A predictive model is designed to make accurate predictions about future or unseen data. The primary goal is to maximize the accuracy of predictions rather than understanding the underlying relationships.
+
+Key characteristics of an inferential model include:
+
+-   **Focus on Prediction:** These models aim to accurately predict the outcome variable for new data points.
+
+-   **Model Performance:** The effectiveness of predictive models is evaluated based on metrics like R-squared, mean squared error, or other prediction accuracy measures.
+
+-   **Complex Algorithms:** Predictive modeling often uses more complex algorithms (e.g., machine learning techniques) that might not be easily interpretable but offer higher predictive power.
+
+-   **Validation:** Predictive models rely heavily on validation techniques like cross-validation to ensure that the model performs well on unseen data.
+
+Before using our model for predictive purposes, let's first take a look at the line of best fit, which represents the linear regression model `m1` that has been fitted to the data.
+
+#### **👉 Your Turn** **⤵**
+
+Run the following code chunk to fit a linear regression model to predict `FinalGradeCEMS` (final grades) based on `TimeSpent` (time in LMS) and visualize the data points and the fitted regression line on a scatter plot:
+
+```{r}
+
+ggplot(data = sci_data, aes(x = TimeSpent, y = FinalGradeCEMS)) +
+  geom_point() +  # Plot data points
+  geom_smooth(method = 'lm', se = FALSE) +  # Add line of best fit
+  labs(x = 'TimeSpent', y = 'FinalGradeCEMS') +  # Add axis labels
+  theme_minimal()  # Use a minimal theme
+
+```
+
+Now let's use this model to predict a student's grade depending on how much time (in minutes) they spent in the course if they spent 1000, 1500, or 2000 minutes respectively:
+
+```{r}
+# Create a data frame 'time' with 'TimeSpent' values 1000, 1500, 2000
+time <- data.frame(TimeSpent = c(1000, 1500, 2000))
+
+# Use the predict function to obtain predictions for the new data
+predicted_grades <- predict(m1, newdata = time)
+
+# Print the predicted grades
+predicted_grades
+```
+
+Hmm... Assuming our model is accurate (a big assumption!) even at 2000 minutes the best a student might nope for is a C+!
+
+#### **👉 Your Turn** **⤵**
+
+Trying changing the amount of time a student spends in the course and see how the predicted grade changes based on our simple model.
+
+```{r}
+
+# Create a data frame 'new_time' with new 'TimeSpent' value
+new_time <- data.frame(TimeSpent = )
+
+# Use the predict function to obtain predictions for the new data
+predicted_grades <- predict(m1, newdata = new_time)
+
+# Print the predicted grades
+predicted_grades
+
+```
+
+#### ❓Question
+
+How much time would a student need to spend in the course to get an A?
+
 -   YOUR RESPONSE HERE
+
+::: callout-important
+It's important to note that these models are just used for illustrative examples of typical modeling approaches used in learning analytics and should be taken with a grain of salt. In our predictive model, for example, we haven't attended to the accuracy of our model or how well it performs well on unseen data.
+:::
 
 ## 5. COMMUNICATE
 
@@ -484,13 +580,15 @@ The final step in the workflow/process is sharing the results of your analysis w
 
 In later modules, you will have an opportunity to create a simple "data product" designed to illustrate some insights gained from your analysis and ideally highlight an action step or change idea that can be used to improve learning or the contexts in which learning occurs.
 
-For now, we will wrap up this case study by converting your work to an HTML file that can be published and used to communicate your learning and demonstrate some of your new R skills. To do so, you will need to "render" your document by clicking the ![](img/render.png){width="4%"} Render button in the menu bar at that the top of this file.
+#### 👉 Your Turn ⤵
 
-Rendering a document does two important things:
+For now, we will wrap up this case study by converting your work to an HTML file that can be published and used to communicate your learning and demonstrate some of your new R skills. To do so, you will need to "render" your document by clicking the ![](img/render.png){width="2%"} Render button in the menu bar at that the top of this file.
+
+Rendering a document does two important things, namely when you render a document it:
 
 1.  checks through all your code for any errors; and,
 
-2.  creates a file in your directory that you can use to share you work .
+2.  creates a file in your project directory that you can use to share you work.
 
 Now that you've finished your first case study, click the "Render" button in the toolbar at the top of your document to covert this Quarto document to a HTML web page, just one of [the many publishing formats you can create with Quarto](https://quarto.org/docs/output-formats/all-formats.html) documents.
 
@@ -502,17 +600,79 @@ If you encounter errors when you try to render, first check the case study answe
 
 ### Publish File
 
-Rendered HTML files can be published online through a variety of ways including [Posit Cloud](https://posit.cloud/learn/guide#publish-from-cloud), [RPubs](#0) , [GitHub Pages](#0), [Quarto Pub](#0), or [other methods](#0). The easiest way to quickly publish your file online is to publish directly from RStudio. You can do so by clicking the "Publish" button located in the Viewer Pane after you render your document as illustrated in the screenshot below.
+There are a wide variety of ways to publish documents, presentations, and websites created using Quarto. Since content rendered with Quarto uses standard formats (HTML, PDFs, MS Word, etc.) it can be published anywhere. Additionally, there is a `quarto publish` command available for easy publishing to various popular services such as [Quarto Pub](#0), [Posit Cloud](#0), [RPubs](#0) , [GitHub Pages](#0), or [other services](#0).
 
-![](img/publish.png)
+#### 👉 Your Turn ⤵
 
-#### **👉 Your Turn** **⤵**
+Choose of of the following methods described below for publishing your completed case study.
 
-Navigate the to the [RPubs](https://rpubs.com) website and create a free account. Now, publish your rendered Quarto markdown file to the web using the RPubs option.
+#### Publishing with Quarto Pub
 
-### Your First LASER Badge
+Quarto Pub is a free publishing service for content created with Quarto. Quarto Pub is ideal for blogs, course or project websites, books, reports, presentations, and personal hobby sites.
 
-Congratulations, you've completed your first case study! Once you have shared a link to you published document with your instructor and they have reviewed your work, you will be provided a physical or digital version of the badge pictured at the top of this document!
+It’s important to note that all documents and sites published to Quarto Pub are **publicly visible**. You should only publish content you wish to share publicly.
+
+To publish to Quarto Pub, you will use the `quarto publish` command to publish content rendered on your local machine or via Posit Cloud.
+
+Before attempting your first publish, be sure that you have created a free [Quarto Pub](https://quartopub.com/) account.
+
+The `quarto publish` command provides a very straightforward way to publish documents to Quarto Pub.
+
+For example, here is the Terminal command to publish a generic Quarto `document.qmd` to each of this service:
+
+``` {.bash filename="Terminal"}
+quarto publish quarto-pub document.qmd
+```
+
+You can access your the terminal from directly **Terminal Pane** in the lower left corner as shown below:
+
+![](img/terminal.png){width="100%"}
+
+The actual command you will enter into your terminal to publish your orientation case study is:
+
+`quarto publish quarto-pub orientation-case-study-R.qmd`
+
+When you publish to Quarto Pub using `quarto publish` an access token is used to grant permission for publishing to your account. The first time you publish to Quarto Pub the Quarto CLI will automatically launch a browser to authorize one as shown below.
+
+``` {.bash filename="Terminal"}
+$ quarto publish quarto-pub
+? Authorize (Y/n) › 
+❯ In order to publish to Quarto Pub you need to
+  authorize your account. Please be sure you are
+  logged into the correct Quarto Pub account in 
+  your default web browser, then press Enter or 
+  'Y' to authorize.
+```
+
+Authorization will launch your default web browser to confirm that you want to allow publishing from Quarto CLI. An access token will be generated and saved locally by the Quarto CLI.
+
+Once you've authorized Quarto Pub and published your case study, it should take you immediately to the published document. See my example Orientation Case Study complete with answer key here: [https://sbkellogg.quarto.pub/laser-orientation-case-study-key](https://sbkellogg.quarto.pub/laser-orientation-case-study-key/).
+
+After you've published your first document, you can continue adding more documents, slides, books and even publish entire websites!
+
+![](img/quarto-pub.png)
+
+#### Publishing with R Pubs
+
+An alternative, and perhaps the easiest way to quickly publish your file online is to publish directly from RStudio using Posit Cloud or RPubs. You can do so by clicking the "Publish" button located in the Viewer Pane after you render your document and as illustrated in the screenshot below.
+
+![](img/publish.png){width="100%"}
+
+Similar to Quarto Pub, be sure that you have created a free Posit Cloud or R Pub account before attempting your first publish. You may also need to add your Posit Cloud or R Pub account before being able to publish.
+
+See below for an example of my published Orientation Case Study complete with answer key here using:
+
+-   **R Pubs**: <https://rpubs.com/sbkellogg/orientation-case-study-key>
+
+-   **Posit Cloud**: <https://posit.cloud/content/8432811>
+
+![](img/posit-cloud-pub.png){width="100%"}
+
+### Your First LASER Badge!
+
+Congratulations, you've completed your first case study!
+
+Once you have shared a link to your published document with your instructor and they have reviewed your work, you will be provided a physical or digital version of the badge pictured below!
 
 ![](img/LASER_Hx.png){width="50%"}
 

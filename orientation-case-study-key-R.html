@@ -162,23 +162,38 @@ div.csl-indent {
   <li><a href="#the-graphing-workflow" id="toc-the-graphing-workflow" class="nav-link" data-scroll-target="#the-graphing-workflow">The Graphing Workflow</a>
   <ul class="collapse">
   <li><a href="#your-turn-12" id="toc-your-turn-12" class="nav-link" data-scroll-target="#your-turn-12">👉 Your Turn ⤵</a></li>
+  <li><a href="#your-turn-13" id="toc-your-turn-13" class="nav-link" data-scroll-target="#your-turn-13">👉 Your Turn ⤵</a></li>
   </ul></li>
   <li><a href="#scatterplots" id="toc-scatterplots" class="nav-link" data-scroll-target="#scatterplots">Scatterplots</a>
   <ul class="collapse">
-  <li><a href="#your-turn-13" id="toc-your-turn-13" class="nav-link" data-scroll-target="#your-turn-13">👉 Your Turn ⤵</a></li>
+  <li><a href="#your-turn-14" id="toc-your-turn-14" class="nav-link" data-scroll-target="#your-turn-14">👉 Your Turn ⤵</a></li>
   </ul></li>
   </ul></li>
   <li><a href="#model" id="toc-model" class="nav-link" data-scroll-target="#model">4. MODEL</a>
   <ul>
-  <li><a href="#your-turn-14" id="toc-your-turn-14" class="nav-link" data-scroll-target="#your-turn-14">👉 Your Turn ⤵</a></li>
+  <li><a href="#an-inferential-model" id="toc-an-inferential-model" class="nav-link" data-scroll-target="#an-inferential-model">An Inferential Model</a>
+  <ul class="collapse">
+  <li><a href="#your-turn-15" id="toc-your-turn-15" class="nav-link" data-scroll-target="#your-turn-15">👉 Your Turn ⤵</a></li>
+  <li><a href="#your-turn-16" id="toc-your-turn-16" class="nav-link" data-scroll-target="#your-turn-16">👉 Your Turn ⤵</a></li>
+  <li><a href="#question-4" id="toc-question-4" class="nav-link" data-scroll-target="#question-4">❓Question</a></li>
+  </ul></li>
+  <li><a href="#a-predictive-model" id="toc-a-predictive-model" class="nav-link" data-scroll-target="#a-predictive-model">A Predictive Model</a>
+  <ul class="collapse">
+  <li><a href="#your-turn-17" id="toc-your-turn-17" class="nav-link" data-scroll-target="#your-turn-17"><strong>👉 Your Turn</strong> <strong>⤵</strong></a></li>
+  <li><a href="#your-turn-18" id="toc-your-turn-18" class="nav-link" data-scroll-target="#your-turn-18"><strong>👉 Your Turn</strong> <strong>⤵</strong></a></li>
+  <li><a href="#question-5" id="toc-question-5" class="nav-link" data-scroll-target="#question-5">❓Question</a></li>
+  </ul></li>
   </ul></li>
   <li><a href="#communicate" id="toc-communicate" class="nav-link" data-scroll-target="#communicate">5. COMMUNICATE</a>
   <ul>
+  <li><a href="#your-turn-19" id="toc-your-turn-19" class="nav-link" data-scroll-target="#your-turn-19">👉 Your Turn ⤵</a></li>
   <li><a href="#publish-file" id="toc-publish-file" class="nav-link" data-scroll-target="#publish-file">Publish File</a>
   <ul class="collapse">
-  <li><a href="#your-turn-15" id="toc-your-turn-15" class="nav-link" data-scroll-target="#your-turn-15">👉 Your Turn ⤵</a></li>
+  <li><a href="#your-turn-20" id="toc-your-turn-20" class="nav-link" data-scroll-target="#your-turn-20">👉 Your Turn ⤵</a></li>
+  <li><a href="#publishing-with-quarto-pub" id="toc-publishing-with-quarto-pub" class="nav-link" data-scroll-target="#publishing-with-quarto-pub">Publishing with Quarto Pub</a></li>
+  <li><a href="#publishing-with-r-pubs" id="toc-publishing-with-r-pubs" class="nav-link" data-scroll-target="#publishing-with-r-pubs">Publishing with R Pubs</a></li>
   </ul></li>
-  <li><a href="#your-first-laser-badge" id="toc-your-first-laser-badge" class="nav-link" data-scroll-target="#your-first-laser-badge">Your First LASER Badge</a></li>
+  <li><a href="#your-first-laser-badge" id="toc-your-first-laser-badge" class="nav-link" data-scroll-target="#your-first-laser-badge">Your First LASER Badge!</a></li>
   <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
   </ul></li>
   </ul>
@@ -237,7 +252,7 @@ Tip
 </div>
 <div class="callout-body-container callout-body">
 <p>Quarto docs can include specially formatted <strong>callout boxes</strong> like this one to draw special attention to provide notes, tips, cautions, warnings, and important information.</p>
-<p><strong>Pro tip</strong>: Quarto documents have handy Outline feature that allow you to easily navigate the entire document. If the outline is not currently visible, click the Outline button located on the right of the toolbar at the top of this document.</p>
+<p><strong>Pro tip</strong>: Quarto documents also have a handy Outline feature that allow you to easily navigate the entire document. If the outline is not currently visible, click the Outline button located on the right of the toolbar at the top of this document.</p>
 </div>
 </div>
 <section id="source-vs.-visual-editor" class="level4">
@@ -736,7 +751,7 @@ Note
 </section>
 <section id="arrange" class="level3">
 <h3 class="anchored" data-anchor-id="arrange">Arrange</h3>
-<p>The last function we’ll use for preparing tables is arrange. We’ll again use the <code>|&gt;</code> to combine this <code>arrange()</code> function with a function we used already - <code>select()</code>. We do this so we can view only time spent and final grades.</p>
+<p>The last function we’ll use for preparing tables is arrange, which allows us to sort columns in ascending (default) or descending order. We’ll again use the <code>|&gt;</code> to combine this <code>arrange()</code> function with a function we used already - <code>select()</code>. We do this so we can view only time spent and final grades.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>sci_data <span class="sc">|&gt;</span> </span>
 <span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(FinalGradeCEMS, TimeSpent) <span class="sc">|&gt;</span> </span>
@@ -758,7 +773,7 @@ Note
 # ℹ 593 more rows</code></pre>
 </div>
 </div>
-<p>Note that arrange works by sorting values in ascending order (from lowest to highest); you can change this by using the <code>desc()</code> function as an argument with arrange, like the following:</p>
+<p>Note that arrange works by sorting values in ascending order (from lowest to highest) by default; you can change this by using the <code>desc()</code> function as an argument with arrange, like the following:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>sci_data <span class="sc">|&gt;</span> </span>
 <span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(FinalGradeCEMS, TimeSpent) <span class="sc">|&gt;</span> </span>
@@ -805,7 +820,7 @@ Note
 # ℹ 593 more rows</code></pre>
 </div>
 </div>
-<p>Can you compose a series of functions that include the <code>select()</code>, <code>filter()</code>, and <code>arrange()</code> functions? Recall that you can “pipe” the output from one function to the next as when we used select() and arrange() together in the code chunk above.</p>
+<p>Can you compose a series of functions that include the <code>select()</code>, <code>filter()</code>, and <code>arrange()</code> functions? Recall that you can “pipe” the output from one function to the next as when we used <code>select()</code> and <code>arrange()</code> together in the code chunk above.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>sci_data <span class="sc">|&gt;</span> </span>
 <span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(TimeSpent, FinalGradeCEMS) <span class="sc">|&gt;</span> </span>
@@ -834,7 +849,7 @@ Note
 <section id="explore" class="level2">
 <h2 class="anchored" data-anchor-id="explore">3. EXPLORE</h2>
 <p>Exploratory data analysis, or exploring your data, involves processes of <em>describing</em> your data (such as by calculating the means and standard deviations of numeric variables, or counting the frequency of categorical variables) and, often, visualizing your data. As we’ll learn in later labs, the explore phase can also involve the process of “feature engineering,” or creating new variables within a dataset <span class="citation" data-cites="krumm2018">(<a href="#ref-krumm2018" role="doc-biblioref">Krumm, Means, and Bienkowski 2018</a>)</span>.</p>
-<p>In this section, we’ll quickly pull together some basic stats using a handy function from the {skimr} package, and introduce you to a basic data visualization “code template” for the {ggplot} package from the tidyverse.</p>
+<p>In this section, we’ll quickly pull together some basic stats for our two variables of interest, <code>TimeSpent</code> and <code>FinalGradeCEMS</code>, using a handy function from the {skimr} package. We’ll also introduce you to a basic data visualization “code template” for the {<a href="https://ggplot2.tidyverse.org">ggplot</a>} package from the tidyverse to help us examine the relationship between these two variables.</p>
 <section id="summary-statistics" class="level3">
 <h3 class="anchored" data-anchor-id="summary-statistics">Summary Statistics</h3>
 <p>Let’s repurpose what we learned from our wrangle section to select just a few variables and quickly gather some descriptive stats using the <code>skim()</code> function from the {skimr} package.</p>
@@ -1575,12 +1590,14 @@ Note
 </section>
 <section id="the-graphing-workflow" class="level3">
 <h3 class="anchored" data-anchor-id="the-graphing-workflow">The Graphing Workflow</h3>
-<p>At it’s core, you can create some very simple but attractive graphs with just a couple lines of code. {<a href="https://ggplot2.tidyverse.org">ggplot2</a>} follows the common workflow for making graphs. To make a graph, you simply:</p>
+<p>At it’s core, you can create some very simple but attractive graphs with just a couple lines of code. The {ggplot2} package follows the common basic workflow for making graphs:</p>
 <ol type="1">
 <li><p>Start the graph with <code>ggplot()</code> and include your data as an argument;</p></li>
 <li><p>“Add” elements to the graph using the <code>+</code> operator a&nbsp;<a href="https://ggplot2.tidyverse.org/reference/#geoms"><code>geom_()</code> function</a>;</p></li>
 <li><p>Select variables to graph on each axis with the <code>aes()</code> argument.</p></li>
 </ol>
+<section id="your-turn-12" class="level4">
+<h4 class="anchored" data-anchor-id="your-turn-12">👉 Your Turn ⤵</h4>
 <p>Let’s give it a try by creating a simple histogram of our <code>FinalGradeCEMS</code> variable. The code below creates a histogram, or a distribution of the values, in this case for students’ final grades. Go ahead and run it:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb32"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(sci_data) <span class="sc">+</span></span>
@@ -1622,9 +1639,11 @@ Note
 </div>
 </div>
 </div>
-<section id="your-turn-12" class="level4">
-<h4 class="anchored" data-anchor-id="your-turn-12">👉 Your Turn ⤵</h4>
+</section>
+<section id="your-turn-13" class="level4">
+<h4 class="anchored" data-anchor-id="your-turn-13">👉 Your Turn ⤵</h4>
 <p>Now use the code chunk below to visualize the distribution of another variable in the data, specifically <code>TimeSpent</code>. You can do so by swapping out the variable <code>FinalGradeCEMS</code> with our new variable. Also, change the color to one of your choosing; consider this list of valid color names here: <a href="http://www.stat.columbia.edu/~tzheng/files/Rcolor.pdf" class="uri">http://www.stat.columbia.edu/~tzheng/files/Rcolor.pdf</a></p>
+<p>There is no shame in copying and pasting code from above. Remember, reproducible research is also intended to help you save time!</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb38"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(sci_data) <span class="sc">+</span></span>
 <span id="cb38-2"><a href="#cb38-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="fu">aes</span>(<span class="at">x =</span> TimeSpent), <span class="at">fill =</span> <span class="st">"green"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -1643,15 +1662,15 @@ Note
 </div>
 </div>
 </div>
-<p><strong>Tip:</strong> There is no shame in copying and pasting code from above. Remember, reproducible research is also intended to help you save time!</p>
 </section>
 </section>
 <section id="scatterplots" class="level3">
 <h3 class="anchored" data-anchor-id="scatterplots">Scatterplots</h3>
 <p>Finally, let’s create a scatter plot for the relationship between these two variables. Scatterplots use the point geom, i.e., the <code>geom_point()</code> function, and are most useful for displaying the relationship between two continuous variables.</p>
-<section id="your-turn-13" class="level4">
-<h4 class="anchored" data-anchor-id="your-turn-13">👉 Your Turn ⤵</h4>
-<p>Complete the code chunk below to create a simple scatterplot with <code>TimeSpent</code> on the x axis and <code>FinalGradeCEMS</code> on the y axis. <strong>Hint</strong>: something else important is also missing that you will need to “add” to your code.</p>
+<section id="your-turn-14" class="level4">
+<h4 class="anchored" data-anchor-id="your-turn-14">👉 Your Turn ⤵</h4>
+<p>Complete the code chunk below to create a simple scatterplot with <code>TimeSpent</code> on the x axis and <code>FinalGradeCEMS</code> on the y axis.</p>
+<p><strong>Hint</strong>: Aside from the missing variable for the y-axis, something else important is also missing that you will need to “add” to your code.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb41"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(sci_data) <span class="sc">+</span></span>
 <span id="cb41-2"><a href="#cb41-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">x =</span> TimeSpent, </span>
@@ -1669,14 +1688,27 @@ Note
 </div>
 </div>
 <p>Well done! As you can see, there appears to be a positive relationship between the time students spend in the online course and their final grade!</p>
-<p>To learn more about using {ggplot2} for data visualization, we highly recommend the <a href="https://rstudio.github.io/cheatsheets/html/data-visualization.html?_gl=1*11gsrq9*_ga*OTU4NTc4NzgwLjE2NzI3NTQwNzQ.*_ga_2C0WZ1JHG0*MTcxMDY0NzEzNi4yNzMuMS4xNzEwNjQ3MTk5LjAuMC4w"><strong>Data visualization with ggplot2 :: Cheat Sheet</strong></a><strong>.</strong></p>
+<p>To learn more about using {ggplot2} for data visualization, we highly recommend the <a href="https://rstudio.github.io/cheatsheets/html/data-visualization.html?_gl=1*11gsrq9*_ga*OTU4NTc4NzgwLjE2NzI3NTQwNzQ.*_ga_2C0WZ1JHG0*MTcxMDY0NzEzNi4yNzMuMS4xNzEwNjQ3MTk5LjAuMC4w">Data visualization with ggplot2 :: Cheat Sheet</a>.</p>
 </section>
 </section>
 </section>
 <section id="model" class="level2">
 <h2 class="anchored" data-anchor-id="model">4. MODEL</h2>
-<p>“Model” is one of those terms that has many different meanings. For our purpose, we refer to the process of simplifying and summarizing our data. Thus, models can take many forms; calculating means represents a legitimate form of modeling data, as does estimating more complex models, including linear regressions, and models and algorithms associated with machine learning tasks. For now, we’ll run a base linear regression model to further examine the relationship between <code>TimeSpent</code> and <code>FinalGradeCEMS</code>.</p>
-<p>We’ll dive much deeper into modeling in subsequent learning labs, but for now let’s see if there is a statistically significant relationship between students’ final grades, <code>FinaGradeCEMS</code>, and the <code>TimeSpent</code> on the course:</p>
+<p>“Model” is one of those terms that has many different meanings. For our purpose, we refer to the process of simplifying and summarizing our data as modeling. Thus, models can take many forms; calculating means represents a legitimate form of modeling data, as does estimating more complex models, including linear regressions, and models and algorithms associated with machine learning tasks. For now, we’ll run a base linear regression model to further examine the relationship between <code>TimeSpent</code> and <code>FinalGradeCEMS</code>.</p>
+<p>We’ll dive much deeper into modeling in subsequent case studies, but for now let’s see if there is a statistically significant relationship between students’ final grades, <code>FinaGradeCEMS</code>, and the <code>TimeSpent</code> on the course.</p>
+<section id="an-inferential-model" class="level3">
+<h3 class="anchored" data-anchor-id="an-inferential-model">An Inferential Model</h3>
+<p>An inferential statistical model is used to understand the relationships between variables and make inferences about the population from a sample. It aims to identify the underlying mechanisms and determine the significance of these relationships.</p>
+<p>Key characteristics of an inferential model include:</p>
+<ul>
+<li><p><strong>Focus on Understanding:</strong> These models aim to understand the causal or correlational relationships between variables.</p></li>
+<li><p><strong>Hypothesis Testing:</strong> They often involve hypothesis testing to determine if observed patterns are statistically significant.</p></li>
+<li><p><strong>Parameter Estimates:</strong> Inferential models provide estimates of parameters (such as coefficients) that describe the relationship between variables, along with confidence intervals and p-values to assess their significance.</p></li>
+<li><p><strong>Generalization:</strong> The goal is to generalize findings from the sample to the larger population.</p></li>
+</ul>
+<section id="your-turn-15" class="level4">
+<h4 class="anchored" data-anchor-id="your-turn-15">👉 Your Turn ⤵</h4>
+<p>Execute the following code to run a basic linear regression model to further examine the relationship between <code>TimeSpent</code> and <code>FinalGradeCEMS</code>:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb43"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a>m1 <span class="ot">&lt;-</span> <span class="fu">lm</span>(FinalGradeCEMS <span class="sc">~</span> TimeSpent, <span class="at">data =</span> sci_data)</span>
 <span id="cb43-2"><a href="#cb43-2" aria-hidden="true" tabindex="-1"></a></span>
@@ -1703,9 +1735,11 @@ Multiple R-squared:  0.1335,    Adjusted R-squared:  0.132
 F-statistic: 87.99 on 1 and 571 DF,  p-value: &lt; 2.2e-16</code></pre>
 </div>
 </div>
-<p>It looks like <code>TimeSpent</code> is associated with a higher final grade. That is, students who spent more time in the LMS also earned higher grades.</p>
-<section id="your-turn-14" class="level4">
-<h4 class="anchored" data-anchor-id="your-turn-14">👉 Your Turn ⤵</h4>
+<p>It looks like <code>TimeSpent</code> in the online course is indeed positively associated with a higher final grade! That is, students who spent more time in the LMS also earned higher grades. However, before we get too excited, there are likely other factors influencing student performance that are not captured by by our model and study time only accounts for a small portion of why students get different grades. There are clearly other factors that likely play a big role in determining final grades.</p>
+<p>Don’t worry too much for now if interpreting model outputs is relatively new for you, or if it’s been a while. We’ll be working with models in greater depth in our other LASER modules.</p>
+</section>
+<section id="your-turn-16" class="level4">
+<h4 class="anchored" data-anchor-id="your-turn-16">👉 Your Turn ⤵</h4>
 <p>Now let’s “add” <em>another</em> variable to the regression model. Specifically, use the <code>+</code> operator after <code>TimeSpent</code> to add the course <code>subject</code> variable as a predictor of students’ final grades.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb45"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a>m2 <span class="ot">&lt;-</span> <span class="fu">lm</span>(FinalGradeCEMS <span class="sc">~</span> TimeSpent <span class="sc">+</span> subject, <span class="at">data =</span> sci_data)</span>
@@ -1736,10 +1770,109 @@ Multiple R-squared:  0.213, Adjusted R-squared:  0.2061
 F-statistic: 30.69 on 5 and 567 DF,  p-value: &lt; 2.2e-16</code></pre>
 </div>
 </div>
+</section>
+<section id="question-4" class="level4">
+<h4 class="anchored" data-anchor-id="question-4">❓Question</h4>
 <p>What do you notice about the results? How would you interpret them? Add a comment or two below:</p>
 <ul>
 <li>In summary, the model suggests that there is a statistically significant, though relatively small, positive association between the time spent in the Learning Management System and a student’s final grade. However, the low R-squared value indicates that many other factors not included in the model may be influencing final grades.</li>
 </ul>
+</section>
+</section>
+<section id="a-predictive-model" class="level3">
+<h3 class="anchored" data-anchor-id="a-predictive-model">A Predictive Model</h3>
+<p>A predictive model is designed to make accurate predictions about future or unseen data. The primary goal is to maximize the accuracy of predictions rather than understanding the underlying relationships.</p>
+<p>Key characteristics of an inferential model include:</p>
+<ul>
+<li><p><strong>Focus on Prediction:</strong> These models aim to accurately predict the outcome variable for new data points.</p></li>
+<li><p><strong>Model Performance:</strong> The effectiveness of predictive models is evaluated based on metrics like R-squared, mean squared error, or other prediction accuracy measures.</p></li>
+<li><p><strong>Complex Algorithms:</strong> Predictive modeling often uses more complex algorithms (e.g., machine learning techniques) that might not be easily interpretable but offer higher predictive power.</p></li>
+<li><p><strong>Validation:</strong> Predictive models rely heavily on validation techniques like cross-validation to ensure that the model performs well on unseen data.</p></li>
+</ul>
+<p>Before using our model for predictive purposes, let’s first take a look at the line of best fit, which represents the linear regression model <code>m1</code> that has been fitted to the data.</p>
+<section id="your-turn-17" class="level4">
+<h4 class="anchored" data-anchor-id="your-turn-17"><strong>👉 Your Turn</strong> <strong>⤵</strong></h4>
+<p>Run the following code chunk to fit a linear regression model to predict <code>FinalGradeCEMS</code> (final grades) based on <code>TimeSpent</code> (time in LMS) and visualize the data points and the fitted regression line on a scatter plot:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb47"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> sci_data, <span class="fu">aes</span>(<span class="at">x =</span> TimeSpent, <span class="at">y =</span> FinalGradeCEMS)) <span class="sc">+</span></span>
+<span id="cb47-2"><a href="#cb47-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span>  <span class="co"># Plot data points</span></span>
+<span id="cb47-3"><a href="#cb47-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">'lm'</span>, <span class="at">se =</span> <span class="cn">FALSE</span>) <span class="sc">+</span>  <span class="co"># Add line of best fit</span></span>
+<span id="cb47-4"><a href="#cb47-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">'TimeSpent'</span>, <span class="at">y =</span> <span class="st">'FinalGradeCEMS'</span>) <span class="sc">+</span>  <span class="co"># Add axis labels</span></span>
+<span id="cb47-5"><a href="#cb47-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()  <span class="co"># Use a minimal theme</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>`geom_smooth()` using formula = 'y ~ x'</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: Removed 30 rows containing non-finite outside the scale range
+(`stat_smooth()`).</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: Removed 30 rows containing missing values or values outside the scale range
+(`geom_point()`).</code></pre>
+</div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="orientation-case-study-key-R_files/figure-html/unnamed-chunk-25-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Now let’s use this model to predict a student’s grade depending on how much time (in minutes) they spent in the course if they spent 1000, 1500, or 2000 minutes respectively:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb51"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb51-1"><a href="#cb51-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a data frame 'time' with 'TimeSpent' values 1000, 1500, 2000</span></span>
+<span id="cb51-2"><a href="#cb51-2" aria-hidden="true" tabindex="-1"></a>time <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">TimeSpent =</span> <span class="fu">c</span>(<span class="dv">1000</span>, <span class="dv">1500</span>, <span class="dv">2000</span>))</span>
+<span id="cb51-3"><a href="#cb51-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb51-4"><a href="#cb51-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Use the predict function to obtain predictions for the new data</span></span>
+<span id="cb51-5"><a href="#cb51-5" aria-hidden="true" tabindex="-1"></a>predicted_grades <span class="ot">&lt;-</span> <span class="fu">predict</span>(m1, <span class="at">newdata =</span> time)</span>
+<span id="cb51-6"><a href="#cb51-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb51-7"><a href="#cb51-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Print the predicted grades</span></span>
+<span id="cb51-8"><a href="#cb51-8" aria-hidden="true" tabindex="-1"></a>predicted_grades</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>       1        2        3 
+71.88912 74.92942 77.96973 </code></pre>
+</div>
+</div>
+<p>Hmm… Assuming our model is accurate (a big assumption!) even at 2000 minutes the best a student might nope for is a C+!</p>
+</section>
+<section id="your-turn-18" class="level4">
+<h4 class="anchored" data-anchor-id="your-turn-18"><strong>👉 Your Turn</strong> <strong>⤵</strong></h4>
+<p>Trying changing the amount of time a student spends in the course and see how the predicted grade changes based on our simple model.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb53"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb53-1"><a href="#cb53-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a data frame 'new_time' with new 'TimeSpent' value</span></span>
+<span id="cb53-2"><a href="#cb53-2" aria-hidden="true" tabindex="-1"></a>new_time <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">TimeSpent =</span> <span class="dv">5000</span>)</span>
+<span id="cb53-3"><a href="#cb53-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb53-4"><a href="#cb53-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Use the predict function to obtain predictions for the new data</span></span>
+<span id="cb53-5"><a href="#cb53-5" aria-hidden="true" tabindex="-1"></a>predicted_grades <span class="ot">&lt;-</span> <span class="fu">predict</span>(m1, <span class="at">newdata =</span> new_time)</span>
+<span id="cb53-6"><a href="#cb53-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb53-7"><a href="#cb53-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Print the predicted grades</span></span>
+<span id="cb53-8"><a href="#cb53-8" aria-hidden="true" tabindex="-1"></a>predicted_grades</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>       1 
+96.21156 </code></pre>
+</div>
+</div>
+</section>
+<section id="question-5" class="level4">
+<h4 class="anchored" data-anchor-id="question-5">❓Question</h4>
+<p>How much time would a student need to spend in the course to get an A?</p>
+<ul>
+<li>YOUR RESPONSE HERE</li>
+</ul>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Important
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>It’s important to note that these models are just used for illustrative examples of typical modeling approaches used in learning analytics and should be taken with a grain of salt. In our predictive model, for example, we haven’t attended to the accuracy of our model or how well it performs well on unseen data.</p>
+</div>
+</div>
+</section>
 </section>
 </section>
 <section id="communicate" class="level2">
@@ -1751,11 +1884,13 @@ F-statistic: 30.69 on 5 and 567 DF,  p-value: &lt; 2.2e-16</code></pre>
 <li><p><strong>Narrate.</strong>&nbsp;Writing a narrative to accompany the data products involves, at a minimum, pairing a data product with its related research question, describing how best to interpret the data product, and explaining the ways in which the data product helps answer the research question and might be used to inform new analyses or a “change idea” for improving student learning.</p></li>
 </ol>
 <p>In later modules, you will have an opportunity to create a simple “data product” designed to illustrate some insights gained from your analysis and ideally highlight an action step or change idea that can be used to improve learning or the contexts in which learning occurs.</p>
-<p>For now, we will wrap up this case study by converting your work to an HTML file that can be published and used to communicate your learning and demonstrate some of your new R skills. To do so, you will need to “render” your document by clicking the <img src="img/render.png" class="img-fluid" style="width:4.0%"> Render button in the menu bar at that the top of this file.</p>
-<p>Rendering a document does two important things:</p>
+<section id="your-turn-19" class="level4">
+<h4 class="anchored" data-anchor-id="your-turn-19">👉 Your Turn ⤵</h4>
+<p>For now, we will wrap up this case study by converting your work to an HTML file that can be published and used to communicate your learning and demonstrate some of your new R skills. To do so, you will need to “render” your document by clicking the <img src="img/render.png" class="img-fluid" style="width:2.0%"> Render button in the menu bar at that the top of this file.</p>
+<p>Rendering a document does two important things, namely when you render a document it:</p>
 <ol type="1">
 <li><p>checks through all your code for any errors; and,</p></li>
-<li><p>creates a file in your directory that you can use to share you work .</p></li>
+<li><p>creates a file in your project directory that you can use to share you work.</p></li>
 </ol>
 <p>Now that you’ve finished your first case study, click the “Render” button in the toolbar at the top of your document to covert this Quarto document to a HTML web page, just one of <a href="https://quarto.org/docs/output-formats/all-formats.html">the many publishing formats you can create with Quarto</a> documents.</p>
 <p>If the files rendered correctly, you should now see a new file named <code>orientation-case-study-R.html</code> in the Files tab located in the bottom right corner of R Studio. If so, congratulations, you just completed the getting started activity! You’re now ready for the unit Case Studies that we will complete during the third week of each unit.</p>
@@ -1772,18 +1907,67 @@ Important
 <p>If you encounter errors when you try to render, first check the case study answer key located in the files pane and has the suggested code for the Your Turns. If you are still having difficulties, try copying and pasting the error into Google or ChatGPT to see if you can resolve the issue. Finally, contact your instructor to debug the code together if you’re still having issues.</p>
 </div>
 </div>
+</section>
 <section id="publish-file" class="level3">
 <h3 class="anchored" data-anchor-id="publish-file">Publish File</h3>
-<p>Rendered HTML files can be published online through a variety of ways including <a href="https://posit.cloud/learn/guide#publish-from-cloud">Posit Cloud</a>, <a href="#0">RPubs</a> , <a href="#0">GitHub Pages</a>, <a href="#0">Quarto Pub</a>, or <a href="#0">other methods</a>. The easiest way to quickly publish your file online is to publish directly from RStudio. You can do so by clicking the “Publish” button located in the Viewer Pane after you render your document as illustrated in the screenshot below.</p>
-<p><img src="img/publish.png" class="img-fluid"></p>
-<section id="your-turn-15" class="level4">
-<h4 class="anchored" data-anchor-id="your-turn-15">👉 Your Turn ⤵</h4>
-<p>Navigate the to the <a href="https://rpubs.com">RPubs</a> website and create a free account. Now, publish your rendered Quarto markdown file to the web using the RPubs option.</p>
+<p>There are a wide variety of ways to publish documents, presentations, and websites created using Quarto. Since content rendered with Quarto uses standard formats (HTML, PDFs, MS Word, etc.) it can be published anywhere. Additionally, there is a <code>quarto publish</code> command available for easy publishing to various popular services such as <a href="#0">Quarto Pub</a>, <a href="#0">Posit Cloud</a>, <a href="#0">RPubs</a> , <a href="#0">GitHub Pages</a>, or <a href="#0">other services</a>.</p>
+<section id="your-turn-20" class="level4">
+<h4 class="anchored" data-anchor-id="your-turn-20">👉 Your Turn ⤵</h4>
+<p>Choose of of the following methods described below for publishing your completed case study.</p>
+</section>
+<section id="publishing-with-quarto-pub" class="level4">
+<h4 class="anchored" data-anchor-id="publishing-with-quarto-pub">Publishing with Quarto Pub</h4>
+<p>Quarto Pub is a free publishing service for content created with Quarto. Quarto Pub is ideal for blogs, course or project websites, books, reports, presentations, and personal hobby sites.</p>
+<p>It’s important to note that all documents and sites published to Quarto Pub are <strong>publicly visible</strong>. You should only publish content you wish to share publicly.</p>
+<p>To publish to Quarto Pub, you will use the&nbsp;<code>quarto publish</code>&nbsp;command to publish content rendered on your local machine or via Posit Cloud.</p>
+<p>Before attempting your first publish, be sure that you have created a free&nbsp;<a href="https://quartopub.com/">Quarto Pub</a>&nbsp;account.</p>
+<p>The <code>quarto publish</code>&nbsp;command provides a very straightforward way to publish documents to Quarto Pub.</p>
+<p>For example, here is the Terminal command to publish a generic Quarto <code>document.qmd</code> to each of this service:</p>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Terminal</strong></pre>
+</div>
+<div class="sourceCode" id="cb55" data-filename="Terminal"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb55-1"><a href="#cb55-1" aria-hidden="true" tabindex="-1"></a><span class="ex">quarto</span> publish quarto-pub document.qmd</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>You can access your the terminal from directly <strong>Terminal Pane</strong> in the lower left corner as shown below:</p>
+<p><img src="img/terminal.png" class="img-fluid" style="width:100.0%"></p>
+<p>The actual command you will enter into your terminal to publish your orientation case study is:</p>
+<p><code>quarto publish quarto-pub orientation-case-study-R.qmd</code></p>
+<p>When you publish to Quarto Pub using <code>quarto publish</code> an access token is used to grant permission for publishing to your account. The first time you publish to Quarto Pub the Quarto CLI will automatically launch a browser to authorize one as shown below.</p>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Terminal</strong></pre>
+</div>
+<div class="sourceCode" id="cb56" data-filename="Terminal"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb56-1"><a href="#cb56-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> quarto publish quarto-pub</span>
+<span id="cb56-2"><a href="#cb56-2" aria-hidden="true" tabindex="-1"></a><span class="ex">?</span> Authorize <span class="er">(</span><span class="ex">Y/n</span><span class="kw">)</span> <span class="ex">›</span> </span>
+<span id="cb56-3"><a href="#cb56-3" aria-hidden="true" tabindex="-1"></a><span class="ex">❯</span> In order to publish to Quarto Pub you need to</span>
+<span id="cb56-4"><a href="#cb56-4" aria-hidden="true" tabindex="-1"></a>  <span class="ex">authorize</span> your account. Please be sure you are</span>
+<span id="cb56-5"><a href="#cb56-5" aria-hidden="true" tabindex="-1"></a>  <span class="ex">logged</span> into the correct Quarto Pub account in </span>
+<span id="cb56-6"><a href="#cb56-6" aria-hidden="true" tabindex="-1"></a>  <span class="ex">your</span> default web browser, then press Enter or </span>
+<span id="cb56-7"><a href="#cb56-7" aria-hidden="true" tabindex="-1"></a>  <span class="st">'Y'</span> to authorize.</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Authorization will launch your default web browser to confirm that you want to allow publishing from Quarto CLI. An access token will be generated and saved locally by the Quarto CLI.</p>
+<p>Once you’ve authorized Quarto Pub and published your case study, it should take you immediately to the published document. See my example Orientation Case Study complete with answer key here: <a href="https://sbkellogg.quarto.pub/laser-orientation-case-study-key/">https://sbkellogg.quarto.pub/laser-orientation-case-study-key</a>.</p>
+<p>After you’ve published your first document, you can continue adding more documents, slides, books and even publish entire websites!</p>
+<p><img src="img/quarto-pub.png" class="img-fluid"></p>
+</section>
+<section id="publishing-with-r-pubs" class="level4">
+<h4 class="anchored" data-anchor-id="publishing-with-r-pubs">Publishing with R Pubs</h4>
+<p>An alternative, and perhaps the easiest way to quickly publish your file online is to publish directly from RStudio using Posit Cloud or RPubs. You can do so by clicking the “Publish” button located in the Viewer Pane after you render your document and as illustrated in the screenshot below.</p>
+<p><img src="img/publish.png" class="img-fluid" style="width:100.0%"></p>
+<p>Similar to Quarto Pub, be sure that you have created a free Posit Cloud or R Pub account before attempting your first publish. You may also need to add your Posit Cloud or R Pub account before being able to publish.</p>
+<p>See below for an example of my published Orientation Case Study complete with answer key here using:</p>
+<ul>
+<li><p><strong>R Pubs</strong>: <a href="https://rpubs.com/sbkellogg/orientation-case-study-key" class="uri">https://rpubs.com/sbkellogg/orientation-case-study-key</a></p></li>
+<li><p><strong>Posit Cloud</strong>: <a href="https://posit.cloud/content/8432811" class="uri">https://posit.cloud/content/8432811</a></p></li>
+</ul>
+<p><img src="img/posit-cloud-pub.png" class="img-fluid" style="width:100.0%"></p>
 </section>
 </section>
 <section id="your-first-laser-badge" class="level3">
-<h3 class="anchored" data-anchor-id="your-first-laser-badge">Your First LASER Badge</h3>
-<p>Congratulations, you’ve completed your first case study! Once you have shared a link to you published document with your instructor and they have reviewed your work, you will be provided a physical or digital version of the badge pictured at the top of this document!</p>
+<h3 class="anchored" data-anchor-id="your-first-laser-badge">Your First LASER Badge!</h3>
+<p>Congratulations, you’ve completed your first case study!</p>
+<p>Once you have shared a link to your published document with your instructor and they have reviewed your work, you will be provided a physical or digital version of the badge pictured below!</p>
 <p><img src="img/LASER_Hx.png" class="img-fluid" style="width:50.0%"></p>
 </section>
 <section id="references" class="level3 unnumbered">

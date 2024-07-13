@@ -140,23 +140,30 @@ One package that we'll be using extensively is {pandas}. [Pandas](https://pandas
 
 #### Pyplot 📦
 
-![](img/matplotlib.png){width="20%"}
+![](img/matplotlib.png){width="40%"}
 
 Pyplot is a module in the {matplotlib) package, a comprehensive library for creating static, animated, and interactive visualizations in Python. **`pyplot`** provides a MATLAB-like interface for making plots and is particularly suited for interactive plotting and simple cases of programmatic plot generation.
 
-#### sklearn 📦
+#### Statsmodels 📦
 
-The [scikit-learn](https://scikit-learn.org/stable/) package
+![](img/statsmodels.svg){width="40%"}
+
+The [statsmodels](https://www.statsmodels.org/stable/about.html#about-statsmodels) package provides classes and functions for the estimation of many different statistical models, as well as for conducting statistical tests, and statistical data exploration. An extensive list of result statistics are available for each estimator. The results are tested against existing statistical packages to ensure that they are correct.
+
+#### scikit-learn 📦
+
+The [scikit-learn](https://scikit-learn.org/) package is an open source machine learning library that supports supervised and unsupervised learning. It also provides various tools for model fitting, data preprocessing, model selection, model evaluation, and many other utilities.
 
 #### 👉 Your Turn ⤵
 
-Click the arrow to execute your code in a cell below and load the required packages and functions for this case study.
+Click the arrow to execute the code in the cell below to load the required packages and functions for this case study.
 
 ```{python}
 
 import pandas as pd # for data wrangling
 import numpy as np # for descriptive statistics
 import matplotlib.pyplot as plt # for data visualization
+import statsmodels.api as sm
 from sklearn.linear_model import LinearRegression # for data modeling
 
 ```
@@ -324,27 +331,45 @@ Below are the code chunks to execute both ways. Choose one you think is more app
 
 #### Drop missing values
 
-```{python}
-#drop missing values
+The following code performs data cleaning and provides an overview of the cleaned dataset. Specifically, the `dropna()` function removes any rows from the DataFrame `sci_data` that contain missing values (NaN) in the columns `FinalGradeCEMS` and `TimeSpent`.
 
-sci_data = sci_data.dropna(subset = ['FinalGradeCEMS','TimeSpent'])
+```{python}
+# Remove rows with missing values in 'FinalGradeCEMS' and 'TimeSpent' columns
+sci_data = sci_data.dropna(subset=['FinalGradeCEMS', 'TimeSpent'])
+
+# Display a summary of the DataFrame
 sci_data.info()
 ```
 
 #### Substitute with column means
 
-```{python}
-#substitute missing values with column means
-mean_value_grade=sci_data['FinalGradeCEMS'].mean()
-mean_value_time=sci_data['TimeSpent'].mean()
+The following code snippet addresses missing values in the dataset by replacing them with the mean values of their respective columns. This approach ensures that the dataset remains comprehensive and suitable for analysis, while maintaining the overall statistical properties.
 
+1.  **Calculating Mean Values:** The `mean()` function calculates the mean (average) values for the FinalGradeCEMS and TimeSpent columns.
+
+2.  **Filling Missing Values:** The `fillna()` function replaces any missing values (NaN) in these columns with their corresponding mean values.
+
+```{python}
+# Calculate the mean value for 'FinalGradeCEMS' column
+mean_value_grade = sci_data['FinalGradeCEMS'].mean()
+
+# Calculate the mean value for 'TimeSpent' column
+mean_value_time = sci_data['TimeSpent'].mean()
+
+# Replace missing values in 'FinalGradeCEMS' column with the mean value
 sci_data['FinalGradeCEMS'].fillna(value=mean_value_grade, inplace=True)
+
+# Replace missing values in 'TimeSpent' column with the mean value
 sci_data['TimeSpent'].fillna(value=mean_value_time, inplace=True)
 ```
 
 ### Filtering variables
 
-Next, let's explore filtering variables. Check out and run the next chunk of code, imagining that we wish to filter our data to view only the rows associated with students who earned a final grade (as a percentage) of 70% - or higher and the `TimeSpent` associated with it.
+Finally, let's explore filtering variables by certain values using single brackets `[ ]`.
+
+#### 👉 Your Turn ⤵
+
+Check out and run the next chunk of code, imagining that we wish to filter our data to view only the rows associated with students who earned a final grade (as a percentage) of 70% - or higher and the `TimeSpent` associated with it.
 
 ```{python}
 sci_data['TimeSpent'][sci_data['FinalGradeCEMS']>70]
@@ -352,7 +377,7 @@ sci_data['TimeSpent'][sci_data['FinalGradeCEMS']>70]
 
 #### ❓Question
 
-How much time do you need to spend to get the grade higher than 70%? Is there a consistent pattern?
+Roughly much time do you think you need to spend to get the grade higher than 70%? Is there a consistent pattern?
 
 -   YOUR RESPONSE HERE
 
@@ -364,7 +389,7 @@ In this section, we'll quickly pull together some basic stats and introduce you 
 
 ### Summary Statistics
 
-Let's repurpose what we learned from our wrangle section to select just a few variables and quickly gather some descriptive statistics to see where the data is centered, its values to identify trends by using `.describe()` method.
+Let's repurpose what we learned from our wrangle section to select just a few variables and quickly gather some descriptive statistics to see where the data is centered, its values to identify trends by using `describe()` function.
 
 ```{python}
 sci_data.describe()
@@ -393,8 +418,16 @@ At it's core, you can create some very simple but attractive graphs with just a 
 Let's give it a try by creating a simple histogram of our `FinalGradeCEMS` variable. The code below creates a histogram, or a distribution of the values, in this case for students' final grades. Go ahead and run it:
 
 ```{python}
-plt.hist(sci_data['FinalGradeCEMS'], bins = 30, color ="skyblue")
+# Clear the previous figure to prevent overlapping in Quarto
+plt.clf()
+
+# Create a histogram for the 'FinalGradeCEMS' column in the sci_data DataFrame
+plt.hist(sci_data['FinalGradeCEMS'], bins=30, color="skyblue")
+
+# Label the x-axis as 'FinalGradeCEMS'
 plt.xlabel('FinalGradeCEMS')
+
+# Display the histogram
 plt.show()
 ```
 
@@ -405,22 +438,43 @@ Now use the code chunk below to visualize the distribution of another variable i
 **Tip:** There is no shame in copying and pasting code from above. Remember, reproducible research is also intended to help you save time!
 
 ```{python}
-#Your code goes here:
+# Clear the previous figure to prevent overlapping in Quarto
+plt.clf()
+
+# Create a histogram for the 'TimeSpent' column in the sci_data DataFrame
+plt.hist(sci_data['TimeSpent'], bins=30, color="green")
+
+# Label the x-axis as 'TimeSpent'
+plt.xlabel('TimeSpent')
+
+# Display the histogram
+plt.show()
 
 ```
 
 #### Scatterplots
 
-Finally, let's create a scatter plot for the relationship between these two variables. Scatterplots are most useful for displaying the relationship between two continuous variables. Change type of graph by typing `.scatter()`. You can also choose the size of the marker and color.
+Finally, let's create a scatter plot for the relationship between these two variables. Scatterplots are most useful for displaying the relationship between two continuous variables. You can change type of graph by using the `scatter()` function. You can also choose the size of the marker and color.
 
 #### **👉 Your Turn** **⤵**
 
 Complete the code chunk below to create a simple scatterplot with `TimeSpent` on the x axis and `FinalGradeCEMS` on the y axis.
 
 ```{python}
-plt.scatter(x = sci_data['TimeSpent'], y = sci_data['FinalGradeCEMS'], marker=".", color = '#88c999')
+
+# Clear the previous figure to prevent overlapping in Quarto
+plt.clf()
+
+# Create a scatter plot with 'TimeSpent' on the x-axis and 'FinalGradeCEMS' on the y-axis
+plt.scatter(x=sci_data['TimeSpent'], y=sci_data['FinalGradeCEMS'], marker=".", color='#88c999')
+
+# Label the x-axis as 'TimeSpent'
 plt.xlabel('TimeSpent')
+
+# Label the y-axis as 'FinalGradeCEMS'
 plt.ylabel('FinalGradeCEMS')
+
+# Display the scatter plot
 plt.show()
 ```
 
@@ -428,17 +482,67 @@ Well done! As you can see, there appears to be a positive relationship between t
 
 ## 4. MODEL
 
-"Model" is one of those terms that has many different meanings. For our purpose, we refer to the process of simplifying and summarizing our data. Thus, models can take many forms; calculating means represents a legitimate form of modeling data, as does estimating more complex models, including linear regressions, and models and algorithms associated with machine learning tasks. For now, we'll run a base linear regression model to further examine the relationship between `TimeSpent` and `FinalGradeCEMS`.
+"Model" is one of those terms that has many different meanings. For our purpose, we refer to the process of simplifying and summarizing our data as modeling. Thus, models can take many forms; calculating means represents a legitimate form of modeling data, as does estimating more complex models, including linear regressions, and models and algorithms associated with machine learning tasks. For now, we'll run a base linear regression model to further examine the relationship between `TimeSpent` and `FinalGradeCEMS`.
 
-We'll dive much deeper into modeling in subsequent learning labs, but for now let's see if there is a statistically significant relationship between students' final grades, `FinaGradeCEMS`, and the `TimeSpent` on the course.
+We'll dive much deeper into modeling in subsequent case studies, but for now let's see if there is a statistically significant relationship between students' final grades, `FinaGradeCEMS`, and the `TimeSpent` on the course.
 
-We need to do some transformations of our two parameters before we can run the model, in our case it is linear regression. We encode the data from the two columns `FinaGradeCEMS` and `TimeSpent` into the format our scikit-learn linear regression model could understand.
+### An Inferential Model
 
-\*Note that on the y-axis we put a dependent variable, the one we want to predict and x-axis is for and independent, or exploratory variable.
+An inferential statistical model is used to understand the relationships between variables and make inferences about the population from a sample. It aims to identify the underlying mechanisms and determine the significance of these relationships.
 
-We then train (or fit) or model to the data we selected to find a line of best fit.
+Key characteristics of an inferential model include:
 
-We also added the code to visualize our prediction in the scatter plot and changed its color to understand better what is being predicted.
+-   **Focus on Understanding:** These models aim to understand the causal or correlational relationships between variables.
+
+-   **Hypothesis Testing:** They often involve hypothesis testing to determine if observed patterns are statistically significant.
+
+-   **Parameter Estimates:** Inferential models provide estimates of parameters (such as coefficients) that describe the relationship between variables, along with confidence intervals and p-values to assess their significance.
+
+-   **Generalization:** The goal is to generalize findings from the sample to the larger population.
+
+#### **👉 Your Turn** **⤵**
+
+Let's use {statsmodels} package run a basic linear regression model to further examine the relationship between `TimeSpent` and `FinalGradeCEMS`:
+
+```{python}
+
+# Define the independent variable (predictor) and the dependent variable (response)
+X = sci_data['TimeSpent']
+y = sci_data['FinalGradeCEMS']
+
+# Add a constant to the independent variable (this adds the intercept term to the model)
+X = sm.add_constant(X)
+
+# Fit the linear regression model
+model = sm.OLS(y, X).fit()
+
+# Print the summary of the model
+print(model.summary())
+```
+
+It looks like `TimeSpent` in the online course is indeed positively associated with a higher final grade! That is, students who spent more time in the LMS also earned higher grades. However, before we get too excited, there are likely other factors influencing student performance that are not captured by our model as study time only accounts for a small portion of why students get different grades. There are clearly other variables that likely play a role in determining final grades.
+
+Don't worry too much for now if interpreting model outputs is relatively new for you, or if it's been a while. We'll be working with models in greater depth in our other LASER modules.
+
+### A Predictive Model
+
+A predictive model is designed to make accurate predictions about future or unseen data. The primary goal is to maximize the accuracy of predictions rather than understanding the underlying relationships.
+
+Key characteristics of an inferential model include:
+
+-   **Focus on Prediction:** These models aim to accurately predict the outcome variable for new data points.
+
+-   **Model Performance:** The effectiveness of predictive models is evaluated based on metrics like R-squared, mean squared error, or other prediction accuracy measures.
+
+-   **Complex Algorithms:** Predictive modeling often uses more complex algorithms (e.g., machine learning techniques) that might not be easily interpretable but offer higher predictive power.
+
+-   **Validation:** Predictive models rely heavily on validation techniques like cross-validation to ensure that the model performs well on unseen data.
+
+Before we can run out model, we'll need to do some transformations of our two parameters. In our case it is linear regression. We encode the data from the two columns `FinaGradeCEMS` and `TimeSpent` into the format our scikit-learn linear regression model could understand. We then train (or fit) or model to the data we selected to find a line of best fit.
+
+#### **👉 Your Turn** **⤵**
+
+Run the following code chunk to fit a linear regression model to predict `FinalGradeCEMS` (final grades) based on `TimeSpent` (time in LMS) and visualize the data points and the fitted regression line on a scatter plot:
 
 ```{python}
 #dependent variable is what you want to predict - y axis; independent(exploratory) variable
@@ -453,11 +557,13 @@ plt.ylabel('FinalGradeCEMS')
 plt.show()
 ```
 
-We can now use our model to predict the grade depending on the time spent studying.
+Note that on the y-axis we put a dependent variable, the one we want to predict and x-axis is for and independent, or exploratory variable.
+
+We can now use our model to predict a student's grade depending on how much time (in minutes) they spent in the course:
 
 ```{python}
-# Assuming 'new_data' is a Pandas DataFrame with a 'TimeSpent' column for prediction
-new_data = pd.DataFrame({'TimeSpent': [10, 15, 20]})
+# Create a new DataFrame with a column 'TimeSpent' in minutes
+new_data = pd.DataFrame({'TimeSpent': [1000, 1500, 2000]})
 
 # Extracting the 'TimeSpent' values from 'new_data'
 X_new = np.array(new_data['TimeSpent']).reshape(-1, 1)
@@ -469,69 +575,134 @@ predicted_grades = reg.predict(X_new)
 print(predicted_grades)
 ```
 
-```{python}
-print(reg.predict([[4000]]))
-```
+Hmm... Assuming our model is accurate (a big assumption!) even at 2000 minutes the best a student might nope for is a C+.
 
 #### **👉 Your Turn** **⤵**
 
-Change the number of time a student is spending and see how the predicted grade changes.
-
-❓How much time do you need to spend studying to get an A?
+Change the amount of time a student is spends in the course and see how the predicted grade changes.
 
 ```{python}
-#print(reg.predict([['YOUR CODE HERE']]))
+
+print(reg.predict([[5000]]))
 
 ```
 
-We can also add another variable to our model to see how it would influence the prediction.
+#### ❓Question
 
-\*Note, in Python you can only add numerical data values to your models, so be careful when choosing.
+How much time would a student need to spend in the course to get an A?
 
-There are ways to transform your categorical values into numerical that we will introduce later in the course.
+-   YOUR RESPONSE HERE
 
-Run the cells below to train the model and compare its prediction to the previous one.
-
-```{python}
-X = np.array(sci_data['TimeSpent'],sci_data['section']).reshape(-1, 1)
-y = np.array(sci_data['FinalGradeCEMS']).reshape(-1, 1)
-
-reg_2 = LinearRegression().fit(X, y)
-```
-
-```{python}
-reg_2.predict([[4000]])
-```
-
-As we can see the predicted grade is a bit better with the two parameters.
-
-#### **👉 Your Turn** **⤵**
-
-Compare the two model predictions by altering the time spent studying.
-
-Change the variable `section` to another one that you think might be related to the final grade.
-
-```{python}
-#X = np.array(sci_data['TimeSpent'],sci_data['YOUR CODE HERE']).reshape(-1, 1)
-#y = np.array(sci_data['FinalGradeCEMS']).reshape(-1, 1)
-
-#reg_3 = LinearRegression().fit(X, y)
-```
-
-```{python}
-#reg_3.predict([['YOUR CODE HERE']])
-```
+::: callout-important
+It's important to note that these models are just used for illustrative examples of typical modeling approaches used in learning analytics and should be taken with a grain of salt. In our predictive model, for example, we haven't attended to the accuracy of our model or how well it performs well on unseen data.
+:::
 
 ## 5. COMMUNICATE
 
-The final step in the workflow/process is sharing the results of your analysis with wider audience. Krumm et al. \@krumm2018 have outlined the following 3-step process for communicating with education stakeholders findings from an analysis:
+The final step in the workflow/process is sharing the results of your analysis with wider audience. Krumm et al. @krumm2018 have outlined the following 3-step process for communicating with education stakeholders findings from an analysis:
 
-1.  **Select.** Communicating what one has learned involves selecting among those analyses that are most important and most useful to an intended audience, as well as selecting a form for displaying that information, such as a graph or table in static or interactive form, i.e. a "data product."
+1.  **Select.** Communicating what one has learned involves selecting among those analyses that are most important and most useful to an intended audience, as well as selecting a form for displaying that information, such as a graph or table in static or interactive form, i.e. a "data product."
 
 2.  **Polish**. After creating initial versions of data products, research teams often spend time refining or polishing them, by adding or editing titles, labels, and notations and by working with colors and shapes to highlight key points.
 
-3.  **Narrate.** Writing a narrative to accompany the data products involves, at a minimum, pairing a data product with its related research question, describing how best to interpret the data product, and explaining the ways in which the data product helps answer the research question and might be used to inform new analyses or a "change idea" for improving student learning.
+3.  **Narrate.** Writing a narrative to accompany the data products involves, at a minimum, pairing a data product with its related research question, describing how best to interpret the data product, and explaining the ways in which the data product helps answer the research question and might be used to inform new analyses or a "change idea" for improving student learning.
 
-In later Learning Labs, you will have an opportunity to create a simple "data product" designed to illustrate some insights gained from your analysis and ideally highlight an action step or change idea that can be used to improve learning or the contexts in which learning occurs.
+In later modules, you will have an opportunity to create a simple "data product" designed to illustrate some insights gained from your analysis and ideally highlight an action step or change idea that can be used to improve learning or the contexts in which learning occurs.
 
-For now, we will wrap up this case study by converting our work into a webpage that can be used to communicate your learning and demonstrate some of your new Python skills.
+#### 👉 Your Turn ⤵
+
+For now, we will wrap up this case study by converting your work to an HTML file that can be published and used to communicate your learning and demonstrate some of your new R skills. To do so, you will need to "render" your document by clicking the ![](img/render.png){width="2%"} Render button in the menu bar at that the top of this file.
+
+Rendering a document does two important things, namely when you render a document it:
+
+1.  checks through all your code for any errors; and,
+
+2.  creates a file in your project directory that you can use to share you work.
+
+Now that you've finished your first case study, click the "Render" button in the toolbar at the top of your document to covert this Quarto document to a HTML web page, just one of [the many publishing formats you can create with Quarto](https://quarto.org/docs/output-formats/all-formats.html) documents.
+
+If the files rendered correctly, you should now see a new file named `orientation-case-study-R.html` in the Files tab located in the bottom right corner of R Studio. If so, congratulations, you just completed the getting started activity! You're now ready for the unit Case Studies that we will complete during the third week of each unit.
+
+::: callout-important
+If you encounter errors when you try to render, first check the case study answer key located in the files pane and has the suggested code for the Your Turns. If you are still having difficulties, try copying and pasting the error into Google or ChatGPT to see if you can resolve the issue. Finally, contact your instructor to debug the code together if you're still having issues.
+:::
+
+### Publish File
+
+There are a wide variety of ways to publish documents, presentations, and websites created using Quarto. Since content rendered with Quarto uses standard formats (HTML, PDFs, MS Word, etc.) it can be published anywhere. Additionally, there is a `quarto publish` command available for easy publishing to various popular services such as [Quarto Pub](#0), [Posit Cloud](#0), [RPubs](#0) , [GitHub Pages](#0), or [other services](#0).
+
+#### 👉 Your Turn ⤵
+
+Choose of of the following methods described below for publishing your completed case study.
+
+#### Publishing with Quarto Pub
+
+Quarto Pub is a free publishing service for content created with Quarto. Quarto Pub is ideal for blogs, course or project websites, books, reports, presentations, and personal hobby sites.
+
+It’s important to note that all documents and sites published to Quarto Pub are **publicly visible**. You should only publish content you wish to share publicly.
+
+To publish to Quarto Pub, you will use the `quarto publish` command to publish content rendered on your local machine or via Posit Cloud.
+
+Before attempting your first publish, be sure that you have created a free [Quarto Pub](https://quartopub.com/) account.
+
+The `quarto publish` command provides a very straightforward way to publish documents to Quarto Pub.
+
+For example, here is the Terminal command to publish a generic Quarto `document.qmd` to each of this service:
+
+``` {.bash filename="Terminal"}
+quarto publish quarto-pub document.qmd
+```
+
+You can access your the terminal from directly **Terminal Pane** in the lower left corner as shown below:
+
+![](img/terminal.png){width="100%"}
+
+The actual command you will enter into your terminal to publish your orientation case study is:
+
+`quarto publish quarto-pub orientation-case-study-R.qmd`
+
+When you publish to Quarto Pub using `quarto publish` an access token is used to grant permission for publishing to your account. The first time you publish to Quarto Pub the Quarto CLI will automatically launch a browser to authorize one as shown below.
+
+``` {.bash filename="Terminal"}
+$ quarto publish quarto-pub
+? Authorize (Y/n) › 
+❯ In order to publish to Quarto Pub you need to
+  authorize your account. Please be sure you are
+  logged into the correct Quarto Pub account in 
+  your default web browser, then press Enter or 
+  'Y' to authorize.
+```
+
+Authorization will launch your default web browser to confirm that you want to allow publishing from Quarto CLI. An access token will be generated and saved locally by the Quarto CLI.
+
+Once you've authorized Quarto Pub and published your case study, it should take you immediately to the published document. See my example Orientation Case Study complete with answer key here: [https://sbkellogg.quarto.pub/laser-orientation-case-study-key](https://sbkellogg.quarto.pub/laser-orientation-case-study-key/).
+
+After you've published your first document, you can continue adding more documents, slides, books and even publish entire websites!
+
+![](img/quarto-pub.png)
+
+#### Publishing with R Pubs
+
+An alternative, and perhaps the easiest way to quickly publish your file online is to publish directly from RStudio using Posit Cloud or RPubs. You can do so by clicking the "Publish" button located in the Viewer Pane after you render your document and as illustrated in the screenshot below.
+
+![](img/publish.png){width="100%"}
+
+Similar to Quarto Pub, be sure that you have created a free Posit Cloud or R Pub account before attempting your first publish. You may also need to add your Posit Cloud or R Pub account before being able to publish.
+
+See below for an example of my published Orientation Case Study complete with answer key here using:
+
+-   **R Pubs**: <https://rpubs.com/sbkellogg/orientation-case-study-key>
+
+-   **Posit Cloud**: <https://posit.cloud/content/8432811>
+
+![](img/posit-cloud-pub.png){width="100%"}
+
+### Your First LASER Badge!
+
+Congratulations, you've completed your first case study!
+
+Once you have shared a link to your published document with your instructor and they have reviewed your work, you will be provided a physical or digital version of the badge pictured below!
+
+![](img/LASER_Hx.png){width="50%"}
+
+### References

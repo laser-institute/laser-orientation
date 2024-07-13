@@ -27,6 +27,10 @@ This orientation case study will also introduce you to [Quarto](https://quarto.o
 
 What you are working in now is an **Q**uarto **m**ark**d**own file as indicated by the .**qmd** file name extension. Quarto documents are fully reproducible and use a productive notebook interface to combine formatted text and "chunks" of code to produce a range of [static and dynamic output formats](https://quarto.org/docs/guide/) including: HTML, PDF, Word, HTML5 slides, Tufte-style handouts, books, dashboards, shiny applications, scientific articles, websites, and more.
 
+::: callout-tip
+Quarto documents have handy Outline feature that allow you to easily navigate the entire document. If the outline is not currently visible, click the **Outline** button located on the right of the toolbar at the top of this document.
+:::
+
 #### Source vs. Visual Editor
 
 Following best practices for reproducible research [@gandrud2021], Quarto files store information in plain text [markdown](https://bookdown.org/yihui/rmarkdown/markdown-syntax.html) syntax. You are currently viewing this Quarto document using the visual editor, The visual editor is set as the default view in the [Quarto YAML header](https://quarto.org/docs/get-started/hello/rstudio.html#yaml-header) at the top of this document. Basically, a [YAML header](https://monashdatafluency.github.io/r-rep-res/yaml-header.html#) is:
@@ -36,10 +40,10 @@ Following best practices for reproducible research [@gandrud2021], Quarto files 
 The visual editor allows you to view formatted headers, text and code chunks and is a bit more "human readable" than markdown syntax but there will be many occasions where you will want to take a look at the plain text source code underlying this document. This can be viewed at any point by switching to source mode for editing. You can toggle back and forth between these two modes by clicking on **Source** and **Visual** in the editor toolbar.
 
 ::: callout-note
-You may have noticed a special kind of link in the text above. Specifically, a link citing Reproducible Research with R and R Studio by Chris Gandrud. The YAML header includes a bibliography option and points to our `reference.bib` file in the `lit` folder of this project. This will produce a nice tooltip for each linked reference as well as a bibliography when our doc is [rendered](https://quarto.org/docs/get-started/hello/rstudio.html#rendering) and [published](https://quarto.org/docs/get-started/authoring/rstudio.html#publishing). If you'd like to learn more about citations in Quarto visit: <https://quarto.org/docs/authoring/citations.html>
+You may have noticed a special kind of link in the text above. Specifically, a link citing Reproducible Research with R and R Studio by Chris Gandrud. The YAML header includes a bibliography option and points to our `reference.bib` file in the `lit` folder of this project, which produces a nice tooltip for linked references and a bibliography when our doc is [rendered](https://quarto.org/docs/get-started/hello/rstudio.html#rendering) and [published](https://quarto.org/docs/get-started/authoring/rstudio.html#publishing). Click the following link to learn more about [citations in Quarto](https://quarto.org/docs/authoring/citations.html).
 :::
 
-#### **👉 Your Turn** **⤵**
+#### 👉 Your Turn ⤵
 
 LASER case studies include many interactive elements in which you are asked to perform an action, answer some questions, or write some code. These are indicated by the **👉 Your Turn** **⤵** header. Now it's your turn to do something.
 
@@ -53,7 +57,7 @@ Great job! Let's continue!
 
 In addition to including formatted text hyperlinks, and embedded images like above, Quarto documents can also include a specially formatted text box called a "[code chunk](https://quarto.org/docs/get-started/hello/rstudio.html#code-chunks)." These chunks allows you to run code from multiple languages including R, Python, and SQL. For example, the code chunk below is intended to run R code as specified by "r" inside the curly brackets `{}`. It also contains a contains a code "comment" as indicted by the \# hashtag and line of R code. You may have also noticed a set of buttons in the upper right corner of the code chunk which are used to execute the code.
 
-#### **👉 Your Turn** **⤵**
+#### 👉 Your Turn ⤵
 
 Click the green arrow ![](https://d33wubrfki0l68.cloudfront.net/18153fb9953057ee5cff086122bd26f9cee8fe93/3aba9/images/notebook-run-chunk.png)icon on the right side of the code chunk to run the R code and view the image file name `laser-cycle.png` stored in the `img` folder in your files pane. Quarto will execute the code and its output and any related messages are displayed below the chunk.
 
@@ -92,17 +96,23 @@ First and foremost, data-intensive research involves defining and refining a res
 
 ### Research Question
 
-In this case study, we'll be working with data come from an unpublished research study by LASER team member, Josh Rosenberg, which utilized a number of different data sources to understand high school students' motivation within the context of online courses. For the purpose of this case study, our analysis will be driven by the following research question:
+In this case study, we'll be working with data come from an unpublished research study by LASER team member, [Josh Rosenberg](https://joshuamrosenberg.com), which utilized a number of different data sources to understand high school students' motivation within the context of online courses.
+
+These data sets and related research questions are explored in much greater detail in other modules, but for the purpose of this case study, our analysis will be driven by the following research question:
 
 *Is there a relationship between the time students spend on a course (as measured through their learning management system) and their final course grade?*
 
-### Packages 📦
+### Projects & Packages 📦
 
-As highlighted in [Chapter 6 of Data Science in Education Using R](https://datascienceineducation.com/c06.html) [@estrellado2020e], one of the first steps of every workflow should be to set up a "Project" within RStudio.
+As highlighted in [Chapter 6 of Data Science in Education Using R](https://datascienceineducation.com/c06.html) [@estrellado2020e], one of the first steps of every research workflow should be to set up a "Project" within RStudio.
 
 > A **Project** is the home for all of the files, images, reports, and code that are used in any given project.
 
-We are working in Posit Cloud with an R project [cloned from GitHub](https://github.com/laser-institute/laser-orientation), so a project has already been set up for you as indicated by the `.Rproj` file in the main directory. Locate the Files tab lower right hand window pane and see if you can find the file named `laser-orientation.Rproj`.
+We are working in Posit Cloud with an R project [cloned from GitHub](https://github.com/laser-institute/laser-orientation), so a project has already been set up for you as indicated by the `.Rproj` file in the main directory.
+
+#### 👉 Your Turn ⤵
+
+Locate the Files tab lower right hand window pane and see if you can find the file named `laser-orientation.Rproj`.
 
 Since a project already set up for us, we will instead focus on loading the required packages we'll need for analysis.
 
@@ -114,7 +124,9 @@ You can always check to see which packages have already been installed and loade
 
 ![](img/tidyverse.png){width="30%"}
 
-One package that we'll be using extensively in our learning labs is the {tidyverse} package. The {tidyverse} is actually a [collection of R packages](https://www.tidyverse.org/packages) designed for wrangling and exploring data (sound familiar?) and which all share an underlying design philosophy, grammar, and data structures. These shared features are sometimes referred to as "[tidy data principles](https://r4ds.had.co.nz/tidy-data.html)" [@wickham2016r].
+One package that we'll be using extensively in our learning modules is the {tidyverse} package. The {tidyverse} is actually a [collection of R packages](https://www.tidyverse.org/packages) designed for wrangling and exploring data (sound familiar?) and which all share an underlying design philosophy, grammar, and data structures. These shared features are sometimes referred to as "[tidy data principles](https://r4ds.had.co.nz/tidy-data.html)" [@wickham2016r].
+
+#### 👉 Your Turn ⤵
 
 To load the tidyverse, we'll use the `library()` function. Go ahead and run the code chunk below:
 
@@ -122,21 +134,31 @@ To load the tidyverse, we'll use the `library()` function. Go ahead and run the 
 library(tidyverse)
 ```
 
-Please do not worry if you saw a number of messages: those probably mean that the tidyverse loaded just fine. If you see an error, though, try to interpret or search via your search engine the contents of the error, or reach out to us for assistance.
+::: callout-caution
+Please do not worry if you saw a number of messages. Those probably mean that the `tidyverse` loaded just fine. If you see an "error" message, however, try to interpret or search via your search engine the contents of the error, or reach out to us for assistance.
+:::
 
-#### **👉 Your Turn** **⤵**
+#### skimr 📦
 
-As we noted in the beginning, these case studies are meant to be interactive. Throughout each case study, you'll see Your Turn headings like the one above that will ask to you apply some of your R skills to help with the analysis. These Your Turns are intended to help you practice newly introduced functions or R code and reinforce R skills you have already learned.
+![](img/skimr.png){width="20%"}
 
-Use the code chunk below to load the {skimr} package into our environment as well. **`Skimr`** is a handy package that provides summary statistics that you can skim quickly to understand your data and see what may be missing. We'll be using this later in the Explore section of this case study.
+The {[skimr](https://github.com/ropensci/skimr)} package is a handy package that provides summary statistics that you can skim quickly to understand your data and see what may be missing. We'll be using this later in the Explore section of this case study.
+
+#### 👉 Your Turn ⤵
+
+As we noted in the beginning, these case studies are meant to be interactive. Throughout each case study, we will ask to you apply some of your R skills to help with the analysis. This intended to help you practice newly introduced functions or R code and reinforce R skills you have already learned.
+
+Now use the `library()` function in the code chunk below to load the `skimr` package into our environment as well.
 
 ```{r}
+
 library(skimr)
+
 ```
 
 ### Loading (or reading in) data
 
-The data we'll explore in this case study were originally collected for a research study, which utilized a number of different data sources to understand students' course-related motivation. These courses were designed and taught by instructors through a state-wide online course provider designed to supplement---but not replace---students' enrollment in their local school.
+The data we'll explore in this case study were originally collected for a research study, which utilized a number of different data sources to understand students' course-related motivation. These courses were designed and taught by instructors through a statewide online course provider designed to supplement – but not replace – students' enrollment in their local school.
 
 The data used in this case study has already been "wrangled" quite a bit, but the original datasets included:
 
@@ -150,6 +172,8 @@ The data used in this case study has already been "wrangled" quite a bit, but th
 
 If you are interested in learning more about these datasets, you can visit Chapter 7 of the excellent book, [*Data Science in Education Using R*](https://datascienceineducation.com/c07.html#data-sources)[@estrellado2020e].
 
+#### 👉 Your Turn ⤵
+
 Next, we'll load our data - specifically, a CSV text file, the kind that you can export from Microsoft Excel or Google Sheets - into R, using the `read_csv()` function in the next chunk.
 
 Clicking the green arrow runs the code; do that next to read the `sci-online-classes.csv` file stored in the `data` folder of your R project:
@@ -160,29 +184,43 @@ sci_data <- read_csv("data/sci-online-classes.csv")
 
 Nice work! You should now see a new data "object" named `sci_data` saved in your Environment pane. Try clicking on it and see what happens!
 
-#### Viewing or inspecting data
+::: callout-important
+It's important to note that by manipulating data with the {tidyverse} package, we are **not** changing the original file. Instead, the data is stored in memory and can be viewed in our **Environment** pane, and can later be exported and saved as a new file is desired.
+:::
 
-Now let's learn another way to inspect our data. Run the next chunk and look at the results, tabbing left or right with the arrows, or scanning through the rows by clicking the numbers at the bottom of the pane with the print-out of the data frame you "assigned" to the `sci_data` object in the previous code-chunk:
+#### Viewing and inspecting data
+
+Now let's learn another way to inspect our data.
+
+#### 👉 Your Turn ⤵
+
+Run the next chunk and look at the results, tabbing left or right with the arrows, or scanning through the rows by clicking the numbers at the bottom of the pane with the print-out of the data frame you "assigned" to the `sci_data` object in the previous code-chunk:
 
 ```{r}
+
 sci_data
+
 ```
 
-**Note**: You can also enlarge this output by clicking the "Show in New Window" button located in the top right corner of the output.
+::: callout-tip
+You can also enlarge this output by clicking the "Show in New Window" button located in the top right corner of the output.
+:::
 
-#### **👉 Your Turn** **⤵**
+#### ❓Question
 
 What do you notice about this data set? What do you wonder? Add one or two observations in the space below:
 
 -   YOUR RESPONSE HERE
 
-There are many other ways to inspect your data; the `glimpse()` function provides one such way. Use the code chunk below to take a "glimpse" at your `sci_data`.
+There are many other ways to inspect your data; the `glimpse()` function provides one such way. Complete the code chunk below to take a "glimpse" at your `sci_data`.
 
 ```{r}
 glimpse(sci_data)
 ```
 
-We have one more question to pose to you: What do rows and columns typically represent in your area of work and/or research?
+#### ❓Question
+
+We have a couple more questions to pose to you before wrangling the data we just imported.
 
 Generally, rows typically represent "cases," the units that we measure, or the units on which we collect data. This is not a trick question! What counts as a "case" (and therefore what is represented as a row) varies by (and within) fields. There may be multiple types or levels of units studied in your field; listing more than one is fine! Also, please consider what columns - which usually represent variables - represent in your area of work and/or research.
 
@@ -229,7 +267,7 @@ Recall that you can use a function named `glimpse()` to do this.
 glimpse(sci_data)
 ```
 
-#### **👉 Your Turn** **⤵**
+#### 👉 Your Turn ⤵
 
 In the code chunk below, add a new variable, being careful to type the new variable name as it appears in the data. We've added some code to get you started. Consider how the names of the other variables are separated as you think about how to add an additional variable to this code.
 
@@ -251,7 +289,7 @@ sci_data |>
   filter(FinalGradeCEMS > 70)
 ```
 
-#### **👉 Your Turn** **⤵**
+#### 👉 Your Turn ⤵
 
 In the next code chunk, change the cut-off from 70% to some other value - larger or smaller (maybe much larger or smaller - feel free to play around with the code a bit!).
 
@@ -284,7 +322,7 @@ sci_data |>
 
 Just at a quick cursory glance at our two variables, it does appear that students with higher grades also tend to have spent more time in the online course.
 
-#### **👉 Your Turn** **⤵**
+#### 👉 Your Turn ⤵
 
 In the code chunk below, replace `FinalGradeCEMS` that is used with both the `select()` and `arrange()` functions with a different variable in the data set. Consider returning to the code chunk above in which you glimpsed at the names of all of the variables.
 
@@ -319,7 +357,7 @@ sci_data |>
   skim()
 ```
 
-#### **👉 Your Turn** **⤵**
+#### 👉 Your Turn ⤵
 
 Use the code from the chunk from above to explore some other variables of interest from our `sci_data`.
 
@@ -371,7 +409,7 @@ ggplot(sci_data) +
   geom_histogram(aes(x = FinalGradeCEMS), fill = "blue")
 ```
 
-#### **👉 Your Turn** **⤵**
+#### 👉 Your Turn ⤵
 
 Now use the code chunk below to visualize the distribution of another variable in the data, specifically `TimeSpent`. You can do so by swapping out the variable `FinalGradeCEMS` with our new variable. Also, change the color to one of your choosing; consider this list of valid color names here: <http://www.stat.columbia.edu/~tzheng/files/Rcolor.pdf>
 
@@ -386,7 +424,7 @@ ggplot(sci_data) +
 
 Finally, let's create a scatter plot for the relationship between these two variables. Scatterplots use the point geom, i.e., the `geom_point()` function, and are most useful for displaying the relationship between two continuous variables.
 
-#### **👉 Your Turn** **⤵**
+#### 👉 Your Turn ⤵
 
 Complete the code chunk below to create a simple scatterplot with `TimeSpent` on the x axis and `FinalGradeCEMS` on the y axis. **Hint**: something else important is also missing that you will need to "add" to your code.
 
@@ -414,7 +452,7 @@ summary(m1)
 
 It looks like `TimeSpent` is associated with a higher final grade. That is, students who spent more time in the LMS also earned higher grades.
 
-#### **👉 Your Turn** **⤵**
+#### 👉 Your Turn ⤵
 
 Now let's "add" *another* variable to the regression model. Specifically, use the `+` operator after `TimeSpent` to add the course `subject` variable as a predictor of students' final grades.
 
@@ -461,7 +499,7 @@ Rendered HTML files can be published online through a variety of ways including 
 
 ![](img/publish.png)
 
-#### **👉 Your Turn** **⤵**
+#### 👉 Your Turn ⤵
 
 Navigate the to the [RPubs](https://rpubs.com) website and create a free account. Now, publish your rendered Quarto markdown file to the web using the RPubs option.
 

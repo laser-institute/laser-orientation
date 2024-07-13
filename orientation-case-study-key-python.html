@@ -1,0 +1,2026 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.4.550">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="LASER Institute">
+<meta name="dcterms.date" content="2024-07-13">
+
+<title>A Coding Case Study with Quarto</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script><script src="orientation-case-study-key-python_files/libs/clipboard/clipboard.min.js"></script>
+<script src="orientation-case-study-key-python_files/libs/quarto-html/quarto.js"></script>
+<script src="orientation-case-study-key-python_files/libs/quarto-html/popper.min.js"></script>
+<script src="orientation-case-study-key-python_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="orientation-case-study-key-python_files/libs/quarto-html/anchor.min.js"></script>
+<link href="orientation-case-study-key-python_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="orientation-case-study-key-python_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="orientation-case-study-key-python_files/libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="orientation-case-study-key-python_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="orientation-case-study-key-python_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="orientation-case-study-key-python_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="orientation-case-study-key-python_files/libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==" crossorigin="anonymous"></script>
+
+<script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
+
+
+</head>
+
+<body>
+
+<div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
+<div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+  <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">0. INTRODUCTION</a>
+  <ul>
+  <li><a href="#how-to-use-this-quarto-document" id="toc-how-to-use-this-quarto-document" class="nav-link" data-scroll-target="#how-to-use-this-quarto-document">How to use this Quarto document</a>
+  <ul class="collapse">
+  <li><a href="#source-vs.-visual-editor" id="toc-source-vs.-visual-editor" class="nav-link" data-scroll-target="#source-vs.-visual-editor">Source vs.&nbsp;Visual Editor</a></li>
+  <li><a href="#your-turn" id="toc-your-turn" class="nav-link" data-scroll-target="#your-turn">👉 Your Turn ⤵</a></li>
+  <li><a href="#code-chunks" id="toc-code-chunks" class="nav-link" data-scroll-target="#code-chunks">Code “Chunks”</a></li>
+  <li><a href="#your-turn-1" id="toc-your-turn-1" class="nav-link" data-scroll-target="#your-turn-1">👉 Your Turn ⤵</a></li>
+  <li><a href="#question" id="toc-question" class="nav-link" data-scroll-target="#question">❓Question</a></li>
+  </ul></li>
+  <li><a href="#the-data-intensive-research-workflow" id="toc-the-data-intensive-research-workflow" class="nav-link" data-scroll-target="#the-data-intensive-research-workflow">The Data-Intensive Research Workflow</a></li>
+  </ul></li>
+  <li><a href="#prepare" id="toc-prepare" class="nav-link" data-scroll-target="#prepare">1. PREPARE</a>
+  <ul>
+  <li><a href="#research-question" id="toc-research-question" class="nav-link" data-scroll-target="#research-question">Research Question</a></li>
+  <li><a href="#projects-packages" id="toc-projects-packages" class="nav-link" data-scroll-target="#projects-packages">Projects &amp; Packages 📦</a>
+  <ul class="collapse">
+  <li><a href="#your-turn-2" id="toc-your-turn-2" class="nav-link" data-scroll-target="#your-turn-2">👉 Your Turn ⤵</a></li>
+  <li><a href="#pandas" id="toc-pandas" class="nav-link" data-scroll-target="#pandas">pandas 📦</a></li>
+  <li><a href="#numpy" id="toc-numpy" class="nav-link" data-scroll-target="#numpy">NumPy 📦</a></li>
+  <li><a href="#pyplot" id="toc-pyplot" class="nav-link" data-scroll-target="#pyplot">Pyplot 📦</a></li>
+  <li><a href="#sklearn" id="toc-sklearn" class="nav-link" data-scroll-target="#sklearn">sklearn 📦</a></li>
+  <li><a href="#your-turn-3" id="toc-your-turn-3" class="nav-link" data-scroll-target="#your-turn-3">👉 Your Turn ⤵</a></li>
+  </ul></li>
+  <li><a href="#loading-or-reading-in-data" id="toc-loading-or-reading-in-data" class="nav-link" data-scroll-target="#loading-or-reading-in-data">Loading (or reading in) data</a>
+  <ul class="collapse">
+  <li><a href="#your-turn-4" id="toc-your-turn-4" class="nav-link" data-scroll-target="#your-turn-4">👉 Your Turn ⤵</a></li>
+  <li><a href="#viewing-and-inspecting-data" id="toc-viewing-and-inspecting-data" class="nav-link" data-scroll-target="#viewing-and-inspecting-data">Viewing and inspecting data</a></li>
+  <li><a href="#your-turn-5" id="toc-your-turn-5" class="nav-link" data-scroll-target="#your-turn-5"><strong>👉 Your Turn ⤵</strong></a></li>
+  <li><a href="#question-1" id="toc-question-1" class="nav-link" data-scroll-target="#question-1">❓Question</a></li>
+  <li><a href="#data-types" id="toc-data-types" class="nav-link" data-scroll-target="#data-types">Data Types</a></li>
+  <li><a href="#your-turn-6" id="toc-your-turn-6" class="nav-link" data-scroll-target="#your-turn-6">👉 Your Turn ⤵</a></li>
+  <li><a href="#question-2" id="toc-question-2" class="nav-link" data-scroll-target="#question-2">❓Question</a></li>
+  </ul></li>
+  </ul></li>
+  <li><a href="#wrangle" id="toc-wrangle" class="nav-link" data-scroll-target="#wrangle">2. WRANGLE</a>
+  <ul>
+  <li><a href="#selecting-variables" id="toc-selecting-variables" class="nav-link" data-scroll-target="#selecting-variables">Selecting variables</a></li>
+  <li><a href="#cleaning-data" id="toc-cleaning-data" class="nav-link" data-scroll-target="#cleaning-data">Cleaning data</a></li>
+  <li><a href="#handling-missing-values" id="toc-handling-missing-values" class="nav-link" data-scroll-target="#handling-missing-values">Handling Missing Values</a>
+  <ul class="collapse">
+  <li><a href="#drop-missing-values" id="toc-drop-missing-values" class="nav-link" data-scroll-target="#drop-missing-values">Drop missing values</a></li>
+  <li><a href="#substitute-with-column-means" id="toc-substitute-with-column-means" class="nav-link" data-scroll-target="#substitute-with-column-means">Substitute with column means</a></li>
+  </ul></li>
+  <li><a href="#filtering-variables" id="toc-filtering-variables" class="nav-link" data-scroll-target="#filtering-variables">Filtering variables</a>
+  <ul class="collapse">
+  <li><a href="#your-turn-7" id="toc-your-turn-7" class="nav-link" data-scroll-target="#your-turn-7"><strong>👉 Your Turn</strong> <strong>⤵</strong></a></li>
+  </ul></li>
+  </ul></li>
+  <li><a href="#explore" id="toc-explore" class="nav-link" data-scroll-target="#explore">3. EXPLORE</a>
+  <ul>
+  <li><a href="#summary-statistics" id="toc-summary-statistics" class="nav-link" data-scroll-target="#summary-statistics">Summary Statistics</a>
+  <ul class="collapse">
+  <li><a href="#your-turn-8" id="toc-your-turn-8" class="nav-link" data-scroll-target="#your-turn-8"><strong>👉 Your Turn</strong> <strong>⤵</strong></a></li>
+  </ul></li>
+  <li><a href="#data-visualization" id="toc-data-visualization" class="nav-link" data-scroll-target="#data-visualization">Data Visualization</a>
+  <ul class="collapse">
+  <li><a href="#the-graphing-workflow" id="toc-the-graphing-workflow" class="nav-link" data-scroll-target="#the-graphing-workflow">The Graphing Workflow</a></li>
+  <li><a href="#your-turn-9" id="toc-your-turn-9" class="nav-link" data-scroll-target="#your-turn-9"><strong>👉 Your Turn</strong> <strong>⤵</strong></a></li>
+  <li><a href="#scatterplots" id="toc-scatterplots" class="nav-link" data-scroll-target="#scatterplots">Scatterplots</a></li>
+  <li><a href="#your-turn-10" id="toc-your-turn-10" class="nav-link" data-scroll-target="#your-turn-10"><strong>👉 Your Turn</strong> <strong>⤵</strong></a></li>
+  </ul></li>
+  </ul></li>
+  <li><a href="#model" id="toc-model" class="nav-link" data-scroll-target="#model">4. MODEL</a>
+  <ul>
+  <li><a href="#your-turn-11" id="toc-your-turn-11" class="nav-link" data-scroll-target="#your-turn-11"><strong>👉 Your Turn</strong> <strong>⤵</strong></a></li>
+  <li><a href="#your-turn-12" id="toc-your-turn-12" class="nav-link" data-scroll-target="#your-turn-12"><strong>👉 Your Turn</strong> <strong>⤵</strong></a></li>
+  </ul></li>
+  <li><a href="#communicate" id="toc-communicate" class="nav-link" data-scroll-target="#communicate">5. COMMUNICATE</a></li>
+  </ul>
+</nav>
+</div>
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">A Coding Case Study with Quarto</h1>
+<p class="subtitle lead">LASER Orientation Module</p>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>LASER Institute </p>
+          </div>
+  </div>
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">July 13, 2024</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="introduction" class="level2">
+<h2 class="anchored" data-anchor-id="introduction">0. INTRODUCTION</h2>
+<p><img src="img/LASER_Hx.png" class="img-fluid" style="width:40.0%"></p>
+<p>Welcome to your first LASER Case Study! The case study activities included in each module demonstrate how key Learning Analytics (LA) techniques featured in exemplary STEM education research studies can be implemented with R or Python. Case studies also provide a holistic setting to explore important foundational topics integral to Learning Analytics such as reproducible research, use of APIs, and ethical use of educational data.</p>
+<p>This orientation case study will also introduce you to <a href="https://quarto.org">Quarto</a>, which is heavily integrated into each LASER Module. You may have used Quarto before - or you may not have! Either is fine as this task will be designed with the assumption that you have not used Quarto before.</p>
+<section id="how-to-use-this-quarto-document" class="level3">
+<h3 class="anchored" data-anchor-id="how-to-use-this-quarto-document">How to use this Quarto document</h3>
+<p>What you are working in now is an <strong>Q</strong>uarto <strong>m</strong>ark<strong>d</strong>own file as indicated by the .<strong>qmd</strong> file name extension. Quarto documents are fully reproducible and use a productive notebook interface to combine formatted text and “chunks” of code to produce a range of <a href="https://quarto.org/docs/guide/">static and dynamic output formats</a> including: HTML, PDF, Word, HTML5 slides, Tufte-style handouts, books, dashboards, shiny applications, scientific articles, websites, and more.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Quarto documents have handy Outline feature that allow you to easily navigate the entire document. If the outline is not currently visible, click the <strong>Outline</strong> button located on the right of the toolbar at the top of this document.</p>
+</div>
+</div>
+<section id="source-vs.-visual-editor" class="level4">
+<h4 class="anchored" data-anchor-id="source-vs.-visual-editor">Source vs.&nbsp;Visual Editor</h4>
+<p>Following best practices for reproducible research <span class="citation" data-cites="gandrud2021">(<a href="#ref-gandrud2021" role="doc-biblioref">Gandrud 2021</a>)</span>, Quarto files store information in plain text <a href="https://bookdown.org/yihui/rmarkdown/markdown-syntax.html">markdown</a> syntax. You are currently viewing this Quarto document using the visual editor, The visual editor is set as the default view in the <a href="https://quarto.org/docs/get-started/hello/rstudio.html#yaml-header">Quarto YAML header</a> at the top of this document. Basically, a <a href="https://monashdatafluency.github.io/r-rep-res/yaml-header.html#">YAML header</a> is:</p>
+<blockquote class="blockquote">
+<p>a short blob of text that… not only dictates the final file format, but a style and feel for our final document.</p>
+</blockquote>
+<p>The visual editor allows you to view formatted headers, text and code chunks and is a bit more “human readable” than markdown syntax but there will be many occasions where you will want to take a look at the plain text source code underlying this document. This can be viewed at any point by switching to source mode for editing. You can toggle back and forth between these two modes by clicking on <strong>Source</strong> and <strong>Visual</strong> in the editor toolbar.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>You may have noticed a special kind of link in the text above. Specifically, a link citing Reproducible Research with R and R Studio by Chris Gandrud. The YAML header includes a bibliography option and points to our <code>reference.bib</code> file in the <code>lit</code> folder of this project, which produces a nice tooltip for linked references and a bibliography when our doc is <a href="https://quarto.org/docs/get-started/hello/rstudio.html#rendering">rendered</a> and <a href="https://quarto.org/docs/get-started/authoring/rstudio.html#publishing">published</a>. Click the following link to learn more about <a href="https://quarto.org/docs/authoring/citations.html">citations in Quarto</a>.</p>
+</div>
+</div>
+</section>
+<section id="your-turn" class="level4">
+<h4 class="anchored" data-anchor-id="your-turn">👉 Your Turn ⤵</h4>
+<p>LASER case studies include many interactive elements in which you are asked to perform an action, answer some questions, or write some code. These are indicated by the <strong>👉 Your Turn</strong> <strong>⤵</strong> header. Now it’s your turn to do something.</p>
+<p>Take a look at the markdown syntax used to create this document by viewing with the source editor. To do so, click the “Source” button in the toolbar at the top of this file. After you’ve had a look, click back to the visual editor to continue.</p>
+<p><img src="img/source-view.png" class="img-fluid" style="width:80.0%"></p>
+<p>Great job! Let’s continue!</p>
+</section>
+<section id="code-chunks" class="level4">
+<h4 class="anchored" data-anchor-id="code-chunks">Code “Chunks”</h4>
+<p>In addition to including formatted text hyperlinks, and embedded images like above, Quarto documents can also include a specially formatted text box called a “<a href="https://quarto.org/docs/get-started/hello/rstudio.html#code-chunks">code chunk</a>.” These chunks allows you to run code from multiple languages including R, Python, and SQL. For example, the code chunk below is intended to run Python code as specified by “python” inside the curly brackets <code>{}</code>. It also contains a contains some code “comments” as indicted by the # hashtags and several lines of python code. You may have also noticed a set of buttons in the upper right corner of the code chunk which are used to execute the code.</p>
+</section>
+<section id="your-turn-1" class="level4">
+<h4 class="anchored" data-anchor-id="your-turn-1">👉 Your Turn ⤵</h4>
+<p>Click the green arrow <img src="https://d33wubrfki0l68.cloudfront.net/18153fb9953057ee5cff086122bd26f9cee8fe93/3aba9/images/notebook-run-chunk.png" class="img-fluid">icon on the right side of the code chunk to run the Python code and view the image file name <code>laser-cycle.png</code> stored in the <code>img</code> folder in your files pane. Quarto will execute the code and its output and any related messages are displayed below the chunk.</p>
+<div id="da4c72b4" class="cell" data-execution_count="1">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Import the pyplot and image modules from the matplotlib library</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Read and display an image from file</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>plt.imshow(plt.imread(<span class="st">'img/laser-cycle.png'</span>))</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>plt.axis(<span class="st">'off'</span>)  <span class="co"># Hide axes</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="orientation-case-study-key-python_files/figure-html/cell-2-output-1.png" width="540" height="218" class="figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Nice work! For this case study, <strong>don’t stress too much about understanding the code</strong>. We’ll spend a lot of time doing that in the other modules. For now, take a look at the image displayed and answer the question that follows by typing your response directly in this document.</p>
+</section>
+<section id="question" class="level4">
+<h4 class="anchored" data-anchor-id="question">❓Question</h4>
+<p>In LASER case studies, you will often see as part of “Your Turns” a ❓ icon that indicates you are being promoted to answer a question. Type your response to the following question by deleting “YOUR RESPONSE HERE” and adding your own response:</p>
+<p>What do you think this image is intended to illustrate?</p>
+<ul>
+<li>YOUR RESPONSE HERE</li>
+</ul>
+</section>
+</section>
+<section id="the-data-intensive-research-workflow" class="level3">
+<h3 class="anchored" data-anchor-id="the-data-intensive-research-workflow">The Data-Intensive Research Workflow</h3>
+<p>The diagram shown above illustrates a Learning Analytics framework called the Data-Intensive Research workflow and comes from the excellent book, Learning Analytics Goes to School <span class="citation" data-cites="krumm2018">(<a href="#ref-krumm2018" role="doc-biblioref">Krumm, Means, and Bienkowski 2018</a>)</span><em>.</em> You can check that out later, but don’t feel any need to dive deep into it for now - we spend more time unpacking this framework in our <a href="https://laser-institute.github.io/laser-website/curriculum-la-workflow.html">Learning Analytics Workflow Modules</a>; just know that this case study and all of the case studies in our <a href="https://laser-institute.github.io/laser-website/curriculum-design.html#modules-topics">LASER curriculum modules</a> are organized around the five main components of this workflow.</p>
+<p>In this introductory coding case study, we’ll focus on the following tasks specific to each component of the workflow:</p>
+<ol type="1">
+<li><strong>Prepare</strong>. Understand the research context, software packages, and data collected.</li>
+<li><strong>Wrangle</strong>. Select and filter variables and “wrangle” them in a tabular (think spreadsheet!) format.</li>
+<li><strong>Explore</strong>. Create some basic summary tables and plots to understand our data better.</li>
+<li><strong>Model</strong>. Run a basic model - specifically, a simple regression model.</li>
+<li><strong>Communicate</strong>. Create a reproducible report of your work that you can share with others.</li>
+</ol>
+<p>Now, let’s get started!</p>
+</section>
+</section>
+<section id="prepare" class="level2">
+<h2 class="anchored" data-anchor-id="prepare">1. PREPARE</h2>
+<p>First and foremost, data-intensive research involves defining and refining a research question and developing an understanding of where your data comes from <span class="citation" data-cites="krumm2018">(<a href="#ref-krumm2018" role="doc-biblioref">Krumm, Means, and Bienkowski 2018</a>)</span>. This part of the process also involves setting up a reproducible research environment so your work can be understood and replicated by other researchers <span class="citation" data-cites="gandrud2021">(<a href="#ref-gandrud2021" role="doc-biblioref">Gandrud 2021</a>)</span>. For now, we’ll focus on just a few parts of this process, diving in much more deeply into these components in later learning modules.</p>
+<section id="research-question" class="level3">
+<h3 class="anchored" data-anchor-id="research-question">Research Question</h3>
+<p>In this case study, we’ll be working with data come from an unpublished research study by LASER team member, <a href="https://joshuamrosenberg.com">Josh Rosenberg</a>, which utilized a number of different data sources to understand high school students’ motivation within the context of online courses.</p>
+<p>These data sets and related research questions are explored in much greater detail in other modules, but for the purpose of this case study, our analysis will be driven by the following research question:</p>
+<p><em>Is there a relationship between the time students spend on a course (as measured through their learning management system) and their final course grade?</em></p>
+</section>
+<section id="projects-packages" class="level3">
+<h3 class="anchored" data-anchor-id="projects-packages">Projects &amp; Packages 📦</h3>
+<p>As highlighted in <a href="https://datascienceineducation.com/c06.html">Chapter 6 of Data Science in Education Using R</a> <span class="citation" data-cites="estrellado2020e">(<a href="#ref-estrellado2020e" role="doc-biblioref">Estrellado et al. 2020</a>)</span>, one of the first steps of every research workflow should be to set up a “Project” within RStudio.</p>
+<blockquote class="blockquote">
+<p>A <strong>Project</strong> is the home for all of the files, images, reports, and code that are used in any given project.</p>
+</blockquote>
+<p>We are working in Posit Cloud with an R project <a href="https://github.com/laser-institute/laser-orientation">cloned from GitHub</a>, so a project has already been set up for you as indicated by the <code>.Rproj</code> file in the main directory.</p>
+<section id="your-turn-2" class="level4">
+<h4 class="anchored" data-anchor-id="your-turn-2">👉 Your Turn ⤵</h4>
+<p>Locate the Files tab lower right hand window pane and see if you can find the file named <code>laser-orientation.Rproj</code>.</p>
+<p>Since a project already set up for us, we will instead focus on loading the required <strong>packages</strong> we’ll need for analysis.</p>
+<blockquote class="blockquote">
+<p>Packages, sometimes referred to as libraries, are shareable collections of R code that can contain functions, data, and/or documentation and extend the functionality of R.</p>
+</blockquote>
+</section>
+<section id="pandas" class="level4">
+<h4 class="anchored" data-anchor-id="pandas">pandas 📦</h4>
+<p><img src="img/pandas.svg" class="img-fluid" style="width:30.0%"></p>
+<p>One package that we’ll be using extensively is {pandas}. <a href="https://pandas.pydata.org">Pandas</a> <span class="citation" data-cites="mckinney-proc-scipy-2010">(<a href="#ref-mckinney-proc-scipy-2010" role="doc-biblioref">McKinney 2010</a>)</span> is a powerful and flexible open source data analysis and wrangling tool for Python that is used widely by the data science community.</p>
+</section>
+<section id="numpy" class="level4">
+<h4 class="anchored" data-anchor-id="numpy">NumPy 📦</h4>
+<p><img src="img/numpy.png" class="img-fluid" style="width:20.0%"></p>
+<p><a href="https://numpy.org">NumPy</a> is a fundamental package for scientific computing with Python and includes a collection of mathematical algorithms and convenience functions. NumPy offers comprehensive mathematical functions, random number generators, linear algebra routines, Fourier transforms, and more.</p>
+</section>
+<section id="pyplot" class="level4">
+<h4 class="anchored" data-anchor-id="pyplot">Pyplot 📦</h4>
+<p><img src="img/matplotlib.png" class="img-fluid" style="width:20.0%"></p>
+<p>Pyplot is a module in the {matplotlib) package, a comprehensive library for creating static, animated, and interactive visualizations in Python. <strong><code>pyplot</code></strong> provides a MATLAB-like interface for making plots and is particularly suited for interactive plotting and simple cases of programmatic plot generation.</p>
+</section>
+<section id="sklearn" class="level4">
+<h4 class="anchored" data-anchor-id="sklearn">sklearn 📦</h4>
+<p>The <a href="https://scikit-learn.org/stable/">scikit-learn</a> package</p>
+</section>
+<section id="your-turn-3" class="level4">
+<h4 class="anchored" data-anchor-id="your-turn-3">👉 Your Turn ⤵</h4>
+<p>Click the arrow to execute your code in a cell below and load the required packages and functions for this case study.</p>
+<div id="5eff60b3" class="cell" data-execution_count="2">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd <span class="co"># for data wrangling</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np <span class="co"># for descriptive statistics</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt <span class="co"># for data visualization</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.linear_model <span class="im">import</span> LinearRegression <span class="co"># for data modeling</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+</section>
+<section id="loading-or-reading-in-data" class="level3">
+<h3 class="anchored" data-anchor-id="loading-or-reading-in-data">Loading (or reading in) data</h3>
+<p>The data we’ll explore in this case study were originally collected for a research study, which utilized a number of different data sources to understand students’ course-related motivation. These courses were designed and taught by instructors through a state-wide online course provider designed to supplement – but not replace – students’ enrollment in their local school.</p>
+<p>The data used in this case study has already been “wrangled” quite a bit, but the original datasets included:</p>
+<ol type="1">
+<li><p>A self-report survey assessing three aspects of students’ motivation</p></li>
+<li><p>Log-trace data, such as data output from the learning management system (LMS)</p></li>
+<li><p>Discussion board data</p></li>
+<li><p>Academic achievement data</p></li>
+</ol>
+<p>To know more, see Chapter 7 of <a href="https://colab.research.google.com/corgiredirector?site=https%3A%2F%2Fdatascienceineducation.com%2Fc07.html%23data-sources"><em>Data Science in Education Using R</em></a> <span class="citation" data-cites="estrellado2020e">(<a href="#ref-estrellado2020e" role="doc-biblioref">Estrellado et al. 2020</a>)</span>.</p>
+<section id="your-turn-4" class="level4">
+<h4 class="anchored" data-anchor-id="your-turn-4">👉 Your Turn ⤵</h4>
+<p>Next, we’ll load our data - specifically, a CSV (comma separated value) text file, the kind that you can export from Microsoft Excel or Google Sheets - into pandas, using the <code>pd.read_csv()</code> function in the next chunk.</p>
+<div id="abd9b320" class="cell" data-execution_count="3">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co">#read sci-online-classes.csv to sci_data and display the output</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>sci_data <span class="op">=</span> pd.read_csv(<span class="st">"data/sci-online-classes.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Nice work! You should now see a new data “object” named <code>sci_data</code> saved in your Environment pane. Try clicking on it and see what happens!</p>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Important
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>It’s important to note that by manipulating data with pandas we do <strong>not</strong> change the original file. Instead, the data is stored in memory and can be viewed in our <strong>Environment</strong> pane, and can later be exported and saved as a new file is desired.</p>
+</div>
+</div>
+</section>
+<section id="viewing-and-inspecting-data" class="level4">
+<h4 class="anchored" data-anchor-id="viewing-and-inspecting-data">Viewing and inspecting data</h4>
+<p>Now let’s learn another way to inspect our data.</p>
+</section>
+<section id="your-turn-5" class="level4">
+<h4 class="anchored" data-anchor-id="your-turn-5"><strong>👉 Your Turn ⤵</strong></h4>
+<p>Run the next chunk and look at the results of the data frame you “assigned” to the <code>sci_data</code> object in the previous code-chunk:</p>
+<div id="b6e39fc2" class="cell" data-execution_count="4">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>sci_data</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="4">
+<div>
+<div>
+
+
+<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">student_id</th>
+<th data-quarto-table-cell-role="th">course_id</th>
+<th data-quarto-table-cell-role="th">total_points_possible</th>
+<th data-quarto-table-cell-role="th">total_points_earned</th>
+<th data-quarto-table-cell-role="th">percentage_earned</th>
+<th data-quarto-table-cell-role="th">subject</th>
+<th data-quarto-table-cell-role="th">semester</th>
+<th data-quarto-table-cell-role="th">section</th>
+<th data-quarto-table-cell-role="th">Gradebook_Item</th>
+<th data-quarto-table-cell-role="th">Grade_Category</th>
+<th data-quarto-table-cell-role="th">...</th>
+<th data-quarto-table-cell-role="th">q7</th>
+<th data-quarto-table-cell-role="th">q8</th>
+<th data-quarto-table-cell-role="th">q9</th>
+<th data-quarto-table-cell-role="th">q10</th>
+<th data-quarto-table-cell-role="th">TimeSpent</th>
+<th data-quarto-table-cell-role="th">TimeSpent_hours</th>
+<th data-quarto-table-cell-role="th">TimeSpent_std</th>
+<th data-quarto-table-cell-role="th">int</th>
+<th data-quarto-table-cell-role="th">pc</th>
+<th data-quarto-table-cell-role="th">uv</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">0</td>
+<td>43146</td>
+<td>FrScA-S216-02</td>
+<td>3280</td>
+<td>2220</td>
+<td>0.676829</td>
+<td>FrScA</td>
+<td>S216</td>
+<td>2</td>
+<td>POINTS EARNED &amp; TOTAL COURSE POINTS</td>
+<td>NaN</td>
+<td>...</td>
+<td>5.0</td>
+<td>5.0</td>
+<td>4.0</td>
+<td>5.0</td>
+<td>1555.1667</td>
+<td>25.919445</td>
+<td>-0.180515</td>
+<td>5.0</td>
+<td>4.5</td>
+<td>4.333333</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">1</td>
+<td>44638</td>
+<td>OcnA-S116-01</td>
+<td>3531</td>
+<td>2672</td>
+<td>0.756726</td>
+<td>OcnA</td>
+<td>S116</td>
+<td>1</td>
+<td>ATTEMPTED</td>
+<td>NaN</td>
+<td>...</td>
+<td>4.0</td>
+<td>5.0</td>
+<td>4.0</td>
+<td>4.0</td>
+<td>1382.7001</td>
+<td>23.045002</td>
+<td>-0.307803</td>
+<td>4.2</td>
+<td>3.5</td>
+<td>4.000000</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">2</td>
+<td>47448</td>
+<td>FrScA-S216-01</td>
+<td>2870</td>
+<td>1897</td>
+<td>0.660976</td>
+<td>FrScA</td>
+<td>S216</td>
+<td>1</td>
+<td>POINTS EARNED &amp; TOTAL COURSE POINTS</td>
+<td>NaN</td>
+<td>...</td>
+<td>4.0</td>
+<td>5.0</td>
+<td>3.0</td>
+<td>5.0</td>
+<td>860.4335</td>
+<td>14.340558</td>
+<td>-0.693260</td>
+<td>5.0</td>
+<td>4.0</td>
+<td>3.666667</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">3</td>
+<td>47979</td>
+<td>OcnA-S216-01</td>
+<td>4562</td>
+<td>3090</td>
+<td>0.677335</td>
+<td>OcnA</td>
+<td>S216</td>
+<td>1</td>
+<td>POINTS EARNED &amp; TOTAL COURSE POINTS</td>
+<td>NaN</td>
+<td>...</td>
+<td>4.0</td>
+<td>5.0</td>
+<td>5.0</td>
+<td>5.0</td>
+<td>1598.6166</td>
+<td>26.643610</td>
+<td>-0.148447</td>
+<td>5.0</td>
+<td>3.5</td>
+<td>5.000000</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">4</td>
+<td>48797</td>
+<td>PhysA-S116-01</td>
+<td>2207</td>
+<td>1910</td>
+<td>0.865428</td>
+<td>PhysA</td>
+<td>S116</td>
+<td>1</td>
+<td>POINTS EARNED &amp; TOTAL COURSE POINTS</td>
+<td>NaN</td>
+<td>...</td>
+<td>4.0</td>
+<td>4.0</td>
+<td>NaN</td>
+<td>3.0</td>
+<td>1481.8000</td>
+<td>24.696667</td>
+<td>-0.234663</td>
+<td>3.8</td>
+<td>3.5</td>
+<td>3.500000</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">598</td>
+<td>97265</td>
+<td>PhysA-S216-01</td>
+<td>3101</td>
+<td>2078</td>
+<td>0.670106</td>
+<td>PhysA</td>
+<td>S216</td>
+<td>1</td>
+<td>POINTS EARNED &amp; TOTAL COURSE POINTS</td>
+<td>NaN</td>
+<td>...</td>
+<td>4.0</td>
+<td>4.0</td>
+<td>4.0</td>
+<td>4.0</td>
+<td>817.4501</td>
+<td>13.624168</td>
+<td>-0.724983</td>
+<td>3.8</td>
+<td>3.5</td>
+<td>4.000000</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">599</td>
+<td>97272</td>
+<td>OcnA-S216-01</td>
+<td>2872</td>
+<td>1733</td>
+<td>0.603412</td>
+<td>OcnA</td>
+<td>S216</td>
+<td>1</td>
+<td>POINTS EARNED &amp; TOTAL COURSE POINTS</td>
+<td>NaN</td>
+<td>...</td>
+<td>3.0</td>
+<td>5.0</td>
+<td>5.0</td>
+<td>3.0</td>
+<td>1638.4500</td>
+<td>27.307500</td>
+<td>-0.119048</td>
+<td>4.4</td>
+<td>3.0</td>
+<td>5.000000</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">600</td>
+<td>97374</td>
+<td>BioA-S216-01</td>
+<td>8586</td>
+<td>6978</td>
+<td>0.812718</td>
+<td>BioA</td>
+<td>S216</td>
+<td>1</td>
+<td>POINTS EARNED &amp; TOTAL COURSE POINTS</td>
+<td>NaN</td>
+<td>...</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>470.8000</td>
+<td>7.846667</td>
+<td>-0.980827</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">601</td>
+<td>97386</td>
+<td>BioA-S216-01</td>
+<td>2761</td>
+<td>1937</td>
+<td>0.701557</td>
+<td>BioA</td>
+<td>S216</td>
+<td>1</td>
+<td>POINTS EARNED &amp; TOTAL COURSE POINTS</td>
+<td>NaN</td>
+<td>...</td>
+<td>3.0</td>
+<td>4.0</td>
+<td>3.0</td>
+<td>3.0</td>
+<td>71.0166</td>
+<td>1.183610</td>
+<td>-1.275885</td>
+<td>3.8</td>
+<td>3.0</td>
+<td>3.666667</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">602</td>
+<td>97441</td>
+<td>FrScA-S216-02</td>
+<td>2607</td>
+<td>2205</td>
+<td>0.845800</td>
+<td>FrScA</td>
+<td>S216</td>
+<td>2</td>
+<td>POINTS EARNED &amp; TOTAL COURSE POINTS</td>
+<td>NaN</td>
+<td>...</td>
+<td>5.0</td>
+<td>5.0</td>
+<td>2.0</td>
+<td>4.0</td>
+<td>208.6664</td>
+<td>3.477773</td>
+<td>-1.174293</td>
+<td>4.4</td>
+<td>4.0</td>
+<td>2.000000</td>
+</tr>
+</tbody>
+</table>
+
+<p>603 rows × 30 columns</p>
+</div>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>You can also enlarge this output by clicking the “Show in New Window” button located in the top right corner of the output.</p>
+</div>
+</div>
+</section>
+<section id="question-1" class="level4">
+<h4 class="anchored" data-anchor-id="question-1">❓Question</h4>
+<p>What do you notice about this data set? What do you wonder? Add one or two observations in the space below:</p>
+<ul>
+<li>YOUR RESPONSE HERE</li>
+</ul>
+</section>
+<section id="data-types" class="level4">
+<h4 class="anchored" data-anchor-id="data-types">Data Types</h4>
+<p>Now, let’s <strong>examine</strong> our data a little more more systematically. The first step in getting to know your data is to discover the different data types it contains.</p>
+<p>There are two general types of data:</p>
+<ol type="1">
+<li><p><strong>Categorical</strong> data represent categories or groups that are distinct and separable. It usually consists of names, labels, or attributes and is represented by words or symbols.</p></li>
+<li><p><strong>Numerical</strong> data represents qualities that can be measured and represented as numbers.</p></li>
+</ol>
+</section>
+<section id="your-turn-6" class="level4">
+<h4 class="anchored" data-anchor-id="your-turn-6">👉 Your Turn ⤵</h4>
+<p>One way to explore the data types is by using <code>info()</code> function. Complete the following code to take a look at the data types for each column in our <code>sci_data</code> data frame.</p>
+<p><strong>Hint</strong>: Type the name of the function after the name of the dataset, using <code>.</code> before and <code>()</code> after it.</p>
+<div id="a3677a4e" class="cell" data-execution_count="5">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>sci_data.info()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>&lt;class 'pandas.core.frame.DataFrame'&gt;
+RangeIndex: 603 entries, 0 to 602
+Data columns (total 30 columns):
+ #   Column                 Non-Null Count  Dtype  
+---  ------                 --------------  -----  
+ 0   student_id             603 non-null    int64  
+ 1   course_id              603 non-null    object 
+ 2   total_points_possible  603 non-null    int64  
+ 3   total_points_earned    603 non-null    int64  
+ 4   percentage_earned      603 non-null    float64
+ 5   subject                603 non-null    object 
+ 6   semester               603 non-null    object 
+ 7   section                603 non-null    int64  
+ 8   Gradebook_Item         603 non-null    object 
+ 9   Grade_Category         0 non-null      float64
+ 10  FinalGradeCEMS         573 non-null    float64
+ 11  Points_Possible        603 non-null    int64  
+ 12  Points_Earned          511 non-null    float64
+ 13  Gender                 603 non-null    object 
+ 14  q1                     480 non-null    float64
+ 15  q2                     477 non-null    float64
+ 16  q3                     480 non-null    float64
+ 17  q4                     478 non-null    float64
+ 18  q5                     476 non-null    float64
+ 19  q6                     476 non-null    float64
+ 20  q7                     474 non-null    float64
+ 21  q8                     474 non-null    float64
+ 22  q9                     474 non-null    float64
+ 23  q10                    474 non-null    float64
+ 24  TimeSpent              598 non-null    float64
+ 25  TimeSpent_hours        598 non-null    float64
+ 26  TimeSpent_std          598 non-null    float64
+ 27  int                    527 non-null    float64
+ 28  pc                     528 non-null    float64
+ 29  uv                     528 non-null    float64
+dtypes: float64(20), int64(5), object(5)
+memory usage: 141.5+ KB</code></pre>
+</div>
+</div>
+<p>Nice work!!</p>
+</section>
+<section id="question-2" class="level4">
+<h4 class="anchored" data-anchor-id="question-2">❓Question</h4>
+<p>Which of the columns in our dataset contain categorical and which contain numerical data? Name a few.</p>
+<ul>
+<li>YOUR RESPONSE HERE</li>
+</ul>
+<p>Which data types do you see? Which ones are numerical and which are categorical? Name a few.</p>
+<ul>
+<li>YOUR RESPONSE HERE</li>
+</ul>
+<p>If you look at “Grade_category”, you will notice that all values are NaNs or missing values which means we do not have any information about this variable (or parameter).</p>
+<p>What other columns do you think have missing values? Why do you think so?</p>
+<ul>
+<li>YOUR RESPONSE HERE</li>
+</ul>
+</section>
+</section>
+</section>
+<section id="wrangle" class="level2">
+<h2 class="anchored" data-anchor-id="wrangle">2. WRANGLE</h2>
+<p>By wrangle, we refer to the process of cleaning and processing data, and, in some cases, merging (or joining) data from multiple sources. Often, this part of the process is very (surprisingly) time-intensive! Wrangling your data into shape can itself be an important accomplishment!</p>
+<section id="selecting-variables" class="level3">
+<h3 class="anchored" data-anchor-id="selecting-variables">Selecting variables</h3>
+<p>Recall from our Prepare section that we are interested the relationship between the time students spend on a course and their final course grade.</p>
+<p>Run the following code chunk using <code>sci_data[[]]</code> and the names of the columns:</p>
+<ul>
+<li><p><code>FinalGradeCEMS</code> (i.e., students’ final grades on a 0-100 point scale)</p></li>
+<li><p><code>TimeSpent</code> (i.e., the number of minutes they spent in the course’s learning management system)</p></li>
+</ul>
+<div id="480d6be1" class="cell" data-execution_count="6">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>sci_data[[<span class="st">'FinalGradeCEMS'</span>,<span class="st">'TimeSpent'</span>]]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="6">
+<div>
+<div>
+
+
+<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">FinalGradeCEMS</th>
+<th data-quarto-table-cell-role="th">TimeSpent</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">0</td>
+<td>93.453725</td>
+<td>1555.1667</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">1</td>
+<td>81.701843</td>
+<td>1382.7001</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">2</td>
+<td>88.487585</td>
+<td>860.4335</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">3</td>
+<td>81.852596</td>
+<td>1598.6166</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">4</td>
+<td>84.000000</td>
+<td>1481.8000</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">...</td>
+<td>...</td>
+<td>...</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">598</td>
+<td>84.569444</td>
+<td>817.4501</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">599</td>
+<td>84.239532</td>
+<td>1638.4500</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">600</td>
+<td>12.352941</td>
+<td>470.8000</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">601</td>
+<td>54.158289</td>
+<td>71.0166</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">602</td>
+<td>23.137698</td>
+<td>208.6664</td>
+</tr>
+</tbody>
+</table>
+
+<p>603 rows × 2 columns</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="cleaning-data" class="level3">
+<h3 class="anchored" data-anchor-id="cleaning-data">Cleaning data</h3>
+<p>We have already seen that there are missing values in our target columns. There is another way to do that by selecting the column and usung <code>.isnull()</code> function and adding <code>.sum()</code> function in the end to find the number of those values.</p>
+<div id="503fbd7f" class="cell" data-execution_count="7">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>sci_data.isnull().<span class="bu">sum</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="7">
+<pre><code>student_id                 0
+course_id                  0
+total_points_possible      0
+total_points_earned        0
+percentage_earned          0
+subject                    0
+semester                   0
+section                    0
+Gradebook_Item             0
+Grade_Category           603
+FinalGradeCEMS            30
+Points_Possible            0
+Points_Earned             92
+Gender                     0
+q1                       123
+q2                       126
+q3                       123
+q4                       125
+q5                       127
+q6                       127
+q7                       129
+q8                       129
+q9                       129
+q10                      129
+TimeSpent                  5
+TimeSpent_hours            5
+TimeSpent_std              5
+int                       76
+pc                        75
+uv                        75
+dtype: int64</code></pre>
+</div>
+</div>
+</section>
+<section id="handling-missing-values" class="level3">
+<h3 class="anchored" data-anchor-id="handling-missing-values">Handling Missing Values</h3>
+<p>There are several conventional ways to deal with the missing values.</p>
+<ol type="1">
+<li><p>We can <em>drop</em> those values and not use the entire row in which this element is missing.</p></li>
+<li><p>We can substitute missing values with the <em>column mean</em> if the variance within a row is not very big.</p></li>
+</ol>
+<p>Below are the code chunks to execute both ways. Choose one you think is more appropriate as executing one excludes the use of the other and you will add changes to the dataset.</p>
+<section id="drop-missing-values" class="level4">
+<h4 class="anchored" data-anchor-id="drop-missing-values">Drop missing values</h4>
+<div id="d6112a4a" class="cell" data-execution_count="8">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co">#drop missing values</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>sci_data <span class="op">=</span> sci_data.dropna(subset <span class="op">=</span> [<span class="st">'FinalGradeCEMS'</span>,<span class="st">'TimeSpent'</span>])</span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>sci_data.info()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>&lt;class 'pandas.core.frame.DataFrame'&gt;
+Index: 573 entries, 0 to 602
+Data columns (total 30 columns):
+ #   Column                 Non-Null Count  Dtype  
+---  ------                 --------------  -----  
+ 0   student_id             573 non-null    int64  
+ 1   course_id              573 non-null    object 
+ 2   total_points_possible  573 non-null    int64  
+ 3   total_points_earned    573 non-null    int64  
+ 4   percentage_earned      573 non-null    float64
+ 5   subject                573 non-null    object 
+ 6   semester               573 non-null    object 
+ 7   section                573 non-null    int64  
+ 8   Gradebook_Item         573 non-null    object 
+ 9   Grade_Category         0 non-null      float64
+ 10  FinalGradeCEMS         573 non-null    float64
+ 11  Points_Possible        573 non-null    int64  
+ 12  Points_Earned          486 non-null    float64
+ 13  Gender                 573 non-null    object 
+ 14  q1                     465 non-null    float64
+ 15  q2                     462 non-null    float64
+ 16  q3                     465 non-null    float64
+ 17  q4                     463 non-null    float64
+ 18  q5                     461 non-null    float64
+ 19  q6                     461 non-null    float64
+ 20  q7                     459 non-null    float64
+ 21  q8                     460 non-null    float64
+ 22  q9                     459 non-null    float64
+ 23  q10                    460 non-null    float64
+ 24  TimeSpent              573 non-null    float64
+ 25  TimeSpent_hours        573 non-null    float64
+ 26  TimeSpent_std          573 non-null    float64
+ 27  int                    503 non-null    float64
+ 28  pc                     504 non-null    float64
+ 29  uv                     504 non-null    float64
+dtypes: float64(20), int64(5), object(5)
+memory usage: 138.8+ KB</code></pre>
+</div>
+</div>
+</section>
+<section id="substitute-with-column-means" class="level4">
+<h4 class="anchored" data-anchor-id="substitute-with-column-means">Substitute with column means</h4>
+<div id="145c1462" class="cell" data-execution_count="9">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co">#substitute missing values with column means</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>mean_value_grade<span class="op">=</span>sci_data[<span class="st">'FinalGradeCEMS'</span>].mean()</span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>mean_value_time<span class="op">=</span>sci_data[<span class="st">'TimeSpent'</span>].mean()</span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>sci_data[<span class="st">'FinalGradeCEMS'</span>].fillna(value<span class="op">=</span>mean_value_grade, inplace<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>sci_data[<span class="st">'TimeSpent'</span>].fillna(value<span class="op">=</span>mean_value_time, inplace<span class="op">=</span><span class="va">True</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>/var/folders/n_/y03lvw5130b2ct_8v03d6r840000gq/T/ipykernel_80275/3740110450.py:5: FutureWarning: A value is trying to be set on a copy of a DataFrame or Series through chained assignment using an inplace method.
+The behavior will change in pandas 3.0. This inplace method will never work because the intermediate object on which we are setting values always behaves as a copy.
+
+For example, when doing 'df[col].method(value, inplace=True)', try using 'df.method({col: value}, inplace=True)' or df[col] = df[col].method(value) instead, to perform the operation inplace on the original object.
+
+
+  sci_data['FinalGradeCEMS'].fillna(value=mean_value_grade, inplace=True)
+/var/folders/n_/y03lvw5130b2ct_8v03d6r840000gq/T/ipykernel_80275/3740110450.py:5: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  sci_data['FinalGradeCEMS'].fillna(value=mean_value_grade, inplace=True)
+/var/folders/n_/y03lvw5130b2ct_8v03d6r840000gq/T/ipykernel_80275/3740110450.py:6: FutureWarning: A value is trying to be set on a copy of a DataFrame or Series through chained assignment using an inplace method.
+The behavior will change in pandas 3.0. This inplace method will never work because the intermediate object on which we are setting values always behaves as a copy.
+
+For example, when doing 'df[col].method(value, inplace=True)', try using 'df.method({col: value}, inplace=True)' or df[col] = df[col].method(value) instead, to perform the operation inplace on the original object.
+
+
+  sci_data['TimeSpent'].fillna(value=mean_value_time, inplace=True)
+/var/folders/n_/y03lvw5130b2ct_8v03d6r840000gq/T/ipykernel_80275/3740110450.py:6: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  sci_data['TimeSpent'].fillna(value=mean_value_time, inplace=True)</code></pre>
+</div>
+</div>
+</section>
+</section>
+<section id="filtering-variables" class="level3">
+<h3 class="anchored" data-anchor-id="filtering-variables">Filtering variables</h3>
+<p>Next, let’s explore filtering variables. Check out and run the next chunk of code, imagining that we wish to filter our data to view only the rows associated with students who earned a final grade (as a percentage) of 70% - or higher and the ‘TimeSpent’ associated with it.</p>
+<div id="404a2c15" class="cell" data-execution_count="10">
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>sci_data[<span class="st">'TimeSpent'</span>][sci_data[<span class="st">'FinalGradeCEMS'</span>]<span class="op">&gt;</span><span class="dv">70</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="10">
+<pre><code>0      1555.1667
+1      1382.7001
+2       860.4335
+3      1598.6166
+4      1481.8000
+         ...    
+592     244.3835
+593    2264.4834
+595    2676.7501
+598     817.4501
+599    1638.4500
+Name: TimeSpent, Length: 438, dtype: float64</code></pre>
+</div>
+</div>
+<section id="your-turn-7" class="level4">
+<h4 class="anchored" data-anchor-id="your-turn-7"><strong>👉 Your Turn</strong> <strong>⤵</strong></h4>
+<p>❓ How much time do you need to spend to get the grade higher than 70%? Is there a consistent pattern?</p>
+<ul>
+<li>YOUR RESPONSE HERE</li>
+</ul>
+</section>
+</section>
+</section>
+<section id="explore" class="level2">
+<h2 class="anchored" data-anchor-id="explore">3. EXPLORE</h2>
+<p>Exploratory data analysis, or exploring your data, involves processes of <em>describing</em> your data (such as by calculating the means and standard deviations of numeric variables, or counting the frequency of categorical variables) and, often, visualizing your data. As we’ll learn in later labs, the explore phase can also involve the process of “feature engineering,” or creating new variables within a dataset [@krumm2018].</p>
+<p>In this section, we’ll quickly pull together some basic stats and introduce you to a basic data visualization.</p>
+<section id="summary-statistics" class="level3">
+<h3 class="anchored" data-anchor-id="summary-statistics">Summary Statistics</h3>
+<p>Let’s repurpose what we learned from our wrangle section to select just a few variables and quickly gather some descriptive statistics to see where the data is centered, its values to identify trends by using <code>.describe()</code> method.</p>
+<div id="00462f49" class="cell" data-execution_count="11">
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>sci_data.describe()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="11">
+<div>
+<div>
+
+
+<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">student_id</th>
+<th data-quarto-table-cell-role="th">total_points_possible</th>
+<th data-quarto-table-cell-role="th">total_points_earned</th>
+<th data-quarto-table-cell-role="th">percentage_earned</th>
+<th data-quarto-table-cell-role="th">section</th>
+<th data-quarto-table-cell-role="th">Grade_Category</th>
+<th data-quarto-table-cell-role="th">FinalGradeCEMS</th>
+<th data-quarto-table-cell-role="th">Points_Possible</th>
+<th data-quarto-table-cell-role="th">Points_Earned</th>
+<th data-quarto-table-cell-role="th">q1</th>
+<th data-quarto-table-cell-role="th">...</th>
+<th data-quarto-table-cell-role="th">q7</th>
+<th data-quarto-table-cell-role="th">q8</th>
+<th data-quarto-table-cell-role="th">q9</th>
+<th data-quarto-table-cell-role="th">q10</th>
+<th data-quarto-table-cell-role="th">TimeSpent</th>
+<th data-quarto-table-cell-role="th">TimeSpent_hours</th>
+<th data-quarto-table-cell-role="th">TimeSpent_std</th>
+<th data-quarto-table-cell-role="th">int</th>
+<th data-quarto-table-cell-role="th">pc</th>
+<th data-quarto-table-cell-role="th">uv</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">count</td>
+<td>573.000000</td>
+<td>573.000000</td>
+<td>573.000000</td>
+<td>573.000000</td>
+<td>573.000000</td>
+<td>0.0</td>
+<td>573.000000</td>
+<td>573.000000</td>
+<td>486.000000</td>
+<td>465.000000</td>
+<td>...</td>
+<td>459.000000</td>
+<td>460.000000</td>
+<td>459.000000</td>
+<td>460.000000</td>
+<td>573.000000</td>
+<td>573.000000</td>
+<td>573.000000</td>
+<td>503.000000</td>
+<td>504.000000</td>
+<td>504.000000</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">mean</td>
+<td>86231.424084</td>
+<td>4303.863874</td>
+<td>3267.818499</td>
+<td>0.758350</td>
+<td>1.364747</td>
+<td>NaN</td>
+<td>77.202655</td>
+<td>78.235602</td>
+<td>69.417905</td>
+<td>4.290323</td>
+<td>...</td>
+<td>3.910675</td>
+<td>4.284783</td>
+<td>3.492375</td>
+<td>4.104348</td>
+<td>1873.849317</td>
+<td>31.230822</td>
+<td>0.054687</td>
+<td>4.215540</td>
+<td>3.603009</td>
+<td>3.730974</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">std</td>
+<td>10392.690030</td>
+<td>2305.719003</td>
+<td>1824.242324</td>
+<td>0.089552</td>
+<td>0.675195</td>
+<td>NaN</td>
+<td>22.225076</td>
+<td>169.019143</td>
+<td>145.754144</td>
+<td>0.685135</td>
+<td>...</td>
+<td>0.821833</td>
+<td>0.688678</td>
+<td>0.985399</td>
+<td>0.937004</td>
+<td>1335.608192</td>
+<td>22.260137</td>
+<td>0.985739</td>
+<td>0.595033</td>
+<td>0.644908</td>
+<td>0.703211</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">min</td>
+<td>43146.000000</td>
+<td>840.000000</td>
+<td>672.000000</td>
+<td>0.466447</td>
+<td>1.000000</td>
+<td>NaN</td>
+<td>0.000000</td>
+<td>5.000000</td>
+<td>0.000000</td>
+<td>1.000000</td>
+<td>...</td>
+<td>1.000000</td>
+<td>1.000000</td>
+<td>1.000000</td>
+<td>1.000000</td>
+<td>0.700000</td>
+<td>0.011667</td>
+<td>-1.327782</td>
+<td>2.000000</td>
+<td>1.500000</td>
+<td>1.000000</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">25%</td>
+<td>85644.000000</td>
+<td>2832.000000</td>
+<td>2059.000000</td>
+<td>0.704907</td>
+<td>1.000000</td>
+<td>NaN</td>
+<td>71.251142</td>
+<td>10.000000</td>
+<td>7.600000</td>
+<td>4.000000</td>
+<td>...</td>
+<td>3.000000</td>
+<td>4.000000</td>
+<td>3.000000</td>
+<td>4.000000</td>
+<td>943.066900</td>
+<td>15.717782</td>
+<td>-0.632272</td>
+<td>3.900000</td>
+<td>3.000000</td>
+<td>3.333333</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">50%</td>
+<td>88340.000000</td>
+<td>3641.000000</td>
+<td>2777.000000</td>
+<td>0.776543</td>
+<td>1.000000</td>
+<td>NaN</td>
+<td>84.569444</td>
+<td>10.000000</td>
+<td>10.000000</td>
+<td>4.000000</td>
+<td>...</td>
+<td>4.000000</td>
+<td>4.000000</td>
+<td>4.000000</td>
+<td>4.000000</td>
+<td>1598.616600</td>
+<td>26.643610</td>
+<td>-0.148447</td>
+<td>4.200000</td>
+<td>3.500000</td>
+<td>3.791667</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">75%</td>
+<td>92733.000000</td>
+<td>5083.000000</td>
+<td>3882.000000</td>
+<td>0.826181</td>
+<td>2.000000</td>
+<td>NaN</td>
+<td>92.099323</td>
+<td>30.000000</td>
+<td>26.535000</td>
+<td>5.000000</td>
+<td>...</td>
+<td>4.500000</td>
+<td>5.000000</td>
+<td>4.000000</td>
+<td>5.000000</td>
+<td>2454.333200</td>
+<td>40.905553</td>
+<td>0.483111</td>
+<td>4.700000</td>
+<td>4.000000</td>
+<td>4.166667</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">max</td>
+<td>97441.000000</td>
+<td>15552.000000</td>
+<td>12208.000000</td>
+<td>0.910640</td>
+<td>4.000000</td>
+<td>NaN</td>
+<td>100.000000</td>
+<td>935.000000</td>
+<td>828.200000</td>
+<td>5.000000</td>
+<td>...</td>
+<td>5.000000</td>
+<td>5.000000</td>
+<td>5.000000</td>
+<td>5.000000</td>
+<td>8870.883300</td>
+<td>147.848055</td>
+<td>5.218815</td>
+<td>5.000000</td>
+<td>5.000000</td>
+<td>5.000000</td>
+</tr>
+</tbody>
+</table>
+
+<p>8 rows × 25 columns</p>
+</div>
+</div>
+</div>
+</div>
+<section id="your-turn-8" class="level4">
+<h4 class="anchored" data-anchor-id="your-turn-8"><strong>👉 Your Turn</strong> <strong>⤵</strong></h4>
+<p>❓ What do you notice about this dataset? Which columns are most important for our research question? What do you wonder?</p>
+<ul>
+<li>YOUR RESPONSE HERE</li>
+</ul>
+</section>
+</section>
+<section id="data-visualization" class="level3">
+<h3 class="anchored" data-anchor-id="data-visualization">Data Visualization</h3>
+<p>Data visualization is an extremely common practice in Learning Analytics, especially in the use of data dashboards. Data visualization involves graphically representing one or more variables with the goal of discovering patterns in data. These patterns may help us to answer research questions or generate new questions about our data, to discover relationships between and among variables, and to create or select features for data modeling.</p>
+<section id="the-graphing-workflow" class="level4">
+<h4 class="anchored" data-anchor-id="the-graphing-workflow">The Graphing Workflow</h4>
+<p>At it’s core, you can create some very simple but attractive graphs with just a couple lines of code. Matplotlib follows the common workflow for making graphs. To make a graph, you simply:</p>
+<ol type="1">
+<li><p>Start the graph with <code>plt</code> and include type of graph `.hist()’in our case, and add the data as an argument;</p></li>
+<li><p>“Add” elements to the graph using the <code>bins =</code>, or changing the color;</p></li>
+<li><p>Select variables to graph on each axis with the <code>xlabel()</code> argument.</p></li>
+</ol>
+<p>Let’s give it a try by creating a simple histogram of our <code>FinalGradeCEMS</code> variable. The code below creates a histogram, or a distribution of the values, in this case for students’ final grades. Go ahead and run it:</p>
+<div id="1ad0aaeb" class="cell" data-execution_count="12">
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>plt.hist(sci_data[<span class="st">'FinalGradeCEMS'</span>], bins <span class="op">=</span> <span class="dv">30</span>, color <span class="op">=</span><span class="st">"skyblue"</span>)</span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'FinalGradeCEMS'</span>)</span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="orientation-case-study-key-python_files/figure-html/cell-13-output-1.png" width="566" height="429" class="figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="your-turn-9" class="level4">
+<h4 class="anchored" data-anchor-id="your-turn-9"><strong>👉 Your Turn</strong> <strong>⤵</strong></h4>
+<p>Now use the code chunk below to visualize the distribution of another variable in the data, specifically <code>TimeSpent</code>. You can do so by swapping out the variable <code>FinalGradeCEMS</code> with our new variable. Also, change the color to one of your choosing; consider this list of valid color names here: <a href="https://colab.research.google.com/corgiredirector?site=https%3A%2F%2Fmatplotlib.org%2Fstable%2Fgallery%2Fcolor%2Fnamed_colors.html">https://matplotlib.org/stable/gallery/color/named_colors.html</a></p>
+<p><strong>Tip:</strong> There is no shame in copying and pasting code from above. Remember, reproducible research is also intended to help you save time!</p>
+<div id="3e0b9890" class="cell" data-execution_count="13">
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Your code goes here:</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="scatterplots" class="level4">
+<h4 class="anchored" data-anchor-id="scatterplots">Scatterplots</h4>
+<p>Finally, let’s create a scatter plot for the relationship between these two variables. Scatterplots are most useful for displaying the relationship between two continuous variables. Change type of graph by typing <code>.scatter()</code>. You can also choose the size of the marker and color.</p>
+</section>
+<section id="your-turn-10" class="level4">
+<h4 class="anchored" data-anchor-id="your-turn-10"><strong>👉 Your Turn</strong> <strong>⤵</strong></h4>
+<p>Complete the code chunk below to create a simple scatterplot with <code>TimeSpent</code> on the x axis and <code>FinalGradeCEMS</code> on the y axis.</p>
+<div id="e94480ca" class="cell" data-execution_count="14">
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>plt.scatter(x <span class="op">=</span> sci_data[<span class="st">'TimeSpent'</span>], y <span class="op">=</span> sci_data[<span class="st">'FinalGradeCEMS'</span>], marker<span class="op">=</span><span class="st">"."</span>, color <span class="op">=</span> <span class="st">'#88c999'</span>)</span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'TimeSpent'</span>)</span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">'FinalGradeCEMS'</span>)</span>
+<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="orientation-case-study-key-python_files/figure-html/cell-15-output-1.png" width="593" height="429" class="figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Well done! As you can see, there appears to be a positive relationship between the time students spend in the online course and their final grade!</p>
+</section>
+</section>
+</section>
+<section id="model" class="level2">
+<h2 class="anchored" data-anchor-id="model">4. MODEL</h2>
+<p>“Model” is one of those terms that has many different meanings. For our purpose, we refer to the process of simplifying and summarizing our data. Thus, models can take many forms; calculating means represents a legitimate form of modeling data, as does estimating more complex models, including linear regressions, and models and algorithms associated with machine learning tasks. For now, we’ll run a base linear regression model to further examine the relationship between <code>TimeSpent</code> and <code>FinalGradeCEMS</code>.</p>
+<p>We’ll dive much deeper into modeling in subsequent learning labs, but for now let’s see if there is a statistically significant relationship between students’ final grades, <code>FinaGradeCEMS</code>, and the <code>TimeSpent</code> on the course.</p>
+<p>We need to do some transformations of our two parameters before we can run the model, in our case it is linear regression. We encode the data from the two columns <code>FinaGradeCEMS</code> and <code>TimeSpent</code> into the format our scikit-learn linear regression model could understand.</p>
+<p>*Note that on the y-axis we put a dependent variable, the one we want to predict and x-axis is for and independent, or exploratory variable.</p>
+<p>We then train (or fit) or model to the data we selected to find a line of best fit.</p>
+<p>We also added the code to visualize our prediction in the scatter plot and changed its color to understand better what is being predicted.</p>
+<div id="460f8c35" class="cell" data-execution_count="15">
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="co">#dependent variable is what you want to predict - y axis; independent(exploratory) variable</span></span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>X <span class="op">=</span> np.array(sci_data[<span class="st">'TimeSpent'</span>]).reshape(<span class="op">-</span><span class="dv">1</span>, <span class="dv">1</span>)</span>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> np.array(sci_data[<span class="st">'FinalGradeCEMS'</span>]).reshape(<span class="op">-</span><span class="dv">1</span>, <span class="dv">1</span>)</span>
+<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a>reg <span class="op">=</span> LinearRegression().fit(X, y)</span>
+<span id="cb20-6"><a href="#cb20-6" aria-hidden="true" tabindex="-1"></a>plt.scatter(X, y, marker<span class="op">=</span><span class="st">"."</span>, color <span class="op">=</span> <span class="st">'#88c999'</span>)</span>
+<span id="cb20-7"><a href="#cb20-7" aria-hidden="true" tabindex="-1"></a>plt.plot(X, reg.predict(X),color<span class="op">=</span><span class="st">'hotpink'</span>)</span>
+<span id="cb20-8"><a href="#cb20-8" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'TimeSpent'</span>)</span>
+<span id="cb20-9"><a href="#cb20-9" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">'FinalGradeCEMS'</span>)</span>
+<span id="cb20-10"><a href="#cb20-10" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="orientation-case-study-key-python_files/figure-html/cell-16-output-1.png" width="593" height="429" class="figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>We can now use our model to predict the grade depending on the time spent studying.</p>
+<div id="8e247a07" class="cell" data-execution_count="16">
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Assuming 'new_data' is a Pandas DataFrame with a 'TimeSpent' column for prediction</span></span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>new_data <span class="op">=</span> pd.DataFrame({<span class="st">'TimeSpent'</span>: [<span class="dv">10</span>, <span class="dv">15</span>, <span class="dv">20</span>]})</span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Extracting the 'TimeSpent' values from 'new_data'</span></span>
+<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a>X_new <span class="op">=</span> np.array(new_data[<span class="st">'TimeSpent'</span>]).reshape(<span class="op">-</span><span class="dv">1</span>, <span class="dv">1</span>)</span>
+<span id="cb21-6"><a href="#cb21-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-7"><a href="#cb21-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Use the predict method to obtain predictions</span></span>
+<span id="cb21-8"><a href="#cb21-8" aria-hidden="true" tabindex="-1"></a>predicted_grades <span class="op">=</span> reg.predict(X_new)</span>
+<span id="cb21-9"><a href="#cb21-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-10"><a href="#cb21-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Print the predicted grades</span></span>
+<span id="cb21-11"><a href="#cb21-11" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(predicted_grades)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[[65.86931552]
+ [65.89971856]
+ [65.93012161]]</code></pre>
+</div>
+</div>
+<div id="58829ac7" class="cell" data-execution_count="17">
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(reg.predict([[<span class="dv">4000</span>]]))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[[90.13094602]]</code></pre>
+</div>
+</div>
+<section id="your-turn-11" class="level4">
+<h4 class="anchored" data-anchor-id="your-turn-11"><strong>👉 Your Turn</strong> <strong>⤵</strong></h4>
+<p>Change the number of time a student is spending and see how the predicted grade changes.</p>
+<p>❓How much time do you need to spend studying to get an A?</p>
+<div id="14724fae" class="cell" data-execution_count="18">
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="co">#print(reg.predict([['YOUR CODE HERE']]))</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>We can also add another variable to our model to see how it would influence the prediction.</p>
+<p>*Note, in Python you can only add numerical data values to your models, so be careful when choosing.</p>
+<p>There are ways to transform your categorical values into numerical that we will introduce later in the course.</p>
+<p>Run the cells below to train the model and compare its prediction to the previous one.</p>
+<div id="eada9b61" class="cell" data-execution_count="19">
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>X <span class="op">=</span> np.array(sci_data[<span class="st">'TimeSpent'</span>],sci_data[<span class="st">'section'</span>]).reshape(<span class="op">-</span><span class="dv">1</span>, <span class="dv">1</span>)</span>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> np.array(sci_data[<span class="st">'FinalGradeCEMS'</span>]).reshape(<span class="op">-</span><span class="dv">1</span>, <span class="dv">1</span>)</span>
+<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-4"><a href="#cb26-4" aria-hidden="true" tabindex="-1"></a>reg_2 <span class="op">=</span> LinearRegression().fit(X, y)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="75ca2b85" class="cell" data-execution_count="20">
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>reg_2.predict([[<span class="dv">4000</span>]])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="20">
+<pre><code>array([[90.13362775]])</code></pre>
+</div>
+</div>
+<p>As we can see the predicted grade is a bit better with the two parameters.</p>
+</section>
+<section id="your-turn-12" class="level4">
+<h4 class="anchored" data-anchor-id="your-turn-12"><strong>👉 Your Turn</strong> <strong>⤵</strong></h4>
+<p>Compare the two model predictions by altering the time spent studying.</p>
+<p>Change the variable <code>section</code> to another one that you think might be related to the final grade.</p>
+<div id="4670f6da" class="cell" data-execution_count="21">
+<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="co">#X = np.array(sci_data['TimeSpent'],sci_data['YOUR CODE HERE']).reshape(-1, 1)</span></span>
+<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a><span class="co">#y = np.array(sci_data['FinalGradeCEMS']).reshape(-1, 1)</span></span>
+<span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb29-4"><a href="#cb29-4" aria-hidden="true" tabindex="-1"></a><span class="co">#reg_3 = LinearRegression().fit(X, y)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="dd020e51" class="cell" data-execution_count="22">
+<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="co">#reg_3.predict([['YOUR CODE HERE']])</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+</section>
+<section id="communicate" class="level2">
+<h2 class="anchored" data-anchor-id="communicate">5. COMMUNICATE</h2>
+<p>The final step in the workflow/process is sharing the results of your analysis with wider audience. Krumm et al.&nbsp;@krumm2018 have outlined the following 3-step process for communicating with education stakeholders findings from an analysis:</p>
+<ol type="1">
+<li><p><strong>Select.</strong> Communicating what one has learned involves selecting among those analyses that are most important and most useful to an intended audience, as well as selecting a form for displaying that information, such as a graph or table in static or interactive form, i.e.&nbsp;a “data product.”</p></li>
+<li><p><strong>Polish</strong>. After creating initial versions of data products, research teams often spend time refining or polishing them, by adding or editing titles, labels, and notations and by working with colors and shapes to highlight key points.</p></li>
+<li><p><strong>Narrate.</strong> Writing a narrative to accompany the data products involves, at a minimum, pairing a data product with its related research question, describing how best to interpret the data product, and explaining the ways in which the data product helps answer the research question and might be used to inform new analyses or a “change idea” for improving student learning.</p></li>
+</ol>
+<p>In later Learning Labs, you will have an opportunity to create a simple “data product” designed to illustrate some insights gained from your analysis and ideally highlight an action step or change idea that can be used to improve learning or the contexts in which learning occurs.</p>
+<p>For now, we will wrap up this case study by converting our work into a webpage that can be used to communicate your learning and demonstrate some of your new Python skills.</p>
+
+</section>
+
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+<div id="ref-estrellado2020e" class="csl-entry" role="listitem">
+Estrellado, Ryan A., Emily A. Freer, Jesse Mostipak, Joshua M. Rosenberg, and Isabella C. Velásquez. 2020. <em>Data Science in Education Using r</em>. Routledge. <a href="https://doi.org/10.4324/9780367822842">https://doi.org/10.4324/9780367822842</a>.
+</div>
+<div id="ref-gandrud2021" class="csl-entry" role="listitem">
+Gandrud, Christopher. 2021. <em>Reproducible Research with r and r Studio (3rd Edition)</em>. CRC Press. <a href="http://github.com/christophergandrud/Rep-Res-Book">http://github.com/christophergandrud/Rep-Res-Book</a>.
+</div>
+<div id="ref-krumm2018" class="csl-entry" role="listitem">
+Krumm, Andrew, Barbara Means, and Marie Bienkowski. 2018. <em>Learning Analytics Goes to School</em>. Routledge. <a href="https://doi.org/10.4324/9781315650722">https://doi.org/10.4324/9781315650722</a>.
+</div>
+<div id="ref-mckinney-proc-scipy-2010" class="csl-entry" role="listitem">
+McKinney, Wes. 2010. <span>“<span>D</span>ata <span>S</span>tructures for <span>S</span>tatistical <span>C</span>omputing in <span>P</span>ython.”</span> In <em><span>P</span>roceedings of the 9th <span>P</span>ython in <span>S</span>cience <span>C</span>onference</em>, edited by Stéfan van der Walt and Jarrod Millman, 56–61. <a href="https://doi.org/ 10.25080/Majora-92bf1922-00a ">https://doi.org/ 10.25080/Majora-92bf1922-00a </a>.
+</div>
+</div></section></div></main>
+<!-- /main column -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const disableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'prefetch';
+    }
+  }
+  const enableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'stylesheet';
+    }
+  }
+  const manageTransitions = (selector, allowTransitions) => {
+    const els = window.document.querySelectorAll(selector);
+    for (let i=0; i < els.length; i++) {
+      const el = els[i];
+      if (allowTransitions) {
+        el.classList.remove('notransition');
+      } else {
+        el.classList.add('notransition');
+      }
+    }
+  }
+  const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+    const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+    const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+    let newTheme = '';
+    if(darkModeDefault) {
+      newTheme = isAlternate ? baseTheme : alternateTheme;
+    } else {
+      newTheme = isAlternate ? alternateTheme : baseTheme;
+    }
+    const changeGiscusTheme = () => {
+      // From: https://github.com/giscus/giscus/issues/336
+      const sendMessage = (message) => {
+        const iframe = document.querySelector('iframe.giscus-frame');
+        if (!iframe) return;
+        iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+      }
+      sendMessage({
+        setConfig: {
+          theme: newTheme
+        }
+      });
+    }
+    const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+    if (isGiscussLoaded) {
+      changeGiscusTheme();
+    }
+  }
+  const toggleColorMode = (alternate) => {
+    // Switch the stylesheets
+    const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+    manageTransitions('#quarto-margin-sidebar .nav-link', false);
+    if (alternate) {
+      enableStylesheet(alternateStylesheets);
+      for (const sheetNode of alternateStylesheets) {
+        if (sheetNode.id === "quarto-bootstrap") {
+          toggleBodyColorMode(sheetNode);
+        }
+      }
+    } else {
+      disableStylesheet(alternateStylesheets);
+      toggleBodyColorPrimary();
+    }
+    manageTransitions('#quarto-margin-sidebar .nav-link', true);
+    // Switch the toggles
+    const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+    for (let i=0; i < toggles.length; i++) {
+      const toggle = toggles[i];
+      if (toggle) {
+        if (alternate) {
+          toggle.classList.add("alternate");     
+        } else {
+          toggle.classList.remove("alternate");
+        }
+      }
+    }
+    // Hack to workaround the fact that safari doesn't
+    // properly recolor the scrollbar when toggling (#1455)
+    if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+      manageTransitions("body", false);
+      window.scrollTo(0, 1);
+      setTimeout(() => {
+        window.scrollTo(0, 0);
+        manageTransitions("body", true);
+      }, 40);  
+    }
+  }
+  const isFileUrl = () => { 
+    return window.location.protocol === 'file:';
+  }
+  const hasAlternateSentinel = () => {  
+    let styleSentinel = getColorSchemeSentinel();
+    if (styleSentinel !== null) {
+      return styleSentinel === "alternate";
+    } else {
+      return false;
+    }
+  }
+  const setStyleSentinel = (alternate) => {
+    const value = alternate ? "alternate" : "default";
+    if (!isFileUrl()) {
+      window.localStorage.setItem("quarto-color-scheme", value);
+    } else {
+      localAlternateSentinel = value;
+    }
+  }
+  const getColorSchemeSentinel = () => {
+    if (!isFileUrl()) {
+      const storageValue = window.localStorage.getItem("quarto-color-scheme");
+      return storageValue != null ? storageValue : localAlternateSentinel;
+    } else {
+      return localAlternateSentinel;
+    }
+  }
+  const darkModeDefault = false;
+  let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
+  // Dark / light mode switch
+  window.quartoToggleColorScheme = () => {
+    // Read the current dark / light value 
+    let toAlternate = !hasAlternateSentinel();
+    toggleColorMode(toAlternate);
+    setStyleSentinel(toAlternate);
+    toggleGiscusIfUsed(toAlternate, darkModeDefault);
+  };
+  // Ensure there is a toggle, if there isn't float one in the top right
+  if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+    const a = window.document.createElement('a');
+    a.classList.add('top-right');
+    a.classList.add('quarto-color-scheme-toggle');
+    a.href = "";
+    a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+    const i = window.document.createElement("i");
+    i.classList.add('bi');
+    a.appendChild(i);
+    window.document.body.appendChild(a);
+  }
+  // Switch to dark mode if need be
+  if (hasAlternateSentinel()) {
+    toggleColorMode(true);
+  } else {
+    toggleColorMode(false);
+  }
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

@@ -28,6 +28,10 @@ This orientation case study will also introduce you to [Quarto](https://quarto.o
 
 What you are working in now is an **Q**uarto **m**ark**d**own file as indicated by the .**qmd** file name extension. Quarto documents are fully reproducible and use a productive notebook interface to combine formatted text and "chunks" of code to produce a range of [static and dynamic output formats](https://quarto.org/docs/guide/) including: HTML, PDF, Word, HTML5 slides, Tufte-style handouts, books, dashboards, shiny applications, scientific articles, websites, and more.
 
+::: callout-tip
+Quarto documents have handy Outline feature that allow you to easily navigate the entire document. If the outline is not currently visible, click the **Outline** button located on the right of the toolbar at the top of this document.
+:::
+
 #### Source vs. Visual Editor
 
 Following best practices for reproducible research [@gandrud2021], Quarto files store information in plain text [markdown](https://bookdown.org/yihui/rmarkdown/markdown-syntax.html) syntax. You are currently viewing this Quarto document using the visual editor, The visual editor is set as the default view in the [Quarto YAML header](https://quarto.org/docs/get-started/hello/rstudio.html#yaml-header) at the top of this document. Basically, a [YAML header](https://monashdatafluency.github.io/r-rep-res/yaml-header.html#) is:
@@ -37,7 +41,7 @@ Following best practices for reproducible research [@gandrud2021], Quarto files 
 The visual editor allows you to view formatted headers, text and code chunks and is a bit more "human readable" than markdown syntax but there will be many occasions where you will want to take a look at the plain text source code underlying this document. This can be viewed at any point by switching to source mode for editing. You can toggle back and forth between these two modes by clicking on **Source** and **Visual** in the editor toolbar.
 
 ::: callout-note
-You may have noticed a special kind of link in the text above. Specifically, a link citing Reproducible Research with R and R Studio by Chris Gandrud. The YAML header includes a bibliography option and points to our `reference.bib` file in the `lit` folder of this project. This will produce a nice tooltip for each linked reference as well as a bibliography when our doc is [rendered](https://quarto.org/docs/get-started/hello/rstudio.html#rendering) and [published](https://quarto.org/docs/get-started/authoring/rstudio.html#publishing). If you'd like to learn more about citations in Quarto visit: <https://quarto.org/docs/authoring/citations.html>
+You may have noticed a special kind of link in the text above. Specifically, a link citing Reproducible Research with R and R Studio by Chris Gandrud. The YAML header includes a bibliography option and points to our `reference.bib` file in the `lit` folder of this project, which produces a nice tooltip for linked references and a bibliography when our doc is [rendered](https://quarto.org/docs/get-started/hello/rstudio.html#rendering) and [published](https://quarto.org/docs/get-started/authoring/rstudio.html#publishing). Click the following link to learn more about [citations in Quarto](https://quarto.org/docs/authoring/citations.html).
 :::
 
 #### **👉 Your Turn** **⤵**
@@ -97,11 +101,19 @@ First and foremost, data-intensive research involves defining and refining a res
 
 ### Research Question
 
-In this case study, we'll be working with data coming from an unpublished research study, which utilized a number of different data sources to understand high school students' motivation within the context of online courses. For the purpose of this case study, our analysis will be driven by the following research question:
+In this case study, we'll be working with data come from an unpublished research study by LASER team member, [Josh Rosenberg](https://joshuamrosenberg.com), which utilized a number of different data sources to understand high school students' motivation within the context of online courses.
+
+These data sets and related research questions are explored in much greater detail in other modules, but for the purpose of this case study, our analysis will be driven by the following research question:
 
 *Is there a relationship between the time students spend on a course (as measured through their learning management system) and their final course grade?*
 
-### Packages 📦
+### Projects & Packages 📦
+
+As highlighted in [Chapter 6 of Data Science in Education Using R](https://datascienceineducation.com/c06.html) [@estrellado2020e], one of the first steps of every research workflow should be to set up a "Project" within RStudio.
+
+> A **Project** is the home for all of the files, images, reports, and code that are used in any given project.
+
+We are working in Posit Cloud with an R project [cloned from GitHub](https://github.com/laser-institute/laser-orientation), so a project has already been set up for you as indicated by the `.Rproj` file in the main directory.
 
 **Packages** - sometimes referred to as libraries, are shareable collections of code that can contain functions, data, and/or documentation and extend the functionality of the coding language.
 
@@ -143,17 +155,37 @@ sci_data = pd.read_csv("data/sci-online-classes.csv")
 sci_data
 ```
 
-#### **👉 Your Turn** **⤵**
+::: callout-important
+It's important to note that by manipulating data with pandas we do **not** change the original file. Instead, the data is stored in memory and can be viewed in our **Environment** pane, and can later be exported and saved as a new file is desired.
+:::
 
-❓ What rows and columns correspond with? How many students' data do we possess? How do you know?
+#### Viewing and inspecting data
+
+Now let's learn another way to inspect our data.
+
+#### 👉 Your Turn ⤵
+
+Run the next chunk and look at the results of the data frame you "assigned" to the `sci_data` object in the previous code-chunk:
+
+```{python}
+
+sci_data
+
+```
+
+::: callout-tip
+You can also enlarge this output by clicking the "Show in New Window" button located in the top right corner of the output.
+:::
+
+#### ❓Question
+
+What do you notice about this data set? What do you wonder? Add one or two observations in the space below:
 
 -   YOUR RESPONSE HERE
 
-Now, let's **examine** your data more systematically.
-
-The first step in getting to know your data is to discover the different data types it contains.
-
 #### Data Types
+
+Now, let's **examine** your data more systematically. The first step in getting to know your data is to discover the different data types it contains.
 
 There are two types of data:
 
@@ -161,35 +193,34 @@ There are two types of data:
 
 2.  **Numerical** that represents qualities that can be measured and represented as numbers.
 
-#### **👉 Your Turn** **⤵**
+#### 👉 Your Turn ⤵
 
-❓ Which of the columns in our dataset contain categorical and which contain numerical data?
+One way to explore the data types is by using `info()` function. Complete the following code to take a look at the data types for each column in our `sci_data` data frame.
 
--   YOUR RESPONSE HERE
-
-Another way to explore the data types is by using `.info()` function.
+**Hint**: Type the name of the function after the name of the dataset, using `.` before and `()` after it.
 
 ```{python}
 #Use info function to explore your data below
+
 sci_data#YOUR CODE HERE
 
 ```
 
-💡 **Tip:** type the name of the function after the name of the dataset, using `.` before and `()` after it.
+Nice work!!!
 
-#### **👉 Your Turn** **⤵**
+#### ❓Question
 
-❓ Which data types do you see? Which ones are numerical and which are categorical?
+Which of the columns in our dataset contain categorical and which contain numerical data? Name a few.
+
+-   YOUR RESPONSE HERE
+
+Which data types do you see? Which ones are numerical and which are categorical? Name a few.
 
 -   YOUR RESPONSE HERE
 
 If you look at "Grade_category", you will notice that all values are NaNs or missing values which means we do not have any information about this variable (or parameter).
 
-#### **👉 Your Turn** **⤵**
-
-❓ What other columns do you think have missing values? Why do you think so?[^1]
-
-[^1]: We can see that there are totally 603 rows in each column and if we see that non-null count is lower, it means there are missing values.
+What other columns do you think have missing values? Why do you think so?
 
 -   YOUR RESPONSE HERE
 

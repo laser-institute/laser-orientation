@@ -28,7 +28,9 @@ This orientation case study will also introduce you to [Quarto](https://quarto.o
 What you are working in now is an **Q**uarto **m**ark**d**own file as indicated by the .**qmd** file name extension. Quarto documents are fully reproducible and use a productive notebook interface to combine formatted text and "chunks" of code to produce a range of [static and dynamic output formats](https://quarto.org/docs/guide/) including: HTML, PDF, Word, HTML5 slides, Tufte-style handouts, books, dashboards, shiny applications, scientific articles, websites, and more.
 
 ::: callout-tip
-Quarto documents have handy Outline feature that allow you to easily navigate the entire document. If the outline is not currently visible, click the **Outline** button located on the right of the toolbar at the top of this document.
+Quarto docs can include specially formatted **callout boxes** like this one to draw special attention to provide notes, tips, cautions, warnings, and important information.
+
+**Pro tip**: Quarto documents also have a handy Outline feature that allow you to easily navigate the entire document. If the outline is not currently visible, click the Outline button located on the right of the toolbar at the top of this document.
 :::
 
 #### Source vs. Visual Editor
@@ -236,13 +238,15 @@ Next, we'll use a few functions that are handy for preparing data in table form.
 
 ## 2. WRANGLE
 
-By wrangle, we refer to the process of cleaning and processing data, and, in some cases, merging (or joining) data from multiple sources. Often, this part of the process is very (surprisingly) time-intensive! Wrangling your data into shape can itself be an important accomplishment! And documenting your code using R scripts oQuarto files will save yourself and others a great deal of time wrangling data in the future! There are great tools in R for data wrangling, especially through the use of the {[dplyr](https://dplyr.tidyverse.org)} R package which is part of the {tidyverse} suite of packages.
+By wrangle, we refer to the process of cleaning and processing data, and, in some cases, merging (or joining) data from multiple sources. Often, this part of the process is very (surprisingly) time-intensive! Wrangling your data into shape can itself be an important accomplishment! And documenting your code using R scripts or Quarto files will save yourself and others a great deal of time wrangling data in the future! There are great tools in R for data wrangling, especially through the use of the {[dplyr](https://dplyr.tidyverse.org)} package which is part of the {tidyverse} suite of packages.
 
 ### Selecting variables
 
 Recall from our Prepare section that we are interested the relationship between the time students spend on a course and their final course grade.
 
-Let's practice selecting a few variables by introducing a very powerful `|>` operator called a **pipe**. Pipes are a powerful tool for combining a sequence of functions or processes.
+Let's practice selecting these variables by introducing a very powerful `|>` operator called a **pipe**. Pipes are a powerful tool for combining a sequence of functions or processes.
+
+#### 👉 Your Turn ⤵
 
 Run the following code chunk to "pipe" our `sci_data` to the `select()` function include the following two variables as arguments:
 
@@ -256,6 +260,10 @@ sci_data |>
 ```
 
 Notice how the number of columns (variables) is now different!
+
+::: callout-note
+It's important to note that since we haven't "assigned" this filtered data frame to a new object using the `<-` assignment operator, the number of variables in the `sci_data` data frame in our environment is still 30, not 2.
+:::
 
 Let's *include one additional variable* in the select function that you think might be a predictor of students' final course grade or useful in addressing our research question.
 
@@ -273,23 +281,27 @@ In the code chunk below, add a new variable, being careful to type the new varia
 
 ```{r}
 sci_data |> 
-  select(FinalGradeCEMS, TimeSpent)
+  select(FinalGradeCEMS, TimeSpent, total_points_earned)
 ```
 
 Once added, the output should be different than in the code above - there should now be an additional variable included in the print-out.
 
+::: callout-note
 **A quick footnote about pipes**: The original pipe operator, `%>%`, comes from the {[magrittr](https://magrittr.tidyverse.org)} package but all packages in the tidyverse load `%>%` for you automatically, so you don't usually load magrittr explicitly. The pipe has become such a useful and much used operator in R that it is now baked into R using the new and simpler native pipe `|>` operator. You can use both fairly interchangeably but there are a few [differences between pipe operators](https://www.tidyverse.org/blog/2023/04/base-vs-magrittr-pipe/).
+:::
 
 ### Filtering variables
 
-Next, let's explore filtering variables. Check out and run the next chunk of code, imagining that we wish to filter our data to view only the rows associated with students who earned a final grade (as a percentage) of 70 - 70% - or higher.
+Next, let's explore filtering variables.
+
+#### 👉 Your Turn ⤵
+
+Check out and run the next chunk of code, imagining that we wish to filter our data to view only the rows associated with students who earned a final grade (as a percentage) of 70 - 70% - or higher.
 
 ```{r}
 sci_data |> 
   filter(FinalGradeCEMS > 70)
 ```
-
-#### 👉 Your Turn ⤵
 
 In the next code chunk, change the cut-off from 70% to some other value - larger or smaller (maybe much larger or smaller - feel free to play around with the code a bit!).
 
@@ -298,13 +310,15 @@ sci_data |>
   filter(FinalGradeCEMS > 70)
 ```
 
+#### ❓Question
+
 What happens when you change the cut-off from 70 to something else? Add a thought (or more) below:
 
 -   YOUR RESPONSE HERE
 
 ### Arrange
 
-The last function we'll use for preparing tables is arrange. We'll again use the `|>` to combine this `arrange()` function with a function we used already - `select()`. We do this so we can view only time spent and final grades.
+The last function we'll use for preparing tables is arrange, which allows us to sort columns in ascending (default) or descending order. We'll again use the `|>` to combine this `arrange()` function with a function we used already - `select()`. We do this so we can view only time spent and final grades.
 
 ```{r}
 sci_data |> 
@@ -312,7 +326,7 @@ sci_data |>
   arrange(FinalGradeCEMS)
 ```
 
-Note that arrange works by sorting values in ascending order (from lowest to highest); you can change this by using the `desc()` function as an argument with arrange, like the following:
+Note that arrange works by sorting values in ascending order (from lowest to highest) by default; you can change this by using the `desc()` function as an argument with arrange, like the following:
 
 ```{r}
 sci_data |> 
@@ -332,7 +346,7 @@ sci_data |>
   arrange(desc(FinalGradeCEMS))
 ```
 
-Can you compose a series of functions that include the `select()`, `filter()`, and `arrange()` functions? Recall that you can "pipe" the output from one function to the next as when we used select() and arrange() together in the code chunk above.
+Can you compose a series of functions that include the `select()`, `filter()`, and `arrange()` functions? Recall that you can "pipe" the output from one function to the next as when we used `select()` and `arrange()` together in the code chunk above.
 
 ```{r}
 sci_data |> 

@@ -29,7 +29,9 @@ This orientation case study will also introduce you to [Quarto](https://quarto.o
 What you are working in now is an **Q**uarto **m**ark**d**own file as indicated by the .**qmd** file name extension. Quarto documents are fully reproducible and use a productive notebook interface to combine formatted text and "chunks" of code to produce a range of [static and dynamic output formats](https://quarto.org/docs/guide/) including: HTML, PDF, Word, HTML5 slides, Tufte-style handouts, books, dashboards, shiny applications, scientific articles, websites, and more.
 
 ::: callout-tip
-Quarto documents have handy Outline feature that allow you to easily navigate the entire document. If the outline is not currently visible, click the **Outline** button located on the right of the toolbar at the top of this document.
+Quarto docs can include specially formatted **callout boxes** like this one to draw special attention to provide notes, tips, cautions, warnings, and important information.
+
+**Pro tip**: Quarto documents also have a handy Outline feature that allow you to easily navigate the entire document. If the outline is not currently visible, click the Outline button located on the right of the toolbar at the top of this document.
 :::
 
 #### Source vs. Visual Editor
@@ -226,11 +228,13 @@ What other columns do you think have missing values? Why do you think so?
 
 ## 2. WRANGLE
 
-By wrangle, we refer to the process of cleaning and processing data, and, in some cases, merging (or joining) data from multiple sources. Often, this part of the process is very (surprisingly) time-intensive! Wrangling your data into shape can itself be an important accomplishment!
+By wrangle, we refer to the process of cleaning and processing data, and, in some cases, merging (or joining) data from multiple sources. Often, this part of the process is very (surprisingly) time-intensive! Wrangling your data into shape can itself be an important accomplishment! And documenting your code using Python scripts or Quarto files will save yourself and others a great deal of time wrangling data in the future!
 
 ### Selecting variables
 
-Recall from our Prepare section that we are interested the relationship between the time students spend on a course and their final course grade.
+Recall from our Prepare section that we are interested the relationship between the time students spend on a course and their final course grade. Let's practice selecting these variables!
+
+#### 👉 Your Turn ⤵
 
 Run the following code chunk using `sci_data[[]]` and the names of the columns:
 
@@ -244,14 +248,14 @@ sci_data[['FinalGradeCEMS','TimeSpent']]
 
 ### Cleaning data
 
-We have already seen that there are missing values in our target columns. There is another way to do that by selecting the column and usung `.isnull()` function and adding `.sum()` function in the end to find the number of those values.
+We have already seen that there are missing values in our target columns. There is another way to do that by selecting the column and using `isnull()` function and adding `sum()` function in the end to find the number of those values.
+
+**Hint:** you can use one function and then another function like `data.function_1().function_2()`
 
 ```{python}
 #YOUR CODE HERE
 
 ```
-
-💡 **Tip:** you can use one function and then another function like `data.function_1().function_2()`
 
 ### Handling Missing Values
 
@@ -285,22 +289,22 @@ sci_data['TimeSpent'].fillna(value=mean_value_time, inplace=True)
 
 ### Filtering variables
 
-Next, let's explore filtering variables. Check out and run the next chunk of code, imagining that we wish to filter our data to view only the rows associated with students who earned a final grade (as a percentage) of 70% - or higher and the 'TimeSpent' associated with it.
+Next, let's explore filtering variables. Check out and run the next chunk of code, imagining that we wish to filter our data to view only the rows associated with students who earned a final grade (as a percentage) of 70% - or higher and the `TimeSpent` associated with it.
 
 ```{python}
 #filter to display only students with grades > 70
 sci_data['TimeSpent'][sci_data['FinalGradeCEMS'] #YOUR CODE HERE]
 ```
 
-#### **👉 Your Turn** **⤵**
+#### ❓Question
 
-❓ How much time do you need to spend to get the grade higher than 70%? Is there a consistent pattern?
+How much time do you need to spend to get the grade higher than 70%? Is there a consistent pattern?
 
 -   YOUR RESPONSE HERE
 
 ## 3. EXPLORE
 
-Exploratory data analysis, or exploring your data, involves processes of *describing* your data (such as by calculating the means and standard deviations of numeric variables, or counting the frequency of categorical variables) and, often, visualizing your data. As we'll learn in later labs, the explore phase can also involve the process of "feature engineering," or creating new variables within a dataset \[\@krumm2018\].
+Exploratory data analysis, or exploring your data, involves processes of *describing* your data (such as by calculating the means and standard deviations of numeric variables, or counting the frequency of categorical variables) and, often, visualizing your data. As we'll learn in later labs, the explore phase can also involve the process of "feature engineering," or creating new variables within a dataset [@krumm2018].
 
 In this section, we'll quickly pull together some basic stats and introduce you to a basic data visualization.
 

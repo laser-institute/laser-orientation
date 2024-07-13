@@ -1,0 +1,401 @@
+---
+title: "Workflow & Reproducible Research"
+subtitle: "Orientation: Code Along"
+format:
+  revealjs: 
+    slide-number: c/t
+    progress: true
+    chalkboard: 
+      buttons: false
+    preview-links: auto
+    logo: img/LASERLogoB.png
+    #theme: Cosmo
+    theme: [default, css/laser.scss]
+    width: 1920
+    height: 1080
+    margin: 0.05
+    footer: <a href=https://www.go.ncsu.edu/laser-institute>go.ncsu.edu/laser-institute
+highlight-style: a11y
+resources:
+  - demo.pdf
+bibliography: references.bib
+editor: visual
+jupyter: python3
+---
+
+## Agenda
+
+### Python Code-Along
+
+::: columns
+::: {.column width="60%"}
+Data-Intensive Research Workflow
+
+-   Prepare
+-   Wrangle
+-   Explore
+-   Model
+-   Communicate
+:::
+
+::: {.column width="40%"}
+![](img/laser-cycle.png){.absolute right="50" width="1000"}
+:::
+:::
+
+::: notes
+Krumm, A., Means, B., & Bienkowski, M. (2018). [Learning Analytics Goes to School.](https://www.routledge.com/Learning-Analytics-Goes-to-School-A-Collaborative-Approach-to-Improving/Krumm-Means-Bienkowski/p/book/9781138121836). Routledge.
+:::
+
+## Prepare
+
+::: columns
+::: {.column width="50%"}
+**The Study**
+
+The setting of this study was a public provider of individual online courses in a Midwestern state. Data was collected from two semesters of five online science courses and aimed to understand students' motivation.
+:::
+
+::: {.column width="40%"}
+**Research Question**
+
+Is there a relationship between the time students spend in a learning management system and their final course grade?
+:::
+:::
+
+::: notes
+in our "Prepare" phase, we embark on understanding the setting of our study—a dive into online science courses aiming to unravel the interplay between student motivation and their engagement within a digital learning environment. Here, Python's prowess comes to the forefront, with its ability to effortlessly ingest and preprocess data from varied sources, thanks to the pandas library. Highlight Python's role in not just simplifying data importation via pd.read_csv() but also in enabling initial exploratory steps like identifying missing values, understanding data types, and performing simple data summarizations that lay the groundwork for more complex analysis.
+:::
+
+## The Tools of Reproducible Research
+
+::: panel-tabset
+# Packages
+
+In Python, packages are equivalent to R's libraries, containing functions, modules, and documentation. They can be installed using `pip` and imported into your scripts.
+
+```{python}
+#| echo: true
+#| message: false
+
+# Import pandas for data manipulation and matplotlib for visualization
+import pandas as pd
+import matplotlib.pyplot as plt
+
+# If not installed, you can run in the terminal:
+# python3 -m pip install matplotlib plotly
+# python3 -m pip install pandas
+ 
+
+# or windows
+# py -m pip install matplotlib plotly
+# py -m pip install pandas
+
+```
+
+# Read in Data
+
+The pandas library in Python is used for data manipulation and analysis. Similar to the {readr} package in R the function like `pd.read_csv()` is for importing rectangular data from delimited text files such as comma-separated values (CSV), a preferred file format for reproducible research.
+
+```{python}
+#| echo: true
+#| message: false
+
+# Load data into the Python environment from a CSV file
+sci_data = pd.read_csv("data/sci-online-classes.csv")
+```
+
+# Inspecting Data
+
+Inspecting the dataset in Python can be done by displaying the first few rows of the DataFrame.
+
+```{python}
+#| echo: true
+#| message: false
+
+# Display the first five rows of the data
+print(sci_data.head())
+```
+
+What variables do you think might help us answer our research question?
+
+# Python Syntax
+
+Python syntax for reading and inspecting data can be intuitive and powerful. For example:
+
+`sci_data = pd.read_csv("data/sci-online-classes.csv")`
+
+-   **Functions** are like verbs: pd.read_csv() is the function used to read a CSV file into a pandas DataFrame.
+-   **Objects** are the nouns: In this case, sci_data becomes the object that stores the DataFrame created by pd.read_csv("data/sci-online-classes.csv").
+-   **Arguments** are like adverbs: "data/sci-online-classes.csv" is the argument to pd.read_csv(), specifying the path to the CSV file. Unlike R's read_csv, the default behavior in pandas is to infer column names from the first row in the file, so there's no need for a col_names argument.
+-   **Operators** are like “punctuation”: = is the assignment operator in Python, used to assign the DataFrame returned by pd.read_csv("data/sci-online-classes.csv") to the object sci_data.
+:::
+
+::: notes
+This segment underscores the significance of Python's ecosystem in fostering reproducible research. Delve into how Python, with its rich library ecosystem—pandas for data wrangling, matplotlib and seaborn for visualization—supports the creation of transparent and replicable research workflows. Emphasize the critical role of virtual environments (using venv or conda) and dependency management tools (pip, pipenv) in encapsulating the research environment, ensuring that findings can be recreated and validated by others, a cornerstone of scientific integrity.
+:::
+
+## Wrangle
+
+Data wrangling is the process of cleaning, ["tidying"](https://r4ds.had.co.nz/tidy-data.html?q=tidy%20data#tidy-data-1), and transforming data. In Learning Analytics, it often involves merging (or joining) data from multiple sources.
+
+-   Data wrangling in Python is primarily done using pandas, allowing for cleaning, filtering, and transforming data.
+
+Since we are interested the relationship between time spent in an online course and final grades, let's `select()` the `FinalGradeCEMS` and `TimeSpent` from `sci_data`.
+
+```{python}
+#| echo: true
+#| message: false
+
+# Selecting specific columns and creating a new DataFrame
+sci_data_selected = sci_data[['FinalGradeCEMS', 'TimeSpent']]
+
+```
+
+::: notes
+Data wrangling represents the transformative process of refining our dataset into a format ripe for analysis. Here, spotlight pandas' capability to perform sophisticated data manipulations—filtering rows, selecting columns of interest, handling missing data, and merging datasets. This step is pivotal in distilling our raw data into a structured form that precisely addresses our research questions. Discuss practical examples, like using .dropna() to clean data or .merge() to combine datasets, illustrating Python's efficiency in handling typical data preparation challenges.
+:::
+
+## Explore
+
+::: panel-tabset
+# EDA
+
+Exploratory data analysis in Python involves processes of **describing** your data numerically or graphically, which often includes:
+
+-   **calculating** summary statistics like frequency, means, and standard deviations
+
+-   **visualizing** your data through charts and graphs
+
+EDA can be used to help answer research questions, generate new questions about your data, discover relationships between and among variables, and create new variables (i.e., feature engineering) for data modeling.
+
+# Graph-template
+
+::: columns
+::: {.column width="50%"}
+The workflow for making a graph typically involves:
+
+1.  Choosing the type of plot or visualization you want to create.
+
+2.  Using the plotting function directly with your data.
+
+3.  Optionally customizing the plot with titles, labels, and other aesthetic features.
+:::
+
+::: {.column width="50%"}
+A simple template for creating a scatter plot could look like this:
+
+```{python}
+#| echo: true
+#| message: false
+
+#import packages for visualization
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+# Basic scatter plot template
+# sns.scatterplot(x=<VARIABLE1>, y=<VARIABLE2>, data=<DATA>)
+# plt.show()
+```
+:::
+:::
+
+# Our first graph
+
+::: columns
+::: {.column width="50%"}
+Scatter plots are useful for visualizing the relationship between two continuous variables. Here's how to create one with seaborn.
+:::
+
+::: {.column width="50%"}
+```{python}
+#| echo: true
+#| message: false
+
+# Create a scatter plot showing the relationship between time spent and final grades
+sns.scatterplot(x='TimeSpent', y='FinalGradeCEMS', data=sci_data)
+plt.xlabel('Time Spent')
+plt.ylabel('Final Grade CEMS')
+plt.show()
+```
+:::
+:::
+:::
+
+::: notes
+Our journey through Exploratory Data Analysis (EDA) with Python equips us with the tools to uncover hidden patterns and relationships. Utilize this segment to showcase how seaborn and matplotlib enable us to visualize data in ways that reveal these underlying structures, whether through histograms, scatter plots, or box plots. EDA is our investigative tool, prompting hypotheses and guiding the direction of our modeling efforts. Explicitly demonstrate creating a scatter plot with sns.scatterplot() to examine the relationship between time spent and final grades, highlighting the direct feedback loop between visual exploration and analytical insight.
+
+**Components of the Scatter Plot Command:** sns.scatterplot(): This is the function from the seaborn library (often imported as sns) used to create scatter plots. Seaborn is a statistical data visualization library built on top of matplotlib, offering a higher-level interface for drawing attractive and informative statistical graphics.
+
+x=<VARIABLE1>: This argument specifies the data for the x-axis. <VARIABLE1> should be replaced with the name of the column from your dataset that you want to display on the x-axis.
+
+y=<VARIABLE2>: Similarly, this argument specifies the data for the y-axis. <VARIABLE2> should be replaced with the name of another column from your dataset that you want to display on the y-axis.
+
+data=<DATA>: This argument is where you specify the dataset containing <VARIABLE1> and <VARIABLE2>. <DATA> should be replaced with the variable name of your dataset, which is typically a pandas DataFrame.
+
+plt.show(): After creating the scatter plot with sns.scatterplot(), this command from matplotlib's pyplot interface (often imported as plt) is used to display the plot. Without this command, the plot may not be visible (depending on your environment, like Jupyter Notebooks might automatically show plots even without explicitly calling plt.show()).
+:::
+
+## Model
+
+::: panel-tabset
+Modeling involves a simple low-dimensional summary of a dataset. According to Krumm et al. (2018), there are two general types of modeling approaches: - **Unsupervised** learning algorithms can be used to understand the structure of one’s dataset. - **Supervised** models, on the other hand, help to quantify relationships between features and a known outcome.
+
+Ideally, a good model will separate true “signals” (i.e. patterns generated by the phenomenon of interest) from the “noise” (i.e. random variation that you’re not interested in).
+
+# Dealing with missing data (NaN)
+
+Before adding a constant or fitting the model, ensure the data doesn't contain NaNs (Not a Number) or infinite values. In a pandas DataFrame, you can use a combination of methods provided by `pandas` and `NumPy`.
+
+```{python}
+#| echo: true
+#| message: false
+import numpy as np
+
+# Drop rows with NaNs in 'TimeSpent' or 'FinalGradeCEMS'
+sci_data_clean = sci_data.dropna(subset=['TimeSpent', 'FinalGradeCEMS'])
+
+# Replace infinite values with NaN and then drop those rows (if any)
+sci_data_clean.replace([np.inf, -np.inf], np.nan, inplace=True)
+sci_data_clean.dropna(subset=['TimeSpent', 'FinalGradeCEMS'], inplace=True)
+```
+
+# A Simple Model
+
+You can use libraries such as `statsmodels` or `scikit-learn`. We'll dive much deeper into modeling in subsequent learning labs, but for now let's see if there is a statistically significant relationship between students' final grades, `FinaGradeCEMS`, and the `TimeSpent` in the LMS:
+
+```{python}
+#| echo: true
+#| message: false
+
+# add the statsmodels
+import statsmodels.api as sm
+
+# Add a constant term for the intercept to the independent variable
+X = sm.add_constant(sci_data_clean['TimeSpent'])  # Independent variable
+y = sci_data_clean['FinalGradeCEMS']  # Dependent variable
+
+# Fit the model
+model = sm.OLS(y, X).fit()
+```
+
+# Interpret
+
+```{python}
+#| echo: true
+#| message: false
+
+# Print the summary of the model
+print(model.summary())
+```
+:::
+
+::: notes
+**Overview Modeling** Modeling is where we apply statistical techniques to interpret our data's story. With Python's statsmodels, we can fit a linear regression model to quantify the relationship between variables of interest. This section is an opportunity to detail the process of model selection, fitting, and evaluation within Python's framework. Discuss the interpretation of regression outputs from statsmodels, such as coefficients for understanding variable impact, p-values for statistical significance, and R-squared values for model fit. This not only aids in hypothesis testing but also in predicting outcomes based on observed data.
+
+**Dealing with Missing Data (NaN)** Importance: Handling missing data is a crucial preprocessing step to ensure the quality and reliability of your statistical models. Missing values (NaNs) or infinite values in your dataset can lead to errors or biased results when fitting models. Thus, cleaning your data is essential.
+
+Process: Drop NaNs: This step removes any rows in your dataset that contain NaN values in specific columns of interest (TimeSpent or FinalGradeCEMS). This ensures that the model only uses complete cases without missing values, which could distort the analysis.
+
+Handle Infinite Values: Infinite values, which can result from divisions by zero or other operations, are not suitable for most statistical models. Replacing these with NaN (np.inf or -np.inf to np.nan) and then dropping them is a way to ensure that your dataset is finite and can be processed by statistical modeling tools.
+
+**A Simple Model** Importance: Building a statistical model allows us to quantify the relationship between variables in our dataset. In this case, you're interested in the relationship between TimeSpent in the learning management system (LMS) and students' final grades (FinalGradeCEMS). A simple linear regression model can provide insights into whether there is a statistically significant association between these variables.
+
+Process: Add a Constant Term: Many statistical models, including linear regression, assume that your equation will have an intercept term. Adding a constant to your independent variables (using sm.add_constant()) accommodates this intercept in the model.
+
+Fit the Model: Using statsmodels' OLS function (Ordinary Least Squares), the model is fitted to the data. This process involves finding the parameters (intercept and slope) that minimize the sum of squared residuals, providing the best linear approximation of the relationship between the independent and dependent variables.
+
+Interpret Importance: After fitting the model, interpreting the output is crucial for understanding the relationship between the variables. The model summary provides several key pieces of information, including the coefficients of the model, their statistical significance, and the overall fit of the model.
+
+Process: Coefficients: Indicate the expected change in the dependent variable (e.g., FinalGradeCEMS) for a one-unit increase in the independent variable (e.g., TimeSpent), assuming all other variables in the model are held constant.
+
+P-values: Help determine the statistical significance of each coefficient. A low p-value (typically \<0.05) suggests that the effect of the independent variable on the dependent variable is statistically significant and not due to chance.
+
+Model Fit: Indicators like R-squared value give an idea of how well the model explains the variability in the dependent variable. A higher R-squared value suggests a better fit, although it's important to consider other factors and diagnostics to evaluate model performance fully.
+:::
+
+## Communicate
+
+::: panel-tabset
+# Data Products
+
+Krumm et al. (2018) have outlined the following 3-step process for communicating finding with education stakeholders:
+
+1.  **Select.** Selecting analyses that are most important and useful to an intended audience, as well as selecting a format for displaying that info (e.g. chart, table).
+
+2.  **Polish.** Refining or polishing data products, by adding or editing titles, labels, and notations and by working with colors and shapes to highlight key points.
+
+3.  **Narrate.**  Writing a narrative pairing a data product with its related research question and describing how best to interpret and use the data product.
+
+# Dashboards
+
+<img src="img/dashboards.png" height="350px"/>
+
+<https://quarto.org/docs/dashboards/>
+
+# Websites
+
+<img src="img/websites.png" height="350px"/>
+
+<https://quarto.org/docs/websites/>
+
+# Books
+
+<img src="img/books.png" height="350px"/> \]
+
+<https://quarto.org/docs/books/>
+
+# ...and more
+
+-   [**BLOGS** - https://quarto.org/docs/websites/website-blog.html](https://quarto.org/docs/websites/website-blog.html)
+
+-   [**Manuscripts** - https://quarto.org/docs/manuscripts/](https://quarto.org/docs/manuscripts/)
+
+-   [**REVEAL JS** - https://quarto.org/docs/presentations/revealjs/](https://quarto.org/docs/presentations/revealjs/)
+
+-   [**Powerpoint** - https://quarto.org/docs/presentations/powerpoint.html](https://quarto.org/docs/presentations/powerpoint.html)
+:::
+
+::: notes
+In this section, we highlight the essence of communicating research findings effectively. Krumm et al. (2018) advocate for a targeted approach: select key findings that resonate with your audience, polish your data products for clarity and engagement, and narrate your insights to ensure they are actionable. Quarto enhances this process by supporting diverse formats for data products, from interactive dashboards and websites to traditional publications like books and manuscripts. Its flexibility allows for tailored communication strategies, ensuring your research not only reaches but also impacts your intended audience. By leveraging Quarto, we can create compelling narratives that are accessible across various platforms, fostering broader understanding and application of our findings.
+
+Quarto stands out in the communication phase due to its inherent design for reproducibility and collaboration. It's a powerful tool that allows researchers to seamlessly integrate Python analysis with narrative text, creating a cohesive document that not only presents findings but also the code and data behind those conclusions. This integration promotes transparency and facilitates peer review, ensuring that the research can be easily validated and reproduced by others.
+
+Moreover, Quarto's ability to produce a wide array of output formats—from interactive web pages and dashboards to PDFs and slides—ensures that our communication is not just wide-reaching but also adaptable to the preferences and needs of diverse audiences. Whether stakeholders prefer a static report, an interactive web application, or a formal presentation, Quarto enables us to cater to these varied requirements without needing to alter the underlying content. This flexibility, combined with the platform's emphasis on reproducibility, positions Quarto as an ideal choice for modern data-driven research communication.
+:::
+
+# What's Next?
+
+::: columns
+::: {.column width="50%"}
+**Our First LASER Badge!** Next you will complete an interactive "case study" which is a key component to each learning lab.
+
+Navigate to the Files tab and open the following file:
+
+`laser-lab-case-study.RMD` **Change this to the new one**
+:::
+
+::: {.column width="50%"}
+**Essential Readings**
+
+-   [Reproducible Research with R and RStudio](https://github.com/christophergandrud/Rep-Res-Book) (chapters 1 & 2)
+
+-   [Learning Analytics Goes to School](https://www.routledge.com/Learning-Analytics-Goes-to-School-A-Collaborative-Approach-to-Improving/Krumm-Means-Bienkowski/p/book/9781138121836) (pages 28 - 58)
+
+-   [Data Science in Education Using R](https://datascienceineducation.com)
+
+-   [R for Data Science](https://r4ds.had.co.nz/index.html)
+:::
+:::
+
+## Acknowledgements
+
+::: columns
+::: {.column width="20%"}
+![](img/nsf.jpg){fig-align="center" width="80%"}
+:::
+
+::: {.column width="80%"}
+This work was supported by the National Science Foundation grants DRL-2025090 and DRL-2321128 (ECR:BCSER). Any opinions, findings, and conclusions expressed in this material are those of the authors and do not necessarily reflect the views of the National Science Foundation.
+:::
+:::

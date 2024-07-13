@@ -1,6 +1,6 @@
 ---
 title: "A Coding Case Study with Quarto"
-subtitle: "Orientation Module: Case Study Key"
+subtitle: "LASER Orientation Module"
 author: "LASER Institute"
 date: today 
 format:
@@ -19,48 +19,80 @@ bibliography: lit/references.bib
 
 ![](img/LASER_Hx.png){width="40%"}
 
-Welcome to your first LASER Case Study! The case study activities included in each module demonstrate how key Learning Analytics (LA) techniques featured in exemplary STEM education research studies can be implemented with R. Case studies also provide a holistic setting to explore important foundational topics integral to Learning Analytics such as reproducible research, use of APIs, and ethical use of educational data.
+Welcome to your first LASER Case Study! The case study activities included in each module demonstrate how key Learning Analytics (LA) techniques featured in exemplary STEM education research studies can be implemented with R or Python. Case studies also provide a holistic setting to explore important foundational topics integral to Learning Analytics such as reproducible research, use of APIs, and ethical use of educational data.
 
 This orientation case study will also introduce you to [Quarto](https://quarto.org), which is heavily integrated into each LASER Module. You may have used Quarto before - or you may not have! Either is fine as this task will be designed with the assumption that you have not used Quarto before.
 
-In this interactive coding case study, we'll focus on the following tasks:
-
-1.  Reading data into R (in the **Prepare** section)
-2.  Preparing and "wrangling" data in a tabular (think spreadsheet!) format (in the **Wrangle** section)
-3.  Creating some basic plots (in the **Explore** section)
-4.  Running a model - specifically, a simple regression model (in the **Model** section)
-5.  Finally, creating a reproducible report of your work you can share with others (in the **Communicate** section)
-
 ### How to use this Quarto document
 
-What you are working in now is an [Quarto](https://quarto.org) markdown file as indicated by the .qmd file name extension. Following best practices for reproducible research [@gandrud2021], Quarto files store information in plain text [markdown](https://bookdown.org/yihui/rmarkdown/markdown-syntax.html) syntax, which can be viewed as "Source" or by using "Visual" editor which converts markdown syntax to formatted text.
+What you are working in now is an **Q**uarto **m**ark**d**own file as indicated by the .**qmd** file name extension. Quarto documents are fully reproducible and use a productive notebook interface to combine formatted text and "chunks" of code to produce a range of [static and dynamic output formats](https://quarto.org/docs/guide/) including: HTML, PDF, Word, HTML5 slides, Tufte-style handouts, books, dashboards, shiny applications, scientific articles, websites, and more.
 
-Quarto documents are fully reproducible and use a productive notebook interface to combine narrative text and "chunks" of code to produce a range of [static and dynamic output formats](https://quarto.org/docs/guide/) including: HTML, PDF, Word, HTML5 slides, Tufte-style handouts, books, dashboards, shiny applications, scientific articles, websites, and more.
+#### Source vs. Visual Editor
 
-There are two keys to your use of Quarto for this activity:
+Following best practices for reproducible research [@gandrud2021], Quarto files store information in plain text [markdown](https://bookdown.org/yihui/rmarkdown/markdown-syntax.html) syntax. You are currently viewing this Quarto document using the visual editor, The visual editor is set as the default view in the [Quarto YAML header](https://quarto.org/docs/get-started/hello/rstudio.html#yaml-header) at the top of this document. Basically, a [YAML header](https://monashdatafluency.github.io/r-rep-res/yaml-header.html#) is:
 
-1.  First, be sure that you are viewing the document in the "Visual Editor" mode. You can use this mode by clicking the word "Visual" on the left side of the toolbar above. The visual editor allows you to view formatted headers, text and code chunks as specified by the underlying markdown syntax, or "Source" text. Visual mode is a bit more "human readable" than markdown syntax but definitely take a look at the source text.
-2.  Second, note the specially formatted text box below called a "[code chunk](#0)." These chunks allows you to run code from [multiple languages](#0) including R, Python, and SQL. This specific code chunk contains a line of R code as specified by "r" inside the curly brackets `{}` where you can also include other "[chunk options](https://yihui.org/knitr/options/#chunk-options)." You will also notice a set of buttons in the upper right corner for running the code.
+> a short blob of text that... not only dictates the final file format, but a style and feel for our final document.
 
-Click the green arrow button on the right side of the code chunk to run the R code and view the image file name `laser-cycle.png` stored in the `img` folder in your files pane.
+The visual editor allows you to view formatted headers, text and code chunks and is a bit more "human readable" than markdown syntax but there will be many occasions where you will want to take a look at the plain text source code underlying this document. This can be viewed at any point by switching to source mode for editing. You can toggle back and forth between these two modes by clicking on **Source** and **Visual** in the editor toolbar.
+
+::: callout-note
+You may have noticed a special kind of link in the text above. Specifically, a link citing Reproducible Research with R and R Studio by Chris Gandrud. The YAML header includes a bibliography option and points to our `reference.bib` file in the `lit` folder of this project. This will produce a nice tooltip for each linked reference as well as a bibliography when our doc is [rendered](https://quarto.org/docs/get-started/hello/rstudio.html#rendering) and [published](https://quarto.org/docs/get-started/authoring/rstudio.html#publishing). If you'd like to learn more about citations in Quarto visit: <https://quarto.org/docs/authoring/citations.html>
+:::
+
+#### **👉 Your Turn** **⤵**
+
+LASER case studies include many interactive elements in which you are asked to perform an action, answer some questions, or write some code. These are indicated by the **👉 Your Turn** **⤵** header. Now it's your turn to do something.
+
+Take a look at the markdown syntax used to create this document by viewing with the source editor. To do so, click the "Source" button in the toolbar at the top of this file. After you've had a look, click back to the visual editor to continue.
+
+![](img/source-view.png){width="80%"}
+
+Great job! Let's continue!
+
+#### Code Chunks
+
+In addition to including formatted text hyperlinks, and embedded images like above, Quarto documents can also include a specially formatted text box called a "[code chunk](https://quarto.org/docs/get-started/hello/rstudio.html#code-chunks)." These chunks allows you to run code from multiple languages including R, Python, and SQL. For example, the code chunk below is intended to run R code as specified by "r" inside the curly brackets `{}`. It also contains a contains a code "comment" as indicted by the \# hashtag and line of R code. You may have also noticed a set of buttons in the upper right corner of the code chunk which are used to execute the code.
+
+#### **👉 Your Turn** **⤵**
+
+Click the green arrow ![](https://d33wubrfki0l68.cloudfront.net/18153fb9953057ee5cff086122bd26f9cee8fe93/3aba9/images/notebook-run-chunk.png)icon on the right side of the code chunk to run the R code and view the image file name `laser-cycle.png` stored in the `img` folder in your files pane. Quarto will execute the code and its output and any related messages are displayed below the chunk.
 
 ```{r}
+# Display an image from the specified path using the knitr package in R
 knitr::include_graphics("img/laser-cycle.png")
 ```
 
+Nice work! For this case study, don't stress too much about understanding the code. We'll spend a lot of time doing that in the other modules. For now, take a look at the image displayed and answer the question that follows by typing your response directly in this document.
+
+#### ❓Question
+
+In LASER case studies, you will often see as part of "Your Turns" a ❓ icon that indicates you are being promoted to answer a question. Type your response to the following question by deleting "YOUR RESPONSE HERE" and adding your own response:
+
+What do you think this image is intended to illustrate?
+
+-   YOUR RESPONSE HERE
+
 ### The Data-Intensive Research Workflow
 
-You may have noticed that the words in this diagram correspond to the sections outlined at the beginning of this document. These terms, or processes, are part of a framework called the data-intensive research workflow and comes from the book Learning Analytics Goes to School [@krumm2018]*.* You can check that out later, but don't feel any need to dive deep into it for now - we'll be spending more time on this throughout the week; just know that this document and all of our LASER Lab case studies are organized around these five components.
+The diagram shown above illustrates a Learning Analytics framework called the Data-Intensive Research workflow and comes from the excellent book, Learning Analytics Goes to School [@krumm2018]*.* You can check that out later, but don't feel any need to dive deep into it for now - we spend more time unpacking this framework in our [Learning Analytics Workflow Modules](https://laser-institute.github.io/laser-website/curriculum-la-workflow.html); just know that this case study and all of the case studies in our [LASER curriculum modules](https://laser-institute.github.io/laser-website/curriculum-design.html#modules-topics) are organized around the five main components of this workflow.
+
+In this introductory coding case study, we'll focus on the following tasks specific to each component of the workflow:
+
+1.  **Prepare**. Understand the research context, software packages, and data collected.
+2.  **Wrangle**. Select and filter variables and "wrangle" them in a tabular (think spreadsheet!) format.
+3.  **Explore**. Create some basic summary tables and plots to understand our data better.
+4.  **Model**. Run a basic model - specifically, a simple regression model.
+5.  **Communicate**. Create a reproducible report of your work that you can share with others.
 
 Now, let's get started!
 
 ## 1. PREPARE
 
-First and foremost, data-intensive research involves defining and refining a research question and developing an understanding of where your data comes from [@krumm2018]. This part of the process also involves setting up a reproducible research environment [@gandrud2021] so your work can be understood and replicated by other researchers. For now, we'll focus on just a few parts of this process, diving in much more deeply into these components in later learning labs.
+First and foremost, data-intensive research involves defining and refining a research question and developing an understanding of where your data comes from [@krumm2018]. This part of the process also involves setting up a reproducible research environment so your work can be understood and replicated by other researchers [@gandrud2021]. For now, we'll focus on just a few parts of this process, diving in much more deeply into these components in later learning modules.
 
 ### Research Question
 
-In this case study, we'll be working with data come from an unpublished research study, which utilized a number of different data sources to understand high school students' motivation within the context of online courses. For the purpose of this case study, our analysis will be driven by the following research question:
+In this case study, we'll be working with data come from an unpublished research study by LASER team member, Josh Rosenberg, which utilized a number of different data sources to understand high school students' motivation within the context of online courses. For the purpose of this case study, our analysis will be driven by the following research question:
 
 *Is there a relationship between the time students spend on a course (as measured through their learning management system) and their final course grade?*
 

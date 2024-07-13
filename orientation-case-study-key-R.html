@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="LASER Institute">
-<meta name="dcterms.date" content="2024-04-05">
+<meta name="dcterms.date" content="2024-07-13">
 
 <title>A Coding Case Study with Quarto</title>
 <style>
@@ -105,7 +105,14 @@ div.csl-indent {
   <ul>
   <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">0. INTRODUCTION</a>
   <ul>
-  <li><a href="#how-to-use-this-quarto-document" id="toc-how-to-use-this-quarto-document" class="nav-link" data-scroll-target="#how-to-use-this-quarto-document">How to use this Quarto document</a></li>
+  <li><a href="#how-to-use-this-quarto-document" id="toc-how-to-use-this-quarto-document" class="nav-link" data-scroll-target="#how-to-use-this-quarto-document">How to use this Quarto document</a>
+  <ul class="collapse">
+  <li><a href="#source-vs.-visual-editor" id="toc-source-vs.-visual-editor" class="nav-link" data-scroll-target="#source-vs.-visual-editor">Source vs.&nbsp;Visual Editor</a></li>
+  <li><a href="#your-turn" id="toc-your-turn" class="nav-link" data-scroll-target="#your-turn"><strong>👉 Your Turn</strong> <strong>⤵</strong></a></li>
+  <li><a href="#code-chunks" id="toc-code-chunks" class="nav-link" data-scroll-target="#code-chunks">Code Chunks</a></li>
+  <li><a href="#your-turn-1" id="toc-your-turn-1" class="nav-link" data-scroll-target="#your-turn-1"><strong>👉 Your Turn</strong> <strong>⤵</strong></a></li>
+  <li><a href="#question" id="toc-question" class="nav-link" data-scroll-target="#question">❓Question</a></li>
+  </ul></li>
   <li><a href="#the-data-intensive-research-workflow" id="toc-the-data-intensive-research-workflow" class="nav-link" data-scroll-target="#the-data-intensive-research-workflow">The Data-Intensive Research Workflow</a></li>
   </ul></li>
   <li><a href="#prepare" id="toc-prepare" class="nav-link" data-scroll-target="#prepare">1. PREPARE</a>
@@ -114,54 +121,54 @@ div.csl-indent {
   <li><a href="#packages" id="toc-packages" class="nav-link" data-scroll-target="#packages">Packages 📦</a>
   <ul class="collapse">
   <li><a href="#tidyverse" id="toc-tidyverse" class="nav-link" data-scroll-target="#tidyverse">tidyverse 📦</a></li>
-  <li><a href="#your-turn" id="toc-your-turn" class="nav-link" data-scroll-target="#your-turn"><strong>👉 Your Turn</strong> <strong>⤵</strong></a></li>
+  <li><a href="#your-turn-2" id="toc-your-turn-2" class="nav-link" data-scroll-target="#your-turn-2"><strong>👉 Your Turn</strong> <strong>⤵</strong></a></li>
   </ul></li>
   <li><a href="#loading-or-reading-in-data" id="toc-loading-or-reading-in-data" class="nav-link" data-scroll-target="#loading-or-reading-in-data">Loading (or reading in) data</a>
   <ul class="collapse">
   <li><a href="#viewing-or-inspecting-data" id="toc-viewing-or-inspecting-data" class="nav-link" data-scroll-target="#viewing-or-inspecting-data">Viewing or inspecting data</a></li>
-  <li><a href="#your-turn-1" id="toc-your-turn-1" class="nav-link" data-scroll-target="#your-turn-1"><strong>👉 Your Turn</strong> <strong>⤵</strong></a></li>
+  <li><a href="#your-turn-3" id="toc-your-turn-3" class="nav-link" data-scroll-target="#your-turn-3"><strong>👉 Your Turn</strong> <strong>⤵</strong></a></li>
   </ul></li>
   </ul></li>
   <li><a href="#wrangle" id="toc-wrangle" class="nav-link" data-scroll-target="#wrangle">2. WRANGLE</a>
   <ul>
   <li><a href="#selecting-variables" id="toc-selecting-variables" class="nav-link" data-scroll-target="#selecting-variables">Selecting variables</a>
   <ul class="collapse">
-  <li><a href="#your-turn-2" id="toc-your-turn-2" class="nav-link" data-scroll-target="#your-turn-2"><strong>👉 Your Turn</strong> <strong>⤵</strong></a></li>
+  <li><a href="#your-turn-4" id="toc-your-turn-4" class="nav-link" data-scroll-target="#your-turn-4"><strong>👉 Your Turn</strong> <strong>⤵</strong></a></li>
   </ul></li>
   <li><a href="#filtering-variables" id="toc-filtering-variables" class="nav-link" data-scroll-target="#filtering-variables">Filtering variables</a>
   <ul class="collapse">
-  <li><a href="#your-turn-3" id="toc-your-turn-3" class="nav-link" data-scroll-target="#your-turn-3"><strong>👉 Your Turn</strong> <strong>⤵</strong></a></li>
+  <li><a href="#your-turn-5" id="toc-your-turn-5" class="nav-link" data-scroll-target="#your-turn-5"><strong>👉 Your Turn</strong> <strong>⤵</strong></a></li>
   </ul></li>
   <li><a href="#arrange" id="toc-arrange" class="nav-link" data-scroll-target="#arrange">Arrange</a>
   <ul class="collapse">
-  <li><a href="#your-turn-4" id="toc-your-turn-4" class="nav-link" data-scroll-target="#your-turn-4"><strong>👉 Your Turn</strong> <strong>⤵</strong></a></li>
+  <li><a href="#your-turn-6" id="toc-your-turn-6" class="nav-link" data-scroll-target="#your-turn-6"><strong>👉 Your Turn</strong> <strong>⤵</strong></a></li>
   </ul></li>
   </ul></li>
   <li><a href="#explore" id="toc-explore" class="nav-link" data-scroll-target="#explore">3. EXPLORE</a>
   <ul>
   <li><a href="#summary-statistics" id="toc-summary-statistics" class="nav-link" data-scroll-target="#summary-statistics">Summary Statistics</a>
   <ul class="collapse">
-  <li><a href="#your-turn-5" id="toc-your-turn-5" class="nav-link" data-scroll-target="#your-turn-5"><strong>👉 Your Turn</strong> <strong>⤵</strong></a></li>
+  <li><a href="#your-turn-7" id="toc-your-turn-7" class="nav-link" data-scroll-target="#your-turn-7"><strong>👉 Your Turn</strong> <strong>⤵</strong></a></li>
   </ul></li>
   <li><a href="#data-visualization" id="toc-data-visualization" class="nav-link" data-scroll-target="#data-visualization">Data Visualization</a></li>
   <li><a href="#the-graphing-workflow" id="toc-the-graphing-workflow" class="nav-link" data-scroll-target="#the-graphing-workflow">The Graphing Workflow</a>
   <ul class="collapse">
-  <li><a href="#your-turn-6" id="toc-your-turn-6" class="nav-link" data-scroll-target="#your-turn-6"><strong>👉 Your Turn</strong> <strong>⤵</strong></a></li>
+  <li><a href="#your-turn-8" id="toc-your-turn-8" class="nav-link" data-scroll-target="#your-turn-8"><strong>👉 Your Turn</strong> <strong>⤵</strong></a></li>
   </ul></li>
   <li><a href="#scatterplots" id="toc-scatterplots" class="nav-link" data-scroll-target="#scatterplots">Scatterplots</a>
   <ul class="collapse">
-  <li><a href="#your-turn-7" id="toc-your-turn-7" class="nav-link" data-scroll-target="#your-turn-7"><strong>👉 Your Turn</strong> <strong>⤵</strong></a></li>
+  <li><a href="#your-turn-9" id="toc-your-turn-9" class="nav-link" data-scroll-target="#your-turn-9"><strong>👉 Your Turn</strong> <strong>⤵</strong></a></li>
   </ul></li>
   </ul></li>
   <li><a href="#model" id="toc-model" class="nav-link" data-scroll-target="#model">4. MODEL</a>
   <ul>
-  <li><a href="#your-turn-8" id="toc-your-turn-8" class="nav-link" data-scroll-target="#your-turn-8"><strong>👉 Your Turn</strong> <strong>⤵</strong></a></li>
+  <li><a href="#your-turn-10" id="toc-your-turn-10" class="nav-link" data-scroll-target="#your-turn-10"><strong>👉 Your Turn</strong> <strong>⤵</strong></a></li>
   </ul></li>
   <li><a href="#communicate" id="toc-communicate" class="nav-link" data-scroll-target="#communicate">5. COMMUNICATE</a>
   <ul>
   <li><a href="#publish-file" id="toc-publish-file" class="nav-link" data-scroll-target="#publish-file">Publish File</a>
   <ul class="collapse">
-  <li><a href="#your-turn-9" id="toc-your-turn-9" class="nav-link" data-scroll-target="#your-turn-9"><strong>👉 Your Turn</strong> <strong>⤵</strong></a></li>
+  <li><a href="#your-turn-11" id="toc-your-turn-11" class="nav-link" data-scroll-target="#your-turn-11"><strong>👉 Your Turn</strong> <strong>⤵</strong></a></li>
   </ul></li>
   <li><a href="#your-first-laser-badge" id="toc-your-first-laser-badge" class="nav-link" data-scroll-target="#your-first-laser-badge">Your First LASER Badge</a></li>
   <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
@@ -174,7 +181,7 @@ div.csl-indent {
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
 <h1 class="title">A Coding Case Study with Quarto</h1>
-<p class="subtitle lead">Orientation Module: Case Study Key</p>
+<p class="subtitle lead">LASER Orientation Module</p>
 </div>
 
 
@@ -191,7 +198,7 @@ div.csl-indent {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">April 5, 2024</p>
+      <p class="date">July 13, 2024</p>
     </div>
   </div>
   
@@ -206,28 +213,49 @@ div.csl-indent {
 <section id="introduction" class="level2">
 <h2 class="anchored" data-anchor-id="introduction">0. INTRODUCTION</h2>
 <p><img src="img/LASER_Hx.png" class="img-fluid" style="width:40.0%"></p>
-<p>Welcome to your first LASER Case Study! The case study activities included in each module demonstrate how key Learning Analytics (LA) techniques featured in exemplary STEM education research studies can be implemented with R. Case studies also provide a holistic setting to explore important foundational topics integral to Learning Analytics such as reproducible research, use of APIs, and ethical use of educational data.</p>
-<p>This orientation case study will also introduce you to <a href="https://quarto.org">Quarto</a>, which is heavily integrated into each LASER Module. You may have used Qurto before - or you may not have! Either is fine as this task will be designed with the assumption that you have not used Quarto before.</p>
-<p>In this interactive coding case study, we’ll focus on the following tasks:</p>
-<ol type="1">
-<li>Reading data into R (in the <strong>Prepare</strong> section)</li>
-<li>Preparing and “wrangling” data in a tabular (think spreadsheet!) format (in the <strong>Wrangle</strong> section)</li>
-<li>Creating some basic plots (in the <strong>Explore</strong> section)</li>
-<li>Running a model - specifically, a simple regression model (in the <strong>Model</strong> section)</li>
-<li>Finally, creating a reproducible report of your work you can share with others (in the <strong>Communicate</strong> section)</li>
-</ol>
+<p>Welcome to your first LASER Case Study! The case study activities included in each module demonstrate how key Learning Analytics (LA) techniques featured in exemplary STEM education research studies can be implemented with R or Python. Case studies also provide a holistic setting to explore important foundational topics integral to Learning Analytics such as reproducible research, use of APIs, and ethical use of educational data.</p>
+<p>This orientation case study will also introduce you to <a href="https://quarto.org">Quarto</a>, which is heavily integrated into each LASER Module. You may have used Quarto before - or you may not have! Either is fine as this task will be designed with the assumption that you have not used Quarto before.</p>
 <section id="how-to-use-this-quarto-document" class="level3">
 <h3 class="anchored" data-anchor-id="how-to-use-this-quarto-document">How to use this Quarto document</h3>
-<p>What you are working in now is an <a href="https://quarto.org">Quarto</a> markdown file as indicated by the .qmd file name extension. Following best practices for reproducible research <span class="citation" data-cites="gandrud2021">(<a href="#ref-gandrud2021" role="doc-biblioref">Gandrud 2013</a>)</span>, Quarto files store information in plain text <a href="https://bookdown.org/yihui/rmarkdown/markdown-syntax.html">markdown</a> syntax, which can be viewed as “Source” or by using “Visual” editor which converts markdown syntax to formatted text.</p>
-<p>Quarto documents are fully reproducible and use a productive notebook interface to combine narrative text and “chunks” of code to produce a range of <a href="https://quarto.org/docs/guide/">static and dynamic output formats</a> including: HTML,&nbsp;PDF, Word, HTML5 slides,&nbsp;Tufte-style handouts, books, dashboards, shiny applications,&nbsp;scientific articles,&nbsp;websites, and more.</p>
-<p>There are two keys to your use of Quarto for this activity:</p>
-<ol type="1">
-<li>First, be sure that you are viewing the document in the “Visual Editor” mode. You can use this mode by clicking the word “Visual” on the left side of the toolbar above. The visual editor allows you to view formatted headers, text and code chunks as specified by the underlying markdown syntax, or “Source” text. Visual mode is a bit more “human readable” than markdown syntax but definitely take a look at the source text.</li>
-<li>Second, note the specially formatted text box below called a “<a href="#0">code chunk</a>.” These chunks allows you to run code from <a href="#0">multiple languages</a> including R, Python, and SQL. This specific code chunk contains a line of R code as specified by “r” inside the curly brackets <code>{}</code> where you can also include other “<a href="https://yihui.org/knitr/options/#chunk-options">chunk options</a>.” You will also notice a set of buttons in the upper right corner for running the code.</li>
-</ol>
-<p>Click the green arrow button on the right side of the code chunk to run the R code and view the image file name <code>laser-cycle.png</code> stored in the <code>img</code> folder in your files pane.</p>
+<p>What you are working in now is an <strong>Q</strong>uarto <strong>m</strong>ark<strong>d</strong>own file as indicated by the .<strong>qmd</strong> file name extension. Quarto documents are fully reproducible and use a productive notebook interface to combine formatted text and “chunks” of code to produce a range of <a href="https://quarto.org/docs/guide/">static and dynamic output formats</a> including: HTML, PDF, Word, HTML5 slides, Tufte-style handouts, books, dashboards, shiny applications, scientific articles, websites, and more.</p>
+<section id="source-vs.-visual-editor" class="level4">
+<h4 class="anchored" data-anchor-id="source-vs.-visual-editor">Source vs.&nbsp;Visual Editor</h4>
+<p>Following best practices for reproducible research <span class="citation" data-cites="gandrud2021">(<a href="#ref-gandrud2021" role="doc-biblioref">Gandrud 2021</a>)</span>, Quarto files store information in plain text <a href="https://bookdown.org/yihui/rmarkdown/markdown-syntax.html">markdown</a> syntax. You are currently viewing this Quarto document using the visual editor, The visual editor is set as the default view in the <a href="https://quarto.org/docs/get-started/hello/rstudio.html#yaml-header">Quarto YAML header</a> at the top of this document. Basically, a <a href="https://monashdatafluency.github.io/r-rep-res/yaml-header.html#">YAML header</a> is:</p>
+<blockquote class="blockquote">
+<p>a short blob of text that… not only dictates the final file format, but a style and feel for our final document.</p>
+</blockquote>
+<p>The visual editor allows you to view formatted headers, text and code chunks and is a bit more “human readable” than markdown syntax but there will be many occasions where you will want to take a look at the plain text source code underlying this document. This can be viewed at any point by switching to source mode for editing. You can toggle back and forth between these two modes by clicking on <strong>Source</strong> and <strong>Visual</strong> in the editor toolbar.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>You may have noticed a special kind of link in the text above. Specifically, a link citing Reproducible Research with R and R Studio by Chris Gandrud. The YAML header includes a bibliography option and points to our <code>reference.bib</code> file in the <code>lit</code> folder. This will produce a nice tooltip for each linked reference as well as a bibliography when our doc is <a href="https://quarto.org/docs/get-started/hello/rstudio.html#rendering">rendered</a> and <a href="https://quarto.org/docs/get-started/authoring/rstudio.html#publishing">published</a>. If you’d like to learn more about citations in Quarto visit: <a href="https://quarto.org/docs/authoring/citations.html" class="uri">https://quarto.org/docs/authoring/citations.html</a></p>
+</div>
+</div>
+</section>
+<section id="your-turn" class="level4">
+<h4 class="anchored" data-anchor-id="your-turn"><strong>👉 Your Turn</strong> <strong>⤵</strong></h4>
+<p>LASER case studies include many interactive elements in which you are asked to perform an action, answer some questions, or write some code. These are indicated by the <strong>👉 Your Turn</strong> <strong>⤵</strong> header. Now it’s your turn to do something.</p>
+<p>Take a look at the markdown syntax used to create this document by viewing with the source editor. To do so, click the “Source” button in the toolbar at the top of this file. After you’ve had a look, click back to the visual editor to continue.</p>
+<p><img src="img/source-view.png" class="img-fluid" style="width:80.0%"></p>
+<p>Great job! Let’s continue!</p>
+</section>
+<section id="code-chunks" class="level4">
+<h4 class="anchored" data-anchor-id="code-chunks">Code Chunks</h4>
+<p>In addition to including formatted text hyperlinks, and embedded images like above, Quarto documents can also include a specially formatted text box called a “<a href="https://quarto.org/docs/get-started/hello/rstudio.html#code-chunks">code chunk</a>.” These chunks allows you to run code from multiple languages including R, Python, and SQL. For example, the code chunk below is intended to run R code as specified by “r” inside the curly brackets <code>{}</code>. It also contains a contains a code “comment” as indicted by the # hashtag and line of R code. You may have also noticed a set of buttons in the upper right corner of the code chunk which are used to execute the code.</p>
+</section>
+<section id="your-turn-1" class="level4">
+<h4 class="anchored" data-anchor-id="your-turn-1"><strong>👉 Your Turn</strong> <strong>⤵</strong></h4>
+<p>Click the green arrow <img src="https://d33wubrfki0l68.cloudfront.net/18153fb9953057ee5cff086122bd26f9cee8fe93/3aba9/images/notebook-run-chunk.png" class="img-fluid">icon on the right side of the code chunk to run the R code and view the image file name <code>laser-cycle.png</code> stored in the <code>img</code> folder in your files pane. Quarto will execute the code and its output and any related messages are displayed below the chunk.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="st">"img/laser-cycle.png"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Display an image from the specified path using the knitr package in R</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="st">"img/laser-cycle.png"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
@@ -236,19 +264,37 @@ div.csl-indent {
 </div>
 </div>
 </div>
+<p>Nice work! For this case study, don’t stress too much about understanding the code. We’ll spend a lot of time doing that in the other modules. For now, take a look at the image displayed and answer the question that follows by typing your response directly in this document.</p>
+</section>
+<section id="question" class="level4">
+<h4 class="anchored" data-anchor-id="question">❓Question</h4>
+<p>In LASER case studies, you will often see as part of “Your Turns” a ❓ icon that indicates you are being promoted to answer a question. Type your response to the following question by deleting “YOUR RESPONSE HERE” and adding your own response:</p>
+<p>What do you think this image is intended to illustrate?</p>
+<ul>
+<li>YOUR RESPONSE HERE</li>
+</ul>
+</section>
 </section>
 <section id="the-data-intensive-research-workflow" class="level3">
 <h3 class="anchored" data-anchor-id="the-data-intensive-research-workflow">The Data-Intensive Research Workflow</h3>
-<p>You may have noticed that the words in this diagram correspond to the sections outlined at the beginning of this document. These terms, or processes, are part of a framework called the data-intensive research workflow and comes from the book Learning Analytics Goes to School <span class="citation" data-cites="krumm2018">(<a href="#ref-krumm2018" role="doc-biblioref">Krumm, Means, and Bienkowski 2018</a>)</span><em>.</em> You can check that out later, but don’t feel any need to dive deep into it for now - we’ll be spending more time on this throughout the week; just know that this document and all of our LASER Lab case studies are organized around these five components.</p>
+<p>The diagram shown above illustrates a Learning Analytics framework called the Data-Intensive Research workflow and comes from the excellent book, Learning Analytics Goes to School <span class="citation" data-cites="krumm2018">(<a href="#ref-krumm2018" role="doc-biblioref">Krumm, Means, and Bienkowski 2018</a>)</span><em>.</em> You can check that out later, but don’t feel any need to dive deep into it for now - we spend more time unpacking this framework in our <a href="https://laser-institute.github.io/laser-website/curriculum-la-workflow.html">Learning Analytics Workflow Modules</a>; just know that this case study and all of the case studies in our <a href="https://laser-institute.github.io/laser-website/curriculum-design.html#modules-topics">LASER curriculum modules</a> are organized around the five main components of this workflow.</p>
+<p>In this introductory coding case study, we’ll focus on the following tasks specific to each component of the workflow:</p>
+<ol type="1">
+<li><strong>Prepare</strong>. Understand the research context, software packages, and data collected.</li>
+<li><strong>Wrangle</strong>. Select and filter variables and “wrangle” them in a tabular (think spreadsheet!) format.</li>
+<li><strong>Explore</strong>. Create some basic summary tables and plots to understand our data better.</li>
+<li><strong>Model</strong>. Run a basic model - specifically, a simple regression model.</li>
+<li><strong>Communicate</strong>. Create a reproducible report of your work that you can share with others.</li>
+</ol>
 <p>Now, let’s get started!</p>
 </section>
 </section>
 <section id="prepare" class="level2">
 <h2 class="anchored" data-anchor-id="prepare">1. PREPARE</h2>
-<p>First and foremost, data-intensive research involves defining and refining a research question and developing an understanding of where your data comes from <span class="citation" data-cites="krumm2018">(<a href="#ref-krumm2018" role="doc-biblioref">Krumm, Means, and Bienkowski 2018</a>)</span>. This part of the process also involves setting up a reproducible research environment <span class="citation" data-cites="gandrud2021">(<a href="#ref-gandrud2021" role="doc-biblioref">Gandrud 2013</a>)</span> so your work can be understood and replicated by other researchers. For now, we’ll focus on just a few parts of this process, diving in much more deeply into these components in later learning labs.</p>
+<p>First and foremost, data-intensive research involves defining and refining a research question and developing an understanding of where your data comes from <span class="citation" data-cites="krumm2018">(<a href="#ref-krumm2018" role="doc-biblioref">Krumm, Means, and Bienkowski 2018</a>)</span>. This part of the process also involves setting up a reproducible research environment so your work can be understood and replicated by other researchers <span class="citation" data-cites="gandrud2021">(<a href="#ref-gandrud2021" role="doc-biblioref">Gandrud 2021</a>)</span>. For now, we’ll focus on just a few parts of this process, diving in much more deeply into these components in later learning modules.</p>
 <section id="research-question" class="level3">
 <h3 class="anchored" data-anchor-id="research-question">Research Question</h3>
-<p>In this case study, we’ll be working with data come from an unpublished research study, which utilized a number of different data sources to understand high school students’ motivation within the context of online courses. For the purpose of this case study, our analysis will be driven by the following research question:</p>
+<p>In this case study, we’ll be working with data come from an unpublished research study by LASER team member, Josh Rosenberg, which utilized a number of different data sources to understand high school students’ motivation within the context of online courses. For the purpose of this case study, our analysis will be driven by the following research question:</p>
 <p><em>Is there a relationship between the time students spend on a course (as measured through their learning management system) and their final course grade?</em></p>
 </section>
 <section id="packages" class="level3">
@@ -274,8 +320,8 @@ div.csl-indent {
 <pre><code>── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──
 ✔ dplyr     1.1.4     ✔ readr     2.1.5
 ✔ forcats   1.0.0     ✔ stringr   1.5.1
-✔ ggplot2   3.5.0     ✔ tibble    3.2.1
-✔ lubridate 1.9.2     ✔ tidyr     1.3.1
+✔ ggplot2   3.5.1     ✔ tibble    3.2.1
+✔ lubridate 1.9.3     ✔ tidyr     1.3.1
 ✔ purrr     1.0.2     
 ── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
 ✖ dplyr::filter() masks stats::filter()
@@ -285,8 +331,8 @@ div.csl-indent {
 </div>
 <p>Please do not worry if you saw a number of messages: those probably mean that the tidyverse loaded just fine. If you see an error, though, try to interpret or search via your search engine the contents of the error, or reach out to us for assistance.</p>
 </section>
-<section id="your-turn" class="level4">
-<h4 class="anchored" data-anchor-id="your-turn"><strong>👉 Your Turn</strong> <strong>⤵</strong></h4>
+<section id="your-turn-2" class="level4">
+<h4 class="anchored" data-anchor-id="your-turn-2"><strong>👉 Your Turn</strong> <strong>⤵</strong></h4>
 <p>As we noted in the beginning, these case studies are meant to be interactive. Throughout each case study, you’ll see Your Turn headings like the one above that will ask to you apply some of your R skills to help with the analysis. These Your Turns are intended to help you practice newly introduced functions or R code and reinforce R skills you have already learned.</p>
 <p>Use the code chunk below to load the {skimr} package into our environment as well. <strong><code>Skimr</code></strong> is a handy package that provides summary statistics that you can skim quickly to understand your data and see what may be missing. We’ll be using this later in the Explore section of this case study.</p>
 <div class="cell">
@@ -352,8 +398,8 @@ lgl  (1): Grade_Category
 </div>
 <p><strong>Note</strong>: You can also enlarge this output by clicking the “Show in New Window” button located in the top right corner of the output.</p>
 </section>
-<section id="your-turn-1" class="level4">
-<h4 class="anchored" data-anchor-id="your-turn-1"><strong>👉 Your Turn</strong> <strong>⤵</strong></h4>
+<section id="your-turn-3" class="level4">
+<h4 class="anchored" data-anchor-id="your-turn-3"><strong>👉 Your Turn</strong> <strong>⤵</strong></h4>
 <p>What do you notice about this data set? What do you wonder? Add one or two observations in the space below:</p>
 <ul>
 <li>YOUR RESPONSE HERE</li>
@@ -483,8 +529,8 @@ $ pc                    &lt;dbl&gt; 4.50, 3.50, 4.00, 3.50, 3.50, 4.00, 3.50, 3.
 $ uv                    &lt;dbl&gt; 4.333333, 4.000000, 3.666667, 5.000000, 3.500000…</code></pre>
 </div>
 </div>
-<section id="your-turn-2" class="level4">
-<h4 class="anchored" data-anchor-id="your-turn-2"><strong>👉 Your Turn</strong> <strong>⤵</strong></h4>
+<section id="your-turn-4" class="level4">
+<h4 class="anchored" data-anchor-id="your-turn-4"><strong>👉 Your Turn</strong> <strong>⤵</strong></h4>
 <p>In the code chunk below, add a new variable, being careful to type the new variable name as it appears in the data. We’ve added some code to get you started. Consider how the names of the other variables are separated as you think about how to add an additional variable to this code.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>sci_data <span class="sc">|&gt;</span> </span>
@@ -539,8 +585,8 @@ $ uv                    &lt;dbl&gt; 4.333333, 4.000000, 3.666667, 5.000000, 3.50
 #   TimeSpent_hours &lt;dbl&gt;, TimeSpent_std &lt;dbl&gt;, int &lt;dbl&gt;, pc &lt;dbl&gt;, uv &lt;dbl&gt;</code></pre>
 </div>
 </div>
-<section id="your-turn-3" class="level4">
-<h4 class="anchored" data-anchor-id="your-turn-3"><strong>👉 Your Turn</strong> <strong>⤵</strong></h4>
+<section id="your-turn-5" class="level4">
+<h4 class="anchored" data-anchor-id="your-turn-5"><strong>👉 Your Turn</strong> <strong>⤵</strong></h4>
 <p>In the next code chunk, change the cut-off from 70% to some other value - larger or smaller (maybe much larger or smaller - feel free to play around with the code a bit!).</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>sci_data <span class="sc">|&gt;</span> </span>
@@ -621,8 +667,8 @@ $ uv                    &lt;dbl&gt; 4.333333, 4.000000, 3.666667, 5.000000, 3.50
 </div>
 </div>
 <p>Just at a quick cursory glance at our two variables, it does appear that students with higher grades also tend to have spent more time in the online course.</p>
-<section id="your-turn-4" class="level4">
-<h4 class="anchored" data-anchor-id="your-turn-4"><strong>👉 Your Turn</strong> <strong>⤵</strong></h4>
+<section id="your-turn-6" class="level4">
+<h4 class="anchored" data-anchor-id="your-turn-6"><strong>👉 Your Turn</strong> <strong>⤵</strong></h4>
 <p>In the code chunk below, replace <code>FinalGradeCEMS</code> that is used with both the <code>select()</code> and <code>arrange()</code> functions with a different variable in the data set. Consider returning to the code chunk above in which you glimpsed at the names of all of the variables.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>sci_data <span class="sc">|&gt;</span> </span>
@@ -781,8 +827,8 @@ $ uv                    &lt;dbl&gt; 4.333333, 4.000000, 3.666667, 5.000000, 3.50
 </table>
 </div>
 </div>
-<section id="your-turn-5" class="level4">
-<h4 class="anchored" data-anchor-id="your-turn-5"><strong>👉 Your Turn</strong> <strong>⤵</strong></h4>
+<section id="your-turn-7" class="level4">
+<h4 class="anchored" data-anchor-id="your-turn-7"><strong>👉 Your Turn</strong> <strong>⤵</strong></h4>
 <p>Use the code from the chunk from above to explore some other variables of interest from our <code>sci_data</code>.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb30"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a>sci_data <span class="sc">|&gt;</span></span>
@@ -1462,8 +1508,8 @@ $ uv                    &lt;dbl&gt; 4.333333, 4.000000, 3.666667, 5.000000, 3.50
 </div>
 </div>
 </div>
-<section id="your-turn-6" class="level4">
-<h4 class="anchored" data-anchor-id="your-turn-6"><strong>👉 Your Turn</strong> <strong>⤵</strong></h4>
+<section id="your-turn-8" class="level4">
+<h4 class="anchored" data-anchor-id="your-turn-8"><strong>👉 Your Turn</strong> <strong>⤵</strong></h4>
 <p>Now use the code chunk below to visualize the distribution of another variable in the data, specifically <code>TimeSpent</code>. You can do so by swapping out the variable <code>FinalGradeCEMS</code> with our new variable. Also, change the color to one of your choosing; consider this list of valid color names here: <a href="http://www.stat.columbia.edu/~tzheng/files/Rcolor.pdf" class="uri">http://www.stat.columbia.edu/~tzheng/files/Rcolor.pdf</a></p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb38"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(sci_data) <span class="sc">+</span></span>
@@ -1489,8 +1535,8 @@ $ uv                    &lt;dbl&gt; 4.333333, 4.000000, 3.666667, 5.000000, 3.50
 <section id="scatterplots" class="level3">
 <h3 class="anchored" data-anchor-id="scatterplots">Scatterplots</h3>
 <p>Finally, let’s create a scatter plot for the relationship between these two variables. Scatterplots use the point geom, i.e., the <code>geom_point()</code> function, and are most useful for displaying the relationship between two continuous variables.</p>
-<section id="your-turn-7" class="level4">
-<h4 class="anchored" data-anchor-id="your-turn-7"><strong>👉 Your Turn</strong> <strong>⤵</strong></h4>
+<section id="your-turn-9" class="level4">
+<h4 class="anchored" data-anchor-id="your-turn-9"><strong>👉 Your Turn</strong> <strong>⤵</strong></h4>
 <p>Complete the code chunk below to create a simple scatterplot with <code>TimeSpent</code> on the x axis and <code>FinalGradeCEMS</code> on the y axis. <strong>Hint</strong>: something else important is also missing that you will need to “add” to your code.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb41"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(sci_data) <span class="sc">+</span></span>
@@ -1544,8 +1590,8 @@ F-statistic: 87.99 on 1 and 571 DF,  p-value: &lt; 2.2e-16</code></pre>
 </div>
 </div>
 <p>It looks like <code>TimeSpent</code> is associated with a higher final grade. That is, students who spent more time in the LMS also earned higher grades.</p>
-<section id="your-turn-8" class="level4">
-<h4 class="anchored" data-anchor-id="your-turn-8"><strong>👉 Your Turn</strong> <strong>⤵</strong></h4>
+<section id="your-turn-10" class="level4">
+<h4 class="anchored" data-anchor-id="your-turn-10"><strong>👉 Your Turn</strong> <strong>⤵</strong></h4>
 <p>Now let’s “add” <em>another</em> variable to the regression model. Specifically, use the <code>+</code> operator after <code>TimeSpent</code> to add the course <code>subject</code> variable as a predictor of students’ final grades.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb45"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a>m2 <span class="ot">&lt;-</span> <span class="fu">lm</span>(FinalGradeCEMS <span class="sc">~</span> TimeSpent <span class="sc">+</span> subject, <span class="at">data =</span> sci_data)</span>
@@ -1616,8 +1662,8 @@ Important
 <h3 class="anchored" data-anchor-id="publish-file">Publish File</h3>
 <p>Rendered HTML files can be published online through a variety of ways including <a href="https://posit.cloud/learn/guide#publish-from-cloud">Posit Cloud</a>, <a href="#0">RPubs</a> , <a href="#0">GitHub Pages</a>, <a href="#0">Quarto Pub</a>, or <a href="#0">other methods</a>. The easiest way to quickly publish your file online is to publish directly from RStudio. You can do so by clicking the “Publish” button located in the Viewer Pane after you render your document as illustrated in the screenshot below.</p>
 <p><img src="img/publish.png" class="img-fluid"></p>
-<section id="your-turn-9" class="level4">
-<h4 class="anchored" data-anchor-id="your-turn-9"><strong>👉 Your Turn</strong> <strong>⤵</strong></h4>
+<section id="your-turn-11" class="level4">
+<h4 class="anchored" data-anchor-id="your-turn-11"><strong>👉 Your Turn</strong> <strong>⤵</strong></h4>
 <p>Navigate the to the <a href="https://rpubs.com">RPubs</a> website and create a free account. Now, publish your rendered Quarto markdown file to the web using the RPubs option.</p>
 </section>
 </section>
@@ -1637,7 +1683,7 @@ Important
 Estrellado, Ryan A., Emily A. Freer, Jesse Mostipak, Joshua M. Rosenberg, and Isabella C. Velásquez. 2020. <em>Data Science in Education Using r</em>. Routledge. <a href="https://doi.org/10.4324/9780367822842">https://doi.org/10.4324/9780367822842</a>.
 </div>
 <div id="ref-gandrud2021" class="csl-entry" role="listitem">
-Gandrud, Christopher. 2013. <em>Reproducible Research with r and r Studio (3rd Edition)</em>. CRC Press. <a href="http://github.com/christophergandrud/Rep-Res-Book">http://github.com/christophergandrud/Rep-Res-Book</a>.
+Gandrud, Christopher. 2021. <em>Reproducible Research with r and r Studio (3rd Edition)</em>. CRC Press. <a href="http://github.com/christophergandrud/Rep-Res-Book">http://github.com/christophergandrud/Rep-Res-Book</a>.
 </div>
 <div id="ref-krumm2018" class="csl-entry" role="listitem">
 Krumm, Andrew, Barbara Means, and Marie Bienkowski. 2018. <em>Learning Analytics Goes to School</em>. Routledge. <a href="https://doi.org/10.4324/9781315650722">https://doi.org/10.4324/9781315650722</a>.

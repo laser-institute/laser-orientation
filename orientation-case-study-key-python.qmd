@@ -1,0 +1,440 @@
+---
+title: "A Coding Case Study with Quarto"
+subtitle: "LASER Orientation Module"
+author: "LASER Institute"
+date: today 
+format:
+  html:
+    toc: true
+    toc-depth: 4
+    toc-location: right
+theme:
+  light: simplex
+  dark: cyborg
+editor: visual
+bibliography: lit/references.bib
+jupyter: python3
+---
+
+## 0. INTRODUCTION
+
+![](img/LASER_Hx.png){width="40%"}
+
+Welcome to your first LASER Case Study! The case study activities included in each module demonstrate how key Learning Analytics (LA) techniques featured in exemplary STEM education research studies can be implemented with R or Python. Case studies also provide a holistic setting to explore important foundational topics integral to Learning Analytics such as reproducible research, use of APIs, and ethical use of educational data.
+
+This orientation case study will also introduce you to [Quarto](https://quarto.org), which is heavily integrated into each LASER Module. You may have used Quarto before - or you may not have! Either is fine as this task will be designed with the assumption that you have not used Quarto before.
+
+### How to use this Quarto document
+
+What you are working in now is an **Q**uarto **m**ark**d**own file as indicated by the .**qmd** file name extension. Quarto documents are fully reproducible and use a productive notebook interface to combine formatted text and "chunks" of code to produce a range of [static and dynamic output formats](https://quarto.org/docs/guide/) including: HTML, PDF, Word, HTML5 slides, Tufte-style handouts, books, dashboards, shiny applications, scientific articles, websites, and more.
+
+#### Source vs. Visual Editor
+
+Following best practices for reproducible research [@gandrud2021], Quarto files store information in plain text [markdown](https://bookdown.org/yihui/rmarkdown/markdown-syntax.html) syntax. You are currently viewing this Quarto document using the visual editor, The visual editor is set as the default view in the [Quarto YAML header](https://quarto.org/docs/get-started/hello/rstudio.html#yaml-header) at the top of this document. Basically, a [YAML header](https://monashdatafluency.github.io/r-rep-res/yaml-header.html#) is:
+
+> a short blob of text that... not only dictates the final file format, but a style and feel for our final document.
+
+The visual editor allows you to view formatted headers, text and code chunks and is a bit more "human readable" than markdown syntax but there will be many occasions where you will want to take a look at the plain text source code underlying this document. This can be viewed at any point by switching to source mode for editing. You can toggle back and forth between these two modes by clicking on **Source** and **Visual** in the editor toolbar.
+
+::: callout-note
+You may have noticed a special kind of link in the text above. Specifically, a link citing Reproducible Research with R and R Studio by Chris Gandrud. The YAML header includes a bibliography option and points to our `reference.bib` file in the `lit` folder of this project. This will produce a nice tooltip for each linked reference as well as a bibliography when our doc is [rendered](https://quarto.org/docs/get-started/hello/rstudio.html#rendering) and [published](https://quarto.org/docs/get-started/authoring/rstudio.html#publishing). If you'd like to learn more about citations in Quarto visit: <https://quarto.org/docs/authoring/citations.html>
+:::
+
+#### **👉 Your Turn** **⤵**
+
+LASER case studies include many interactive elements in which you are asked to perform an action, answer some questions, or write some code. These are indicated by the **👉 Your Turn** **⤵** header. Now it's your turn to do something.
+
+Take a look at the markdown syntax used to create this document by viewing with the source editor. To do so, click the "Source" button in the toolbar at the top of this file. After you've had a look, click back to the visual editor to continue.
+
+![](img/source-view.png){width="80%"}
+
+Great job! Let's continue!
+
+#### Code "Chunks"
+
+In addition to including formatted text hyperlinks, and embedded images like above, Quarto documents can also include a specially formatted text box called a "[code chunk](https://quarto.org/docs/get-started/hello/rstudio.html#code-chunks)." These chunks allows you to run code from multiple languages including R, Python, and SQL. For example, the code chunk below is intended to run Python code as specified by "python" inside the curly brackets `{}`. It also contains a contains some code "comments" as indicted by the \# hashtags and several lines of python code. You may have also noticed a set of buttons in the upper right corner of the code chunk which are used to execute the code.
+
+#### **👉 Your Turn** **⤵**
+
+Click the green arrow ![](https://d33wubrfki0l68.cloudfront.net/18153fb9953057ee5cff086122bd26f9cee8fe93/3aba9/images/notebook-run-chunk.png)icon on the right side of the code chunk to run the Python code and view the image file name `laser-cycle.png` stored in the `img` folder in your files pane. Quarto will execute the code and its output and any related messages are displayed below the chunk.
+
+```{python}
+# Import the pyplot and image modules from the matplotlib library
+import matplotlib.pyplot as plt
+
+# Read and display an image from file
+plt.imshow(plt.imread('img/laser-cycle.png'))
+plt.show()
+```
+
+Nice work! For this case study, don't stress too much about understanding the code. We'll spend a lot of time doing that in the other modules. For now, take a look at the image displayed and answer the question that follows by typing your response directly in this document.
+
+#### ❓Question
+
+In LASER case studies, you will often see as part of "Your Turns" a ❓ icon that indicates you are being promoted to answer a question. Type your response to the following question by deleting "YOUR RESPONSE HERE" and adding your own response:
+
+What do you think this image is intended to illustrate?
+
+-   YOUR RESPONSE HERE
+
+### The Data-Intensive Research Workflow
+
+The diagram shown above illustrates a Learning Analytics framework called the Data-Intensive Research workflow and comes from the excellent book, Learning Analytics Goes to School [@krumm2018]*.* You can check that out later, but don't feel any need to dive deep into it for now - we spend more time unpacking this framework in our [Learning Analytics Workflow Modules](https://laser-institute.github.io/laser-website/curriculum-la-workflow.html); just know that this case study and all of the case studies in our [LASER curriculum modules](https://laser-institute.github.io/laser-website/curriculum-design.html#modules-topics) are organized around the five main components of this workflow.
+
+In this introductory coding case study, we'll focus on the following tasks specific to each component of the workflow:
+
+1.  **Prepare**. Understand the research context, software packages, and data collected.
+2.  **Wrangle**. Select and filter variables and "wrangle" them in a tabular (think spreadsheet!) format.
+3.  **Explore**. Create some basic summary tables and plots to understand our data better.
+4.  **Model**. Run a basic model - specifically, a simple regression model.
+5.  **Communicate**. Create a reproducible report of your work that you can share with others.
+
+Now, let's get started!
+
+## 1. PREPARE
+
+First and foremost, data-intensive research involves defining and refining a research question and developing an understanding of where your data comes from [@krumm2018]. This part of the process also involves setting up a reproducible research environment so your work can be understood and replicated by other researchers [@gandrud2021]. For now, we'll focus on just a few parts of this process, diving in much more deeply into these components in later learning modules.
+
+### Research Question
+
+In this case study, we'll be working with data coming from an unpublished research study, which utilized a number of different data sources to understand high school students' motivation within the context of online courses. For the purpose of this case study, our analysis will be driven by the following research question:
+
+*Is there a relationship between the time students spend on a course (as measured through their learning management system) and their final course grade?*
+
+### Packages 📦
+
+**Packages** - sometimes referred to as libraries, are shareable collections of code that can contain functions, data, and/or documentation and extend the functionality of the coding language.
+
+We will work with a dataset that was obtained from a learning management system (LMS). We will use libraries **pandas** ([https://pandas.pydata.org/docs/](https://colab.research.google.com/corgiredirector?site=https%3A%2F%2Fpandas.pydata.org%2Fdocs%2F)) to read and analyze the data. We will also be using **matptlotlib** ([https://matplotlib.org/stable/users/index.html](https://colab.research.google.com/corgiredirector?site=https%3A%2F%2Fmatplotlib.org%2Fstable%2Fusers%2Findex.html)) package to visualize data distribution, and finally we will use both **scikit-learn** ([https://scikit-learn.org/stable/](https://colab.research.google.com/corgiredirector?site=https%3A%2F%2Fscikit-learn.org%2Fstable%2F)) and numpy ([https://numpy.org/devdocs/](https://colab.research.google.com/corgiredirector?site=https%3A%2F%2Fnumpy.org%2Fdevdocs%2F)) to run our regression model.
+
+Click the arrow to execute your code in a cell below.
+
+```{python}
+#First we import necessary libraries
+import pandas as pd
+import matplotlib.pyplot as plt
+from sklearn.linear_model import LinearRegression
+import numpy as np
+```
+
+### Loading (or reading in) data
+
+The data we'll explore in this case study were originally collected for a research study, which utilized a number of different data sources to understand students' course-related motivation. These courses were designed and taught by instructors through a state-wide online course provider designed to supplement -- but not replace -- students' enrollment in their local school.
+
+The data used in this case study has already been "wrangled" quite a bit, but the original datasets included:
+
+1.  A self-report survey assessing three aspects of students' motivation
+
+2.  Log-trace data, such as data output from the learning management system (LMS)
+
+3.  Discussion board data
+
+4.  Academic achievement data
+
+To know more, see Chapter 7 of [*Data Science in Education Using R*](https://colab.research.google.com/corgiredirector?site=https%3A%2F%2Fdatascienceineducation.com%2Fc07.html%23data-sources) \[\@estrellado2020e\].
+
+Next, we'll load our data - specifically, a CSV (comma separated value) text file, the kind that you can export from Microsoft Excel or Google Sheets - into pandas, using the `pd.read_csv()` function in the next chunk.
+
+**Note:** by manipulating data in pandas we do not change the original file.
+
+```{python}
+#read sci-online-classes.csv to sci_data and display the output
+sci_data = pd.read_csv("data/sci-online-classes.csv")
+sci_data
+```
+
+#### **👉 Your Turn** **⤵**
+
+❓ What rows and columns correspond with? How many students' data do we possess? How do you know?
+
+-   YOUR RESPONSE HERE
+
+Now, let's **examine** your data more systematically.
+
+The first step in getting to know your data is to discover the different data types it contains.
+
+#### Data Types
+
+There are two types of data:
+
+1.  **Categorical** that represents categories or groups that are distinct and separable. It usually consists of names, labels, or attributes and is represented by words or symbols.
+
+2.  **Numerical** that represents qualities that can be measured and represented as numbers.
+
+#### **👉 Your Turn** **⤵**
+
+❓ Which of the columns in our dataset contain categorical and which contain numerical data?
+
+-   YOUR RESPONSE HERE
+
+Another way to explore the data types is by using .info() function.
+
+```{python}
+sci_data.info()
+```
+
+#### **👉 Your Turn** **⤵**
+
+❓ Which data types do you see? Which ones are numerical and which are categorical?
+
+-   YOUR RESPONSE HERE
+
+If you look at "Grade_category", you will notice that all values are NaNs or missing values which means we do not have any information about this variable (or parameter).
+
+#### **👉 Your Turn** **⤵**
+
+❓ What other columns do you think have missing values? Why do you think so?[^1]
+
+[^1]: We can see that there are totally 603 rows in each column and if we see that non-null count is lower, it means there are missing values.
+
+-   YOUR RESPONSE HERE
+
+## 2. WRANGLE
+
+By wrangle, we refer to the process of cleaning and processing data, and, in some cases, merging (or joining) data from multiple sources. Often, this part of the process is very (surprisingly) time-intensive! Wrangling your data into shape can itself be an important accomplishment!
+
+### Selecting variables
+
+Recall from our Prepare section that we are interested the relationship between the time students spend on a course and their final course grade.
+
+Run the following code chunk using `sci_data[[]]` and the names of the columns:
+
+-   `FinalGradeCEMS` (i.e., students' final grades on a 0-100 point scale)
+
+-   `TimeSpent` (i.e., the number of minutes they spent in the course's learning management system)
+
+```{python}
+sci_data[['FinalGradeCEMS','TimeSpent']]
+```
+
+### Cleaning data
+
+We have already seen that there are missing values in our target columns. There is another way to do that by selecting the column and usung `.isnull()` function and adding `.sum()` function in the end to find the number of those values.
+
+```{python}
+sci_data.isnull().sum()
+```
+
+### Handling Missing Values
+
+There are several conventional ways to deal with the missing values.
+
+1.  We can *drop* those values and not use the entire row in which this element is missing.
+
+2.  We can substitute missing values with the *column mean* if the variance within a row is not very big.
+
+Below are the code chunks to execute both ways. Choose one you think is more appropriate as executing one excludes the use of the other and you will add changes to the dataset.
+
+#### Drop missing values
+
+```{python}
+#drop missing values
+
+sci_data = sci_data.dropna(subset = ['FinalGradeCEMS','TimeSpent'])
+sci_data.info()
+```
+
+#### Substitute with column means
+
+```{python}
+#substitute missing values with column means
+mean_value_grade=sci_data['FinalGradeCEMS'].mean()
+mean_value_time=sci_data['TimeSpent'].mean()
+
+sci_data['FinalGradeCEMS'].fillna(value=mean_value_grade, inplace=True)
+sci_data['TimeSpent'].fillna(value=mean_value_time, inplace=True)
+```
+
+### Filtering variables
+
+Next, let's explore filtering variables. Check out and run the next chunk of code, imagining that we wish to filter our data to view only the rows associated with students who earned a final grade (as a percentage) of 70% - or higher and the 'TimeSpent' associated with it.
+
+```{python}
+sci_data['TimeSpent'][sci_data['FinalGradeCEMS']>70]
+```
+
+#### **👉 Your Turn** **⤵**
+
+❓ How much time do you need to spend to get the grade higher than 70%? Is there a consistent pattern?
+
+-   YOUR RESPONSE HERE
+
+## 3. EXPLORE
+
+Exploratory data analysis, or exploring your data, involves processes of *describing* your data (such as by calculating the means and standard deviations of numeric variables, or counting the frequency of categorical variables) and, often, visualizing your data. As we'll learn in later labs, the explore phase can also involve the process of "feature engineering," or creating new variables within a dataset \[\@krumm2018\].
+
+In this section, we'll quickly pull together some basic stats and introduce you to a basic data visualization.
+
+### Summary Statistics
+
+Let's repurpose what we learned from our wrangle section to select just a few variables and quickly gather some descriptive statistics to see where the data is centered, its values to identify trends by using `.describe()` method.
+
+```{python}
+sci_data.describe()
+```
+
+#### **👉 Your Turn** **⤵**
+
+❓ What do you notice about this dataset? Which columns are most important for our research question? What do you wonder?
+
+-   YOUR RESPONSE HERE
+
+### Data Visualization
+
+Data visualization is an extremely common practice in Learning Analytics, especially in the use of data dashboards. Data visualization involves graphically representing one or more variables with the goal of discovering patterns in data. These patterns may help us to answer research questions or generate new questions about our data, to discover relationships between and among variables, and to create or select features for data modeling.
+
+#### The Graphing Workflow
+
+At it's core, you can create some very simple but attractive graphs with just a couple lines of code. Matplotlib follows the common workflow for making graphs. To make a graph, you simply:
+
+1.  Start the graph with `plt` and include type of graph \`.hist()'in our case, and add the data as an argument;
+
+2.  "Add" elements to the graph using the `bins =`, or changing the color;
+
+3.  Select variables to graph on each axis with the `xlabel()` argument.
+
+Let's give it a try by creating a simple histogram of our `FinalGradeCEMS` variable. The code below creates a histogram, or a distribution of the values, in this case for students' final grades. Go ahead and run it:
+
+```{python}
+plt.hist(sci_data['FinalGradeCEMS'], bins = 30, color ="skyblue")
+plt.xlabel('FinalGradeCEMS')
+plt.show()
+```
+
+#### **👉 Your Turn** **⤵**
+
+Now use the code chunk below to visualize the distribution of another variable in the data, specifically `TimeSpent`. You can do so by swapping out the variable `FinalGradeCEMS` with our new variable. Also, change the color to one of your choosing; consider this list of valid color names here: [https://matplotlib.org/stable/gallery/color/named_colors.html](https://colab.research.google.com/corgiredirector?site=https%3A%2F%2Fmatplotlib.org%2Fstable%2Fgallery%2Fcolor%2Fnamed_colors.html)
+
+**Tip:** There is no shame in copying and pasting code from above. Remember, reproducible research is also intended to help you save time!
+
+```{python}
+#Your code goes here:
+
+```
+
+#### Scatterplots
+
+Finally, let's create a scatter plot for the relationship between these two variables. Scatterplots are most useful for displaying the relationship between two continuous variables. Change type of graph by typing `.scatter()`. You can also choose the size of the marker and color.
+
+#### **👉 Your Turn** **⤵**
+
+Complete the code chunk below to create a simple scatterplot with `TimeSpent` on the x axis and `FinalGradeCEMS` on the y axis.
+
+```{python}
+plt.scatter(x = sci_data['TimeSpent'], y = sci_data['FinalGradeCEMS'], marker=".", color = '#88c999')
+plt.xlabel('TimeSpent')
+plt.ylabel('FinalGradeCEMS')
+plt.show()
+```
+
+Well done! As you can see, there appears to be a positive relationship between the time students spend in the online course and their final grade!
+
+## 4. MODEL
+
+"Model" is one of those terms that has many different meanings. For our purpose, we refer to the process of simplifying and summarizing our data. Thus, models can take many forms; calculating means represents a legitimate form of modeling data, as does estimating more complex models, including linear regressions, and models and algorithms associated with machine learning tasks. For now, we'll run a base linear regression model to further examine the relationship between `TimeSpent` and `FinalGradeCEMS`.
+
+We'll dive much deeper into modeling in subsequent learning labs, but for now let's see if there is a statistically significant relationship between students' final grades, `FinaGradeCEMS`, and the `TimeSpent` on the course.
+
+We need to do some transformations of our two parameters before we can run the model, in our case it is linear regression. We encode the data from the two columns `FinaGradeCEMS` and `TimeSpent` into the format our scikit-learn linear regression model could understand.
+
+\*Note that on the y-axis we put a dependent variable, the one we want to predict and x-axis is for and independent, or exploratory variable.
+
+We then train (or fit) or model to the data we selected to find a line of best fit.
+
+We also added the code to visualize our prediction in the scatter plot and changed its color to understand better what is being predicted.
+
+```{python}
+#dependent variable is what you want to predict - y axis; independent(exploratory) variable
+X = np.array(sci_data['TimeSpent']).reshape(-1, 1)
+y = np.array(sci_data['FinalGradeCEMS']).reshape(-1, 1)
+
+reg = LinearRegression().fit(X, y)
+plt.scatter(X, y, marker=".", color = '#88c999')
+plt.plot(X, reg.predict(X),color='hotpink')
+plt.xlabel('TimeSpent')
+plt.ylabel('FinalGradeCEMS')
+plt.show()
+```
+
+We can now use our model to predict the grade depending on the time spent studying.
+
+```{python}
+# Assuming 'new_data' is a Pandas DataFrame with a 'TimeSpent' column for prediction
+new_data = pd.DataFrame({'TimeSpent': [10, 15, 20]})
+
+# Extracting the 'TimeSpent' values from 'new_data'
+X_new = np.array(new_data['TimeSpent']).reshape(-1, 1)
+
+# Use the predict method to obtain predictions
+predicted_grades = reg.predict(X_new)
+
+# Print the predicted grades
+print(predicted_grades)
+```
+
+```{python}
+print(reg.predict([[4000]]))
+```
+
+#### **👉 Your Turn** **⤵**
+
+Change the number of time a student is spending and see how the predicted grade changes.
+
+❓How much time do you need to spend studying to get an A?
+
+```{python}
+#print(reg.predict([['YOUR CODE HERE']]))
+
+```
+
+We can also add another variable to our model to see how it would influence the prediction.
+
+\*Note, in Python you can only add numerical data values to your models, so be careful when choosing.
+
+There are ways to transform your categorical values into numerical that we will introduce later in the course.
+
+Run the cells below to train the model and compare its prediction to the previous one.
+
+```{python}
+X = np.array(sci_data['TimeSpent'],sci_data['section']).reshape(-1, 1)
+y = np.array(sci_data['FinalGradeCEMS']).reshape(-1, 1)
+
+reg_2 = LinearRegression().fit(X, y)
+```
+
+```{python}
+reg_2.predict([[4000]])
+```
+
+As we can see the predicted grade is a bit better with the two parameters.
+
+#### **👉 Your Turn** **⤵**
+
+Compare the two model predictions by altering the time spent studying.
+
+Change the variable `section` to another one that you think might be related to the final grade.
+
+```{python}
+#X = np.array(sci_data['TimeSpent'],sci_data['YOUR CODE HERE']).reshape(-1, 1)
+#y = np.array(sci_data['FinalGradeCEMS']).reshape(-1, 1)
+
+#reg_3 = LinearRegression().fit(X, y)
+```
+
+```{python}
+#reg_3.predict([['YOUR CODE HERE']])
+```
+
+## 5. COMMUNICATE
+
+The final step in the workflow/process is sharing the results of your analysis with wider audience. Krumm et al. \@krumm2018 have outlined the following 3-step process for communicating with education stakeholders findings from an analysis:
+
+1.  **Select.** Communicating what one has learned involves selecting among those analyses that are most important and most useful to an intended audience, as well as selecting a form for displaying that information, such as a graph or table in static or interactive form, i.e. a "data product."
+
+2.  **Polish**. After creating initial versions of data products, research teams often spend time refining or polishing them, by adding or editing titles, labels, and notations and by working with colors and shapes to highlight key points.
+
+3.  **Narrate.** Writing a narrative to accompany the data products involves, at a minimum, pairing a data product with its related research question, describing how best to interpret the data product, and explaining the ways in which the data product helps answer the research question and might be used to inform new analyses or a "change idea" for improving student learning.
+
+In later Learning Labs, you will have an opportunity to create a simple "data product" designed to illustrate some insights gained from your analysis and ideally highlight an action step or change idea that can be used to improve learning or the contexts in which learning occurs.
+
+For now, we will wrap up this case study by converting our work into a webpage that can be used to communicate your learning and demonstrate some of your new Python skills.

@@ -29,32 +29,36 @@ Read chapters 1 and 2 of [Reproducible Research with R and RStudio](https://gith
 
 ## Reflection
 
+To help guide your reflection on the readings, a set of guiding questions are provided below. After you have had a chance to work through one or more of the readings, **we encourage you to contribute to our learning community by creating a new post to our laser-orientation channel on [Slack](http://laser-scholars.slack.com/)**. Your post might contain a response to one or more of the guiding questions, questions you still have about the topics addressed, or insights gained into your own research.
+
 ### Chapter 1: Introducing Reproducible Research
 
-1.  **What is Reproducible Research?**
+1.  What is Reproducible Research?
     -   How does the author define reproducible research in the context of computational and quantitative empirical sciences?
     -   What are the key differences between replicable and reproducible research as outlined in the book?
-2.  **Why Should Research Be Reproducible?**
+2.  Why Should Research Be Reproducible?
     -   What are the primary reasons reproducible research is crucial for scientific inquiry?
     -   How can reproducible research enhance your own work and productivity?
-3.  **Benefits for the Scientific Community and Researchers:**
+3.  Benefits for the Scientific Community and Researchers:
     -   How does reproducible research contribute to the cumulative growth of scientific knowledge?
     -   In what ways does making your research reproducible lead to better work habits and more effective teamwork?
-4.  **Tools of Reproducible Research:**
+4.  Tools of Reproducible Research:
     -   What are the main tools of reproducible research introduced in this chapter?
     -   Discuss the benefits of using R, knitr, and RStudio for conducting reproducible research.
 
 ### Chapter 2: Getting Started with Reproducible Research
 
-1.  **Workflow for Reproducible Research:**
+1.  Workflow for Reproducible Research:
     -   What some core elements of the workflow for reproducible research proposed by Gandrud?
     -   What are some of the key principles and practices for ensuring research is reproducible?
-2.  **Practical Tips for Reproducible Research:**
+2.  Practical Tips for Reproducible Research:
     -   What does the author mean by “Document everything” and why is it important?
     -   How can organizing your files and ensuring they are human-readable contribute to reproducibility?
-3.  **File Management:**
+3.  File Management:
     -   Explain the significance of having a plan to organize, store, and make your files available.
     -   Discuss some best practices for file naming conventions and directory structures to facilitate reproducibility.
-4.  **Implementing Reproducibility:**
+4.  Implementing Reproducibility:
     -   How does Gandrud suggest you explicitly tie your files together in a research project?
     -   What role do tools like GNU Make play in managing reproducible research projects?
+
+## References

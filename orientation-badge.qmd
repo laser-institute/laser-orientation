@@ -1,5 +1,5 @@
 ---
-title: 'Publishing with Quarto'
+title: 'Your First LASER Badge!'
 subtitle: "Orientation Module: Badge"
 author: "LASER Institute"
 date: today 
@@ -29,7 +29,7 @@ The final activity for each learning module provides space for you to reflect on
 
 In later modules, you will have an opportunity to create a "data product" designed to illustrate some insights gained from your analysis and ideally highlight an action step or change idea that can be used to improve learning or the contexts in which learning occurs.
 
-For example, imagine that as part of a grant to improve student performance in online courses, your are working with the instructors who taught for this online course provider. As part of some early exploratory work to identify factors influencing performance, you are interested in sharing some of your findings about hours logged in the LMS and their final grades. One way we might communicate these findings is through a simple [data dashboard](https://sbkellogg.quarto.pub/final-grades-and-hours-logged/#plots) like the one shown below. Dashboards are a very common reporting tool and their use, for better or worse, has become ubiquitous in the field of Learning Analytics.
+For example, imagine that as part of a grant to improve student performance in online courses, your are working with the instructors who taught for a virtual public school. As part of some early exploratory work to identify factors influencing student performance, you are interested in sharing some of your findings about hours logged in the LMS and their final grades. One way we might communicate these findings is through a simple [data dashboard](https://sbkellogg.quarto.pub/final-grades-and-hours-logged/#plots) like the one shown below. Dashboards are a very common reporting tool and their use, for better or worse, has become ubiquitous in the field of Learning Analytics.
 
 [![](img/data-dashboard.png){width="100%"}](https://sbkellogg.quarto.pub/final-grades-and-hours-logged/)
 

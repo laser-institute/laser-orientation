@@ -1,0 +1,193 @@
+---
+title: "The LASER Institute"
+subtitle: "Orientation Module: Welcome Slides"
+format:
+  revealjs: 
+    slide-number: c/t
+    progress: true
+    chalkboard: 
+      buttons: false
+    preview-links: auto
+    logo: img/LASERLogoB.png
+    theme: [default, css/laser.scss]
+    width: 1920
+    height: 1080
+    margin: 0.05
+    footer: <a href=https://www.go.ncsu.edu/laser-institute>go.ncsu.edu/laser-institute
+resources:
+  - demo.pdf
+bibliography: references.bib
+editor: visual
+---
+
+## Welcome Notes
+
+1\. Welcome to the Friday Institute!
+
+2\. Meet the LASER Team
+
+3\. What is Learning Analytics?
+
+4\. LASER Institute Core Components
+
+5\. Goals for the Year, the Week, and Today
+
+## The Friday Institute for Educational Innovation
+
+At The Friday Institute, **our mission is to advance K-12 education through innovation** in teaching, learning and leadership so that ALL students are prepared to succeed in a rapidly changing world.
+
+-   **Educate.** We conduct research, evaluation and professional learning.
+
+-   **Innovate.** We design supports, tools and structures for educational change.
+
+-   **Inspire.** We convene and collaborate with partners in education, government and private industries to inform standards, policy and practice.
+
+The LASER Institute is a prime example of how we [Think and Do](https://www.ncsu.edu/think-and-do/) at the Friday Institute and we hope that you will carry this mission and vision forward!
+
+## The Friday Institute Operations Team
+
+![](img/laser-ops.png){fig-align="center"}
+
+## The LASER Team
+
+-   **NC State University**: Shaun Kellogg (Host; SNA), Shiyan Jiang (TM), Jeanne McClure (LAW), Daria Smyslova (LAW), Gemma Mojica (Community & Design),
+
+-   **University of Pennsylvania**: Ryan Baker (KT), Yilin Yiu (KT), Richard Scruggs (KT), Liz Cloude (Eval), Zhanlan Wei (Logistics)
+
+-   **University of Tennessee - Knoxville**: Joshua Rosenberg (ML)
+
+-   **Evaluation Team**: Eleanor Hasse and Pamela Lovin
+
+## LASER Components
+
+::: panel-tabset
+### Learning Modules
+
+::: columns
+::: {.column width="50%"}
+Each method area consist of four progressively sequenced modules that include a:
+
+-   Conceptual Overview
+
+-   Code-Along
+
+-   Case Study
+
+-   Essential Readings
+
+-   LASER Badge
+:::
+
+::: {.column width="50%"}
+
+![](img/learning-labs.png)
+:::
+:::
+
+### SHARK Goals
+
+::: columns
+::: {.column width="60%"}
+Each day includes whole and small group activities to help participants:
+
+-   design a customized instructional plan at their home institutions;
+
+-   adapt curriculum and technology resources for their own contexts;
+
+-   gather feedback to improve instructional materials.
+:::
+
+::: {.column width="40%"}
+
+![](img/laser-shark.png){fig-align="center" width="80%"}
+:::
+:::
+
+### Community Building
+
+::: columns
+::: {.column width="50%"}
+[Community building activities](https://fi.ncsu.edu/news/laser-institute-builds-community-of-scholars-for-lifelong-connections-future-collaboration/) help participants create a sense of community by sharing their backgrounds, interests, and experiences, participants will identify commonalities and differences.
+:::
+
+::: {.column width="50%"}
+![Network of LASER Scholars](img/laser-network.png)
+:::
+:::
+
+### Guest Speakers
+
+::: columns
+::: {.column width="50%"}
+**Advisory Board Members**
+
+-   **Dr. Collin Lynch**
+
+-   **Dr. Xavier Ochoa**
+
+-   **Dr. Julia Rutledge**
+
+-   **Dr. George Siemens**
+
+-   **Dr. Yianna Vovides**
+:::
+
+::: {.column width="50%"}
+**Topics**
+
+1.  What is Learning Analytics?
+
+2.  
+:::
+:::
+:::
+
+## Goals of the LASER Institute
+
+::: panel-tabset
+## This Year
+
+-   **Disciplinary Knowledge**: Deepen their understanding of LA methodologies, literature, applications and ethical issues as they relate to STEM education and equity.
+
+-   **Technical Skills**: Develop proficiency with R/Python, Quarto, GitHub and other tools used for collaboration, reproducible research and computational analysis.
+
+-   **Social Capital**: Expand their professional networks, connecting with researchers and experts in LA related fields, as well as other scholars focused on STEM education.
+
+## This Week
+
+-   **Have fun.** Learning new methods can be rewarding but hard, especially when coding is involved, but we want to you enjoy yourselves this week.
+
+-   **Make Connections** We have an amazing groups of scholars participating this year, use this opportunity to get to know them better.
+
+-   **Develop a plan.** Create a SHARK goal for teaching colleagues or students at their home institutions using curriculum materials developed for the LASER Institute.
+
+-   **Earn two badges.** You'll be exposed to many new concepts and techniques this week, we want you to dig in and demonstrate what you've learned.
+
+-   **Provide Feedback.** We've revamped our curriculum and need your input to figure out what works well and how we can improve.
+
+## Today
+
+1.  **Community Building (9:15)** - Affinity groups, badges and SHARK goals, oh my!
+
+2.  **Learning Lab Intros (10:00)** - Learn about reproducible research and the data-intensive research workflow in our LASER Learning Lab orientation.
+
+3.  **Lunch (12:30)** - Eat some great food, connect with new colleagues.
+
+4.  **Scholar TA Panel (1:30)** - Meet three of our past scholars who'll be assisting throughout the week and learn about their LA journey.
+
+5.  **Method Overviews (2:15)** - Learn about our four concentration areas (FS, ML, TM, and SNA) and accompanying labs and select a learning path this week.
+
+6.  **Field Trip (4:30)** - Ice cream party at NC State's dairy farm!
+:::
+
+## Acknowledgements
+
+::: columns
+::: {.column width="20%"}
+![](img/nsf.jpg){fig-align="center" width="80%"}
+:::
+
+::: {.column width="80%"}
+This work was supported by the National Science Foundation grants DRL-2025090 and DRL-2321128 (ECR:BCSER). Any opinions, findings, and conclusions expressed in this material are those of the authors and do not necessarily reflect the views of the National Science Foundation.
+:::
+:::

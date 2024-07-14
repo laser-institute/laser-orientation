@@ -1,0 +1,156 @@
+---
+title: "Do students who spend more time in the course earn higher grades?"
+format: 
+  dashboard:
+    orientation: rows
+    theme: cosmo
+---
+
+# Sidebar {.sidebar}
+
+Short Answer... Yes, to an extent.
+
+Each point in the scatterplot indicates the amount of time a student spent logged into their online course and their final grade. For each of five online STEM courses offered by the statewide virtual public school from which this data was collected, **there is a positive relationship between the amount of time students spent and their course grade.** However, there also appears to be diminishing returns of course grade after roughly 40 hours, where invested time does not necessarily correspond to higher course grades.
+
+The boxplot and histogram in the two smaller boxes show distributions of hours logged in online and final grades for all course offerings in each subject area. On average, students spent the most time on Anatomy (40.1 hours) and the least time on Biology (21.2 hours); students earned the highest grades in Physics (83.7%) and the lowest grades in Biology (65.6%). The Biology course may need some attention as students on average earned the lowest grades and spent the least amount of time on the course.
+
+**Fine print:** Time spent online does not necessarily account for all time students spent on the course, e.g, studying offline.
+
+# Plots
+
+## Row {height="60%"}
+
+```{r}
+library(flexdashboard)
+library(tidyverse)
+library(janitor)
+
+course_text <- read_csv("data/course-text.csv") |>
+  clean_names()
+
+data_to_viz <- course_text |>
+  select(course_id, 
+         gender,
+         time_spent_hours, 
+         final_grade) |>
+  separate(course_id, c("subject", "semester", "section")) |>
+  mutate(subject = recode(subject, 
+                          "AnPhA" = "Anatomy",
+                          "BioA" = "Biology", 
+                          "FrScA" = "Forensics", 
+                          "OcnA" =  "Oceanography", 
+                          "PhysA" = "Physics"))
+
+data_to_viz  %>% 
+  ggplot() +
+  geom_point(mapping = aes(x = time_spent_hours, 
+                       y = final_grade,
+                       color = subject),
+             alpha = .5) +
+  geom_smooth(mapping = aes(x = time_spent_hours, 
+                            y = final_grade,
+                            # color = subject,
+                            weight = .5),
+              color = "gray", 
+              method = loess,
+              se = FALSE) +
+  ylim(0, 100) + 
+  xlim(0, 150) +
+  # facet_wrap(~subject, ncol = 3) +
+  labs(title = "Relationship between Final Grades and Hours Logged",
+       y = "Final Grades",
+       x = "Hours Logged into Online Course",
+       # subtitle = "Spoiler Alert... Yes, to an extent.",
+       # caption = "Fine print: Time spent online does not necessarly account for all time students spent on the course, e.g, studying offline."
+       ) +
+  theme_minimal() +
+  theme(legend.position = "bottom",
+        panel.grid.minor = element_blank(),
+        plot.title = element_text(hjust = 0.5,
+                                 margin = margin(b = 20),
+                                 size = 12,
+                                 face = "bold")) +
+  scale_color_brewer(palette = "Set1",
+                     name = "Subject") +
+  scale_x_continuous(breaks = seq(0, 160, by = 20)) +
+  scale_y_continuous(breaks = seq(0, 100, by = 10))
+```
+
+## Row {height="40%"}
+
+```{r}
+data_to_viz  %>% 
+  ggplot() +
+  geom_boxplot(mapping = aes(x = time_spent_hours,
+                             #y = subject, 
+                       color = subject),
+             alpha = .25) +
+  facet_wrap(~subject, ncol = 1) +
+  labs(title = "Hours Logged Distribution",
+     #  y = "Course Subject",
+    #   x = "Hours Logged into Online Course",
+     #  subtitle = "Spoiler Alert... Yes, to an extent.",
+     #  caption = "Fine print: Time spent online does not necessarly account for all time students spent on the course, e.g, studying offline."
+     ) +
+  theme_void() +
+  theme(legend.position = "none",
+        axis.text.y=element_blank(),
+        axis.ticks.y=element_blank(),
+       # axis.title.x = element_text(),
+        axis.text.x = element_text(),
+       plot.title = element_text(hjust = 0.5,
+                                 margin = margin(b = 20),
+                                 size = 16,
+                                 face = "bold")) +
+  scale_color_brewer(palette = "Set1",
+                     name = "Subject") +
+  scale_x_continuous(breaks = seq(0, 160, by = 20))
+ # scale_y_discrete(limits=rev)
+```
+
+```{r}
+data_to_viz |>
+  ggplot() +
+  geom_histogram(mapping = aes(
+                       x = final_grade,
+                       #y = stat(count/sum(count)),
+                       color = subject),
+                 fill = NA
+                       ) +
+  facet_wrap(~subject, ncol = 1) +
+  labs(title = "Final Grades Distribution",
+       y = "% of Students",
+       x = "Final Grade",
+     #  subtitle = "Spoiler Alert... Yes, to an extent.",
+     #  caption = "Fine print: Time spent online does not necessarly account for all time students spent on the course, e.g, studying offline."
+     ) +
+  theme_void() +
+  theme(legend.position = "none",
+        axis.text.y=element_blank(),
+        axis.ticks.y=element_blank(),
+        #axis.title.x = element_text(),
+        axis.text.x = element_text(),
+        plot.title = element_text(hjust = 0.5,
+                                 margin = margin(b = 20),
+                                 size = 16,
+                                 face = "bold")) +
+  scale_color_brewer(palette = "Set1",
+                     name = "Subject") +
+  scale_x_continuous(breaks = seq(0, 100, by = 10))
+```
+
+# Data
+
+```{r}
+library(DT)
+
+course_text |>
+  select(student_id,
+         course_id,
+         subject,
+         semester,
+         time_spent_hours,
+         final_grade) |>
+datatable() %>% 
+    formatRound(columns = c('time_spent_hours', 'final_grade'), digits = 1)
+```

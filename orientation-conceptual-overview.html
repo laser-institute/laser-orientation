@@ -10,7 +10,7 @@
 <link href="orientation-conceptual-overview_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.4.550">
 
-  <title>Reproducible Research</title>
+  <title>The LASER Toolkit &amp; Reproducible Research</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -347,12 +347,53 @@
     <div class="slides">
 
 <section id="title-slide" class="quarto-title-block center">
-  <h1 class="title">Reproducible Research</h1>
-  <p class="subtitle">Orientation Module: Conceptual Overview</p>
+  <h1 class="title">The LASER Toolkit &amp; Reproducible Research</h1>
+  <p class="subtitle">LASER Orientation Module: Conceptual Overview</p>
 
 <div class="quarto-title-authors">
 </div>
 
+</section>
+<section id="overview" class="slide level2">
+<h2>Overview</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<h3 id="reproducible-research"><strong>Reproducible Research</strong></h3>
+<ul>
+<li><p>Definition</p></li>
+<li><p>Benefits</p></li>
+<li><p>Pain Points</p></li>
+<li><p>Best Practices</p></li>
+<li><p>Discussion</p></li>
+</ul>
+</div><div class="column" style="width:50%;">
+<h3 id="the-laser-toolkit">The LASER Toolkit</h3>
+<ul>
+<li><p>GitHub</p></li>
+<li><p>Posit Cloud</p></li>
+<li><p>RStudio</p></li>
+<li><p>Quarto</p></li>
+<li><p>R &amp; Python</p></li>
+</ul>
+</div>
+</div>
+<aside class="notes">
+<p><strong>Speaker Notes:</strong></p>
+<p>Each module begins with a 30-minute conceptual overview of key terminology, techniques, and applications.</p>
+<p>In this module we’ll discuss the importance of reproducible research including benefits, pain points and best practices.</p>
+<p>We’ll also breifly introduce you to the tools we’ve adopted for LASER and tools for reproducible research. These tools include GitHub and Posit Cloud for hosting our website and curriculum materials, RStudio for managing research projects, Quarto for documenting and reporting research activities, and R &amp; Python for wrangling, exploring, and modeling data.</p>
+<p>Everything we introduce in this presentation you will have an opportunity to explore in much greater depth through the essential readings, code-along, and coding case study.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 </section>
 <section id="what-is-reproducible-research" class="slide level2">
 <h2>What is Reproducible Research?</h2>
@@ -366,17 +407,15 @@
 </div><div class="column" style="width:40%;">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="img/reproducible-research.png" style="width:60.0%"></p>
-<figcaption>Reproducible Research with R <span class="citation" data-cites="gandrud2021">(<a href="#/references" role="doc-biblioref" onclick="">Gandrud 2013</a>)</span></figcaption>
+<p><img data-src="img/reproducible-research.png" style="width:50.0%"></p>
+<figcaption>Reproducible Research with R <span class="citation" data-cites="gandrud2021">(<a href="#/references" role="doc-biblioref" onclick="">Gandrud 2021</a>)</span></figcaption>
 </figure>
 </div>
 </div>
 </div>
 <aside class="notes">
 <p><strong>Speaker Notes:</strong></p>
-<p>Each module begins with a 30-minute conceptual overview of key terminology, techniques, and applications.</p>
-<p>In this module we focus on the importance of reproducible research and tools for reproducible research. Everything we introduce in this presentation you will have an opportunity to explore in much greater depth through the essential readings, code-along, and coding case study.</p>
-<p>The information from this conceptual overview on reproducible research is drawn largely from the excellent book by Christopher Gandrud, Reproducible research with R and R studio.</p>
+<p>The information from this conceptual overview on reproducible research is drawn largely from the excellent book by Christopher Gandrud, Reproducible research with R and R studio. Even if you’re a python user, this is a valuable resource for essential concepts and practices for ensuring that your research is reproducible.</p>
 <p>The distinction between these two definitions is that we recognize it is sometimes difficult to replicate the original data set in a study because of issues such as limited resources to gather new data, or because the original study may have already sampled the full universe of cases.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
@@ -439,7 +478,7 @@
           display:block!important;
       }</style></aside>
 </section>
-<section id="reproducible-research" class="slide level2">
+<section id="reproducible-research-1" class="slide level2">
 <h2>Reproducible Research?</h2>
 
 <img data-src="img/phd-comic.jpeg" class="quarto-figure quarto-figure-center r-stretch"><aside class="notes">
@@ -465,6 +504,7 @@
 <li><p>What have your experiences been with reproducible research?</p></li>
 <li><p>What tools have you used to ensure the reproducibility of your work?</p></li>
 <li><p>What questions do you have about reproducible research?</p></li>
+<li><p>Baker</p></li>
 </ul>
 </section>
 <section id="best-practices-for-reproducible-research" class="slide level2">
@@ -472,7 +512,7 @@
 <ol type="1">
 <li><p>Document everything!</p></li>
 <li><p>Everything is a (text) file.</p></li>
-<li><p>All files should be human readable.</p></li>
+<li><p>All files should be “human readable.”</p></li>
 <li><p>Explicitly tie your files together.</p></li>
 <li><p>Have a plan to organize, store, and make your files available.</p></li>
 </ol>
@@ -481,10 +521,10 @@
 <p>Speaker Notes:</p>
 <ol type="1">
 <li><p><strong>Document everything!</strong> Obviously, in order to reproduce your research, others must be able to know what you did. Documentation of includes, but is not limited to the data itself, analysis code, the write-up of results, and explanations of these files (e.g.&nbsp;data set codebooks, software information, and so on).</p></li>
-<li><p><strong>Everything is a (text) file</strong>. Ideally, your documentation will be stored in the simplest file format possible to store this information. Usually the simplest file format is the humble, but versatile, text file. Text files are extremely nimble and can used your data in, like in comma-separated values (CSV) format for example, can contain your analysis code in files, and can be the basis for publishable formats like articles, webpages, books, etc. using markup languages such as Markdown. One reason reproducible research is best stored in text fles is that this helps future-proof your research</p></li>
-<li><p><strong>All files should be human readable.</strong> Treat all of your research fles as if someone who has not worked on the project will, in the future, try to understand them. Computer code is a way of communicating with the computer. It is ‘machine readable’ in that the computer is able to use it to understand what you want to do.2 However, there is a very good chance that other people (or you six months in the future) will not understand what you were telling the computer. So, you need to make all of your files ‘human readable’. To make them human readable, you should comment on your code with the goal of communicating its design and purpose.</p></li>
-<li><p><strong>Explicitly tie your files together.</strong> Researchers often do not explicitly document the relationships between fles that they used in their research. For example, the results of an analysis–a table or figure–may be copied and pasted into a presentation document. It can be very difficult for future researchers to trace the table or fgure back to a particular statistical model and a particular data set without clear documentation. Therefore, it is important to make the links between your files explicit.</p></li>
-<li><p><strong>Have a plan to organize, store, and make your files available</strong>. Finally, in order for independent researchers to reproduce your work, they need to be able access the fles that instruct them how to do this. Files also need to be organized so that independent researchers can fgure out how they ft together. So, from the beginning of your research process, you should have a plan for organizing your files and a way to make them accessible.</p></li>
+<li><p><strong>Everything is a (text) file</strong>. Ideally, your documentation will be stored in the simplest file format possible to store this information. Usually the best file format is as simple but versatile text file like a comma-separated values (CSV) file for storing data, R and python scripts for documenting code, and markdown files like Quarto for articles, webpages, books, and more.</p></li>
+<li><p><strong>All files should be human readable.</strong> Treat all of your research files as if someone who has not worked on the project will, in the future, try to understand them. Computer code like R and Python is ‘machine readable’ in that the computer is able to use it to understand what you want to do. However, there is a very good chance that other people (or you six months in the future) will not understand what you were telling the computer to do. So, you need to make all of your files ‘human readable’ by commenting on your code so others can understand its design and purpose.</p></li>
+<li><p><strong>Explicitly tie your files together.</strong> Researchers often do not explicitly document the relationships between files that they used in their research. For example, the results of an analysis, for example a table or figure, might be copied and pasted into a presentation document. However, it can be very difficult for future researchers to trace the table or figure back to a particular statistical model and a particular data set without clear documentation. Therefore, you should make an effort to document the links between your files.</p></li>
+<li><p><strong>Have a plan to organize, store, and make your files available</strong>. Finally, in order for independent researchers to reproduce your work, they need to be able access the files that instruct them how to do this. Files also need to be organized so that independent researchers can figure out how they fit together. So, from the beginning of your research process, you should have a plan for organizing your files and a way to make them accessible.</p></li>
 </ol>
 <p><strong>Learn More</strong></p>
 <p>We’ve only scratched the surface Reproducible Research practices and highlight recommend the book Reproducible research with R and R studio to learn more.</p>
@@ -501,9 +541,24 @@
       }</style></aside>
 </section>
 <section>
-<section id="tools-for-reproducible-research" class="title-slide slide level1 center">
-<h1>Tools for Reproducible Research</h1>
-<p>GitHub, Posit, RStudio, Quarto, and R</p>
+<section id="the-laser-toolkit-1" class="title-slide slide level1 center">
+<h1>The LASER Toolkit</h1>
+<p>GitHub, Posit, RStudio, Quarto, and R &amp; Python</p>
+<aside class="notes">
+<p><strong>Speaker Notes:</strong></p>
+<p>One point we want to emphasis is that the tools we use for LASER and that you’ll become familiar with over the next year, is that the LASER way of doing things is just one approach. We hope that you find these set of tools useful for your own research and teaching, but we also encourage you to adapt our curriculum to tools that you and the learners you’ll be working with are comfortable with.</p>
+<p>In fact, we’d love to be able over the course of the year to include in our curriculum alternate formats for our case studies and presentations, such as Jupyter notebooks or versions using Google Collab.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 </section>
 <section id="tool-types" class="slide level2">
 <h2>Tool Types</h2>
@@ -530,8 +585,10 @@
 </div>
 <aside class="notes">
 <p><strong>Speaker Notes:</strong></p>
-<p>GitHub is an interface and cloud hosting service built on top of the Git version control system. GitHub was not explicitly designed to host research projects or even data, but for programmers to work together to build computer programs. This seems very far from reproducible research but remember that as reproducible researchers, we are building projects out of interconnected text files. In important ways, this is exactly the same as building a computer program and offers many highly developed and robust features for reproducible researchers.</p>
-<p>We won’t be using GitHub directly, but I did want to note that if you click the link, it will take you to our GitHub organization site where you will find our RStudio Projects stored as Repositories, or repos, including the laser-orientation repository you just opened.</p>
+<p>GitHub is an interface and cloud hosting service built on top of the Git version control system. GitHub was originally designed to for programmers to work together to build computer programs, but has become widely used by researcher and educators to host statistical software packages, course websites and books, and even online tutorials.</p>
+<p>We won’t be using GitHub directly, but I did want to note that if you click the link, it will take you to our GitHub organization site where you will find our of the course materials stored as Repositories, or repos, including the laser-orientation repository you just opened.</p>
+<p>Later, you’ll be learning how to use this GitHub site to adapt these materials for your own instruction.</p>
+<p><em>[Prompt scholars to click the link and then give them a very brief tour of the LASER GitHub site including the repositories for each method.]</em></p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -548,12 +605,9 @@
 <h2>Posit Cloud</h2>
 <div class="columns">
 <div class="column" style="width:50%;">
-<p>The LASER Institute has <a href="https://posit.cloud">Posit Cloud</a> workspaces for:</p>
-<ul>
-<li><p><a href="https://posit.cloud/spaces/493094/join?access_code=qjsumVzA0HZYgrxOSizVbVPmDs7iHYS32yUQaqDe">LASER Learners</a></p></li>
-<li><p><a href="https://posit.cloud/spaces/491234/join?access_code=ika-H6TmM2WU2bN9zwkU7VU1jhAioJHh9wNRudUg">LASER Instructors</a></p></li>
-</ul>
 <p>Posit Cloud lets you access <a href="https://posit.co">Posit</a>’s powerful set of data science tools like <a href="https://posit.co/products/open-source/rstudio/">RStudio IDE</a> and <a href="https://jupyter.org">Jupyter Notebooks</a> right in your browser.</p>
+<p><br></p>
+<p>Interactive components for each module (e.g., Case Studies and Code-Alongs) are accessed and complete in our <a href="https://posit.cloud/spaces/493094/join?access_code=qjsumVzA0HZYgrxOSizVbVPmDs7iHYS32yUQaqDe">LASER Learners</a> workspace.</p>
 </div><div class="column" style="width:50%;">
 <div class="quarto-figure quarto-figure-center">
 <figure>
@@ -564,8 +618,11 @@
 </div>
 <aside class="notes">
 <p><strong>Speaker Notes</strong>:</p>
-<p>Posit Cloud (formerly RStudio Cloud) provides a powerful set of data science tools right in your browser with no installation or complex configuration required.All of our Module materials will be access through Posit Cloud this year so we encourage you bookmark posit.cloud in your browser.</p>
-<p>&lt; Have scholars navigate to our LASER Instructor using the link provided and share a brief overview of the the Posit Cloud features like workspaces, recipes, cheatsheets, etc. &gt;</p>
+<p>Posit Cloud (formerly RStudio Cloud) provides a powerful set of data science tools right in your browser with no installation or complex configuration required. All of our Module materials will be accessed through Posit Cloud this year so we encourage you bookmark it in your browser.</p>
+<p><em>[Prompt scholars navigate to our LASER Learners workspace using the link provided and share a brief overview of the the Posit Cloud features like workspaces, recipes, cheatsheets, etc.</em></p>
+<p><em>Direct them click on the LASER Orientation Module RStudio “assignment” and have them open.]</em></p>
+<p>Note that when you clicked on this assignment, you are actually creating a copy of the original project and that only you and LASER Instructors can access these personal copies.</p>
+<p>It’s important that instructors have access so we can assist you with assignments when you get stuck.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -582,14 +639,12 @@
 <h2>RStudio</h2>
 <div class="columns">
 <div class="column" style="width:50%;">
-<div>
 <p><a href="https://posit.co/products/open-source/rstudio/">RStudio</a> is an integrated development environment (IDE) for R and Python and includes:</p>
 <ul>
 <li><p>a <strong>Console</strong> for running R code directly,</p></li>
 <li><p>syntax-highlighting editor that supports direct code execution in the <strong>Source</strong> pane,</p></li>
 <li><p>tools for plotting, history, debugging, and management of research projects in the <strong>Environment</strong> and <strong>Files</strong> panes.</p></li>
 </ul>
-</div>
 </div><div class="column" style="width:50%;">
 <div class="quarto-figure quarto-figure-center">
 <figure>
@@ -600,10 +655,9 @@
 </div>
 <aside class="notes">
 <p><strong>Speaker Notes:</strong></p>
-<p>&lt; Next have scholars navigate to our laser-orientation RStudio Project “assignment” and click the link to make a copy for themselves and open up the project. &gt;</p>
-<p>RStudio is an integrated development environment (IDE) for R and Python and includes a console for running R code directly, syntax-highlighting editor that supports direct code execution in the source pane, and tools for plotting, history, debugging, and management of research projects in the Environment and Files panes.</p>
-<p>RStudio is basically your home for all of the files, images, reports, and code that are used in a research project given project.When you create a “project” with RStudio, it’s straightforward to divide your work into multiple contexts, each with their own working directory, workspace, history, and source documents.</p>
-<p>&lt; Provide a brief walkthrough of the different panes and discuss what they are used for including how they might make their own R Project is they so desired. &gt;</p>
+<p>What you are looking at now is RStudio, which is an integrated development environment (IDE) for R and Python and includes a console for running R code directly, syntax-highlighting editor that supports direct code execution in the source pane, and tools for plotting, history, debugging, and management of research projects in the Environment and Files panes.</p>
+<p>RStudio is basically your home for all of the files, images, reports, and code that are used in a research project given project. When you create a “project” with RStudio, it’s straightforward to divide your work into multiple contexts, each with their own working directory, workspace, history, and source documents.</p>
+<p><em>[Provide a brief walkthrough of the different panes and discuss what they are used for including how they might make their own R Project is they so desired.]</em></p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -702,7 +756,7 @@
 </a></div><a href="https://www.go.ncsu.edu/laser-institute">
 </a><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list"><a href="https://www.go.ncsu.edu/laser-institute">
 </a><div id="ref-gandrud2021" class="csl-entry" role="listitem"><a href="https://www.go.ncsu.edu/laser-institute">
-Gandrud, Christopher. 2013. <em>Reproducible Research with r and r Studio (3rd Edition)</em>. CRC Press. </a><a href="http://github.com/christophergandrud/Rep-Res-Book">http://github.com/christophergandrud/Rep-Res-Book</a>.
+Gandrud, Christopher. 2021. <em>Reproducible Research with r and r Studio (3rd Edition)</em>. CRC Press. </a><a href="http://github.com/christophergandrud/Rep-Res-Book">http://github.com/christophergandrud/Rep-Res-Book</a>.
 </div>
 </div>
 </section></section>

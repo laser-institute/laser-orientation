@@ -1,5 +1,5 @@
 ---
-title: "Reproducible Research"
+title: "Reproducible Research & DIR Workflow"
 subtitle: "Orientation Module: Essential Readings"
 author: "LASER Institute"
 date: today 

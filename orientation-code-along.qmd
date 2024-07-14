@@ -29,9 +29,9 @@ editor: visual
 ::: panel-tabset
 ### Research Context
 
-The setting of this study was a public provider of individual online courses in a Midwestern state.
+-   The setting of this study was a public provider of individual online courses in a Midwestern state.
 
-Data was collected from two semesters of five online science courses and aimed to understand students motivation.
+-   Data was collected from two semesters of five online science courses and aimed to understand students motivation.
 
 ### Question
 

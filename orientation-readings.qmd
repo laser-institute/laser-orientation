@@ -23,42 +23,82 @@ The primary goal of our essential readings in the LASER Orientation module is to
 
 Read chapters 1 and 2 of [Reproducible Research with R and RStudio](https://github.com/christophergandrud/Rep-Res-Book) by @gandrud2021, which lay the groundwork for understanding and implementing reproducible research:
 
+**Reproducible Research with R and RStudio** [@gandrud2021]
+
 -   **Chapter 1: Introducing Reproducible Research**. Chapter 1 introduces the concept of reproducible research, emphasizing its importance for scientific integrity and personal research efficiency, and outlines the main tools and practices essential for achieving reproducibility in computational and quantitative empirical sciences.
 
 -   **Chapter 2: Getting Started with Reproducible Research**. Chapter 2 provides a detailed workflow for conducting reproducible research, offering practical tips for documenting and organizing research projects to ensure all steps are transparent and easily replicable by others.
+
+**Learning Analytics Goes to School** [@krumm2018]
+
+-   **Chapter 2: Data Use in Educational Data-Intensive Research (pp. 28 - 33)**. The Data-Intensive Research Workflow introduced in this chapter provides a high-level overview of preparing, wrangling, exploring, modeling, and communicating data for effective and reproducible research.
 
 ## Reflection
 
 To help guide your reflection on the readings, a set of guiding questions are provided below. After you have had a chance to work through one or more of the readings, **we encourage you to contribute to our learning community by creating a new post to our [laser-orientation channel](https://laser-scholars.slack.com/archives/C07CF9HCLFN) on [Slack](http://laser-scholars.slack.com/)**. Your post might contain a response to one or more of the guiding questions, questions you still have about the topics addressed, or insights gained into your own research.
 
-### Chapter 1: Introducing Reproducible Research
+### **Reproducible Research with R and RStudio**
+
+**Chapter 1: Introducing Reproducible Research**
 
 1.  What is Reproducible Research?
+
     -   How does the author define reproducible research in the context of computational and quantitative empirical sciences?
     -   What are the key differences between replicable and reproducible research as outlined in the book?
+
 2.  Why Should Research Be Reproducible?
+
     -   What are the primary reasons reproducible research is crucial for scientific inquiry?
     -   How can reproducible research enhance your own work and productivity?
+
 3.  Benefits for the Scientific Community and Researchers:
+
     -   How does reproducible research contribute to the cumulative growth of scientific knowledge?
     -   In what ways does making your research reproducible lead to better work habits and more effective teamwork?
+
 4.  Tools of Reproducible Research:
+
     -   What are the main tools of reproducible research introduced in this chapter?
     -   Discuss the benefits of using R, knitr, and RStudio for conducting reproducible research.
 
-### Chapter 2: Getting Started with Reproducible Research
+**Chapter 2: Getting Started with Reproducible Research**
 
 1.  Workflow for Reproducible Research:
+
     -   What some core elements of the workflow for reproducible research proposed by Gandrud?
     -   What are some of the key principles and practices for ensuring research is reproducible?
+
 2.  Practical Tips for Reproducible Research:
+
     -   What does the author mean by “Document everything” and why is it important?
     -   How can organizing your files and ensuring they are human-readable contribute to reproducibility?
+
 3.  File Management:
+
     -   Explain the significance of having a plan to organize, store, and make your files available.
     -   Discuss some best practices for file naming conventions and directory structures to facilitate reproducibility.
+
 4.  Implementing Reproducibility:
+
     -   How does Gandrud suggest you explicitly tie your files together in a research project?
     -   What role do tools like GNU Make play in managing reproducible research projects?
+
+### **Learning Analytics Goes to School (pp. 28 - 33)**
+
+1.  What are the five stages of the **data-intensive research workflow**, and what is the primary goal of each stage?
+
+2.  Why is the "**prepare**" phase crucial in the data-intensive research workflow, and what key activities are involved in this phase?
+
+3.  What are some common challenges faced during the "**wrangle**" phase, and how can they be effectively addressed?
+
+4.  How does the "**explore**" phase contribute to the overall research process, and what techniques are commonly used during this phase?
+
+5.  What is the significance of the "**model**" phase in the workflow, and what are some best practices for building and evaluating models?
+
+6.  Why is the "**communicate**" phase essential, and what strategies can be used to present research findings to different audiences effectively?
+
+7.  How do the stages of the workflow integrate with one another, and why is iteration an important aspect of the data-intensive research process?
+
+8.  Can you think of a real-world example where this workflow could be applied to solve an educational problem? Describe the steps you would take in each phase.
 
 ## References

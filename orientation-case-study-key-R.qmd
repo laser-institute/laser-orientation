@@ -591,7 +591,7 @@ In later modules, you will have an opportunity to create a "data product" design
 
 For example, imagine that as part of a grant to improve student performance in online courses, your are working with the instructors who taught for this online course provider. As part of some early exploratory work to identify factors influencing performance, you are interested in sharing some of your findings about hours logged in the LMS and their final grades. One way we might communicate these findings is through a simple [data dashboard](https://sbkellogg.quarto.pub/final-grades-and-hours-logged/#plots) like the one shown below. Dashboards are a very common reporting tool and their use, for better or worse, has become ubiquitous in the field of Learning Analytics.
 
-![](img/data-dashboard.png)
+[![](img/data-dashboard.png)](https://sbkellogg.quarto.pub/final-grades-and-hours-logged/#plots)
 
 ### Render Document
 

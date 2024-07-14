@@ -1,5 +1,5 @@
 ---
-title: "The LASER Toolkit"
+title: "Reproducible Research"
 subtitle: "Orientation Module: Essential Readings"
 author: "LASER Institute"
 date: today 
@@ -15,10 +15,46 @@ editor: visual
 bibliography: lit/references.bib
 ---
 
-The following readings for this module provide an introduction to Reproducible Research, Learning Analytics and the data-intensive research cycle, and using R for data science in education:
+## Overview
 
--   [Reproducible Research with R and RStudio](https://github.com/christophergandrud/Rep-Res-Book) (chapters 1 & 2)
+The primary goal of our essential readings in the LASER Orientation module is to introduce learners to foundational concepts and practical tools necessary for conducting reproducible research. Learners will explore the importance of reproducibility in scientific inquiry, understand the benefits it offers to individual researchers and the broader scientific community, and learn about the essential tools and workflows that facilitate reproducible research. The discussion questions aim to deepen students' comprehension of these topics, encourage critical thinking about the practices and principles of reproducible research, and provide practical insights into implementing these methods in their own research projects.
 
--   [Learning Analytics Goes to School](https://www.routledge.com/Learning-Analytics-Goes-to-School-A-Collaborative-Approach-to-Improving/Krumm-Means-Bienkowski/p/book/9781138121836) (pages 28 - 58)
+## Readings
 
--   [Data Science in Education Using R](https://datascienceineducation.com)
+Read chapters 1 and 2 of [Reproducible Research with R and RStudio](https://github.com/christophergandrud/Rep-Res-Book) by Christopher Gandrud The following readings for this module provide an introduction to Reproducible Research, Learning Analytics and the data-intensive research cycle, and using R for data science in education:
+
+-   **Chapter 1: Introducing Reproducible Research**. Chapter 1 introduces the concept of reproducible research, emphasizing its importance for scientific integrity and personal research efficiency, and outlines the main tools and practices essential for achieving reproducibility in computational and quantitative empirical sciences.
+
+-   **Chapter 2: Getting Started with Reproducible Research**. Chapter 2 provides a detailed workflow for conducting reproducible research, offering practical tips for documenting and organizing research projects to ensure all steps are transparent and easily replicable by others.
+
+## Reflection
+
+### Chapter 1: Introducing Reproducible Research
+
+1.  **What is Reproducible Research?**
+    -   How does the author define reproducible research in the context of computational and quantitative empirical sciences?
+    -   What are the key differences between replicable and reproducible research as outlined in the book?
+2.  **Why Should Research Be Reproducible?**
+    -   What are the primary reasons reproducible research is crucial for scientific inquiry?
+    -   How can reproducible research enhance your own work and productivity?
+3.  **Benefits for the Scientific Community and Researchers:**
+    -   How does reproducible research contribute to the cumulative growth of scientific knowledge?
+    -   In what ways does making your research reproducible lead to better work habits and more effective teamwork?
+4.  **Tools of Reproducible Research:**
+    -   What are the main tools of reproducible research introduced in this chapter?
+    -   Discuss the benefits of using R, knitr, and RStudio for conducting reproducible research.
+
+### Chapter 2: Getting Started with Reproducible Research
+
+1.  **Workflow for Reproducible Research:**
+    -   What some core elements of the workflow for reproducible research proposed by Gandrud?
+    -   What are some of the key principles and practices for ensuring research is reproducible?
+2.  **Practical Tips for Reproducible Research:**
+    -   What does the author mean by “Document everything” and why is it important?
+    -   How can organizing your files and ensuring they are human-readable contribute to reproducibility?
+3.  **File Management:**
+    -   Explain the significance of having a plan to organize, store, and make your files available.
+    -   Discuss some best practices for file naming conventions and directory structures to facilitate reproducibility.
+4.  **Implementing Reproducibility:**
+    -   How does Gandrud suggest you explicitly tie your files together in a research project?
+    -   What role do tools like GNU Make play in managing reproducible research projects?

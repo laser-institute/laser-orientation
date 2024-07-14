@@ -310,11 +310,13 @@ RStudio is basically your home for all of the files, images, reports, and code t
 
 -   [presentations](https://laser-institute.github.io/laser-orientation/orientation-code-along.html#/title-slide)
 
--   [dashboards](https://rpubs.com/sbkellogg/dashboard-example)
+-   [dashboards](https://sbkellogg.quarto.pub/final-grades-and-hours-logged/)
+
+-   [coding tutorials](https://laser-institute.github.io/laser-orientation/orientation-case-study-key-R.html#communicate)
 
 -   [books](https://datascienceineducation.com)
 
--   journal articles and much [more](https://quarto.org/docs/guide/)!
+-   and much [more](https://quarto.org/docs/guide/)!
 :::
 
 ::: {.column width="50%"}
@@ -325,7 +327,15 @@ RStudio is basically your home for all of the files, images, reports, and code t
 ::: notes
 **Speaker Notes:**
 
-Virtually all
+Virtually all of our curriculum materials, including our website, our proudly built with Quarto. Quarto is is an open-source scientific and technical publishing system that enables the creation of dynamic documents, dashboards, presentations, websites and more.
+
+Quarto also integrates with programming languages like R and Python, allowing for the inclusion of interactive elements and reproducible research workflows, making it a great tool for data analysis, visualization, and reporting.
+
+*\[Click through each link to show them examples of different LASER related products that can be made with Quarto. Highlight the case study answer key and dashboard which we'll be working with shortly.*
+
+*Prompt learners to open up the `orientation-data-product.qmd` file as an example of a simple data dashboard and show them how to render a Quarto document using the dashboard as an example.*
+
+*Then have them open up the `orientation-cass-study-R.qmd` or `orientation-cass-study-python.qmd` case study file and ask them to render and discuss what happens when it doesn't and why.\]*
 :::
 
 ## R & Python
@@ -336,7 +346,7 @@ The LASER Institute uses [R](https://www.r-project.org/about.html) and [Python](
 
 <br>
 
-Both are freely avialable have large and active communities and a vast number of libraries and frameworks for learning analytics.
+Both are freely available have large and active communities and a vast number of libraries and frameworks for learning analytics.
 :::
 
 ::: {.column width="50%"}
@@ -349,20 +359,32 @@ Both are freely avialable have large and active communities and a vast number of
 
 Underlying all of this is R (or Python), two of the most popular programming languages used in data science, statistical analysis, and machine learning. Each provide a rich platform that can be used to create a wide range of static and dynamic outputs for communicating your research.
 
-Let's create a new R script so we can begin working with R to help illustrate a simple research workflow and analyze some data.
+Let's create a new R (or Python) script so we can begin working with R to help illustrate a simple research workflow and analyze some data.
 
-\< Direct learners to create a new R or Python script as illustrated in the screenshot. Show them how to name the file and save to their main directory. \>
+*\[Direct learners to create a new R or Python script as illustrated in the screenshot. Show them how to name the file and save to their main directory.*
+
+*Transition to code-along slides.\]*
 :::
 
 ## Essential Readings
 
--   [Reproducible Research with R and RStudio](https://github.com/christophergandrud/Rep-Res-Book) (chapters 1 & 2)
+Chapters 1 and 2 of [Reproducible Research with R and RStudio](https://github.com/christophergandrud/Rep-Res-Book) by @gandrud2021 lay the groundwork for understanding and implementing reproducible research:
 
--   [Learning Analytics Goes to School](https://www.routledge.com/Learning-Analytics-Goes-to-School-A-Collaborative-Approach-to-Improving/Krumm-Means-Bienkowski/p/book/9781138121836) (pages 28 - 58)
+-   Chapter 1: Introducing Reproducible Research
 
--   [Data Science in Education Using R](https://datascienceineducation.com)
+-   Chapter 2: Getting Started with Reproducible Research
 
--   [R for Data Science](https://r4ds.had.co.nz/index.html)
+Questions for reflection and discussion are also included in our [Essential Readings](https://laser-institute.github.io/laser-orientation/orientation-readings.html) document. Responses can be posted to our [**laser-orientation channel**](https://laser-scholars.slack.com/archives/C07CF9HCLFN)on Slack.
+
+::: notes
+**Speaker Notes:**
+
+Each LASER Module comes with a set of essential readings and reflection questions to dig deeper into concepts shared in our conceptual overviews and provide opportunities for checking your own understanding or the understanding of colleagues and students you work with.
+
+For this module, we recommend this week taking a look at Chapters 1 and 2 of Reproducible Research with R and RStudio.
+
+To help guide your reflection on the readings, a set of questions are provided in our essential readings document. **You are welecome to contribute to our learning community by creating a new post to our [laser-orientation channel](https://laser-scholars.slack.com/archives/C07CF9HCLFN) on [Slack](http://laser-scholars.slack.com/)**. Your post might contain a response to one or more of the guiding questions, questions you still have about the topics addressed, or insights gained into your own research.
+:::
 
 ## Acknowledgements
 

@@ -4,6 +4,10 @@ format:
   dashboard:
     orientation: rows
     theme: cosmo
+    nav-buttons:
+      - icon: github
+        href: https://github.com/laser-institute/laser-orientation/blob/master/orientation-data-product.qmd
+editor: visual
 ---
 
 # Sidebar {.sidebar}
@@ -151,6 +155,10 @@ course_text |>
          semester,
          time_spent_hours,
          final_grade) |>
-datatable() %>% 
+datatable(extensions = 'Buttons',
+            options = list(dom = 'Blfrtip',
+                           buttons = c('copy', 'csv', 'excel', 'pdf', 'print'),
+                           lengthMenu = list(c(10,25,50,-1),
+                                             c(10,25,50,"All")))) |>
     formatRound(columns = c('time_spent_hours', 'final_grade'), digits = 1)
 ```

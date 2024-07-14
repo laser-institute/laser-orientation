@@ -24,6 +24,24 @@ editor: visual
 
 ![Data-Intensive Research Workflow [@krumm2018]](img/laser-cycle.png){fig-align="center" width="60%"}
 
+::: notes
+**Speaker Notes:**
+
+**Slide Overview:** This slide illustrates the data-intensive research workflow, which is a cyclical process and which we use to frame all of the case studies for each module. Each stage is interconnected, emphasizing the iterative nature of the research process. Let’s briefly walk through each stage.
+
+**Prepare:** The preparation phase involves defining and refining the research questions, ensuring they are clear and relevant to the data at hand. This stage sets the foundation for the entire research process, establishing the goals and objectives that guide the subsequent stages.
+
+**Wrangle:** Data wrangling is the process of cleaning, transforming, and merging raw data into a structured format suitable for analysis. This stage is crucial as it ensures the data is accurate, complete, and ready for exploration and modeling.
+
+**Explore:** In the exploration phase, researchers perform exploratory data analysis (EDA) to uncover patterns, trends, and insights within the data. Visualization tools and statistical methods are commonly used to gain a deeper understanding of the dataset, which helps inform the modeling stage.
+
+**Model:** The modeling phase involves building and evaluating predictive models based on the prepared and explored data. Various statistical and machine learning techniques are applied to predict outcomes or classify data, with a focus on accuracy and reliability.
+
+**Communicate:** Effective communication of findings is essential. In this stage, researchers present their results through polished data products, such as reports, visualizations, and presentations, tailored to their intended audience. The goal is to ensure that the insights are clear and actionable.
+
+**Iterative Nature:** The dashed lines in the diagram indicate the iterative nature of this workflow. New analyses often lead to refinements in the research questions or data, prompting a return to the preparation or wrangling stages. Additionally, communicating findings can generate new ideas for further analysis, creating a continuous cycle of improvement and discovery.
+:::
+
 ## Prepare
 
 ::: panel-tabset
@@ -35,19 +53,19 @@ editor: visual
 
 ### Question
 
-Is there a relationship between the time students spend in a learning management system and their final course grade?
+<br>
+
+> Is there a relationship between the time students spend in a learning management system and their final course grade?
 
 ### Data
 
 The data used in this case study has already been "wrangled" quite a bit, but the original datasets included:
 
-1.  A self-report survey assessing three aspects of students' motivation
+1.  A self-report **survey** assessing three aspects of students' motivation
 
-2.  Log-trace data, such as data output from the learning management system (LMS)
+2.  **Log-trace data** from the learning management system (LMS) including discussion board posts
 
-3.  Discussion board data
-
-4.  Academic achievement data
+3.  **Administrative** **records** including academic achievement and student demographic data
 
 ### Packages
 
@@ -235,32 +253,32 @@ Krumm et al. (2018) have outlined the following 3-step process for communicating
 
 ## Dashboards
 
-![](img/laser-dashboard.png){fig-align="center" width="60%"}
+[![](img/data-dashboard.png){fig-align="center" width="60%"}](https://sbkellogg.quarto.pub/final-grades-and-hours-logged/)
 
 ## Websites
 
-![](img/laser-website.png){fig-align="center" width="60%"}
+[![](img/laser-website.png){fig-align="center" width="60%"}](https://laser-institute.github.io/laser-website/)
 
 ## Books
 
-![](img/books.png){fig-align="center" width="60%"}
+[![](img/books.png){fig-align="center" width="60%"}](https://datascienceineducation.com)
 
 ## And More!
 
 ```{=html}
-<iframe width="2000" height="1000" src="https://quarto.org/docs/guide/" title="Webpage example"></iframe>
+<iframe width="2000" height="800" src="https://quarto.org/docs/guide/" title="Webpage example"></iframe>
 ```
 :::
 
 ## What's Next
 
-Next you will complete an interactive "case study" which is a key component to each learning lab.
+Next you will complete an interactive "case study" which is a key component to each LASER Module.
 
 <br>
 
 Navigate to the Files tab and open the following file:
 
-`orientation-case-study.qmd`
+`orientation-case-study-R.qmd`
 
 ## Acknowledgements
 

@@ -422,27 +422,50 @@
 <section id="overview" class="slide level2">
 <h2>Overview</h2>
 
-<img data-src="img/laser-cycle.png" class="quarto-figure quarto-figure-center r-stretch" style="width:60.0%"><p class="caption">Data-Intensive Research Workflow <span class="citation" data-cites="krumm2018">(<a href="#/references" role="doc-biblioref" onclick="">Krumm, Means, and Bienkowski 2018</a>)</span></p></section>
+<img data-src="img/laser-cycle.png" class="quarto-figure quarto-figure-center r-stretch" style="width:60.0%"><p class="caption">Data-Intensive Research Workflow <span class="citation" data-cites="krumm2018">(<a href="#/references" role="doc-biblioref" onclick="">Krumm, Means, and Bienkowski 2018</a>)</span></p><aside class="notes">
+<p><strong>Speaker Notes:</strong></p>
+<p><strong>Slide Overview:</strong> This slide illustrates the data-intensive research workflow, which is a cyclical process and which we use to frame all of the case studies for each module. Each stage is interconnected, emphasizing the iterative nature of the research process. Let’s briefly walk through each stage.</p>
+<p><strong>Prepare:</strong> The preparation phase involves defining and refining the research questions, ensuring they are clear and relevant to the data at hand. This stage sets the foundation for the entire research process, establishing the goals and objectives that guide the subsequent stages.</p>
+<p><strong>Wrangle:</strong> Data wrangling is the process of cleaning, transforming, and merging raw data into a structured format suitable for analysis. This stage is crucial as it ensures the data is accurate, complete, and ready for exploration and modeling.</p>
+<p><strong>Explore:</strong> In the exploration phase, researchers perform exploratory data analysis (EDA) to uncover patterns, trends, and insights within the data. Visualization tools and statistical methods are commonly used to gain a deeper understanding of the dataset, which helps inform the modeling stage.</p>
+<p><strong>Model:</strong> The modeling phase involves building and evaluating predictive models based on the prepared and explored data. Various statistical and machine learning techniques are applied to predict outcomes or classify data, with a focus on accuracy and reliability.</p>
+<p><strong>Communicate:</strong> Effective communication of findings is essential. In this stage, researchers present their results through polished data products, such as reports, visualizations, and presentations, tailored to their intended audience. The goal is to ensure that the insights are clear and actionable.</p>
+<p><strong>Iterative Nature:</strong> The dashed lines in the diagram indicate the iterative nature of this workflow. New analyses often lead to refinements in the research questions or data, prompting a return to the preparation or wrangling stages. Additionally, communicating findings can generate new ideas for further analysis, creating a continuous cycle of improvement and discovery.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
 <section id="prepare" class="slide level2">
 <h2>Prepare</h2>
 <div class="panel-tabset">
 <ul id="tabset-1" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-1-1">Research Context</a></li><li><a href="#tabset-1-2">Question</a></li><li><a href="#tabset-1-3">Data</a></li><li><a href="#tabset-1-4">Packages</a></li></ul>
 <div class="tab-content">
 <div id="tabset-1-1">
-<p>The setting of this study was a public provider of individual online courses in a Midwestern state.</p>
-<p><br></p>
-<p>Data was collected from two semesters of five online science courses and aimed to understand students motivation.</p>
+<ul>
+<li><p>The setting of this study was a public provider of individual online courses in a Midwestern state.</p></li>
+<li><p>Data was collected from two semesters of five online science courses and aimed to understand students motivation.</p></li>
+</ul>
 </div>
 <div id="tabset-1-2">
+<p><br></p>
+<blockquote>
 <p>Is there a relationship between the time students spend in a learning management system and their final course grade?</p>
+</blockquote>
 </div>
 <div id="tabset-1-3">
 <p>The data used in this case study has already been “wrangled” quite a bit, but the original datasets included:</p>
 <ol type="1">
-<li><p>A self-report survey assessing three aspects of students’ motivation</p></li>
-<li><p>Log-trace data, such as data output from the learning management system (LMS)</p></li>
-<li><p>Discussion board data</p></li>
-<li><p>Academic achievement data</p></li>
+<li><p>A self-report <strong>survey</strong> assessing three aspects of students’ motivation</p></li>
+<li><p><strong>Log-trace data</strong> from the learning management system (LMS) including discussion board posts</p></li>
+<li><p><strong>Administrative</strong> <strong>records</strong> including academic achievement and student demographic data</p></li>
 </ol>
 </div>
 <div id="tabset-1-4">
@@ -638,36 +661,36 @@ F-statistic: 87.99 on 1 and 571 DF,  p-value: &lt; 2.2e-16</code></pre>
 <div id="tabset-5-2">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="img/laser-dashboard.png" class="quarto-figure quarto-figure-center" style="width:60.0%"></p>
+<p><a href="https://sbkellogg.quarto.pub/final-grades-and-hours-logged/"><img data-src="img/data-dashboard.png" class="quarto-figure quarto-figure-center" style="width:60.0%"></a></p>
 </figure>
 </div>
 </div>
 <div id="tabset-5-3">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="img/laser-website.png" class="quarto-figure quarto-figure-center" style="width:60.0%"></p>
+<p><a href="https://laser-institute.github.io/laser-website/"><img data-src="img/laser-website.png" class="quarto-figure quarto-figure-center" style="width:60.0%"></a></p>
 </figure>
 </div>
 </div>
 <div id="tabset-5-4">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="img/books.png" class="quarto-figure quarto-figure-center" style="width:60.0%"></p>
+<p><a href="https://datascienceineducation.com"><img data-src="img/books.png" class="quarto-figure quarto-figure-center" style="width:60.0%"></a></p>
 </figure>
 </div>
 </div>
 <div id="tabset-5-5">
-<iframe width="2000" height="1000" src="https://quarto.org/docs/guide/" title="Webpage example"></iframe>
+<iframe width="2000" height="800" src="https://quarto.org/docs/guide/" title="Webpage example"></iframe>
 </div>
 </div>
 </div>
 </section>
 <section id="whats-next" class="slide level2">
 <h2>What’s Next</h2>
-<p>Next you will complete an interactive “case study” which is a key component to each learning lab.</p>
+<p>Next you will complete an interactive “case study” which is a key component to each LASER Module.</p>
 <p><br></p>
 <p>Navigate to the Files tab and open the following file:</p>
-<p><code>orientation-case-study.qmd</code></p>
+<p><code>orientation-case-study-R.qmd</code></p>
 </section>
 <section id="acknowledgements" class="slide level2">
 <h2>Acknowledgements</h2>

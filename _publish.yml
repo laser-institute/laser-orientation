@@ -2,3 +2,7 @@
   quarto-pub:
     - id: eda04d4e-214e-4c53-8f2c-69bee2f03115
       url: 'https://sbkellogg.quarto.pub/laser-orientation-case-study-key'
+- source: orientation-data-product.qmd
+  quarto-pub:
+    - id: f3b79c45-902c-4dfe-921d-7e6b30d115ec
+      url: 'https://sbkellogg.quarto.pub/final-grades-and-hours-logged'

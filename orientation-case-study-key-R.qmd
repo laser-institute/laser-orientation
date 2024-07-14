@@ -51,7 +51,7 @@ LASER case studies include many interactive elements in which you are asked to p
 
 Take a look at the markdown syntax used to create this document by viewing with the source editor. To do so, click the "Source" button in the toolbar at the top of this file. After you've had a look, click back to the visual editor to continue.
 
-![](img/source-view.png){width="80%"}
+![](img/source-view.png){width="100%"}
 
 Great job! Let's continue!
 
@@ -587,19 +587,23 @@ The final step in the workflow/process is sharing the results of your analysis w
 
 3.  **Narrate.** Writing a narrative to accompany the data products involves, at a minimum, pairing a data product with its related research question, describing how best to interpret the data product, and explaining the ways in which the data product helps answer the research question and might be used to inform new analyses or a "change idea" for improving student learning.
 
-In later modules, you will have an opportunity to create a simple "data product" designed to illustrate some insights gained from your analysis and ideally highlight an action step or change idea that can be used to improve learning or the contexts in which learning occurs.
+In later modules, you will have an opportunity to create a "data product" designed to illustrate some insights gained from your analysis and ideally highlight an action step or change idea that can be used to improve learning or the contexts in which learning occurs.
 
-#### 👉 Your Turn ⤵
+For example, imagine that as part of a grant to improve student performance in online courses, your are working with the instructors who taught for this online course provider. As part of some early exploratory work to identify factors influencing performance, you are interested in sharing some of your findings about hours logged in the LMS and their final grades. One way we might communicate these findings is through a simple [data dashboard](https://sbkellogg.quarto.pub/final-grades-and-hours-logged/#plots) like the one shown below. Dashboards are a very common reporting tool and their use, for better or worse, has become ubiquitous in the field of Learning Analytics.
 
-For now, we will wrap up this case study by converting your work to an HTML file that can be published and used to communicate your learning and demonstrate some of your new R skills. To do so, you will need to "render" your document by clicking the ![](img/render.png){width="2%"} Render button in the menu bar at that the top of this file.
+![](img/data-dashboard.png)
 
-Rendering a document does two important things, namely when you render a document it:
+### Render Document
+
+For now, we will wrap up this case study by converting your work to an HTML file that can be published and used to communicate your learning and demonstrate some of your new R skills. To do so, you will need to "render" your document. Rendering a document does two important things, namely when you render a document it:
 
 1.  checks through all your code for any errors; and,
 
 2.  creates a file in your project directory that you can use to share you work.
 
-Now that you've finished your first case study, click the "Render" button in the toolbar at the top of your document to covert this Quarto document to a HTML web page, just one of [the many publishing formats you can create with Quarto](https://quarto.org/docs/output-formats/all-formats.html) documents.
+#### 👉 Your Turn ⤵
+
+Now that you've finished your first case study, let's render this document by clicking the ![](img/render.png){width="2%"} Render button in the toolbar at that the top of this file. Rendering will covert this Quarto document to a HTML web page as specified in our YAML header. Web pages are just one of [the many publishing formats you can create with Quarto](https://quarto.org/docs/output-formats/all-formats.html) documents.
 
 If the files rendered correctly, you should now see a new file named `orientation-case-study-R.html` in the Files tab located in the bottom right corner of R Studio. If so, congratulations, you just completed the getting started activity! You're now ready for the unit Case Studies that we will complete during the third week of each unit.
 

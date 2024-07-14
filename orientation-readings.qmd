@@ -21,7 +21,7 @@ The primary goal of our essential readings in the LASER Orientation module is to
 
 ## Readings
 
-Read chapters 1 and 2 of [Reproducible Research with R and RStudio](https://github.com/christophergandrud/Rep-Res-Book) by Christopher Gandrud The following readings for this module provide an introduction to Reproducible Research, Learning Analytics and the data-intensive research cycle, and using R for data science in education:
+Read chapters 1 and 2 of [Reproducible Research with R and RStudio](https://github.com/christophergandrud/Rep-Res-Book) by @gandrud2021, which lay the groundwork for understanding and implementing reproducible research:
 
 -   **Chapter 1: Introducing Reproducible Research**. Chapter 1 introduces the concept of reproducible research, emphasizing its importance for scientific integrity and personal research efficiency, and outlines the main tools and practices essential for achieving reproducibility in computational and quantitative empirical sciences.
 

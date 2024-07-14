@@ -37,7 +37,7 @@ Read chapters 1 and 2 of [Reproducible Research with R and RStudio](https://gith
 
 To help guide your reflection on the readings, a set of guiding questions are provided below. After you have had a chance to work through one or more of the readings, **we encourage you to contribute to our learning community by creating a new post to our [laser-orientation channel](https://laser-scholars.slack.com/archives/C07CF9HCLFN) on [Slack](http://laser-scholars.slack.com/)**. Your post might contain a response to one or more of the guiding questions, questions you still have about the topics addressed, or insights gained into your own research.
 
-### **Reproducible Research with R and RStudio**
+### Reproducible Research with R and RStudio
 
 **Chapter 1: Introducing Reproducible Research**
 
@@ -83,7 +83,7 @@ To help guide your reflection on the readings, a set of guiding questions are pr
     -   How does Gandrud suggest you explicitly tie your files together in a research project?
     -   What role do tools like GNU Make play in managing reproducible research projects?
 
-### **Learning Analytics Goes to School (pp. 28 - 33)**
+### Learning Analytics Goes to School (pp. 28 - 33)
 
 1.  What are the five stages of the **data-intensive research workflow**, and what is the primary goal of each stage?
 

@@ -145,7 +145,7 @@ Each day includes whole and small group activities to help participants:
 ## Goals of the LASER Institute
 
 ::: panel-tabset
-## This Year
+### This Year
 
 -   **Disciplinary Knowledge**: Deepen their understanding of LA methodologies, literature, applications and ethical issues as they relate to STEM education and equity.
 
@@ -153,7 +153,7 @@ Each day includes whole and small group activities to help participants:
 
 -   **Social Capital**: Expand their professional networks, connecting with researchers and experts in LA related fields, as well as other scholars focused on STEM education.
 
-## This Week
+### This Week
 
 -   **Have fun.** Learning new methods can be rewarding but hard, especially when coding is involved, but we want to you enjoy yourselves this week.
 
@@ -165,7 +165,7 @@ Each day includes whole and small group activities to help participants:
 
 -   **Provide Feedback.** We've revamped our curriculum and need your input to figure out what works well and how we can improve.
 
-## Today
+### Today
 
 1.  **Community Building (9:15)** - Affinity groups, badges and SHARK goals, oh my!
 

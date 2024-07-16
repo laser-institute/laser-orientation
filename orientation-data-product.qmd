@@ -28,6 +28,7 @@ The boxplot and histogram in the two smaller boxes show distributions of hours l
 library(flexdashboard)
 library(tidyverse)
 library(janitor)
+library(plotly)
 
 course_text <- read_csv("data/course-text.csv") |>
   clean_names()
@@ -43,9 +44,11 @@ data_to_viz <- course_text |>
                           "BioA" = "Biology", 
                           "FrScA" = "Forensics", 
                           "OcnA" =  "Oceanography", 
-                          "PhysA" = "Physics"))
+                          "PhysA" = "Physics"),
+         time_spent_hours = round(time_spent_hours, 1),
+         final_grade = round(final_grade, 1))
 
-data_to_viz  %>% 
+scatterplot <- data_to_viz  %>% 
   ggplot() +
   geom_point(mapping = aes(x = time_spent_hours, 
                        y = final_grade,
@@ -78,12 +81,25 @@ data_to_viz  %>%
                      name = "Subject") +
   scale_x_continuous(breaks = seq(0, 160, by = 20)) +
   scale_y_continuous(breaks = seq(0, 100, by = 10))
+
+# Convert the ggplot2 plot to an interactive plotly plot
+scatterplot <- ggplotly(scatterplot)
+
+# Move the legend to the bottom
+scatterplot <- scatterplot |>
+  layout(legend = list(orientation = 'h',   # horizontal legend
+                       x = 0.5,             # center horizontally
+                       xanchor = 'center',  # center the legend
+                       y = -0.2))           # place below the plot
+
+# Display the interactive plot
+scatterplot
 ```
 
 ## Row {height="40%"}
 
 ```{r}
-data_to_viz  %>% 
+data_to_viz  |>
   ggplot() +
   geom_boxplot(mapping = aes(x = time_spent_hours,
                              #y = subject, 
@@ -110,6 +126,7 @@ data_to_viz  %>%
                      name = "Subject") +
   scale_x_continuous(breaks = seq(0, 160, by = 20))
  # scale_y_discrete(limits=rev)
+
 ```
 
 ```{r}

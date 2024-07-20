@@ -79,7 +79,6 @@ Each method area consist of four progressively sequenced modules that include a:
 :::
 
 ::: {.column width="50%"}
-
 ![](img/learning-labs.png)
 :::
 :::
@@ -98,7 +97,6 @@ Each day includes whole and small group activities to help participants:
 :::
 
 ::: {.column width="40%"}
-
 ![](img/laser-shark.png){fig-align="center" width="80%"}
 :::
 :::
@@ -147,36 +145,27 @@ Each day includes whole and small group activities to help participants:
 ::: panel-tabset
 ### This Year
 
--   **Disciplinary Knowledge**: Deepen their understanding of LA methodologies, literature, applications and ethical issues as they relate to STEM education and equity.
+-   **Learn from LASER**. A significant portion of the Summer Workshop consists of learning module sessions, which are conducted in small groups and differentiated for participants based on your selected method of interest. 
 
--   **Technical Skills**: Develop proficiency with R/Python, Quarto, GitHub and other tools used for collaboration, reproducible research and computational analysis.
+-   **Teach with LASER**. Each LASER Scholar will work on a self-determined “SHARK” Goal throughout the year. These research-related professional goals are created during the Summer Workshop and implemented throughout the year. 
 
--   **Social Capital**: Expand their professional networks, connecting with researchers and experts in LA related fields, as well as other scholars focused on STEM education.
+-   **Network at LASER**. Community building activities are designed to facilitate personal and professional networking and include morning icebreakers and opportunities to connect with fellow Scholars throughout the year.
 
 ### This Week
 
 -   **Have fun.** Learning new methods can be rewarding but hard, especially when coding is involved, but we want to you enjoy yourselves this week.
-
 -   **Make Connections** We have an amazing groups of scholars participating this year, use this opportunity to get to know them better.
-
 -   **Develop a plan.** Create a SHARK goal for teaching colleagues or students at their home institutions using curriculum materials developed for the LASER Institute.
-
 -   **Earn two badges.** You'll be exposed to many new concepts and techniques this week, we want you to dig in and demonstrate what you've learned.
-
 -   **Provide Feedback.** We've revamped our curriculum and need your input to figure out what works well and how we can improve.
 
 ### Today
 
 1.  **Community Building (9:15)** - Affinity groups, badges and SHARK goals, oh my!
-
-2.  **Learning Lab Intros (10:00)** - Learn about reproducible research and the data-intensive research workflow in our LASER Learning Lab orientation.
-
+2.  **LASER Orientation (10:00)** - Learn about reproducible research and the data-intensive research workflow in our LASER Learning Lab orientation.
 3.  **Lunch (12:30)** - Eat some great food, connect with new colleagues.
-
-4.  **Scholar TA Panel (1:30)** - Meet three of our past scholars who'll be assisting throughout the week and learn about their LA journey.
-
+4.  **Guest Speaker (1:15)** - Meet three of our past scholars who'll be assisting throughout the week and learn about their LA journey.
 5.  **Method Overviews (2:15)** - Learn about our four concentration areas (FS, ML, TM, and SNA) and accompanying labs and select a learning path this week.
-
 6.  **Field Trip (4:30)** - Ice cream party at NC State's dairy farm!
 :::
 

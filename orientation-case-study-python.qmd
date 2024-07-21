@@ -71,6 +71,7 @@ import matplotlib.pyplot as plt
 # Read and display an image from file
 plt.imshow(plt.imread('img/laser-cycle.png'))
 plt.show()
+plt.clf() # helps to clear the plot
 ```
 
 Nice work! For this case study, don't stress too much about understanding the code. We'll spend a lot of time doing that in the other modules. For now, take a look at the image displayed and answer the question that follows by typing your response directly in this document.
@@ -288,7 +289,6 @@ The following code snippet addresses missing values in the dataset by replacing 
 2.  **Filling Missing Values:** The `fillna()` function replaces any missing values (NaN) in these columns with their corresponding mean values.
 
 ```{python}
-{python}
 # Calculate the mean value for 'FinalGradeCEMS' column
 mean_value_grade = sci_data['FinalGradeCEMS'].mean()
 
@@ -358,6 +358,7 @@ Let's give it a try by creating a simple histogram of our `FinalGradeCEMS` varia
 plt.hist(sci_data['FinalGradeCEMS'], bins = 30, color ="skyblue")
 plt.xlabel('FinalGradeCEMS')
 plt.show()
+plt.clf() # helps to clear the plot
 ```
 
 #### **👉 Your Turn** **⤵**
@@ -384,6 +385,7 @@ plt.scatter(x = sci_data['TimeSpent'], y = sci_data['FinalGradeCEMS'], marker=".
 plt.xlabel('TimeSpent')
 plt.ylabel('FinalGradeCEMS')
 plt.show()
+plt.clf() # helps to clear the plot
 ```
 
 Well done! As you can see, there appears to be a positive relationship between the time students spend in the online course and their final grade!
@@ -413,6 +415,8 @@ Key characteristics of an inferential model include:
 Let's use {statsmodels} package run a basic linear regression model to further examine the relationship between `TimeSpent` and `FinalGradeCEMS`:
 
 ```{python}
+#add the statsmodel package
+import statsmodels.api as sm
 
 # Define the independent variable (predictor) and the dependent variable (response)
 X = sci_data['TimeSpent']
@@ -463,6 +467,7 @@ plt.plot(X, reg.predict(X),color='hotpink')
 plt.xlabel('TimeSpent')
 plt.ylabel('FinalGradeCEMS')
 plt.show()
+plt.clf()
 ```
 
 Note that on the y-axis we put a dependent variable, the one we want to predict and x-axis is for and independent, or exploratory variable.
@@ -615,5 +620,3 @@ Congratulations, you've completed your first case study!
 Once you have shared a link to your published document with your instructor and they have reviewed your work, you will be provided a physical or digital version of the badge pictured below!
 
 ![](img/LASER_Hx.png){width="50%"}
-
-### References

@@ -160,8 +160,6 @@ Think about the following questions and then discuss at your table:
 
 -   What questions do you have about reproducible research?
 
--   Baker
-
 ## Best Practices for Reproducible Research
 
 1.  Document everything!
@@ -226,7 +224,9 @@ The [LASER Institute GitHub](https://github.com/laser-institute) site houses rep
 :::
 
 ::: {.column width="50%"}
-![](img/github.png){fig-align="center" width="100%"}
+[![](img/github.png){width="100%"}](https://go.ncsu.edu/laser-github)
+
+            [go.ncsu.edu/laser-github](https://go.ncsu.edu/laser-github)
 :::
 :::
 
@@ -254,7 +254,9 @@ Interactive components for each module (e.g., Case Studies and Code-Alongs) are 
 :::
 
 ::: {.column width="50%"}
-![](img/posit-cloud.png){fig-align="center" width="100%"}
+[![](img/posit-cloud.png){fig-align="center" width="100%"}](https://go.ncsu.edu/laser-learners)
+
+            [go.ncsu.edu/laser-learners](https://go.ncsu.edu/laser-learners)
 :::
 :::
 

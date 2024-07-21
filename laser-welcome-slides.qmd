@@ -186,7 +186,7 @@ Each day includes whole and small group activities to help participants:
 ::: {.column width="50%"}
 **Example**:
 
-1.   I was born and raised in Lansing, Michigan.
+1.   I was born and raised in Lansing, Michigan but use "y'all" with ease.
 2.   I am an avid Python-ista and loathe using R.
 3.  I began my career in education as Peace Corps Volunteer in Romania.
 :::

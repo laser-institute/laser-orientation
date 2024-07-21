@@ -1,6 +1,6 @@
 ---
 title: "Welcome to the LASER Institute!"
-subtitle: "Orientation Module: Welcome Slides"
+subtitle: "Summer Workshop: July 22-26, 2024"
 format:
   revealjs: 
     slide-number: c/t
@@ -22,15 +22,13 @@ editor: visual
 
 ## Welcome Notes
 
-1\. Welcome to the Friday Institute!
+1.  Welcome to the Friday Institute!
 
-2\. Meet the LASER Team
+2.  Meet the LASER Team
 
-3\. What is Learning Analytics?
+3.  Program Components
 
-4\. LASER Institute Core Components
-
-5\. Goals for the Year, the Week, and Today
+4.  Goals for the Year, the Week, and Today
 
 ## The Friday Institute for Educational Innovation
 

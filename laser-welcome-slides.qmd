@@ -1,5 +1,5 @@
 ---
-title: "The LASER Institute"
+title: "Welcome to the LASER Institute!"
 subtitle: "Orientation Module: Welcome Slides"
 format:
   revealjs: 
@@ -62,13 +62,13 @@ The LASER Institute is a prime example of how we [Think and Do](https://www.ncsu
 
 ::: columns
 ::: {.column width="50%"}
-**Summer Workshop**
+### **Summer Workshop**
 
 ![](images/summer-workshop.jpeg){width="90%"}
 :::
 
 ::: {.column width="50%"}
-**Online Community**
+### **Online Community**
 
 ![](images/online-community.png){width="97%"}
 :::
@@ -119,24 +119,6 @@ Each day includes whole and small group activities to help participants:
 :::
 :::
 
-### Community Building
-
-::: columns
-::: {.column width="50%"}
-[Community building activities](https://fi.ncsu.edu/news/laser-institute-builds-community-of-scholars-for-lifelong-connections-future-collaboration/) help participants create a sense of community by:
-
--   sharing their backgrounds and areas of expertise
-
--   discussing their research interests and experience
-
--   identifying potential areas for collaborations
-:::
-
-::: {.column width="50%"}
-![Network of LASER Scholars](img/laser-network.png)
-:::
-:::
-
 ### Guest Speakers
 
 ::: columns
@@ -166,13 +148,55 @@ Each day includes whole and small group activities to help participants:
 4.  How can you engage in the LA community?
 :::
 :::
+
+###  Community Building
+
+::: columns
+::: {.column width="50%"}
+[Community building activities](https://fi.ncsu.edu/news/laser-institute-builds-community-of-scholars-for-lifelong-connections-future-collaboration/) help participants create a sense of community by:
+
+-   sharing their backgrounds and areas of expertise
+
+-   discussing their research interests and experience
+
+-   identifying potential areas for collaborations
+:::
+
+::: {.column width="50%"}
+![Network of LASER Scholars](img/laser-network.png){alt="Network of LASER Scholars"}
+:::
+:::
+:::
+
+## LASER Ice Breaker
+
+### **Two (Surprising) Truths and a (Believable) Lie**
+
+::: columns
+::: {.column width="50%"}
+**How to Play:**
+
+1.  Each person will share three statements about themselves.
+
+2.  Two of the statements should be true, and one should be a lie.
+
+3.   The group will try to guess which statement is the lie.
+:::
+
+::: {.column width="50%"}
+**Example**:
+
+1.   I was born and raised in Lansing, Michigan.
+2.   I am an avid Python-ista and loathe using R.
+3.  I began my career in education as Peace Corps Volunteer in Romania.
+:::
 :::
 
 ## LASER Improvement
 
 ::: columns
 ::: {.column width="50%"}
-**Development**
+### **Development**
 
 -   Webinars
 
@@ -184,7 +208,7 @@ Each day includes whole and small group activities to help participants:
 :::
 
 ::: {.column width="50%"}
-**Evaluation**
+### **Evaluation**
 
 -   Daily Exit Tickets
 
@@ -214,16 +238,16 @@ Each day includes whole and small group activities to help participants:
 -   **Have fun.** Learning new methods can be rewarding but hard, especially when coding is involved, but we want to you enjoy yourselves this week.
 -   **Develop a plan.** Create a SHARK goal for teaching colleagues or students at their home institutions using curriculum materials developed for the LASER Institute.
 -   **Make Connections** We have an amazing groups of scholars participating this year, use this opportunity to get to know them better.
--   **Earn two badges.** You'll be exposed to many new concepts and techniques this week, we want you to dig in and demonstrate what you've learned.
+-   **Earn two badges.** You'll be exposed to many new concepts and techniques this week, we want you to dig into a small subset and demonstrate what you've learned.
 -   **Provide Feedback.** We've revamped our curriculum and need your input to figure out what works well and how we can improve.
 
 ### Today
 
-1.  **LASER Orientation (10:00)** - Learn about tools for reproducible research and the data-intensive research workflow.
+1.  **LASER Orientation (9:40)** - Learn about the LASER toolkit, reproducible research, and the data-intensive research workflow.
 2.  **Lunch (12:30)** - Eat some great food, connect with new colleagues.
 3.  **Guest Speaker (1:15)** - Meet our first Advisory Board member and guest speaker and get their perspective on Learning Analytics.
-4.  **Method Overviews (2:15)** - Learn about our four concentration areas (FS, ML, TM, and SNA) and accompanying labs and select a learning path this week.
-5.  Design Session -
+4.  **Method Orientation (2:15)** - Learn more about your selected method area (LAW, ML, TM, KT, and SNA) and get set up for the week.
+5.  **Design Session (3:00)** - Identify your SHARK Goal and begin the plannign process for teaching others at you home institution or elsewhere.
 6.  **Field Trip (4:30)** - Ice cream party at NC State's dairy farm!
 :::
 

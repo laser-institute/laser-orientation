@@ -58,7 +58,23 @@ The LASER Institute is a prime example of how we [Think and Do](https://www.ncsu
 
 -   **Evaluation Team**: Eleanor Hasse and Pamela Lovin
 
-## LASER Components
+## Institute Components
+
+::: columns
+::: {.column width="50%"}
+**Summer Workshop**
+
+![](images/summer-workshop.jpeg){width="90%"}
+:::
+
+::: {.column width="50%"}
+**Online Community**
+
+![](images/online-community.png){width="97%"}
+:::
+:::
+
+## Program Supports
 
 ::: panel-tabset
 ### Learning Modules
@@ -79,7 +95,9 @@ Each method area consist of four progressively sequenced modules that include a:
 :::
 
 ::: {.column width="50%"}
-![](img/learning-labs.png)
+![](images/learning-modules.png){width="100%"}
+
+[[go.ncsu.edu/laser-curriculum]{.underline}](https://go.ncsu.edu/laser-curriculum)
 :::
 :::
 
@@ -105,7 +123,13 @@ Each day includes whole and small group activities to help participants:
 
 ::: columns
 ::: {.column width="50%"}
-[Community building activities](https://fi.ncsu.edu/news/laser-institute-builds-community-of-scholars-for-lifelong-connections-future-collaboration/) help participants create a sense of community by sharing their backgrounds, interests, and experiences, participants will identify commonalities and differences.
+[Community building activities](https://fi.ncsu.edu/news/laser-institute-builds-community-of-scholars-for-lifelong-connections-future-collaboration/) help participants create a sense of community by:
+
+-   sharing their backgrounds and areas of expertise
+
+-   discussing their research interests and experience
+
+-   identifying potential areas for collaborations
 :::
 
 ::: {.column width="50%"}
@@ -119,24 +143,58 @@ Each day includes whole and small group activities to help participants:
 ::: {.column width="50%"}
 **Advisory Board Members**
 
--   **Dr. Collin Lynch**
+-   **Dr. Collin Lynch (NC State)**
 
--   **Dr. Xavier Ochoa**
+-   **Dr. Xavier Ochoa (NYU)**
 
--   **Dr. Julia Rutledge**
+-   **Dr. Julia Rutledge (UWisc)**
 
--   **Dr. George Siemens**
+-   **Dr. George Siemens (SNHU)**
 
--   **Dr. Yianna Vovides**
+-   **Dr. Yianna Vovides (Georgetown)**
 :::
 
 ::: {.column width="50%"}
 **Topics**
 
-1.  What is Learning Analytics?
+1.  What exactly is Learning Analytics?
 
-2.  
+2.  What does LA research look like in practice?
+
+3.  How do you teach LA to others?
+
+4.  How can you engage in the LA community?
 :::
+:::
+:::
+
+## LASER Improvement
+
+::: columns
+::: {.column width="50%"}
+**Evaluation**
+
+-   Daily Exit Tickets
+
+-   Module Feedback Forms
+
+-   Summer Workshop Survey
+
+-   Post Program Surveys
+
+-   Participant Interviews
+:::
+
+::: {.column width="50%"}
+**Development**
+
+-   Webinars
+
+-   Workshops
+
+-   Courses
+
+-   Lessons & Units
 :::
 :::
 
@@ -145,11 +203,13 @@ Each day includes whole and small group activities to help participants:
 ::: panel-tabset
 ### This Year
 
--   **Learn from LASER**. A significant portion of the Summer Workshop consists of learning module sessions, which are conducted in small groups and differentiated for participants based on your selected method of interest. 
+::: incremental
+-   **Learn from LASER**. . 
 
 -   **Teach with LASER**. Each LASER Scholar will work on a self-determined “SHARK” Goal throughout the year. These research-related professional goals are created during the Summer Workshop and implemented throughout the year. 
 
 -   **Network at LASER**. Community building activities are designed to facilitate personal and professional networking and include morning icebreakers and opportunities to connect with fellow Scholars throughout the year.
+:::
 
 ### This Week
 

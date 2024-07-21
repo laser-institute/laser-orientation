@@ -83,11 +83,11 @@ Each method area consist of four progressively sequenced modules that include a:
 
 -   Conceptual Overview
 
+-   Essential Readings
+
 -   Code-Along
 
 -   Case Study
-
--   Essential Readings
 
 -   LASER Badge
 :::

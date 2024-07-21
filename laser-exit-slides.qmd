@@ -1,0 +1,81 @@
+---
+title: "What's Next for LASER?"
+subtitle: "Fall 2024 - Spring 2025"
+format:
+  revealjs: 
+    slide-number: c/t
+    progress: true
+    chalkboard: 
+      buttons: false
+    preview-links: auto
+    logo: img/LASERLogoB.png
+    theme: [default, css/laser.scss]
+    width: 1920
+    height: 1080
+    margin: 0.05
+    footer: <a href=https://www.go.ncsu.edu/laser-institute>go.ncsu.edu/laser-institute
+resources:
+  - demo.pdf
+bibliography: references.bib
+editor: visual
+---
+
+## Module Session & Office Hours
+
+::: columns
+::: {.column width="50%"}
+Late August through early December we'll offer:
+
+-   **Virtual Module Sessions** for TM, ML, SNA, KT and LAW
+
+-   **Office Hours** for open-ended discussion and support
+:::
+
+::: {.column width="50%"}
+![](img/laser-availability.svg){fig-align="center" width="70%"}
+
+           [go.ncsu.edu/laser-availability](https://go.ncsu.edu/laser-availability)
+:::
+:::
+
+## SHARK Goal Check-Ins
+
+::: columns
+::: {.column width="50%"}
+Starting last August we'll be facilitating asynchronous:
+
+-   **monthly check-ins** to share progress toward your SHARK Goal.
+
+-   **#shark-goals channel** on Slack to ask questions and discuss your goals
+:::
+
+::: {.column width="50%"}
+![](img/laser-shark.png){fig-align="center" width="70%"}
+:::
+:::
+
+## Slack Community
+
+::: columns
+::: {.column width="50%"}
+[![](img/qr-slack.svg){fig-align="center" width="50%"}](http://go.ncsu.edu/laser-slack)
+
+                [go.ncsu.edu/laser-slack](http://go.ncsu.edu/laser-slack)
+:::
+
+::: {.column width="50%"}
+![](img/slack.png){fig-align="center"}
+:::
+:::
+
+## Acknowledgements
+
+::: columns
+::: {.column width="20%"}
+![](img/nsf.jpg){fig-align="center" width="80%"}
+:::
+
+::: {.column width="80%"}
+This work was supported by the National Science Foundation grants DRL-2025090 and DRL-2321128 (ECR:BCSER). Any opinions, findings, and conclusions expressed in this material are those of the authors and do not necessarily reflect the views of the National Science Foundation.
+:::
+:::

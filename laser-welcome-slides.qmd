@@ -95,7 +95,7 @@ Each method area consist of four progressively sequenced modules that include a:
 ::: {.column width="50%"}
 ![](images/learning-modules.png){width="100%"}
 
-[[go.ncsu.edu/laser-curriculum]{.underline}](https://go.ncsu.edu/laser-curriculum)
+         [[go.ncsu.edu/laser-curriculum]{.underline}](https://go.ncsu.edu/laser-curriculum)
 :::
 :::
 
@@ -161,7 +161,7 @@ Each day includes whole and small group activities to help participants:
 :::
 
 ::: {.column width="50%"}
-![Network of LASER Scholars](img/laser-network.png){alt="Network of LASER Scholars"}
+![                            **Network of LASER Scholars**](img/laser-network.png){alt="Network of LASER Scholars"}
 :::
 :::
 :::

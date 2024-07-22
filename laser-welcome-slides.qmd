@@ -123,15 +123,15 @@ Each day includes whole and small group activities to help participants:
 ::: {.column width="50%"}
 **Advisory Board Members**
 
--   **Dr. Collin Lynch (NC State)**
+-   Dr. Collin Lynch (NC State)
 
--   **Dr. Xavier Ochoa (NYU)**
+-   Dr. Xavier Ochoa (NYU)
 
--   **Dr. Julia Rutledge (UWisc)**
+-   Dr. Julia Rutledge (UWisc)
 
--   **Dr. George Siemens (SNHU)**
+-   Dr. George Siemens (SNHU)
 
--   **Dr. Yianna Vovides (Georgetown)**
+-   Dr. Yianna Vovides (Georgetown)
 :::
 
 ::: {.column width="50%"}
@@ -147,7 +147,7 @@ Each day includes whole and small group activities to help participants:
 :::
 :::
 
-###  Community Building
+### Community Building
 
 ::: columns
 ::: {.column width="50%"}
@@ -161,7 +161,7 @@ Each day includes whole and small group activities to help participants:
 :::
 
 ::: {.column width="50%"}
-![                            **Network of LASER Scholars**](img/laser-network.png){alt="Network of LASER Scholars"}
+![Network of LASER Scholars](img/laser-network.png)
 :::
 :::
 :::
@@ -178,14 +178,14 @@ Each day includes whole and small group activities to help participants:
 
 2.  Two of the statements should be true, and one should be a lie.
 
-3.   The group will try to guess which statement is the lie.
+3.  The group will try to guess which statement is the lie.
 :::
 
 ::: {.column width="50%"}
 **Example**:
 
-1.   I was born and raised in Lansing, Michigan but use "y'all" with ease.
-2.   I am an avid Python-ista and loathe using R.
+1.  I was born and raised in Lansing, Michigan but use "y'all" with ease.
+2.  I am an avid Python-ista and loathe using R.
 3.  I began my career in education as Peace Corps Volunteer in Romania.
 :::
 :::
@@ -245,9 +245,13 @@ Each day includes whole and small group activities to help participants:
 2.  **Lunch (12:30)** - Eat some great food, connect with new colleagues.
 3.  **Guest Speaker (1:15)** - Meet our first Advisory Board member and guest speaker and get their perspective on Learning Analytics.
 4.  **Method Orientation (2:15)** - Learn more about your selected method area (LAW, ML, TM, KT, and SNA) and get set up for the week.
-5.  **Design Session (3:00)** - Identify your SHARK Goal and begin the plannign process for teaching others at you home institution or elsewhere.
+5.  **Design Session (3:00)** - Identify your SHARK Goal and begin the planning process for teaching others at you home institution or elsewhere.
 6.  **Field Trip (4:30)** - Ice cream party at NC State's dairy farm!
 :::
+
+## Photo Release
+
+### <https://bit.ly/FImediaRelease>
 
 ## Acknowledgements
 

@@ -116,6 +116,8 @@ Each method area consist of four progressively sequenced modules that include a:
 -   Case Study
 
 -   LASER Badge
+
+-   Microcredential
 :::
 
 ::: {.column width="50%"}
@@ -275,10 +277,6 @@ Each day includes whole and small group activities to help participants:
 6.  **Field Trip (4:30)** - Ice cream party at NC State's dairy farm!
 :::
 
-## Photo Release
-
-### <https://bit.ly/FImediaRelease>
-
 ## Acknowledgements
 
 ::::: columns
@@ -287,6 +285,6 @@ Each day includes whole and small group activities to help participants:
 :::
 
 ::: {.column width="80%"}
-This work was supported by the National Science Foundation grants DRL-2025090 and DRL-2321128 (ECR:BCSER). Any opinions, findings, and conclusions expressed in this material are those of the authors and do not necessarily reflect the views of the National Science Foundation.
+This work was supported by the National Science Foundation grants under Grant No. [DRL-2025090](#0), [DRL-2321128](#0), and [DRL-2321129](#0). Any opinions, findings, and conclusions expressed in this material are those of the authors and do not necessarily reflect the views of the National Science Foundation.
 :::
 :::::

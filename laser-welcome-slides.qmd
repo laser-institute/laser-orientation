@@ -1,6 +1,6 @@
 ---
 title: "Welcome to the LASER Institute!"
-subtitle: "Summer Workshop: July 22-26, 2024"
+subtitle: "Summer Workshop: July 14-18, 2025"
 format:
   revealjs: 
     slide-number: c/t
@@ -48,17 +48,43 @@ The LASER Institute is a prime example of how we [Think and Do](https://www.ncsu
 
 ## The LASER Team
 
--   **NC State University**: Shaun Kellogg (Host; SNA), Shiyan Jiang (TM), Jeanne McClure (LAW), Daria Smyslova (LAW), Gemma Mojica (Community & Design),
+::::: columns
+::: {.column width="50%"}
+**NC State University**
 
--   **University of Pennsylvania**: Ryan Baker (KT), Yilin Yiu (KT), Richard Scruggs (KT), Liz Cloude (Eval), Zhanlan Wei (Logistics)
+-   Gemma Mojica (Community & Design)
 
--   **University of Tennessee - Knoxville**: Joshua Rosenberg (ML)
+-   Shaun Kellogg (TM)
 
--   **Evaluation Team**: Eleanor Hasse and Pamela Lovin
+-   Ela Castellanos-Reyes (SNA)
+
+-   Duncan Culbreth (LAW)
+
+**University of Tennessee-Knoxville**
+
+-   Joshua Rosenberg (SML)
+:::
+
+::: {.column width="50%"}
+**University of Pennsylvania**
+
+-   Ryan Baker (KT) & Stefan Slater (KT)
+
+-   Elizabeth Cloude (SD)
+
+-   Yilin Yiu (RM) & Richard Scruggs (RM)
+
+-   Zhanlan Wei (Logistics)
+
+**Evaluation Team**
+
+-   Eleanor Hasse & Pamela Lovin (Eval)
+:::
+:::::
 
 ## Institute Components
 
-::: columns
+::::: columns
 ::: {.column width="50%"}
 ### **Summer Workshop**
 
@@ -66,18 +92,18 @@ The LASER Institute is a prime example of how we [Think and Do](https://www.ncsu
 :::
 
 ::: {.column width="50%"}
-### **Online Community**
+### **Fall & Spring Components**
 
 ![](images/online-community.png){width="97%"}
 :::
-:::
+:::::
 
 ## Program Supports
 
-::: panel-tabset
+::::::::::::::: panel-tabset
 ### Learning Modules
 
-::: columns
+::::: columns
 ::: {.column width="50%"}
 Each method area consist of four progressively sequenced modules that include a:
 
@@ -97,11 +123,11 @@ Each method area consist of four progressively sequenced modules that include a:
 
          [[go.ncsu.edu/laser-curriculum]{.underline}](https://go.ncsu.edu/laser-curriculum)
 :::
-:::
+:::::
 
 ### SHARK Goals
 
-::: columns
+::::: columns
 ::: {.column width="60%"}
 Each day includes whole and small group activities to help participants:
 
@@ -115,11 +141,11 @@ Each day includes whole and small group activities to help participants:
 ::: {.column width="40%"}
 ![](img/laser-shark.png){fig-align="center" width="80%"}
 :::
-:::
+:::::
 
 ### Guest Speakers
 
-::: columns
+::::: columns
 ::: {.column width="50%"}
 **Advisory Board Members**
 
@@ -145,11 +171,11 @@ Each day includes whole and small group activities to help participants:
 
 4.  How can you engage in the LA community?
 :::
-:::
+:::::
 
 ### Community Building
 
-::: columns
+::::: columns
 ::: {.column width="50%"}
 [Community building activities](https://fi.ncsu.edu/news/laser-institute-builds-community-of-scholars-for-lifelong-connections-future-collaboration/) help participants create a sense of community by:
 
@@ -163,14 +189,14 @@ Each day includes whole and small group activities to help participants:
 ::: {.column width="50%"}
 ![Network of LASER Scholars](img/laser-network.png)
 :::
-:::
-:::
+:::::
+:::::::::::::::
 
 ## LASER Ice Breaker
 
 ### **Two (Surprising) Truths and a (Believable) Lie**
 
-::: columns
+::::: columns
 ::: {.column width="50%"}
 **How to Play:**
 
@@ -188,11 +214,11 @@ Each day includes whole and small group activities to help participants:
 2.  I am an avid Python-ista and loathe using R.
 3.  I began my career in education as Peace Corps Volunteer in Romania.
 :::
-:::
+:::::
 
 ## LASER Improvement
 
-::: columns
+::::: columns
 ::: {.column width="50%"}
 ### **Development**
 
@@ -218,7 +244,7 @@ Each day includes whole and small group activities to help participants:
 
 -   Participant Interviews
 :::
-:::
+:::::
 
 ## Goals of the LASER Institute
 
@@ -255,7 +281,7 @@ Each day includes whole and small group activities to help participants:
 
 ## Acknowledgements
 
-::: columns
+::::: columns
 ::: {.column width="20%"}
 ![](img/nsf.jpg){fig-align="center" width="80%"}
 :::
@@ -263,4 +289,4 @@ Each day includes whole and small group activities to help participants:
 ::: {.column width="80%"}
 This work was supported by the National Science Foundation grants DRL-2025090 and DRL-2321128 (ECR:BCSER). Any opinions, findings, and conclusions expressed in this material are those of the authors and do not necessarily reflect the views of the National Science Foundation.
 :::
-:::
+:::::

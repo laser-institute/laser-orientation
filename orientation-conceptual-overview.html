@@ -8,7 +8,7 @@
 <link href="orientation-conceptual-overview_files/libs/quarto-html/light-border.css" rel="stylesheet">
 <link href="orientation-conceptual-overview_files/libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
 <link href="orientation-conceptual-overview_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.4.550">
+  <meta name="generator" content="quarto-1.5.57">
 
   <title>The LASER Toolkit &amp; Reproducible Research</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -375,8 +375,7 @@
 <li><p>Quarto</p></li>
 <li><p>R &amp; Python</p></li>
 </ul>
-</div>
-</div>
+</div></div>
 <aside class="notes">
 <p><strong>Speaker Notes:</strong></p>
 <p>Each module begins with a 30-minute conceptual overview of key terminology, techniques, and applications.</p>
@@ -402,7 +401,7 @@
 <p>In computational sciences like LA:</p>
 <ul>
 <li><p>Ideally… researchers can <strong><em>replicate</em></strong> your findings by following the procedures used to gather the data and run the computer code.</p></li>
-<li><p>Realistically… the data and code used to make a finding are available and sufficient to <strong><em>recreate</em></strong> the finding.</p></li>
+<li><p>Realistically… the data and code used to make a finding are available and sufficient to <strong><em>reproduce</em></strong> the analysis.</p></li>
 </ul>
 </div><div class="column" style="width:40%;">
 <div class="quarto-figure quarto-figure-center">
@@ -411,8 +410,7 @@
 <figcaption>Reproducible Research with R <span class="citation" data-cites="gandrud2021">(<a href="#/references" role="doc-biblioref" onclick="">Gandrud 2021</a>)</span></figcaption>
 </figure>
 </div>
-</div>
-</div>
+</div></div>
 <aside class="notes">
 <p><strong>Speaker Notes:</strong></p>
 <p>The information from this conceptual overview on reproducible research is drawn largely from the excellent book by Christopher Gandrud, Reproducible research with R and R studio. Even if you’re a python user, this is a valuable resource for essential concepts and practices for ensuring that your research is reproducible.</p>
@@ -448,8 +446,7 @@
 <li><p>Changes are easier</p></li>
 <li><p>Higher impact research</p></li>
 </ul>
-</div>
-</div>
+</div></div>
 <aside class="notes">
 <p><strong>Speaker Notes:</strong></p>
 <p><strong>For Science:</strong></p>
@@ -577,8 +574,7 @@
 </div><div class="column" style="width:50%;">
 <p><a href="https://go.ncsu.edu/laser-github"><img data-src="img/github.png" style="width:100.0%"></a></p>
 <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://go.ncsu.edu/laser-github">go.ncsu.edu/laser-github</a></p>
-</div>
-</div>
+</div></div>
 <aside class="notes">
 <p><strong>Speaker Notes:</strong></p>
 <p>GitHub is an interface and cloud hosting service built on top of the Git version control system. GitHub was originally designed to for programmers to work together to build computer programs, but has become widely used by researcher and educators to host statistical software packages, course websites and books, and even online tutorials.</p>
@@ -611,8 +607,7 @@
 </figure>
 </div>
 <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://go.ncsu.edu/laser-learners">go.ncsu.edu/laser-learners</a></p>
-</div>
-</div>
+</div></div>
 <aside class="notes">
 <p><strong>Speaker Notes</strong>:</p>
 <p>Posit Cloud (formerly RStudio Cloud) provides a powerful set of data science tools right in your browser with no installation or complex configuration required. All of our Module materials will be accessed through Posit Cloud this year so we encourage you bookmark it in your browser.</p>
@@ -648,8 +643,7 @@
 <p><img data-src="img/rstudio.png" class="quarto-figure quarto-figure-center"></p>
 </figure>
 </div>
-</div>
-</div>
+</div></div>
 <aside class="notes">
 <p><strong>Speaker Notes:</strong></p>
 <p>What you are looking at now is RStudio, which is an integrated development environment (IDE) for R and Python and includes a console for running R code directly, syntax-highlighting editor that supports direct code execution in the source pane, and tools for plotting, history, debugging, and management of research projects in the Environment and Files panes.</p>
@@ -686,8 +680,7 @@
 <p><img data-src="img/quarto.png" class="quarto-figure quarto-figure-center"></p>
 </figure>
 </div>
-</div>
-</div>
+</div></div>
 <aside class="notes">
 <p><strong>Speaker Notes:</strong></p>
 <p>Virtually all of our curriculum materials, including our website, our proudly built with Quarto. Quarto is is an open-source scientific and technical publishing system that enables the creation of dynamic documents, dashboards, presentations, websites and more.</p>
@@ -720,8 +713,7 @@
 <p><img data-src="img/r-script.png" class="quarto-figure quarto-figure-center" style="width:70.0%"></p>
 </figure>
 </div>
-</div>
-</div>
+</div></div>
 <aside class="notes">
 <p><strong>Speaker Notes:</strong></p>
 <p>Underlying all of this is R (or Python), two of the most popular programming languages used in data science, statistical analysis, and machine learning. Each provide a rich platform that can be used to create a wide range of static and dynamic outputs for communicating your research.</p>
@@ -776,8 +768,7 @@
 </div>
 </div><div class="column" style="width:80%;">
 <p>This work was supported by the National Science Foundation grants DRL-2025090 and DRL-2321128 (ECR:BCSER). Any opinions, findings, and conclusions expressed in this material are those of the authors and do not necessarily reflect the views of the National Science Foundation.</p>
-</div>
-</div>
+</div></div>
 </section>
 <section id="references" class="slide level2 smaller scrollable">
 <h2>References</h2>
@@ -1037,18 +1028,7 @@ Gandrud, Christopher. 2021. <em>Reproducible Research with r and r Studio (3rd E
         }
         return false;
       }
-      const clipboard = new window.ClipboardJS('.code-copy-button', {
-        text: function(trigger) {
-          const codeEl = trigger.previousElementSibling.cloneNode(true);
-          for (const childEl of codeEl.children) {
-            if (isCodeAnnotation(childEl)) {
-              childEl.remove();
-            }
-          }
-          return codeEl.innerText;
-        }
-      });
-      clipboard.on('success', function(e) {
+      const onCopySuccess = function(e) {
         // button target
         const button = e.trigger;
         // don't keep focus
@@ -1080,7 +1060,47 @@ Gandrud, Christopher. 2021. <em>Reproducible Research with r and r Studio (3rd E
         }, 1000);
         // clear code selection
         e.clearSelection();
+      }
+      const getTextToCopy = function(trigger) {
+          const codeEl = trigger.previousElementSibling.cloneNode(true);
+          for (const childEl of codeEl.children) {
+            if (isCodeAnnotation(childEl)) {
+              childEl.remove();
+            }
+          }
+          return codeEl.innerText;
+      }
+      const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+        text: getTextToCopy
       });
+      clipboard.on('success', onCopySuccess);
+      if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+        // For code content inside modals, clipBoardJS needs to be initialized with a container option
+        // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+        const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+          text: getTextToCopy,
+          container: window.document.getElementById('quarto-embedded-source-code-modal')
+        });
+        clipboardModal.on('success', onCopySuccess);
+      }
+        var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+        var mailtoRegex = new RegExp(/^mailto:/);
+          var filterRegex = new RegExp('/' + window.location.host + '/');
+        var isInternal = (href) => {
+            return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+        }
+        // Inspect non-navigation links and adorn them if external
+     	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+        for (var i=0; i<links.length; i++) {
+          const link = links[i];
+          if (!isInternal(link.href)) {
+            // undo the damage that might have been done by quarto-nav.js in the case of
+            // links that we want to consider external
+            if (link.dataset.originalHref !== undefined) {
+              link.href = link.dataset.originalHref;
+            }
+          }
+        }
       function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
         const config = {
           allowHTML: true,
@@ -1117,7 +1137,11 @@ Gandrud, Christopher. 2021. <em>Reproducible Research with r and r Studio (3rd E
           try { href = new URL(href).hash; } catch {}
           const id = href.replace(/^#\/?/, "");
           const note = window.document.getElementById(id);
-          return note.innerHTML;
+          if (note) {
+            return note.innerHTML;
+          } else {
+            return "";
+          }
         });
       }
       const findCites = (el) => {

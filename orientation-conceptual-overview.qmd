@@ -20,7 +20,7 @@ editor: visual
 
 ## Overview
 
-::: columns
+::::: columns
 ::: {.column width="50%"}
 ### **Reproducible Research**
 
@@ -48,7 +48,7 @@ editor: visual
 
 -   R & Python
 :::
-:::
+:::::
 
 ::: notes
 **Speaker Notes:**
@@ -64,19 +64,19 @@ Everything we introduce in this presentation you will have an opportunity to exp
 
 ## What is Reproducible Research?
 
-::: columns
+::::: columns
 ::: {.column width="60%"}
 In computational sciences like LA:
 
 -   Ideally... researchers can ***replicate*** your findings by following the procedures used to gather the data and run the computer code.
 
--   Realistically... the data and code used to make a finding are available and sufficient to ***recreate*** the finding.
+-   Realistically... the data and code used to make a finding are available and sufficient to ***reproduce*** the analysis.
 :::
 
 ::: {.column width="40%"}
 ![Reproducible Research with R [@gandrud2021]](img/reproducible-research.png){width="50%"}
 :::
-:::
+:::::
 
 ::: notes
 **Speaker Notes:**
@@ -88,7 +88,7 @@ The distinction between these two definitions is that we recognize it is sometim
 
 ## The Benefits of Reproducible Research
 
-::: columns
+::::: columns
 ::: {.column width="50%"}
 ### **For Science:**
 
@@ -112,7 +112,7 @@ The distinction between these two definitions is that we recognize it is sometim
 
 -   Higher impact research
 :::
-:::
+:::::
 
 ::: notes
 **Speaker Notes:**
@@ -214,7 +214,7 @@ Reproducible research involves two broad sets of tools:
 
 ## GitHub
 
-::: columns
+::::: columns
 ::: {.column width="50%"}
 The [LASER Institute GitHub](https://github.com/laser-institute) site houses repositories for all curriculum materials and [GitHub Pages](https://pages.github.com) is used to publish our site to the web.
 
@@ -228,7 +228,7 @@ The [LASER Institute GitHub](https://github.com/laser-institute) site houses rep
 
             [go.ncsu.edu/laser-github](https://go.ncsu.edu/laser-github)
 :::
-:::
+:::::
 
 ::: notes
 **Speaker Notes:**
@@ -244,7 +244,7 @@ Later, you'll be learning how to use this GitHub site to adapt these materials f
 
 ## Posit Cloud
 
-::: columns
+::::: columns
 ::: {.column width="50%"}
 Posit Cloud lets you access [Posit](https://posit.co)'s powerful set of data science tools like [RStudio IDE](https://posit.co/products/open-source/rstudio/) and [Jupyter Notebooks](https://jupyter.org) right in your browser.
 
@@ -258,7 +258,7 @@ Interactive components for each module (e.g., Case Studies and Code-Alongs) are 
 
             [go.ncsu.edu/laser-learners](https://go.ncsu.edu/laser-learners)
 :::
-:::
+:::::
 
 ::: notes
 **Speaker Notes**:
@@ -276,7 +276,7 @@ It's important that instructors have access so we can assist you with assignment
 
 ## RStudio
 
-::: columns
+::::: columns
 ::: {.column width="50%"}
 [RStudio](https://posit.co/products/open-source/rstudio/) is an integrated development environment (IDE) for R and Python and includes:
 
@@ -290,7 +290,7 @@ It's important that instructors have access so we can assist you with assignment
 ::: {.column width="50%"}
 ![](img/rstudio.png){fig-align="center"}
 :::
-:::
+:::::
 
 ::: notes
 **Speaker Notes:**
@@ -304,7 +304,7 @@ RStudio is basically your home for all of the files, images, reports, and code t
 
 ## Quarto
 
-::: columns
+::::: columns
 ::: {.column width="50%"}
 [Quarto](https://quarto.org) is used with Python and R to create reproducible, production quality:
 
@@ -324,7 +324,7 @@ RStudio is basically your home for all of the files, images, reports, and code t
 ::: {.column width="50%"}
 ![](img/quarto.png){fig-align="center"}
 :::
-:::
+:::::
 
 ::: notes
 **Speaker Notes:**
@@ -342,7 +342,7 @@ Quarto also integrates with programming languages like R and Python, allowing fo
 
 ## R & Python
 
-::: columns
+::::: columns
 ::: {.column width="50%"}
 The LASER Institute uses [R](https://www.r-project.org/about.html) and [Python](https://www.python.org), two of the most popular programming languages for data science, statistical analysis, and machine learning.
 
@@ -354,7 +354,7 @@ Both are freely available have large and active communities and a vast number of
 ::: {.column width="50%"}
 ![](img/r-script.png){fig-align="center" width="70%"}
 :::
-:::
+:::::
 
 ::: notes
 **Speaker Notes:**
@@ -390,7 +390,7 @@ To help guide your reflection on the readings, a set of questions are provided i
 
 ## Acknowledgements
 
-::: columns
+::::: columns
 ::: {.column width="20%"}
 ![](img/nsf.jpg){fig-align="center" width="80%"}
 :::
@@ -398,6 +398,6 @@ To help guide your reflection on the readings, a set of questions are provided i
 ::: {.column width="80%"}
 This work was supported by the National Science Foundation grants DRL-2025090 and DRL-2321128 (ECR:BCSER). Any opinions, findings, and conclusions expressed in this material are those of the authors and do not necessarily reflect the views of the National Science Foundation.
 :::
-:::
+:::::
 
 ## References
